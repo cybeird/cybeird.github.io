@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Sunsea的布劳格" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-loading-bar.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="第一天就创造历史的男人，真是令人感到深深的恐惧！">
+<meta name="keywords" content="COGS,蒟蒻,信息竞赛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="令人感到恐惧的DAY1?">
+<meta property="og:url" content="cybeird.coding.me/cpp/5-days-left.html">
+<meta property="og:site_name" content="Sunsea的布劳格">
+<meta property="og:description" content="第一天就创造历史的男人，真是令人感到深深的恐惧！">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ofshdv83w.bkt.clouddn.com/noip1.JPG">
+<meta property="og:image" content="http://ofshdv83w.bkt.clouddn.com/noip2.JPG">
+<meta property="og:updated_time" content="2019-10-17T08:38:48.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="令人感到恐惧的DAY1?">
+<meta name="twitter:description" content="第一天就创造历史的男人，真是令人感到深深的恐惧！">
+<meta name="twitter:image" content="http://ofshdv83w.bkt.clouddn.com/noip1.JPG">
+  <link rel="canonical" href="cybeird.coding.me/cpp/5-days-left">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>令人感到恐惧的DAY1? | Sunsea的布劳格</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93021468-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-93021468-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sunsea的布劳格</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Better to Run Than Curse the Road</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-sitemap">
+      
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-posts">
+      
+    
+
+    <a href="/categories/Post" rel="section"><i class="fa fa-fw fa-pencil"></i>随笔</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-technology">
+      
+    
+
+    <a href="/categories/TECHNOLOGY" rel="section"><i class="fa fa-fw fa-laptop"></i>科技</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-report">
+      
+    
+
+    <a href="/categories/cpp" rel="section"><i class="fa fa-fw fa-question-circle"></i>解题报告</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+
+  <a href="https://github.com/cybeird/cybeird.github.io.old" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="cybeird.coding.me/cpp/5-days-left.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunsea">
+      <meta itemprop="description" content="每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunsea的布劳格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">令人感到恐惧的DAY1?
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-13 15:15:22" itemprop="dateCreated datePublished" datetime="2016-11-13T15:15:22+08:00">2016-11-13</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-17 16:38:48" itemprop="dateModified" datetime="2019-10-17T16:38:48+08:00">2019-10-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>undefined</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>NaN:aN</span>
+            </span>
+          
+            <div class="post-description">第一天就创造历史的男人，真是令人感到深深的恐惧！</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="第一题？最小生成树啊！"><a href="#第一题？最小生成树啊！" class="headerlink" title="第一题？最小生成树啊！"></a>第一题？最小生成树啊！</h2><p>　　今天的第一题就让我不懂了，题意描述的太不清楚了(当然不是因为我蒟蒻!)，反正就是，怎么看都是走地道的话怎么都最多只能携带一块派么！好吧，先看看<a href="#jump1"><strong>题目</strong></a>。<br>　　听完了老师的讲解之后(实际上也不过是那个样子而已)，决定还是要写一个题解的。(不过这学校的电脑是在是太鬼畜了，强行练习我们的盲打技巧，而且还贼卡，xp系统，怪不得大家都自带电脑)</p>
+<!--我实在是懒得配备SSH了(大家公认的令人感到恶心的事情啊)，所以。。。好像也没什么大影响。。-->
+<p>　　反正主要就是<code>Kruskal</code>算法 [^footnote1]:<br>　　1. 记<code>Graph</code>中有<code>v</code>个顶点，<code>e</code>个边<br>　　2. 新建图<code>Graphnew</code>，<code>Graphnew</code>中拥有原图中相同的e个顶点，但没有边<br>　　3. 将原图<code>Graph</code>中所有<code>e</code>个边按权值从小到大排序<br>　　4. 循环：<br>    从权值最小的边开始遍历每条边 直至图<code>Graph</code>中所有的节点都在同一个连通分量中<br>        if 这条边连接的两个节点于图<code>Graphnew</code>中不在同一个连通分量中<br>            添加这条边到图<code>Graphnew</code>中<br>先上常大佬的代码(有人说过自己的题解不能粘别人的代码吗?并没有人)，虽然T了三个点，但是依旧极具参考价值(毕竟大佬)</p>
+<!--代码的命名规则和缩进实在是太诡了，自己进行了恶意的修改-->
+<p><img src="http://ofshdv83w.bkt.clouddn.com/noip1.JPG" alt=""></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXM=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">1e4</span>+<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">UnionFindSet</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> fa[MAXN];</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) fa[i]=i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getfather</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> fa[x]==x?x:fa[x]=getfather(fa[x]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> fax=getfather(x),fay=getfather(y);</span><br><span class="line">		<span class="keyword">if</span>(fax==fay) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		fa[fax]=fay;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;UFS;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> from,to,dist;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Edge &amp;e) <span class="keyword">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> dist &lt; e.dist;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;edges[MAXM];</span><br><span class="line">Edge e[MAXM];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N,T;</span><br><span class="line"><span class="keyword">int</span> x,y,d;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;N,&amp;T);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;T;i++) </span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;edges[i].from,&amp;edges[i].to,&amp;edges[i].dist);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Kruscal</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">memcpy</span>(e,edges,<span class="keyword">sizeof</span>(edges));</span><br><span class="line">	sort(e,e+T);</span><br><span class="line">	UFS.init(N);</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;T;i++) <span class="keyword">if</span>(UFS.merge(e[i].from,e[i].to)) ans+=e[i].dist;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Kruscal();</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;Q);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;Q;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> id,d;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;id,&amp;d);</span><br><span class="line">		id--;</span><br><span class="line">		edges[id].dist=d;</span><br><span class="line">		Kruscal();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	freopen(<span class="string">"tubea.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"tubea.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	init();</span><br><span class="line">	work();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>　　大意就是使用最小生成树，对于玲的每一次原力释放，再次使用最小生成树(至于类封装。。这的确是个好东西!)<br>　　当然，正解为何<del>~</del><br>　　题目给定一个无向图，最多有10 000个顶点，100 000条边。首先题目要求输出这个图的最小生成树的大小。接着题目要求最多有10 000个操作，每个操作是缩短图上的某条边，要求每次操作之后输出这个图的最小生成树的大小。<br>　　由于点数比较多，可以用邻接表存储给出的无向图。对于题目的第一个问题，可以用Kruskal算法求出原图的最小生成树的大小。<br>　　对于第二类问题，可以利用当前求得的最小生成树进行高效求解：<br>　　　1. 对于每条被缩短的边，如果它在当前的最小生成树上，那么把这条边缩短之后的无向图的最小生成树就可以通过把原来的最小生成树对应的边缩短得到。<br>　　　2. 如果被缩短的边不在原来的最小生成树上，先求出在最小生成树上加入这条边之后形成的环，如果这条边缩短之后仍然比环上的其他边长，则不影响生成树，否则在这个环里面选出最长的边，用被缩短的边把它替换掉。<br>　　在本题中应用Kruskal算法求出原图的最小生成树，该算法的过程如下：<br>　　按权值由小到大的顺序尝试将每一条边加入到生成树中，判断加入这条边之后是否会出现环，如果有，表明当前的边不能加入生成树中，否则可以加入。判断加入一条边之后树上是否出现环可以用并查集实现。重复这个操作直到所有的边都尝试完毕，得到的生成树就是最小生成树。总的复杂度为排序复杂度O(ElogE)，其中E是无向图边的数目。<br>　　在求出最小生成树的过程中可以用一个数组标记某条边在不在这个最小生成树上，那么给出一个缩边操作的时候，就可以快速判断要缩短的边在不在当前的最小生成树上。<br>　　对于当前的生成树，可以指定某个点为根节点，然后通过一次遍历求出树上各个节点的深度和它们的父节点、到父节点的边这些信息。要找出加入一条边之后所形成的环，可以通过如下算法得到，假设要加入的为u到v的边：<br>　　　1. 如果u和v的深度不相等，使深度大的往上爬。<br>　　　2. 如果u和v的深度相等，判断u和v是否同一个节点，如果不是，则同时往上爬；<br>　　如果是，则这个找环的过程就结束。<br>　　在找这个环的过程中可以利用之前遍历得到的信息来记录环上的权值最大的边和其权值，如果这条边是新加进来的边，那么缩短这条边之后的最小生成树没有变化，否则就需要把这条边加进来，同时删除环上权值最大的边。<br>　　每次在之前的最小生成树中删除和添加边的操作会破坏原来树的拓扑结构，所以需要重新遍历一遍来更新之前得到的节点的深度等信息。<br>　　对于每个操作，最坏情况下需要遍历整棵树，时间复杂度为O(N),因此以上算法的总的复杂度为O(NQ)，其中Q为询问个数；同时由于使用邻接表作为图的存储结构，空间复杂度为O(E)，可以满足题目时间限制和空间限制的要求。</p>
+<h2 id="神奇的数学思想"><a href="#神奇的数学思想" class="headerlink" title="神奇的数学思想(?)"></a>神奇的数学思想(?)</h2><p>　　不过对于<a href="#jump2"><strong>第二题</strong></a>，老师倒是讲述了一个十分有趣的解决方法，就是利用五进制来进行解决。<br>　　这是一道常规搜索题。给出一个初始状态、一个目标状态和两种变换规则，求从初始状态到目标状态的最小变换次数，如果无解输出<code>-1</code>。<br>　　题中给定的每个状态有<code>8</code>个位置，每个位置上有<code>5</code>种情况，因此所有可能的状态数为<code>58</code>，即<code>390625</code>个。可以先对状态进行编码，然后广搜即可。<br>    <img src="http://ofshdv83w.bkt.clouddn.com/noip2.JPG" alt="">　　　<br>　　状态值=0×5^0+1×5^1+3×5^2+4×5^3+…+3×5^7=251830<br>　　已知状态值，求该状态所对应的布局时，只需将状态值不断地模<code>5</code>取余即可。<br>　　而对于状态转换，莫非就是两种:<br>　　(1) 旋转<br>　　　b=a%57×5+a/57<br>　　(2) 重生<br>　　　　1. 对于一个数<code>i</code>，克它的数字为<code>(i+4)%5</code><br>　　　　2. 对于一个数<code>i</code>，如果被克，它将变成的数字为<code>i=(i+3)%5</code><br>　　　b=a-4×54+(4+3)%5×54<br>　　　呃，a是进行状态转换前的状态值，b是进行状态转换之后的状态值</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">GOLD = 0</span></span><br><span class="line"><span class="comment">WOOD = 1</span></span><br><span class="line"><span class="comment">GROUND = 2</span></span><br><span class="line"><span class="comment">WATER = 3</span></span><br><span class="line"><span class="comment">FIRE = 4</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">int</span> BK[<span class="number">5</span>] = &#123;<span class="number">4</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> BN[<span class="number">5</span>] = &#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> C5[<span class="number">9</span>] = &#123;<span class="number">1</span>, <span class="number">5</span>, <span class="number">25</span>, <span class="number">125</span>, <span class="number">625</span>, <span class="number">3125</span>, <span class="number">15625</span>, <span class="number">78125</span>, <span class="number">390625</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> S, T;</span><br><span class="line"><span class="keyword">int</span> ud[<span class="number">400000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gtp</span><span class="params">(<span class="keyword">char</span> *C)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (C[<span class="number">0</span>] == <span class="string">'G'</span>)</span><br><span class="line">		<span class="keyword">if</span> (C[<span class="number">1</span>] == <span class="string">'O'</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">	<span class="keyword">if</span> (C[<span class="number">0</span>] == <span class="string">'W'</span>)</span><br><span class="line">		<span class="keyword">if</span> (C[<span class="number">1</span>] == <span class="string">'O'</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> C[<span class="number">8</span>][<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">int</span> tls[<span class="number">8</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, C[tls[i]]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">		S = S*<span class="number">5</span> + gtp(C[i]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, C[tls[i]]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">		T = T*<span class="number">5</span> + gtp(C[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (S == T) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; ls;</span><br><span class="line">	ls.push(S);</span><br><span class="line">	ud[S] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> u, t;</span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">while</span> (!ls.empty()) &#123;</span><br><span class="line">		u = ls.front();</span><br><span class="line">		ls.pop();</span><br><span class="line">		t = u/<span class="number">5</span> + u%<span class="number">5</span>*C5[<span class="number">7</span>];</span><br><span class="line">		<span class="keyword">if</span> (!ud[t]) &#123;</span><br><span class="line">			ud[t] = ud[u] + <span class="number">1</span>;</span><br><span class="line">			ls.push(t);</span><br><span class="line">			<span class="keyword">if</span> (t == T)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">bool</span> hv[<span class="number">5</span>] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">		t = u;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">			hv[t%<span class="number">5</span>] = <span class="literal">true</span>;</span><br><span class="line">			t /= <span class="number">5</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		t = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">			x = u / C5[i] % <span class="number">5</span>;</span><br><span class="line">			<span class="keyword">if</span> (hv[BK[x]])</span><br><span class="line">			x = BN[x];</span><br><span class="line">			t = u/C5[i+<span class="number">1</span>]*C5[i+<span class="number">1</span>] + x*C5[i] + u%C5[i];</span><br><span class="line">			<span class="keyword">if</span> (!ud[t]) &#123;</span><br><span class="line">				ud[t] = ud[u] + <span class="number">1</span>;</span><br><span class="line">				ls.push(t);</span><br><span class="line">				<span class="keyword">if</span> (t == T)</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ud[T] - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	freopen(<span class="string">"fengshui.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"fengshui.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	init();</span><br><span class="line">	work();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="十分有趣的字符串问题-dp"><a href="#十分有趣的字符串问题-dp" class="headerlink" title="十分有趣的字符串问题(dp)"></a>十分有趣的字符串问题(dp)</h2><p>　　而最后<a href="#jump3"><strong>一道题</strong></a>,嗯:<br>###算法分析<br>最优解来自于下面两种可能：<br>　　1. 先把原区间全部修改成与目标串同区间的第一个字母，再在此基础上继续寻找最优解；<br>　　2. 把原区间分成两部分分别求得的最优解。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> XTT 66666666</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> s1[<span class="number">106</span>],s2[<span class="number">106</span>];</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">106</span>][<span class="number">106</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//i到j的刷法</span></span><br><span class="line"><span class="keyword">int</span> ans[<span class="number">106</span>],i,j,k,len,len2;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    freopen(<span class="string">"painter.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"painter.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%s%s"</span>,s1,s2)!=EOF)&#123;</span><br><span class="line">    	len=<span class="built_in">strlen</span>(s1);</span><br><span class="line">    	len2=<span class="built_in">strlen</span>(s2);</span><br><span class="line">    	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;len;j++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=j;i&gt;=<span class="number">0</span>;i--) &#123; <span class="comment">//从尾到头</span></span><br><span class="line">    			f[i][j]=f[i+<span class="number">1</span>][j]+<span class="number">1</span>;</span><br><span class="line">    			<span class="keyword">for</span>(k=i+<span class="number">1</span>;k&lt;=j;k++)&#123;</span><br><span class="line">    				<span class="keyword">if</span>(s2[i]==s2[k]) f[i][j]=min(f[i][j],(f[i+<span class="number">1</span>][k]+f[k+<span class="number">1</span>][j]));<span class="comment">//ifi==k</span></span><br><span class="line">    			&#125;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">    		ans[i]=f[<span class="number">0</span>][i];<span class="comment">//初</span></span><br><span class="line">    	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">    		<span class="keyword">if</span>(s1[i]==s2[i])</span><br><span class="line">    			ans[i]=ans[i<span class="number">-1</span>];<span class="comment">//判存</span></span><br><span class="line">    		<span class="keyword">else</span>&#123;</span><br><span class="line">    			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;i;j++)</span><br><span class="line">    				ans[i]=min(ans[i],ans[j]+f[j+<span class="number">1</span>][i]);</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="built_in">cout</span>&lt;&lt;ans[len<span class="number">-1</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>　　懒得写了，代码一lou就搁这了，反正快要退役了(t.t)</p>
+<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><h3 id="危险游戏"><a href="#危险游戏" class="headerlink" title="危险游戏"></a><span id="jump1">危险游戏</span></h3><h4 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h4><p>玲和Janice打小就是好朋友，尽管友谊深厚，她们还是热衷于在各方面比拼，从学习到运动，从说大话到做白日梦。有一段时间，她们爱上了同一个男孩，于是她们各自组建了一个队伍又投入到新一轮的比拼中。<br>在过去的几轮比赛中，玲的队伍以3：1暂时领先，今晚她们要开到一块墓地再比一轮，她们要比赛给鬼魂派发馅饼。Janice很清楚这一次她必须赢，否则就会彻底被玲击败了。这块墓地共有N个坟墓，编号为1～N，双方队伍都在1号坟墓，有一些地道连接着一对对的坟墓，地道允许一个人从一端爬到另一端，两个队伍都必须将馅饼派发到每一个坟墓去才行。<br>在地道爬行是很惊险的，因此Janice希望所要爬的地道总长度尽可能的小，不幸的是，玲练过气功，她拥有不可思议的本领：能瞬间把一条地道缩短！这令Janice很困惑，于是她求助于你，做为她的团队成员，你需要告诉她每次地道发生改变后新的最小总长度。</p>
+<h4 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h4><p>第一行包含两个正整数，N（N&lt;=10^4）和T(T&lt;=10^5)，分别表示坟墓及地道的数目。<br>接下来有T行，每一行有三个数：ui,vi,li，表示在坟墓ui和vi之间有一条长度为li的地道（1&lt;=ui,vi&lt;=N,ui≠vi,li&gt;0）。<br>接下来一行有一个正整数Q（Q&lt;=10^4）。<br>然后跟着有Q行，每行有两个正数ai,wi（1&lt;=ai&lt;=T,wi&gt;0），表示第ai条地道的长度将变为wi，这里的wi保证比该地道当前的长度要小。<br>输入数据保证从1号坟墓能到达所有的坟墓，没有两条地道连接着同样一对坟墓。所有地道的总长度可用无符号的32位二进制整数表示。</p>
+<h4 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h4><p>第一行为到每个坟墓去所要走的最小总长度，接下来有Q行，即玲每使用一次气功，就更新一下这个总长度并输出一行。</p>
+<h4 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h4><blockquote>
+<p>2 1<br>1 2 3<br>1<br>1 1</p>
+</blockquote>
+<h4 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h4><blockquote>
+<p>3<br>1 </p>
+</blockquote>
+<h3 id="风水"><a href="#风水" class="headerlink" title="风水"></a><span id="jump2">风水</span></h3><h4 id="题目描述：-1"><a href="#题目描述：-1" class="headerlink" title="题目描述："></a>题目描述：</h4><p>风水是中国民间一种古老的学问，有人将之奉若神明，有人则认为这是迷信，谁知道呢！不管怎样，在当今社会，每一个人都应该尊重我们的老祖先传下来的宝贵文化。</p>
+<p>风水主要关注地形，环境，以及相关的位置，其所有理论都来自一本古老的书，那就是《易经》，“易”意识着转变，世上所有事物都在变化，风水学希望能引导改变，从而使我们的生活变得更加美好。现在让我们看看风水的变化。</p>
+<p>首先，我们必须了解风水学中构成万物的5大元素：金(GOLD)，木(WOOD),土(GROUND),水(WATER),火(FIRE)，世间万物皆由其中一种元素（仅有一种）所代表，比如：河流的代表元素是水，山的代表元素是土，在这里，我们着重考虑这些元素。在这个体系中，某种元素会“克”(Kill)另一种元素，而某种元素也会“生”(Born)另一种元素，这种相克相生的关系可以用下面两个环来描述：</p>
+<p>每个位置有8个方向：东(east)、西(west)、南(south)、北(north)、东北(northeast)、西北(northwest)、东南(southeast)和西南(southwest)，每个方向也有一个代表元素。现在我们的问题是有关风水中的方向及其代表元素的。下面图a就是这样一个例子：</p>
+<p>但是风水是会变的，可以通过下面两种方式改变：</p>
+<ol>
+<li><p>旋转(TURN)：把整个方位沿顺时针方向旋转一下，下图b显示了图a经过一次旋转操作的结果。</p>
+</li>
+<li><p>重生(REBORN)：基于上面的相生相克关系，某个方向上的代表元素会被另一个任意位置的元素克，那么被克的元素会在原位置生出一种新的元素，当然了，所有的克与生均遵循上图所述的关系。下图b中位于东南的火会被位于东方的水相克，因此东南方位的元素会变成土，如下图c：</p>
+</li>
+</ol>
+<p>每一次改变，不管是旋转还是重生，代价均为1。现在，给你两个风水图，我们想知道其中第一个能否转变为第二个，如果能，最小代价是多少？</p>
+<h4 id="输入格式：-1"><a href="#输入格式：-1" class="headerlink" title="输入格式："></a>输入格式：</h4><p>输入数据共有6行组成，前3行表示第一个风水图，后3行表示第二个风水图。<br>风水图的8个方向如下所示，在两个相邻方向之间可能会有多个空格。</p>
+<blockquote>
+<p>northwest north northeast</p>
+<p>west           east</p>
+<p>southwest south southeast</p>
+</blockquote>
+<h4 id="输出格式：-1"><a href="#输出格式：-1" class="headerlink" title="输出格式："></a>输出格式：</h4><p>一行，输出其转变的最小代价，如果无法转变，输出-1。</p>
+<h4 id="样例输入：-1"><a href="#样例输入：-1" class="headerlink" title="样例输入："></a>样例输入：</h4><blockquote>
+<p>GOLD WOOD WATER<br>WATER      FIRE<br>WOOD GOLD GROUND<br>WATER GOLD WOOD<br>WOOD       WATER<br>GOLD GROUND GROUND</p>
+</blockquote>
+<h4 id="样例输出：-1"><a href="#样例输出：-1" class="headerlink" title="样例输出："></a>样例输出：</h4><blockquote>
+<p>2</p>
+</blockquote>
+<h3 id="字符串印刷机"><a href="#字符串印刷机" class="headerlink" title="字符串印刷机"></a><span id="jump3">字符串印刷机</span></h3><h4 id="题目描述：-2"><a href="#题目描述：-2" class="headerlink" title="题目描述："></a>题目描述：</h4><p>有两个长度相等的字符串A和B，均由小写字母组成，现在给你一台功能强大的字符串印刷机，在它的帮助下，你可以将某个字符串中任意区间内的字母都变成你想要的其它字母，换句话说，在用完印刷机后，该区间内的所有字母都将变成同一个字母，现在你的任务是使用印刷机将A变成B，请问最少的操作次数是多少？</p>
+<h4 id="输入格式：-2"><a href="#输入格式：-2" class="headerlink" title="输入格式："></a>输入格式：</h4><p>输入有多个测试数据（不超过40组），每组测试数据占两行：</p>
+<p>第一行表示字符串A，第二行表示字符串B，它们的长度均不超过100。</p>
+<h4 id="输出格式：-2"><a href="#输出格式：-2" class="headerlink" title="输出格式："></a>输出格式：</h4><p>对于每组测试数据，在一行输出一个结果，即最少操作次数。</p>
+<h4 id="样例输入：-2"><a href="#样例输入：-2" class="headerlink" title="样例输入："></a>样例输入：</h4><blockquote>
+<p>zzzzzfzzzzz<br>abcdefedcba<br>abababababab<br>cdcdcdcdcdcd</p>
+</blockquote>
+<h4 id="样例输出：-2"><a href="#样例输出：-2" class="headerlink" title="样例输出："></a>样例输出：</h4><blockquote>
+<p>6<br>7</p>
+</blockquote>
+<p>[^footnote1]: Kruskal算法是一种用来寻找最小生成树的算法，由Joseph Kruskal在1956年发表。用来解决同样问题的还有Prim算法和Boruvka算法等。三种算法都是贪婪算法的应用。和Boruvka算法不同的地方是，Kruskal算法在图中存在相同权值的边时也有效。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+            
+              <a href="/tags/Kruskal/" rel="tag"># Kruskal</a>
+            
+              <a href="/tags/最小生成树/" rel="tag"># 最小生成树</a>
+            
+              <a href="/tags/并查集/" rel="tag"># 并查集</a>
+            
+              <a href="/tags/BFS/" rel="tag"># BFS</a>
+            
+              <a href="/tags/宽度优先搜索/" rel="tag"># 宽度优先搜索</a>
+            
+              <a href="/tags/COGS/" rel="tag"># COGS</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/cpp/how-to-get-the-maxelement-in-queue.html" rel="next" title="队列中取最大值操作">
+                  <i class="fa fa-chevron-left"></i> 队列中取最大值操作
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/cpp/4-days-left.html" rel="prev" title="此乃天命，而非吾等凡人所能明了(4天?时间充裕的很T.T)">
+                  此乃天命，而非吾等凡人所能明了(4天?时间充裕的很T.T) <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一题？最小生成树啊！"><span class="nav-number">1.</span> <span class="nav-text">第一题？最小生成树啊！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神奇的数学思想"><span class="nav-number">2.</span> <span class="nav-text">神奇的数学思想(?)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十分有趣的字符串问题-dp"><span class="nav-number">3.</span> <span class="nav-text">十分有趣的字符串问题(dp)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题面"><span class="nav-number">4.</span> <span class="nav-text">题面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#危险游戏"><span class="nav-number">4.1.</span> <span class="nav-text">危险游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述："><span class="nav-number">4.1.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式："><span class="nav-number">4.1.2.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式："><span class="nav-number">4.1.3.</span> <span class="nav-text">输出格式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入："><span class="nav-number">4.1.4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出："><span class="nav-number">4.1.5.</span> <span class="nav-text">样例输出：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风水"><span class="nav-number">4.2.</span> <span class="nav-text">风水</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述：-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式：-1"><span class="nav-number">4.2.2.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式：-1"><span class="nav-number">4.2.3.</span> <span class="nav-text">输出格式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入：-1"><span class="nav-number">4.2.4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出：-1"><span class="nav-number">4.2.5.</span> <span class="nav-text">样例输出：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串印刷机"><span class="nav-number">4.3.</span> <span class="nav-text">字符串印刷机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述：-2"><span class="nav-number">4.3.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入格式：-2"><span class="nav-number">4.3.2.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出格式：-2"><span class="nav-number">4.3.3.</span> <span class="nav-text">输出格式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输入：-2"><span class="nav-number">4.3.4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样例输出：-2"><span class="nav-number">4.3.5.</span> <span class="nav-text">样例输出：</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Sunsea">
+  <p class="site-author-name" itemprop="name">Sunsea</p>
+  <div class="site-description" itemprop="description">每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/cybeird" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;cybeird" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/5923141742" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5923141742" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.facebook.com/profile.php?id=100006449520737" title="FB Page &amp;rarr; https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id=100006449520737" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://steamcommunity.com/id/birdisgrea" title="steam &amp;rarr; http:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;birdisgrea" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>steam</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.zhihu.com/people/blrd" title="知乎 &amp;rarr; http:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;blrd" rel="noopener" target="_blank"><i class="fa fa-fw fa-ra"></i>知乎</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Something Magical
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://muzhou.tech/" title="http:&#x2F;&#x2F;muzhou.tech" rel="noopener" target="_blank">MuZhou</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不能吃圣代啊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">NaNm</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">NaN:aN</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script><script src="/js/bookmark.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '76b54e9c106d9c2f6bc1',
+      clientSecret: '083edc379bee67139cff488492bf9c522212564f',
+      repo: 'blog-comments',
+      owner: 'Cybeird',
+      admin: ['Cybeird'],
+      id: 'a75f58618e7063b51da65eb155f58938',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+</body>
+</html>

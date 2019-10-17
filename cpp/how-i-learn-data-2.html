@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Sunsea的布劳格" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-loading-bar.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="漫长而又无可奈何">
+<meta name="keywords" content="学习,数据结构,线性表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构实验课の解题报告-Week2">
+<meta property="og:url" content="cybeird.coding.me/cpp/how-i-learn-data-2.html">
+<meta property="og:site_name" content="Sunsea的布劳格">
+<meta property="og:description" content="漫长而又无可奈何">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/10/10/9epGbClJQA3UNoV.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/10/OD6TUA5CuHMcbn2.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/10/Y1VwLg5kyQH3rpn.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/10/m3hkbFIzaGPY6Nr.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/10/l3WjnBAEaX8vqrV.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/10/3JYt7TQkdNxEmH4.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/10/qGc9ZWDMKONtiCa.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/10/hrGKxXYScPuW9RT.png">
+<meta property="og:updated_time" content="2019-10-17T08:38:52.515Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构实验课の解题报告-Week2">
+<meta name="twitter:description" content="漫长而又无可奈何">
+<meta name="twitter:image" content="https://i.loli.net/2019/10/10/9epGbClJQA3UNoV.png">
+  <link rel="canonical" href="cybeird.coding.me/cpp/how-i-learn-data-2">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>数据结构实验课の解题报告-Week2 | Sunsea的布劳格</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93021468-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-93021468-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sunsea的布劳格</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Better to Run Than Curse the Road</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-sitemap">
+      
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-posts">
+      
+    
+
+    <a href="/categories/Post" rel="section"><i class="fa fa-fw fa-pencil"></i>随笔</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-technology">
+      
+    
+
+    <a href="/categories/TECHNOLOGY" rel="section"><i class="fa fa-fw fa-laptop"></i>科技</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-report">
+      
+    
+
+    <a href="/categories/cpp" rel="section"><i class="fa fa-fw fa-question-circle"></i>解题报告</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+
+  <a href="https://github.com/cybeird/cybeird.github.io.old" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="cybeird.coding.me/cpp/how-i-learn-data-2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunsea">
+      <meta itemprop="description" content="每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunsea的布劳格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">数据结构实验课の解题报告-Week2
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-10 17:09:36" itemprop="dateCreated datePublished" datetime="2019-10-10T17:09:36+08:00">2019-10-10</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-17 16:38:52" itemprop="dateModified" datetime="2019-10-17T16:38:52+08:00">2019-10-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>undefined</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>NaN:aN</span>
+            </span>
+          
+            <div class="post-description">漫长而又无可奈何</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="线性表对话框编程实例方法介绍-上"><a href="#线性表对话框编程实例方法介绍-上" class="headerlink" title="线性表对话框编程实例方法介绍(上)"></a>线性表对话框编程实例方法介绍(上)</h3><ol>
+<li><p>运行VS，建立对话框工程，工程名为<code>STBL</code></p>
+</li>
+<li><p>删除窗体上的提示、<code>确定</code>按钮；将<code>取消</code>按钮的标题改为<code>退出</code></p>
+</li>
+<li><p>添加一个按钮，标题设置为<code>基本操作</code>，ID设置为<code>IDC_BUTTON_OPTION</code></p>
+</li>
+<li><p>更改窗体字体大小</p>
+<p><img src="https://i.loli.net/2019/10/10/9epGbClJQA3UNoV.png" alt="1571626064851.png"></p>
+<p>鼠标右键点击窗体非控件区域，在弹出页面中点击<code>属性</code>项，在弹出属性页中，选择<code>宋体</code>，及<code>小四号字</code></p>
+</li>
+<li><p>插入新对话框</p>
+<p>在“资源视图”选页中，鼠标右键点击<code>Dialog</code>项，从弹出菜单中点选<code>插入 Dialog</code>项后，即出现对话框新窗体。</p>
+<p><img src="https://i.loli.net/2019/10/10/OD6TUA5CuHMcbn2.png" alt="1571626039993.png"></p>
+<p>删除窗体上<code>确定</code>按钮；<code>取消</code>按钮的标题改为<code>退出</code></p>
+</li>
+<li><p>设置新对话框属性</p>
+<p>设置ID为：<code>IDD_DIALOG_LINEAR_LISTS</code><br>标题改为：<code>基本操作</code><br>设置字体为：<code>小四号字</code></p>
+</li>
+<li><p>新对话框建立新类</p>
+<p>鼠标右键点击窗体非控件区域，点选<code>添加类</code>选项，在新页面<code>类名:</code>栏输入类名称<code>DLG_LINEAR_LISTS</code>，按<code>确定</code>按钮</p>
+</li>
+<li><p>在窗体上添加控件，并设置属性，调整布局</p>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2019/10/10/Y1VwLg5kyQH3rpn.png" alt="1571625995790.png"></p>
+<h4 id="具体设置："><a href="#具体设置：" class="headerlink" title="具体设置："></a>具体设置：</h4><ol>
+<li>放置三个<code>Button</code>控件，和一个<code>Group Box</code>控件    <ul>
+<li>三个<code>Button</code>控件，属性设置对应如下：</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Caption</th>
+<th>ID</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>删除</td>
+<td>IDC_BUTTON_DELETE</td>
+</tr>
+<tr>
+<td>插入</td>
+<td>IDC_BUTTON_INSERT</td>
+</tr>
+<tr>
+<td>追加</td>
+<td>IDC_BUTTON_ADD</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>Group Box</code>控件属性设置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Caption</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>选择操作功能</td>
+</tr>
+</tbody></table>
+<ul>
+<li>加上保留的<code>退出</code>按钮，构成一个整体</li>
+<li><code>Group Box</code>属性的<code>Caption</code>设置为：<code>输入数据</code></li>
+</ul>
+<ol start="2">
+<li>放置三个<code>StaticText</code>和三个<code>EditControl</code><ul>
+<li>三个<code>StaticText</code>属性设置：</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Caption</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>位置：</td>
+</tr>
+<tr>
+<td>编号：</td>
+</tr>
+<tr>
+<td>姓名：</td>
+</tr>
+</tbody></table>
+<ul>
+<li>三个<code>EditControl</code>属性设置：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Number</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>对应位置行  IDC_EDIT_POS</td>
+<td>True</td>
+</tr>
+<tr>
+<td>对应编号行  IDC_EDIT_NUM</td>
+<td>True</td>
+</tr>
+<tr>
+<td>对应姓名行  IDC_EDIT_NAME</td>
+<td>False</td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li><p>放置两个<code>StaticText</code>、两个<code>RadioButton</code>、一个<code>Group Box</code></p>
+<ul>
+<li>两个<code>StaticText</code>属性设置： Caption分别设置为： <code>男</code>、<code>女</code></li>
+<li>两个<code>RadioButton</code>属性设置：<br><code>Caption</code>设置为 ，即删除标题内容<br><code>Group</code>均设置为`True``</li>
+<li>``Group Box<code>的Caption设置为：</code>性别`</li>
+</ul>
+</li>
+<li><p>放置三个<code>StaticText</code>、三个<code>EditControl</code>和一个<code>Group Box</code></p>
+<ul>
+<li><p>三个<code>StaticText</code>属性设置：</p>
+<p><code>Caption</code>分别设置为： <code>年</code>、<code>月</code>、<code>日</code></p>
+</li>
+<li><h6 id="Group-Box属性设置"><a href="#Group-Box属性设置" class="headerlink" title="Group Box属性设置"></a><code>Group Box</code>属性设置</h6><p><code>Caption</code>设置为：<code>出生日期</code><br><code>Hoirzontal Alignment</code>设置为： <code>Center</code> </p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>三个<code>EditControl</code>属性设置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Number</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IDC_EDIT_YEAR</td>
+<td>True</td>
+</tr>
+<tr>
+<td>IDC_EDIT_MONTH</td>
+<td>True</td>
+</tr>
+<tr>
+<td>IDC_EDIT_DAY</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<ol start="5">
+<li>放置两个<code>Button</code>控件，和一个<code>Group Box</code>控件<ul>
+<li>两个<code>Button</code>属性设置：<pre><code>Caption分别设置为：`确定`、`返回`
+ID分别设置为：`IDC_BUTTON_SET`、`IDC_BUTTON_NOSET`</code></pre></li>
+</ul>
+</li>
+<li>放置一个<code>ListBox</code>，即图中右边白色方框，其属性中的<code>Sort</code>设置为<code>false</code></li>
+</ol>
+<h5 id="设置完成"><a href="#设置完成" class="headerlink" title="设置完成　"></a>设置完成　</h5><ol start="9">
+<li><p>编辑框控件绑定变量</p>
+<p>每个编辑框控件分别设置两类变量, 值变量和控制变量，值变量类型均选择<code>Cstring</code>，访问类型均设置为<code>private</code>，后面其它绑定变量也是这样</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>控件ID</th>
+<th>值变量</th>
+<th>控制变量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IDC_EDIT_POS</td>
+<td>m_pos</td>
+<td>mc_pos</td>
+</tr>
+<tr>
+<td>IDC_EDIT_NUM</td>
+<td>m_num</td>
+<td>mc_num</td>
+</tr>
+<tr>
+<td>IDC_EDIT_NAME</td>
+<td>m_name</td>
+<td>mc_name</td>
+</tr>
+<tr>
+<td>IDC_EDIT_YEAR</td>
+<td>m_year</td>
+<td>mc_year</td>
+</tr>
+<tr>
+<td>IDC_EDIT_MONTH</td>
+<td>m_month</td>
+<td>mc_month</td>
+</tr>
+<tr>
+<td>IDC_EDIT_DAY</td>
+<td>m_day</td>
+<td>mc_day</td>
+</tr>
+</tbody></table>
+<ol start="10">
+<li><p><code>RadioButton</code>控件绑定变量</p>
+<p>先设置控制类型变量，设置好后，将<code>IDC_RADIO2</code>属性的<code>group</code>项改为<code>false</code>，再设置值变量</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><strong>控件</strong>ID</th>
+<th><strong>值变量</strong></th>
+<th><strong>控制变量</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IDC_RADIO1</td>
+<td>m_radio</td>
+<td>mc_radio1</td>
+</tr>
+<tr>
+<td>IDC_RADIO2</td>
+<td></td>
+<td>mc_radio2</td>
+</tr>
+</tbody></table>
+<ol start="11">
+<li>其它控件绑定变量</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>控件ID</th>
+<th><strong>控制变量</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IDC_LIST1</td>
+<td>mc_list</td>
+</tr>
+<tr>
+<td>IDC_BUTTON_DELETE</td>
+<td>mc_butt_delete</td>
+</tr>
+<tr>
+<td>IDC_BUTTON_INSERT</td>
+<td>mc_butt_insert</td>
+</tr>
+<tr>
+<td>IDC_BUTTON_ADD</td>
+<td>mc_butt_add</td>
+</tr>
+<tr>
+<td>IDC_BUTTON_NOSET</td>
+<td>mc_butt_noset</td>
+</tr>
+<tr>
+<td>IDC_BUTTON_SET</td>
+<td>mc_butt_set</td>
+</tr>
+<tr>
+<td>IDCANCEL</td>
+<td>mc_butt_cancel</td>
+</tr>
+</tbody></table>
+<ol start="12">
+<li><p>为主对话框“基本操作”按钮添加响应函数，用来弹出新对话框</p>
+<p>通过类向导或双击按钮，添加按钮响应函数<code>OnBnClickedButtonOption()</code></p>
+<p>编写代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CstblDlg::OnBnClickedButtonOption()</span><br><span class="line">&#123;	<span class="comment">// <span class="doctag">TODO:</span> Add your control notification handler code here</span></span><br><span class="line">		DLG_LINEAR_LISTS	a;	<span class="comment">//定义对话框类对象</span></span><br><span class="line">		a.DoModal();	<span class="comment">//调用成员函数激活对话框</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在函数<code>OnBnClickedButtonOption()</code>所在文件的开始处添加类型声明：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"DLG_LINEAR_LISTS.h"</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>至此，界面工作已完成。好了，运行程序，若没有问题，备份工程，即整个文件夹，以便后面添加代码，出现大的问题时，可以用备份继续做。</p>
+<ol start="13">
+<li><p>建立三个新类<code>DATE_B</code>、<code>ELEM</code>、<code>TBL</code> </p>
+<p>在<code>类视图</code>对应页面，右键点击最上面一项(右图中蓝色项)，从弹出菜单中选择<code>添加</code>、<code>类</code>，如右图所示。</p>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2019/10/10/m3hkbFIzaGPY6Nr.png" alt="1570713159202.png"></p>
+<p>在弹出页面中，<code>类名</code>栏输入<code>DATE_B</code>按确定按钮，建立了新的类——<code>DATE_B</code>,<code>ELEM</code>,<code>TBL</code>两个类构建方法相同</p>
+<p><img src="https://i.loli.net/2019/10/10/l3WjnBAEaX8vqrV.png" alt="1570713271593.png"></p>
+<ol start="14">
+<li>添加成员变量</li>
+</ol>
+<p>​      在“类视图”对应页面，右键点击最上面一项(右图中蓝色项)，从弹出菜单中选择“添加”、“添加变量”，  如右图所示。</p>
+<p><img src="https://i.loli.net/2019/10/10/3JYt7TQkdNxEmH4.png" alt="1570713334218.png"></p>
+<p>​      在新页面中，填写变量的名称、类型并设置访问权限。</p>
+<p><img src="https://i.loli.net/2019/10/10/qGc9ZWDMKONtiCa.png" alt="1570713340803.png"></p>
+<p>​       当然，添加变量简单的方法，是在类定义中直接填写。在“类视图”页面，双击类名，即出现对应类的定义文件。</p>
+<ul>
+<li>类DATE_B添加成员变量</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>访问权限</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>year</td>
+<td>short</td>
+<td>private</td>
+</tr>
+<tr>
+<td>month</td>
+<td>short</td>
+<td>private</td>
+</tr>
+<tr>
+<td>day</td>
+<td>short</td>
+<td>private</td>
+</tr>
+</tbody></table>
+<ul>
+<li>给类ELEM添加成员变量</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"DATE_B.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ELEM</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	ELEM();</span><br><span class="line">    	~ELEM();</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    	<span class="keyword">char</span> num[<span class="number">9</span>];</span><br><span class="line">    	<span class="keyword">char</span> name[<span class="number">11</span>];</span><br><span class="line">    	DATE_B date;</span><br><span class="line">    	<span class="keyword">char</span> sex;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注： 性别成员用一个char类型变量，不用数组。男、女用1和0标识</p>
+</blockquote>
+<ul>
+<li>类TBL添加成员变量</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ELEM.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 2000</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TBL</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	TBL();</span><br><span class="line">    	~TBL();</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    	ELEM e[N];</span><br><span class="line">    	<span class="keyword">int</span> cnt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ol start="15">
+<li><p>向类中添加成员函数</p>
+<p>可以像添加变量一样，通过界面设置添加，也可以直接添加，函数声明填写在对应<code>.h文件</code>的类定义中，函数体填写在对应<code>.cpp文件</code>中。</p>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2019/10/10/hrGKxXYScPuW9RT.png" alt="1570713929346.png"></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/学习/" rel="tag"># 学习</a>
+            
+              <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+            
+              <a href="/tags/线性表/" rel="tag"># 线性表</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/cpp/how-i-learn-c-2.html" rel="next" title="C艹实验课の解题报告-Week2">
+                  <i class="fa fa-chevron-left"></i> C艹实验课の解题报告-Week2
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/cpp/how-to-use-private-out.html" rel="prev" title="在类的外面调用类的private数据">
+                  在类的外面调用类的private数据 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性表对话框编程实例方法介绍-上"><span class="nav-number">1.</span> <span class="nav-text">线性表对话框编程实例方法介绍(上)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#具体设置："><span class="nav-number">1.1.</span> <span class="nav-text">具体设置：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Group-Box属性设置"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">Group Box属性设置</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置完成"><span class="nav-number">1.1.1.</span> <span class="nav-text">设置完成　</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Sunsea">
+  <p class="site-author-name" itemprop="name">Sunsea</p>
+  <div class="site-description" itemprop="description">每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/cybeird" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;cybeird" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/5923141742" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5923141742" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.facebook.com/profile.php?id=100006449520737" title="FB Page &amp;rarr; https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id=100006449520737" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://steamcommunity.com/id/birdisgrea" title="steam &amp;rarr; http:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;birdisgrea" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>steam</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.zhihu.com/people/blrd" title="知乎 &amp;rarr; http:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;blrd" rel="noopener" target="_blank"><i class="fa fa-fw fa-ra"></i>知乎</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Something Magical
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://muzhou.tech/" title="http:&#x2F;&#x2F;muzhou.tech" rel="noopener" target="_blank">MuZhou</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不能吃圣代啊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">NaNm</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">NaN:aN</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script><script src="/js/bookmark.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '76b54e9c106d9c2f6bc1',
+      clientSecret: '083edc379bee67139cff488492bf9c522212564f',
+      repo: 'blog-comments',
+      owner: 'Cybeird',
+      admin: ['Cybeird'],
+      id: '961d2798c8bb5741e2468a3eeac625f8',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+</body>
+</html>

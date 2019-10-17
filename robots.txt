@@ -1,0 +1,17 @@
+# hexo robots.txt
+User-agent: * Allow: /
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tages/
+Allow: /home/
+
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: http://cybird.site/sitemap.xml
+Sitemap: http://cybird.site/baidusitemap.xml

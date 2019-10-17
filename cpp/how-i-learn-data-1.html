@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Sunsea的布劳格" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-loading-bar.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="第一章的教程又臭又长也没啥难度，也就是搞个对话框，就直接从线性表开始了">
+<meta name="keywords" content="学习,数据结构,顺序表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构实验课の解题报告-Week1">
+<meta property="og:url" content="cybeird.coding.me/cpp/how-i-learn-data-1.html">
+<meta property="og:site_name" content="Sunsea的布劳格">
+<meta property="og:description" content="第一章的教程又臭又长也没啥难度，也就是搞个对话框，就直接从线性表开始了">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-17T08:38:52.466Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构实验课の解题报告-Week1">
+<meta name="twitter:description" content="第一章的教程又臭又长也没啥难度，也就是搞个对话框，就直接从线性表开始了">
+  <link rel="canonical" href="cybeird.coding.me/cpp/how-i-learn-data-1">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>数据结构实验课の解题报告-Week1 | Sunsea的布劳格</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93021468-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-93021468-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sunsea的布劳格</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Better to Run Than Curse the Road</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-sitemap">
+      
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-posts">
+      
+    
+
+    <a href="/categories/Post" rel="section"><i class="fa fa-fw fa-pencil"></i>随笔</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-technology">
+      
+    
+
+    <a href="/categories/TECHNOLOGY" rel="section"><i class="fa fa-fw fa-laptop"></i>科技</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-report">
+      
+    
+
+    <a href="/categories/cpp" rel="section"><i class="fa fa-fw fa-question-circle"></i>解题报告</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+
+  <a href="https://github.com/cybeird/cybeird.github.io.old" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="cybeird.coding.me/cpp/how-i-learn-data-1.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunsea">
+      <meta itemprop="description" content="每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunsea的布劳格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">数据结构实验课の解题报告-Week1
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-09 12:58:50" itemprop="dateCreated datePublished" datetime="2019-10-09T12:58:50+08:00">2019-10-09</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-17 16:38:52" itemprop="dateModified" datetime="2019-10-17T16:38:52+08:00">2019-10-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>undefined</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>NaN:aN</span>
+            </span>
+          
+            <div class="post-description">第一章的教程又臭又长也没啥难度，也就是搞个对话框，就直接从线性表开始了</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="顺序表运算控制台编程实例"><a href="#顺序表运算控制台编程实例" class="headerlink" title="顺序表运算控制台编程实例"></a>顺序表运算控制台编程实例</h4><h5 id="添加头文件-my-h，定义数据类型"><a href="#添加头文件-my-h，定义数据类型" class="headerlink" title="添加头文件 my.h，定义数据类型"></a>添加头文件 my.h，定义数据类型</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//my.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 2000</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">DATE_B</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">short</span>  year;  <span class="comment">//年</span></span><br><span class="line">  <span class="keyword">short</span>  month;  <span class="comment">//月</span></span><br><span class="line">  <span class="keyword">short</span>  day;  <span class="comment">//日</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">Set</span><span class="params">(<span class="keyword">char</span> s[])</span></span>;<span class="comment">//根据参数s中的日期“yy-mm-dd”字符串  </span></span><br><span class="line">  <span class="comment">//设置成员变量year,month,day的值</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">ELEM</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">char</span>  num[<span class="number">9</span>];  <span class="comment">//学号, 长度8位</span></span><br><span class="line">  <span class="keyword">char</span>  name[<span class="number">11</span>];  <span class="comment">//姓名, 最多5个汉字</span></span><br><span class="line">  <span class="keyword">char</span>  sex;  <span class="comment">//性别，'1'=男，'0'=女</span></span><br><span class="line">  DATE_B  date;  <span class="comment">//出生日期</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">TBL</span></span></span><br><span class="line"><span class="class">&#123;</span>	ELEM  e[N];	<span class="comment">//表容量</span></span><br><span class="line">	<span class="keyword">int</span>	cnt;	<span class="comment">//记录表中元素个数</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span>  <span class="title">DisplayElem</span><span class="params">()</span></span>;	<span class="comment">//显示表中元素</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span>  <span class="title">InitTbl</span><span class="params">()</span></span>;	<span class="comment">//初始化表</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span>  <span class="title">AddElemProc</span><span class="params">()</span></span>;	<span class="comment">//添加元素处理</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span>	  <span class="title">WFile</span><span class="params">()</span></span>;       <span class="comment">//表中元素写到文件</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span>  <span class="title">DeleteElem</span><span class="params">(<span class="keyword">int</span> pos)</span></span>;<span class="comment">//删除逻辑序号第pos位置的元素</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span>  <span class="title">DeleteElemProc</span><span class="params">()</span></span>;<span class="comment">//删除原素处理</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span>  <span class="title">InsertElem</span><span class="params">(<span class="keyword">int</span> pos, ELEM &amp;pe)</span></span>;</span><br><span class="line">  <span class="comment">//插入元素，参数pos插入位置的逻辑序号，pe为待插入元素</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span>  <span class="title">InsertElemProc</span><span class="params">()</span></span>;<span class="comment">//插入原素处理</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span>  <span class="title">AddElem</span><span class="params">(ELEM &amp;a)</span></span>;<span class="comment">//添加元素a</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span>  <span class="title">InputElem</span><span class="params">(ELEM &amp;a)</span></span>;<span class="comment">//输入元素a的各个属性值</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="添加源文件-my-cpp，编写-my-h-中数据类型的成员函数"><a href="#添加源文件-my-cpp，编写-my-h-中数据类型的成员函数" class="headerlink" title="添加源文件 my.cpp，编写 my.h 中数据类型的成员函数"></a>添加源文件 my.cpp，编写 my.h 中数据类型的成员函数</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//my.cpp</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdio.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"conio.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"my.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>   s_fname[] = <span class="string">"e:\\abc.xx"</span>;	<span class="comment">//保存数据的文件，全路径</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span>  TBL::AddElem(ELEM &amp;a)</span><br><span class="line">&#123;</span><br><span class="line">    e[cnt++] = a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span>  TBL::AddElemProc()</span><br><span class="line">&#123;</span><br><span class="line">	ELEM e;</span><br><span class="line">	printf_s(<span class="string">"\n追加元素"</span>);</span><br><span class="line">	<span class="keyword">do</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (cnt == N) &#123; printf_s(<span class="string">"表已满!!!"</span>);<span class="keyword">break</span>; &#125;</span><br><span class="line">		InputElem(e);</span><br><span class="line">		AddElem(e);</span><br><span class="line">		printf_s(<span class="string">"\n是否继续(y/n):"</span>);</span><br><span class="line">	&#125; <span class="keyword">while</span> ((_getch() &amp; <span class="number">0x5f</span>) == <span class="string">'Y'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">bool</span>  TBL::DeleteElem(<span class="keyword">int</span> pos)</span><br><span class="line">&#123;<span class="comment">//删除元素</span></span><br><span class="line"><span class="comment">//参数：pos是被删元素的位置</span></span><br><span class="line"><span class="comment">//返回值: 真=删除成功, 否则，失败</span></span><br><span class="line">	<span class="keyword">bool</span>  v = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">if</span> (pos &lt;= cnt) &#123;</span><br><span class="line">		v = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span> (; pos &lt; cnt; pos++)  e[pos - <span class="number">1</span>] = e[pos];</span><br><span class="line">		cnt--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> v;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span>  TBL::DeleteElemProc()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span>  pos;</span><br><span class="line">	printf_s(<span class="string">"\n\n删除操作"</span>);</span><br><span class="line">	printf_s(<span class="string">"\n\n输入删除元素的位置序号:"</span>);</span><br><span class="line">	scanf_s(<span class="string">"%d"</span>, &amp;pos);</span><br><span class="line">	<span class="keyword">if</span> (DeleteElem(pos))</span><br><span class="line">		printf_s(<span class="string">"\n\n操作成功"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		printf_s(<span class="string">"\n\n操作失败"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">bool</span>  TBL::InsertElem(<span class="keyword">int</span> pos, ELEM &amp;pe)</span><br><span class="line">&#123;<span class="comment">//插入操作</span></span><br><span class="line"><span class="comment">//参数：pos=插入位置，e是待插入元素</span></span><br><span class="line"><span class="comment">//返回值：真=插入成功, 否则，失败</span></span><br><span class="line">	<span class="keyword">bool</span> val = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">if</span> (cnt &lt; N &amp;&amp; pos &lt;= cnt + <span class="number">1</span>)</span><br><span class="line">	&#123;	val = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span> (i = cnt; i &gt;= pos; i--)  e[i] = e[i - <span class="number">1</span>];</span><br><span class="line">		e[i] = pe;</span><br><span class="line">		cnt++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span>  TBL::InsertElemProc()</span><br><span class="line">&#123;</span><br><span class="line">	ELEM e; <span class="keyword">int</span> pos;</span><br><span class="line">	printf_s(<span class="string">"\n\n插入操作"</span>);</span><br><span class="line">	printf_s(<span class="string">"\n\n输入插入元素的位置序号:"</span>);</span><br><span class="line">	scanf_s(<span class="string">"%d"</span>, &amp;pos);</span><br><span class="line">	InputElem(e);</span><br><span class="line">	<span class="keyword">if</span> (InsertElem(pos, e))</span><br><span class="line">		printf_s(<span class="string">"\n\n操作成功"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		printf_s(<span class="string">"\n\n操作失败"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span>  TBL::InitTbl()<span class="comment">//初始化表</span></span><br><span class="line">&#123;</span><br><span class="line">	FILE  *h;</span><br><span class="line">	cnt = <span class="number">0</span>;<span class="comment">//设置空表</span></span><br><span class="line">	h = fopen(s_fname, <span class="string">"rb+"</span>);</span><br><span class="line">	<span class="keyword">if</span> (h != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;cnt = fread(<span class="keyword">this</span>-&gt;e, <span class="keyword">sizeof</span>(ELEM), N, h);</span><br><span class="line">		fclose(h);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span>  TBL::InputElem(ELEM &amp;a)</span><br><span class="line">&#123;	  <span class="keyword">char</span> s[<span class="number">11</span>];</span><br><span class="line">	printf_s(<span class="string">"\n输入学号:"</span>);</span><br><span class="line">	gets_s(a.num);</span><br><span class="line">	printf_s(<span class="string">"\n输入姓名:"</span>);</span><br><span class="line">	gets_s(a.name);</span><br><span class="line">	printf_s(<span class="string">"\n输入性别('1'=男，'0'=女):"</span>);</span><br><span class="line">	a.sex=_getch();</span><br><span class="line">	_putch(a.sex);</span><br><span class="line">	a.sex -= <span class="string">'0'</span>;</span><br><span class="line">	printf_s(<span class="string">"\n出生日期(年-月-日):"</span>);</span><br><span class="line">	gets_s(s,<span class="number">11</span>);</span><br><span class="line">	a.date.Set(s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span>  TBL::DisplayElem()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">char</span> sex[][<span class="number">4</span>] = &#123; <span class="string">"女"</span>,<span class="string">"男"</span> &#125;;</span><br><span class="line">	printf_s(<span class="string">"\n%15s%12s%8s%10s"</span>, <span class="string">"学号"</span>, <span class="string">"姓名"</span>, <span class="string">"性别"</span>, <span class="string">"出生日期"</span>);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; cnt; i++)</span><br><span class="line">		printf_s(<span class="string">"\n%15s%12s%8s%6d-%d-%d"</span>, e[i].num, e[i].name, sex[e[i].sex], e[i].date.year, e[i].date.month, e[i].date.day);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span>  DATE_B::Set(<span class="keyword">char</span> s[])</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (year = <span class="number">0</span>; s[<span class="number">0</span>] != <span class="string">'-'</span>; s++)</span><br><span class="line">		year = year * <span class="number">10</span> + s[<span class="number">0</span>] - <span class="string">'0'</span>;</span><br><span class="line">	<span class="keyword">for</span> (month = <span class="number">0</span>, s++; s[<span class="number">0</span>] != <span class="string">'-'</span>; s++)</span><br><span class="line">		month = month * <span class="number">10</span> + s[<span class="number">0</span>] - <span class="string">'0'</span>;</span><br><span class="line">	<span class="keyword">for</span> (day= <span class="number">0</span>, s++; s[<span class="number">0</span>]; s++)</span><br><span class="line">		day = day * <span class="number">10</span> + s[<span class="number">0</span>] - <span class="string">'0'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加主函数源文件-main-cpp"><a href="#添加主函数源文件-main-cpp" class="headerlink" title="添加主函数源文件　main.cpp"></a>添加主函数源文件　main.cpp</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.cpp</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdio.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"conio.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"my.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>   COUNT    5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>  s_menu[COUNT][<span class="number">30</span>] = &#123; <span class="string">"\n\n1. 追加操作"</span>,</span><br><span class="line">				<span class="string">"\n\n2. 删除操作"</span>,</span><br><span class="line">				<span class="string">"\n\n3. 插入操作"</span>,</span><br><span class="line">				<span class="string">"\n\n4. 列表操作"</span>,</span><br><span class="line">				<span class="string">"\n\n0. 退出"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span>   <span class="title">DisplayMenu</span><span class="params">(<span class="keyword">char</span> s[][<span class="number">30</span>])</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span>   <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;      TBL   t;    <span class="keyword">char</span> s;   t.InitTbl();</span><br><span class="line">	<span class="keyword">for</span> (DisplayMenu(s_menu);; DisplayMenu(s_menu))&#123; </span><br><span class="line">    	s = _getch();</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="string">'0'</span>)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">switch</span> (s) &#123;</span><br><span class="line">        	<span class="keyword">case</span>  <span class="string">'1'</span>:<span class="comment">//追加操作</span></span><br><span class="line">            	t.AddElemProc();            <span class="keyword">break</span>;</span><br><span class="line">        	<span class="keyword">case</span>  <span class="string">'2'</span>:<span class="comment">//删除操作</span></span><br><span class="line">            	t.DeleteElemProc();        <span class="keyword">break</span>;</span><br><span class="line">        	<span class="keyword">case</span> <span class="string">'3'</span>:<span class="comment">//插入操作</span></span><br><span class="line">            	t.InsertElemProc();         <span class="keyword">break</span>;</span><br><span class="line">        	<span class="keyword">case</span> <span class="string">'4'</span>:<span class="comment">//列表操作</span></span><br><span class="line">            	t.DisplayElem();</span><br><span class="line">    	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	t.WFile();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span>   <span class="title">DisplayMenu</span><span class="params">(<span class="keyword">char</span> s[][<span class="number">30</span>])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; COUNT; i++)	printf_s(s[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>生成并运行即可</p>
+<h5 id="将-my-h-文件中各结构体换成类"><a href="#将-my-h-文件中各结构体换成类" class="headerlink" title="将 my.h 文件中各结构体换成类"></a>将 my.h 文件中各结构体换成类</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>	<span class="title">DATE_B</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">short</span>	year,month,day;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Set</span><span class="params">(<span class="keyword">char</span> s[])</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ELEM</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">char</span>	num[<span class="number">9</span>];		<span class="comment">//学号, 长度8位</span></span><br><span class="line">	<span class="keyword">char</span>	name[<span class="number">11</span>];	<span class="comment">//姓名, 最多5个汉字</span></span><br><span class="line">	<span class="keyword">char</span>	sex;		<span class="comment">//性别，0=男，1=女</span></span><br><span class="line">	DATE_B	date;		<span class="comment">//出生日期</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TBL</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	ELEM	e[N];	<span class="comment">//表容量</span></span><br><span class="line">	<span class="keyword">int</span>	cnt;	<span class="comment">//记录表中元素个数</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">DisplayElem</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">InitTbl</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">AddElemProc</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">WFile</span><span class="params">(CString Fname)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span>	<span class="title">DeleteElem</span><span class="params">(<span class="keyword">int</span> pos)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">DeleteElemProc</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span>	<span class="title">InsertElem</span><span class="params">(<span class="keyword">int</span> pos, ELEM &amp;pe)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span>	<span class="title">InsertElemProc</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> 	<span class="title">AddElem</span><span class="params">(ELEM &amp;a)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> 	<span class="title">InputElem</span><span class="params">(ELEM &amp;a)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/学习/" rel="tag"># 学习</a>
+            
+              <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+            
+              <a href="/tags/顺序表/" rel="tag"># 顺序表</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/cpp/how-i-learn-c-1.html" rel="next" title="C艹实验课の解题报告-Week1">
+                  <i class="fa fa-chevron-left"></i> C艹实验课の解题报告-Week1
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/cpp/how-i-learn-c-2.html" rel="prev" title="C艹实验课の解题报告-Week2">
+                  C艹实验课の解题报告-Week2 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序表运算控制台编程实例"><span class="nav-number">1.</span> <span class="nav-text">顺序表运算控制台编程实例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加头文件-my-h，定义数据类型"><span class="nav-number">1.1.</span> <span class="nav-text">添加头文件 my.h，定义数据类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加源文件-my-cpp，编写-my-h-中数据类型的成员函数"><span class="nav-number">1.2.</span> <span class="nav-text">添加源文件 my.cpp，编写 my.h 中数据类型的成员函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加主函数源文件-main-cpp"><span class="nav-number">2.</span> <span class="nav-text">添加主函数源文件　main.cpp</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#将-my-h-文件中各结构体换成类"><span class="nav-number">2.1.</span> <span class="nav-text">将 my.h 文件中各结构体换成类</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Sunsea">
+  <p class="site-author-name" itemprop="name">Sunsea</p>
+  <div class="site-description" itemprop="description">每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/cybeird" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;cybeird" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/5923141742" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5923141742" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.facebook.com/profile.php?id=100006449520737" title="FB Page &amp;rarr; https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id=100006449520737" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://steamcommunity.com/id/birdisgrea" title="steam &amp;rarr; http:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;birdisgrea" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>steam</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.zhihu.com/people/blrd" title="知乎 &amp;rarr; http:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;blrd" rel="noopener" target="_blank"><i class="fa fa-fw fa-ra"></i>知乎</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Something Magical
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://muzhou.tech/" title="http:&#x2F;&#x2F;muzhou.tech" rel="noopener" target="_blank">MuZhou</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不能吃圣代啊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">NaNm</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">NaN:aN</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script><script src="/js/bookmark.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '76b54e9c106d9c2f6bc1',
+      clientSecret: '083edc379bee67139cff488492bf9c522212564f',
+      repo: 'blog-comments',
+      owner: 'Cybeird',
+      admin: ['Cybeird'],
+      id: 'd8dc843c8e076cc542f91ec04f153bce',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+</body>
+</html>

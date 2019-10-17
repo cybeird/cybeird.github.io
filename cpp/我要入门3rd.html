@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Sunsea的布劳格" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-loading-bar.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="恩，从标题就可以略知一二了。">
+<meta name="keywords" content="数据结构基础,我要入门,c++,Binary Tree">
+<meta property="og:type" content="article">
+<meta property="og:title" content="『3』我要入门！让你们见识一下树和二叉树的力量！">
+<meta property="og:url" content="cybeird.coding.me/cpp/我要入门3rd.html">
+<meta property="og:site_name" content="Sunsea的布劳格">
+<meta property="og:description" content="恩，从标题就可以略知一二了。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-17T08:38:55.485Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="『3』我要入门！让你们见识一下树和二叉树的力量！">
+<meta name="twitter:description" content="恩，从标题就可以略知一二了。">
+  <link rel="canonical" href="cybeird.coding.me/cpp/我要入门3rd">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>『3』我要入门！让你们见识一下树和二叉树的力量！ | Sunsea的布劳格</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93021468-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-93021468-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sunsea的布劳格</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Better to Run Than Curse the Road</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-sitemap">
+      
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-posts">
+      
+    
+
+    <a href="/categories/Post" rel="section"><i class="fa fa-fw fa-pencil"></i>随笔</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-technology">
+      
+    
+
+    <a href="/categories/TECHNOLOGY" rel="section"><i class="fa fa-fw fa-laptop"></i>科技</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-report">
+      
+    
+
+    <a href="/categories/cpp" rel="section"><i class="fa fa-fw fa-question-circle"></i>解题报告</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+
+  <a href="https://github.com/cybeird/cybeird.github.io.old" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="cybeird.coding.me/cpp/我要入门3rd.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunsea">
+      <meta itemprop="description" content="每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunsea的布劳格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">『3』我要入门！让你们见识一下树和二叉树的力量！
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2016-10-23 09:50:54" itemprop="dateCreated datePublished" datetime="2016-10-23T09:50:54+08:00">2016-10-23</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-17 16:38:55" itemprop="dateModified" datetime="2019-10-17T16:38:55+08:00">2019-10-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>undefined</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>NaN:aN</span>
+            </span>
+          
+            <div class="post-description">恩，从标题就可以略知一二了。</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>　　二叉树的递归定义如下：二叉树要么为空，要么由根节点(root)、左子树(left subtree)和右子树(right subtree)组成，而左子树和右子树分别是一棵二叉树。</p>
+<a id="more"></a>
+
+<blockquote><p><B>TIPS:</B> 在计算机中，树一般是“倒置”的，即根在上，叶子在下。</p>
+</blockquote>
+
+<p>　　树(tree)和二叉树类似，区别在于每个节点不一定只有两棵子树。比如说这个神奇网站的categories也可以看做一个树状结构。<br>　　而不管是二叉树还是树，每一个非根节点都有一个父亲(father),也称父节点。</p>
+<h2 id="二叉树的编号"><a href="#二叉树的编号" class="headerlink" title="二叉树的编号"></a>二叉树的编号</h2><p>　　对于一个节点k，其左子节点、右子节点的编号分别是2k和2k+1。</p>
+<h2 id="二叉树的层次遍历"><a href="#二叉树的层次遍历" class="headerlink" title="二叉树的层次遍历"></a>二叉树的层次遍历</h2><h3 id="题目简述："><a href="#题目简述：" class="headerlink" title="题目简述："></a>题目简述：</h3><p>　　输入二叉树的每一个节点的信息，建树完毕后，按照层次顺序遍历这棵树，然后将每一个节点的权值给输出来！<br>　　注意：如果从根到某个叶节点的路径上有的节点没有在输入中给出或者给出超过一次，应该输出“not complete”.节点数不超过256个！</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入:"></a>样例输入:</h3><blockquote><p>(11,LL) (7,LLL) (8,R) (5,) (4,L) (13,RL) (2,LLR) (1,RRR) (4,RR) ()<br>(3,L) (4,R) ()</p>
+</blockquote>    
+
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出:"></a>样例输出:</h3><blockquote><p>5 4 8 11 13 4 7 2 1<br>not complete</p>
+</blockquote>    
+
+<h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><h4 id="①"><a href="#①" class="headerlink" title="①"></a>①</h4><p>　　由于这道题中已限制结点最多有256个。若各个节点形成一条链，最后一个链的编号将会变得无比巨大！就算用高精度保存编号，数组也开不下。<br>　　所以说，我们需要采用动态结构，根据需要来建立新的结点，然后将其组织成一棵树。首先，来看一看输入成分和主程序：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[maxn];									<span class="comment">//保存读入结点</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">read_input</span><span class="params">()</span></span>&#123;</span><br><span class="line">	failed = <span class="literal">false</span>;</span><br><span class="line">	root = newnode();							<span class="comment">//创建根结点</span></span><br><span class="line">	<span class="keyword">for</span>(;;)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">scanf</span>(<span class="string">"%s"</span>, s) != <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;	<span class="comment">//整个输入结束</span></span><br><span class="line">		is(!<span class="built_in">strcmp</span>(s, <span class="string">"()"</span>)) <span class="keyword">break</span>;				<span class="comment">//读到结束标志，退出循环(若s == "()"则返回0,s &lt; "()"返回负数)</span></span><br><span class="line">		<span class="keyword">int</span> v;</span><br><span class="line">		<span class="built_in">sscanf</span>(&amp;s[<span class="number">1</span>], <span class="string">"%d"</span>, &amp;v);				<span class="comment">//读入结点值</span></span><br><span class="line">		addnode(v, <span class="built_in">strchr</span>(s, <span class="string">','</span>)+<span class="number">1</span>);			<span class="comment">//查找逗号，然后插入结点</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ture;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　嗯，大意就是:不断读入结点，如果在读到空括号之前文件结束，则返回0(这样，在main函数里就能知道输入结束了)。而且这里两次用到了C语言的灵活性。</p>
+<p>1) 在代码第九行的位置里，若读到的结点是(11,LL),则&amp;s[1]所对应的字符串是“11,LL)”。</p>
+<blockquote><p><B>TIPS:</B> 可以把任意“指向字符的指针”看成是字符串，从该位置开始，直到字符“\0”。</p>
+</blockquote>
+
+<p>2) 函数 strchr(s, ‘,’) 返回字符串 s 中从左往右第一个字符 “,” 的指针，因此 strchr(s, ‘,’)+1 所对应的字符串是 “LL)”。这样，实际调用的是 addnode(11, “LL)”)。</p>
+<h4 id="②"><a href="#②" class="headerlink" title="②"></a>②</h4><p>　　接下来就是最关键的地方了!没错：二叉树的结点定义和操作。首先，需要定义一个称为Node的结构体，并且对应整棵二叉树的树根root:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//结点类型</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span>										  <span class="comment">//结点值</span></span><br><span class="line">	<span class="keyword">bool</span> have_value;</span><br><span class="line">	<span class="keyword">int</span> v;</span><br><span class="line">	Node *left, *right;</span><br><span class="line">	Node():have_value(<span class="literal">false</span>),left(<span class="literal">NULL</span>),right(<span class="literal">NULL</span>)&#123;&#125; <span class="comment">//构造函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Node* root;											  <span class="comment">//二叉树的根节点</span></span><br></pre></td></tr></table></figure>
+
+<p>　　由于二叉树是递归定义的，其左右子结点类型都是“指向结点类型的指针”。也就是说，如果结点的类型是Node，则左右子结点的类型都是Node*。</p>
+<blockquote><p><B>TIPS:</B> 如果要定义一颗二叉树，一般都是定义一个“结点”类型的 struct (如叫Node)，然后保存树根的指针(如 Node* root)</p>
+</blockquote>
+
+<p>　　每次需要一个新的 Node 时，都要用 new 运算符申请内存，并执行构造函数。下面把申请新结点的操作封装到 newnode 函数中：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Node* <span class="title">newnode</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="keyword">new</span> Node(); &#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote><p><B>TIPS:</B> 可以用 new 运算符申请空间并执行构造函数。如果返回值为 NULL，说明空间不足，申请失败。</p>
+</blockquote>
+
+<h4 id="③"><a href="#③" class="headerlink" title="③"></a>③</h4><p>　　然后就是在 read_input 中调用的 addnode 函数。它按照移动序列行走，目标不存在时调用 newnode 来创建新结点。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addnode</span><span class="params">(<span class="keyword">int</span> v, <span class="keyword">char</span>* s)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="built_in">strlen</span>(s);</span><br><span class="line">	Node* u = root;											<span class="comment">//从根节点开始往下走</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="keyword">if</span>(s[i] == <span class="string">'L'</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(u-&gt;left == <span class="string">'L'</span>) u-&gt;Left = newnode();			<span class="comment">//结点不存在，建立新结点</span></span><br><span class="line">			u = u-&gt;left;									<span class="comment">//往左走</span></span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(s[i] == <span class="string">'R'</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(u-&gt;right == <span class="literal">NULL</span>) u -&gt; right = newnode();</span><br><span class="line">			u = u-&gt;right;</span><br><span class="line">		&#125;													<span class="comment">//忽略其他情况，即最后那个多余的右括号</span></span><br><span class="line">		<span class="keyword">if</span>(u-&gt;have_value) failed = ture;					<span class="comment">//已经赋过值，表明输入有误</span></span><br><span class="line">		u-&gt;v = v;</span><br><span class="line">		u-&gt;have_value = ture;								<span class="comment">//别忘记做标记</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="④"><a href="#④" class="headerlink" title="④"></a>④</h4><p>　　紧接着就是按照层次顺序遍历这棵。此处使用一个队列来完成这个队伍，初始时只有一个根节点，然后每次取出一个结点，就把它的左右子结点(如果存在)放进队列。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; ans)</span></span>&#123;</span><br><span class="line">	<span class="built_in">queue</span>&lt;Node*&gt; q;</span><br><span class="line">	ans.clear();</span><br><span class="line">	q.push(root);								<span class="comment">//初始时只有一个根节点</span></span><br><span class="line">	<span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">		Node* u = q.front(); q.pop();</span><br><span class="line">		<span class="keyword">if</span>(!u-&gt;have_value) <span class="keyword">return</span> <span class="literal">false</span>;		<span class="comment">//有结点没有被赋值</span></span><br><span class="line">		ans.push_back(u-&gt;v);					<span class="comment">//增加到输出序列尾部</span></span><br><span class="line">		<span class="keyword">if</span>(u-&gt;left != <span class="literal">NULL</span>) q.push(u-&gt;left);	<span class="comment">//把左子结点(如果有)放进队列</span></span><br><span class="line">		<span class="keyword">if</span>(u-&gt;right != <span class="literal">NULL</span>) q.push(u-&gt;right);	<span class="comment">//把右子结点(如果有)放进队列</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;								<span class="comment">//输入正确</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　这样遍历二叉树的方法称为宽度优先遍历(Breadth-First Search, BFS)。</p>
+<blockquote>
+<p><strong>TIPS:</strong>可以用队列实现二叉树的层次遍历。这个方法还有一个名字，叫做宽度优先遍历(Breadth-First Search, BFS)。</p>
+</blockquote>
+<p>　　上面的程序在功能上是正确的，但是有一个小小的技术问题:在输入一组新数据时，没有释放上一棵二叉树所申请的内存空间。一旦执行了 root = newnode() ，就再也无法访问到那些内存了，尽管那些内存物理上仍然存在。当然，从技术上说，还是可以访问到那些内存的，如果能“猜到”那些地址。之所以说“访问不到”，是因为丢失了指向这些内存的指针。<br>　　有一个专业术语用来描述这样的情况:内存泄漏(memory leak)————它意味着有些内存被白白浪费了。在实际运行的过程中，一般很难看出这个问题:在很多情况下，内存空间都不会很紧张，浪费一些空间后，程序还是可以正常运行；况且在整个程序结束后，该程序占用的空间会被操作系统全部回收，包括泄漏的那些。</p>
+<blockquote>
+<p><strong>TIPS:</strong> 如果程序动态申请内存，请注意内存泄漏。程序执行完毕后，操作系统会回收该程序申请的所有内存(包括泄漏的)，所以在算法竞赛中内存泄漏往往不会造成什么影响。但是从专业素养的角度考虑，请从现在养成好习惯，对内存泄漏保持警惕。</p>
+</blockquote>
+<h4 id="⑤"><a href="#⑤" class="headerlink" title="⑤"></a>⑤</h4><p>　　下面是释放一棵二叉树的代码，请在“root=newnode()”之前加一行“remove_tree(root)”:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove_tree</span><span class="params">(Node* u)</span></span>&#123;		<span class="comment">//提前判断比较稳妥</span></span><br><span class="line">	<span class="keyword">if</span>(u == <span class="literal">NULL</span>) <span class="keyword">return</span>;		<span class="comment">//递归释放左子树的空间</span></span><br><span class="line">	remove_tree(u-&gt;left);		<span class="comment">//递归释放右子树的空间</span></span><br><span class="line">	remove_tree(u-&gt;reght);		<span class="comment">//调用u的析构函数并释放u结点本身的内存</span></span><br><span class="line">	<span class="keyword">delete</span> u;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="⑥"><a href="#⑥" class="headerlink" title="⑥"></a>⑥</h4><p>　　<!--在学习了新的语法后可以干更多的事情了O(∩_∩)O--><br>　　二叉树并不一定要用指针实现。接下来，把指针完全去掉。首先还是按每个节点编号但不是按照从上到下的顺序，而是按照结点的生成顺序。用计数器<code>cnt</code>表示已存在的结点编号的最大值yinci因此<code>newnode</code>的函数需要改成这样:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> root = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">newnode</span><span class="params">()</span></span>&#123;</span><br><span class="line">    left[root] = right[root] = <span class="number">0</span>;</span><br><span class="line">    have_value[root] = <span class="literal">false</span>;</span><br><span class="line">    cnt = root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>　　上面的<code>newnode()</code>是用来替代前面的<code>remove_tree(root)</code>和<code>root = newnode()</code>两条语句 的:由于没有了动态内存的申请和释放，只需要重置结点计数器和根结点的左右子树了。<br>　　接下来，就仅仅只需要把所有Node<em>类型改成int类型，然后把结点结构中的成员变量改成全局数组(例如，u-&gt;left和u-&gt;right分别改成right[u]和left[u]就行了)<br>　　&lt;!–完结撒花！φ(≥ω≤</em>)♪ –&gt;</p>
+<h2 id="二叉树的递归遍历"><a href="#二叉树的递归遍历" class="headerlink" title="二叉树的递归遍历"></a>二叉树的递归遍历</h2><p>　　对于二叉树T，可以递归定义它的先序遍历、中序遍历和后序遍历，如下所示:<br>　　   - PreOrder(T)=T的根结点+PreOrder(T的左子树)+PreOrder(T的右子树)<br>　　   - InOrder(T)=InOrder(T的左子树)+T的根结点+InOrder(T的右子树)<br>　　   - PostOrder(T)=T的根结点+PostOrder(T的左子树)+PostOrder(T的右子树)<br>　　其中加号表示字符串连接运算。而这三种遍历都属于递归遍历，或者说深度优先搜索遍历(<code>Depth-First Search</code>,<code>DFS</code>)，因为它总是优先往深度访问。</p>
+<blockquote>
+<p><strong>TIPS:</strong>二叉树有三种深度优先遍历:先序遍历、中序遍历和后序遍历</p>
+</blockquote>
+<h3 id="题目简述"><a href="#题目简述" class="headerlink" title="题目简述"></a>题目简述</h3><p>　　给一棵点带权(权值各不相同，就是小于 <code>10000</code> 的正整数)的二叉树中序和后序遍历，找一个叶子使得它到根的路径上的权和最小。如果有多解，该叶子本身的权应尽量小。输入中每两行表示一棵树，其中第一行为中序遍历，第二行为后序遍历。</p>
+<h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h3><blockquote>
+<p>3 2 1 4 5 7 6<br>3 1 2 5 6 7 4<br>7 8 11 3 5 16 12 18<br>8 3 11 7 16 18 12 5<br>255<br>255</p>
+</blockquote>
+<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a>样例输出</h3><blockquote>
+<p>1<br>3<br>255</p>
+</blockquote>
+<h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>　　后序遍历的最后一个字符就是根，因此只需在中序遍历中找到它(因为树中权值各不相同)，就可以知道左右字数的中序遍历和后序遍历了。这样可以先把二叉树构造出来，然后再执行一次递归遍历，找到最优解。</p>
+<blockquote>
+<p><strong>TIPS:</strong>给定二叉树的中序遍历和后序遍历，可以构造出这棵二叉树。方法是根据后序遍历找到树根，然后在中序遍历中找到树根，从而找出左右子树的结点列表，然后递归构造左右子树。</p>
+</blockquote>
+<p>代码如下:(另外，也可以在递归的同时统计最优解，不过程序稍微复杂一点)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//因为各个结点的权值不同，从而可以直接用权值来当做结点编号</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxv = <span class="number">10000</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> in_order[maxv], post_order[maxv], lch[maxv], rch[maxv], n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">read_list</span><span class="params">(<span class="keyword">int</span>* a)</span></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> line;</span><br><span class="line">	<span class="keyword">if</span>(!getline(<span class="built_in">cin</span>, line)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	getline(<span class="built_in">cin</span>, line)</span><br><span class="line">	n = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">while</span>(ss &gt;&gt; x) a[n++] = x;</span><br><span class="line">	<span class="keyword">return</span> n &gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//把in_order[L1..R1]和post_order[L2..R2]建成一棵二叉树，返回树根</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> L1, <span class="keyword">int</span> R1, <span class="keyword">int</span> L2, <span class="keyword">int</span> R2)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(L1 &gt; R1) <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//空树</span></span><br><span class="line">	<span class="keyword">int</span> root = post_order[R2];</span><br><span class="line">	<span class="keyword">int</span> p = L1;</span><br><span class="line">	<span class="keyword">while</span>(in_order[p] != root) p++;</span><br><span class="line">	<span class="keyword">int</span> cnt = p - L1; <span class="comment">//左子树的结点个数</span></span><br><span class="line">	lch[root] = build(L1,  p<span class="number">-1</span>, L2,     L2+cnt<span class="number">-1</span>);</span><br><span class="line">	lch[root] = build(p+<span class="number">1</span>, R1,  L2+cnt, R2<span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> best, best_sum; <span class="comment">//目前为止的最优解和对应的权和</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">	sum += u;</span><br><span class="line">	<span class="keyword">if</span>(!lch[u] &amp;&amp; !rch[u]) &#123; <span class="comment">//叶子</span></span><br><span class="line">		<span class="keyword">if</span>(sum &lt; best_sum || (sum == best_sum &amp;&amp; u &lt; best)) &#123;</span><br><span class="line">			best = u;</span><br><span class="line">			best_sum = sum;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(lch[u]) dfs(lch[u], sum);</span><br><span class="line">	<span class="keyword">if</span>(rch[u]) dfs(rch[u], sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(read_list(in_order)) &#123;</span><br><span class="line">		read_list(post_order);</span><br><span class="line">		build(<span class="number">0</span>, n<span class="number">-1</span>, <span class="number">0</span>, n<span class="number">-1</span>);</span><br><span class="line">		best_num = <span class="number">1234567890</span>;</span><br><span class="line">		dfs(post_order[n<span class="number">-1</span>], <span class="number">0</span>);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; best &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/数据结构基础/" rel="tag"># 数据结构基础</a>
+            
+              <a href="/tags/我要入门/" rel="tag"># 我要入门</a>
+            
+              <a href="/tags/c/" rel="tag"># c++</a>
+            
+              <a href="/tags/Binary-Tree/" rel="tag"># Binary Tree</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/Post/Form-Begining.html" rel="next" title="从头开始吧!少年，感受这一切/">
+                  <i class="fa fa-chevron-left"></i> 从头开始吧!少年，感受这一切/
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Post/stationed-on.html" rel="prev" title="正式驻扎在HEXO!">
+                  正式驻扎在HEXO! <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的编号"><span class="nav-number">1.</span> <span class="nav-text">二叉树的编号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的层次遍历"><span class="nav-number">2.</span> <span class="nav-text">二叉树的层次遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目简述："><span class="nav-number">2.1.</span> <span class="nav-text">题目简述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入"><span class="nav-number">2.2.</span> <span class="nav-text">样例输入:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出"><span class="nav-number">2.3.</span> <span class="nav-text">样例输出:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目分析："><span class="nav-number">2.4.</span> <span class="nav-text">题目分析：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#①"><span class="nav-number">2.4.1.</span> <span class="nav-text">①</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#②"><span class="nav-number">2.4.2.</span> <span class="nav-text">②</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#③"><span class="nav-number">2.4.3.</span> <span class="nav-text">③</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#④"><span class="nav-number">2.4.4.</span> <span class="nav-text">④</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#⑤"><span class="nav-number">2.4.5.</span> <span class="nav-text">⑤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#⑥"><span class="nav-number">2.4.6.</span> <span class="nav-text">⑥</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的递归遍历"><span class="nav-number">3.</span> <span class="nav-text">二叉树的递归遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目简述"><span class="nav-number">3.1.</span> <span class="nav-text">题目简述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入-1"><span class="nav-number">3.2.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出-1"><span class="nav-number">3.3.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目分析"><span class="nav-number">3.4.</span> <span class="nav-text">题目分析</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Sunsea">
+  <p class="site-author-name" itemprop="name">Sunsea</p>
+  <div class="site-description" itemprop="description">每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">94</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/cybeird" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;cybeird" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/5923141742" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5923141742" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.facebook.com/profile.php?id=100006449520737" title="FB Page &amp;rarr; https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id=100006449520737" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://steamcommunity.com/id/birdisgrea" title="steam &amp;rarr; http:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;birdisgrea" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>steam</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.zhihu.com/people/blrd" title="知乎 &amp;rarr; http:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;blrd" rel="noopener" target="_blank"><i class="fa fa-fw fa-ra"></i>知乎</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Something Magical
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://muzhou.tech/" title="http:&#x2F;&#x2F;muzhou.tech" rel="noopener" target="_blank">MuZhou</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不能吃圣代啊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">NaNm</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">NaN:aN</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script><script src="/js/bookmark.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '76b54e9c106d9c2f6bc1',
+      clientSecret: '083edc379bee67139cff488492bf9c522212564f',
+      repo: 'blog-comments',
+      owner: 'Cybeird',
+      admin: ['Cybeird'],
+      id: '10b46f13ff84051544de191b246b4453',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+</body>
+</html>
