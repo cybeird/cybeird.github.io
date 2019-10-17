@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>从头开始的Python(z)初次见面</title>
+    <url>/cpp/how-i-learn-python.html</url>
+    <content><![CDATA[<h3 id="我学Python"><a href="#我学Python" class="headerlink" title="我学Python"></a>我学Python</h3><p>实际上我在高二的时候就设想过把<code>Python</code>全通一遍，比如某个暑假搞一搞。</p>
+<p>但是由于某种不可抗力的存在，我的学习始终处于初识语法的阶段。</p>
+<h3 id="再起征途"><a href="#再起征途" class="headerlink" title="再起征途"></a>再起征途</h3><p>这次选修课的<em>误选</em>在某种程度上也算是成了一把鞭子，鼓励我向前走起。</p>
+<p>那么就从最基础的开始学起吧！</p>
+<h4 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h4><p><code>Python</code>的变量是很智能的，其类型由其所赋值的类型决定，随着赋值的改变，其类型也会改变。</p>
+<p>当然有的时候<code>Python</code>的<strong>自动类型转换</strong>有的时候会妨碍我们作业，这时候就需要使用<strong>强制类型转换</strong></p>
+<p>强制类型转换需要用到一些函数： <code>int()</code>,<code>float</code>，and so on</p>
+<h4 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h4><p>对于<code>Python</code>来说，除是<code>/</code>而整除是<code>//</code>，幂运算则是<code>**</code>，这与c艹不同。</p>
+<h4 id="eval-函数"><a href="#eval-函数" class="headerlink" title="eval()函数"></a><code>eval()</code>函数</h4><p>这可以说是上帝赋予的神奇之手了，智能无匹</p>
+<p>大概就是可以自动识别自动赋类型赋值，十分灵活但是我懒得在这里阐述了</p>
+<h4 id="空语句"><a href="#空语句" class="headerlink" title="空语句"></a>空语句</h4><p><strong><code>pass</code></strong></p>
+<h4 id="与或非"><a href="#与或非" class="headerlink" title="与或非"></a>与或非</h4><p><code>Python</code>里的与或非完全可以直接用<code>and</code>,<code>or</code>来搞，很方便</p>
+<h4 id="range语句"><a href="#range语句" class="headerlink" title="range语句"></a><code>range</code>语句</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">range(start, stop[, step])</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li><p>start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;</p>
+</li>
+<li><p>stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5</p>
+</li>
+<li>step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)</li>
+</ul>
+<p>很神奇，但是还算是比较好理解</p>
+<h4 id="列表的截取"><a href="#列表的截取" class="headerlink" title="列表的截取"></a>列表的截取</h4><h5 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list[a:b:c]</span><br></pre></td></tr></table></figure>
+<p>这个a是左端,b是右端,c是步长。</p>
+<p>在[a,b]区间从左到右每隔c取值,默认c为1可以省略c参数，若c带负号表示反方向取值，即从右到左。</p>
+<h5 id="再举个例子"><a href="#再举个例子" class="headerlink" title="再举个例子"></a>再举个例子</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">list[-1]            //取最后一个元素</span><br><span class="line">list[:-1]			//取除了最后一个的全部</span><br><span class="line">list[1:]			//从第二个开始取</span><br><span class="line">list[:2]			//取到第二个</span><br></pre></td></tr></table></figure>
+<p>这个时候就可以放两道例题了，第一道是<a href="货币转换1">货币转换</a>，第二道也是<a href="货币转换2">货币转换</a></p>
+<h4 id="按需输出列表中的元素"><a href="#按需输出列表中的元素" class="headerlink" title="按需输出列表中的元素"></a>按需输出列表中的元素</h4><h5 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">print(*a, sep = <span class="string">" "</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a = [0, 1, 2, 3]</span><br><span class="line">[print(i,end = &quot; &quot;) for i in a]</span><br></pre></td></tr></table></figure>
+<h4 id="奇妙缩进"><a href="#奇妙缩进" class="headerlink" title="奇妙缩进"></a>奇妙缩进</h4><p>对于<a href="找素数">这道题</a>,我在某个关键的地方少了一个关键的<code>Tab</code>,然后输出的结果就疯了</p>
+<p>这是我的错误代码,我在第11行不小心把<code>else</code>和<code>if</code>对齐了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">list1 = []</span><br><span class="line">num = 0</span><br><span class="line">for i in range (1,5) :</span><br><span class="line">    for j in range(1,5) :</span><br><span class="line">        for h in range(1,5) :</span><br><span class="line">            if i != j and j != h and i != h :</span><br><span class="line">                num = i *100 + j * 10 + h</span><br><span class="line">                for k in range(2, num//2+1):</span><br><span class="line">                    if (num % i) == 0:</span><br><span class="line">                        break</span><br><span class="line">                	else :</span><br><span class="line">                        list1.append(num)</span><br><span class="line">print(*list1, sep = &quot; &quot;)</span><br><span class="line">#[print(i,end = &quot; &quot;) for i in list1]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>人民币和美元是世界上通用的两种货币之一，写一个程序进行货币间币值转换，其中：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>人民币和美元间汇率固定为：1美元 = 6.78人民币。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>程序可以接受人民币或美元输入，转换为美元或人民币输出。人民币采用￥符号或RMB表示，美元采用$或USD表示，符号和数值之间没有空格。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>注意：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>人民币和美元间符号在转换中要对等，￥和$相互对应，RMB和USD相互对应。</p>
+</blockquote>
+<p>代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">money = input(<span class="string">""</span>)</span><br><span class="line"><span class="keyword">if</span> money[<span class="number">0</span>] <span class="keyword">in</span> [<span class="string">'R'</span>,<span class="string">'U'</span>]:</span><br><span class="line">    <span class="keyword">if</span> money[<span class="number">0</span>] == <span class="string">'R'</span>:</span><br><span class="line">        ans = eval(money[<span class="number">3</span>:])/<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"USD%.2f"</span>%ans)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        ans = eval(money[<span class="number">3</span>:])*<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"RMB%.2f"</span>%ans)</span><br><span class="line"><span class="keyword">elif</span> money[<span class="number">0</span>] <span class="keyword">in</span> [<span class="string">'$'</span>,<span class="string">'￥'</span>]:</span><br><span class="line">    <span class="keyword">if</span> money[<span class="number">0</span>] == <span class="string">'￥'</span>:</span><br><span class="line">        ans = eval(money[<span class="number">1</span>:])/<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"$%.2f"</span>%ans)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        ans = eval(money[<span class="number">1</span>:])*<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"￥%.2f"</span>%ans)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>人民币和美元是世界上通用的两种货币之一，写一个程序进行货币间币值转换，其中：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>人民币和美元间汇率固定为：1美元 = 6.78人民币。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>程序可以接收人民币或美元输入，转换为美元或人民币输出。人民币采用￥符号或RMB表示，美元采用$或USD表示，符号和数值之间没有空格。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>注意：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>(1) 人民币和美元间符号在转换中要对等，￥和$相互对应，RMB和USD相互对应，输出结果保留小数点后两位；‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>(2) 符号在数字的后面；</p>
+</blockquote>
+<p>代码：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">money = input(<span class="string">""</span>)</span><br><span class="line"><span class="keyword">if</span> money[len(money)<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'B'</span>,<span class="string">'D'</span>]:</span><br><span class="line">    <span class="keyword">if</span> money[len(money)<span class="number">-1</span>] == <span class="string">'B'</span>:</span><br><span class="line">        ans = eval(money[<span class="number">0</span>:(len(money)<span class="number">-3</span>)])/<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"%.2fUSD"</span>%ans)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        ans = eval(money[<span class="number">0</span>:(len(money)<span class="number">-3</span>)])*<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"%.2fRMB"</span>%ans)</span><br><span class="line"><span class="keyword">elif</span> money[len(money)<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'$'</span>,<span class="string">'￥'</span>]:</span><br><span class="line">    <span class="keyword">if</span> money[len(money)<span class="number">-1</span>] == <span class="string">'￥'</span>:</span><br><span class="line">        ans = eval(money[<span class="number">0</span>:len(money)<span class="number">-1</span>])/<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"%.2f$"</span>%ans)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        ans = eval(money[<span class="number">0</span>:len(money)<span class="number">-1</span>])*<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"%.2f￥"</span>%ans)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>编写程序，由1、2、3、4四个数字组成三位数，每个数字在三位数中只能使用一次，找出其中的全部素数。</p>
+</blockquote>
+<p>正确代码如下:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = []</span><br><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">1</span>,<span class="number">5</span>) :</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>) :</span><br><span class="line">        <span class="keyword">for</span> h <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>) :</span><br><span class="line">            <span class="keyword">if</span> i != j <span class="keyword">and</span> j != h <span class="keyword">and</span> i != h :</span><br><span class="line">                num = i *<span class="number">100</span> + j * <span class="number">10</span> + h</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">2</span>, num//<span class="number">2</span>+<span class="number">1</span>):</span><br><span class="line">                    <span class="keyword">if</span> (num % i) == <span class="number">0</span>:</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span> :</span><br><span class="line">                        list1.append(num)</span><br><span class="line">print(*list1, sep = <span class="string">" "</span>)</span><br><span class="line"><span class="comment">#[print(i,end = " ") for i in list1]</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>cpp</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux系统SSH客户端断开后保持进程继续运行配置方法</title>
     <url>/TECHNOLOGY/how-keep-running.html</url>
     <content><![CDATA[<p><a href="https://help.aliyun.com/knowledge_detail/42523.html?spm=5176.2000002.0.0.616d7b0fuIjmqa" target="_blank" rel="noopener">参考链接</a></p>

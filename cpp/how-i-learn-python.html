@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Sunsea的布劳格" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-loading-bar.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="一不小心就把Python选修课给选上了，既如此，那就勉为其难的学学吧">
+<meta name="keywords" content="学习,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从头开始的Python(z)初次见面">
+<meta property="og:url" content="cybeird.coding.me/cpp/how-i-learn-python.html">
+<meta property="og:site_name" content="Sunsea的布劳格">
+<meta property="og:description" content="一不小心就把Python选修课给选上了，既如此，那就勉为其难的学学吧">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-17T15:31:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从头开始的Python(z)初次见面">
+<meta name="twitter:description" content="一不小心就把Python选修课给选上了，既如此，那就勉为其难的学学吧">
+  <link rel="canonical" href="cybeird.coding.me/cpp/how-i-learn-python">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>从头开始的Python(z)初次见面 | Sunsea的布劳格</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93021468-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-93021468-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sunsea的布劳格</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Better to Run Than Curse the Road</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-sitemap">
+      
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-posts">
+      
+    
+
+    <a href="/categories/Post" rel="section"><i class="fa fa-fw fa-pencil"></i>随笔</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-technology">
+      
+    
+
+    <a href="/categories/TECHNOLOGY" rel="section"><i class="fa fa-fw fa-laptop"></i>科技</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-report">
+      
+    
+
+    <a href="/categories/cpp" rel="section"><i class="fa fa-fw fa-question-circle"></i>解题报告</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+
+  <a href="https://github.com/cybeird/cybeird.github.io.old" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="cybeird.coding.me/cpp/how-i-learn-python.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunsea">
+      <meta itemprop="description" content="每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunsea的布劳格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">从头开始的Python(z)初次见面
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-17 21:53:31 / 修改时间：23:31:14" itemprop="dateCreated datePublished" datetime="2019-10-17T21:53:31+08:00">2019-10-17</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>3.4k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
+            <div class="post-description">一不小心就把Python选修课给选上了，既如此，那就勉为其难的学学吧</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="我学Python"><a href="#我学Python" class="headerlink" title="我学Python"></a>我学Python</h3><p>实际上我在高二的时候就设想过把<code>Python</code>全通一遍，比如某个暑假搞一搞。</p>
+<p>但是由于某种不可抗力的存在，我的学习始终处于初识语法的阶段。</p>
+<h3 id="再起征途"><a href="#再起征途" class="headerlink" title="再起征途"></a>再起征途</h3><p>这次选修课的<em>误选</em>在某种程度上也算是成了一把鞭子，鼓励我向前走起。</p>
+<p>那么就从最基础的开始学起吧！</p>
+<h4 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h4><p><code>Python</code>的变量是很智能的，其类型由其所赋值的类型决定，随着赋值的改变，其类型也会改变。</p>
+<p>当然有的时候<code>Python</code>的<strong>自动类型转换</strong>有的时候会妨碍我们作业，这时候就需要使用<strong>强制类型转换</strong></p>
+<p>强制类型转换需要用到一些函数： <code>int()</code>,<code>float</code>，and so on</p>
+<h4 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h4><p>对于<code>Python</code>来说，除是<code>/</code>而整除是<code>//</code>，幂运算则是<code>**</code>，这与c艹不同。</p>
+<h4 id="eval-函数"><a href="#eval-函数" class="headerlink" title="eval()函数"></a><code>eval()</code>函数</h4><p>这可以说是上帝赋予的神奇之手了，智能无匹</p>
+<p>大概就是可以自动识别自动赋类型赋值，十分灵活但是我懒得在这里阐述了</p>
+<h4 id="空语句"><a href="#空语句" class="headerlink" title="空语句"></a>空语句</h4><p><strong><code>pass</code></strong></p>
+<h4 id="与或非"><a href="#与或非" class="headerlink" title="与或非"></a>与或非</h4><p><code>Python</code>里的与或非完全可以直接用<code>and</code>,<code>or</code>来搞，很方便</p>
+<h4 id="range语句"><a href="#range语句" class="headerlink" title="range语句"></a><code>range</code>语句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">range(start, stop[, step])</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li><p>start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;</p>
+</li>
+<li><p>stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5</p>
+</li>
+<li>step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)</li>
+</ul>
+<p>很神奇，但是还算是比较好理解</p>
+<h4 id="列表的截取"><a href="#列表的截取" class="headerlink" title="列表的截取"></a>列表的截取</h4><h5 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list[a:b:c]</span><br></pre></td></tr></table></figure>
+<p>这个a是左端,b是右端,c是步长。</p>
+<p>在[a,b]区间从左到右每隔c取值,默认c为1可以省略c参数，若c带负号表示反方向取值，即从右到左。</p>
+<h5 id="再举个例子"><a href="#再举个例子" class="headerlink" title="再举个例子"></a>再举个例子</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list[-1]            //取最后一个元素</span><br><span class="line">list[:-1]			//取除了最后一个的全部</span><br><span class="line">list[1:]			//从第二个开始取</span><br><span class="line">list[:2]			//取到第二个</span><br></pre></td></tr></table></figure>
+<p>这个时候就可以放两道例题了，第一道是<a href="货币转换1">货币转换</a>，第二道也是<a href="货币转换2">货币转换</a></p>
+<h4 id="按需输出列表中的元素"><a href="#按需输出列表中的元素" class="headerlink" title="按需输出列表中的元素"></a>按需输出列表中的元素</h4><h5 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">print(*a, sep = <span class="string">" "</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [0, 1, 2, 3]</span><br><span class="line">[print(i,end = &quot; &quot;) for i in a]</span><br></pre></td></tr></table></figure>
+<h4 id="奇妙缩进"><a href="#奇妙缩进" class="headerlink" title="奇妙缩进"></a>奇妙缩进</h4><p>对于<a href="找素数">这道题</a>,我在某个关键的地方少了一个关键的<code>Tab</code>,然后输出的结果就疯了</p>
+<p>这是我的错误代码,我在第11行不小心把<code>else</code>和<code>if</code>对齐了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">list1 = []</span><br><span class="line">num = 0</span><br><span class="line">for i in range (1,5) :</span><br><span class="line">    for j in range(1,5) :</span><br><span class="line">        for h in range(1,5) :</span><br><span class="line">            if i != j and j != h and i != h :</span><br><span class="line">                num = i *100 + j * 10 + h</span><br><span class="line">                for k in range(2, num//2+1):</span><br><span class="line">                    if (num % i) == 0:</span><br><span class="line">                        break</span><br><span class="line">                	else :</span><br><span class="line">                        list1.append(num)</span><br><span class="line">print(*list1, sep = &quot; &quot;)</span><br><span class="line">#[print(i,end = &quot; &quot;) for i in list1]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>人民币和美元是世界上通用的两种货币之一，写一个程序进行货币间币值转换，其中：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>人民币和美元间汇率固定为：1美元 = 6.78人民币。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>程序可以接受人民币或美元输入，转换为美元或人民币输出。人民币采用￥符号或RMB表示，美元采用$或USD表示，符号和数值之间没有空格。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>注意：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>人民币和美元间符号在转换中要对等，￥和$相互对应，RMB和USD相互对应。</p>
+</blockquote>
+<p>代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">money = input(<span class="string">""</span>)</span><br><span class="line"><span class="keyword">if</span> money[<span class="number">0</span>] <span class="keyword">in</span> [<span class="string">'R'</span>,<span class="string">'U'</span>]:</span><br><span class="line">    <span class="keyword">if</span> money[<span class="number">0</span>] == <span class="string">'R'</span>:</span><br><span class="line">        ans = eval(money[<span class="number">3</span>:])/<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"USD%.2f"</span>%ans)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        ans = eval(money[<span class="number">3</span>:])*<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"RMB%.2f"</span>%ans)</span><br><span class="line"><span class="keyword">elif</span> money[<span class="number">0</span>] <span class="keyword">in</span> [<span class="string">'$'</span>,<span class="string">'￥'</span>]:</span><br><span class="line">    <span class="keyword">if</span> money[<span class="number">0</span>] == <span class="string">'￥'</span>:</span><br><span class="line">        ans = eval(money[<span class="number">1</span>:])/<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"$%.2f"</span>%ans)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        ans = eval(money[<span class="number">1</span>:])*<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"￥%.2f"</span>%ans)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>人民币和美元是世界上通用的两种货币之一，写一个程序进行货币间币值转换，其中：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>人民币和美元间汇率固定为：1美元 = 6.78人民币。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>程序可以接收人民币或美元输入，转换为美元或人民币输出。人民币采用￥符号或RMB表示，美元采用$或USD表示，符号和数值之间没有空格。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>注意：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>(1) 人民币和美元间符号在转换中要对等，￥和$相互对应，RMB和USD相互对应，输出结果保留小数点后两位；‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>(2) 符号在数字的后面；</p>
+</blockquote>
+<p>代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">money = input(<span class="string">""</span>)</span><br><span class="line"><span class="keyword">if</span> money[len(money)<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'B'</span>,<span class="string">'D'</span>]:</span><br><span class="line">    <span class="keyword">if</span> money[len(money)<span class="number">-1</span>] == <span class="string">'B'</span>:</span><br><span class="line">        ans = eval(money[<span class="number">0</span>:(len(money)<span class="number">-3</span>)])/<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"%.2fUSD"</span>%ans)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        ans = eval(money[<span class="number">0</span>:(len(money)<span class="number">-3</span>)])*<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"%.2fRMB"</span>%ans)</span><br><span class="line"><span class="keyword">elif</span> money[len(money)<span class="number">-1</span>] <span class="keyword">in</span> [<span class="string">'$'</span>,<span class="string">'￥'</span>]:</span><br><span class="line">    <span class="keyword">if</span> money[len(money)<span class="number">-1</span>] == <span class="string">'￥'</span>:</span><br><span class="line">        ans = eval(money[<span class="number">0</span>:len(money)<span class="number">-1</span>])/<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"%.2f$"</span>%ans)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        ans = eval(money[<span class="number">0</span>:len(money)<span class="number">-1</span>])*<span class="number">6.78</span></span><br><span class="line">        print(<span class="string">"%.2f￥"</span>%ans)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>编写程序，由1、2、3、4四个数字组成三位数，每个数字在三位数中只能使用一次，找出其中的全部素数。</p>
+</blockquote>
+<p>正确代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">list1 = []</span><br><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (<span class="number">1</span>,<span class="number">5</span>) :</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>) :</span><br><span class="line">        <span class="keyword">for</span> h <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>) :</span><br><span class="line">            <span class="keyword">if</span> i != j <span class="keyword">and</span> j != h <span class="keyword">and</span> i != h :</span><br><span class="line">                num = i *<span class="number">100</span> + j * <span class="number">10</span> + h</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">2</span>, num//<span class="number">2</span>+<span class="number">1</span>):</span><br><span class="line">                    <span class="keyword">if</span> (num % i) == <span class="number">0</span>:</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span> :</span><br><span class="line">                        list1.append(num)</span><br><span class="line">print(*list1, sep = <span class="string">" "</span>)</span><br><span class="line"><span class="comment">#[print(i,end = " ") for i in list1]</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/学习/" rel="tag"># 学习</a>
+            
+              <a href="/tags/Python/" rel="tag"># Python</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/TECHNOLOGY/how-keep-running.html" rel="next" title="Linux系统SSH客户端断开后保持进程继续运行配置方法">
+                  <i class="fa fa-chevron-left"></i> Linux系统SSH客户端断开后保持进程继续运行配置方法
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#我学Python"><span class="nav-number">1.</span> <span class="nav-text">我学Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再起征途"><span class="nav-number">2.</span> <span class="nav-text">再起征途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型和变量"><span class="nav-number">2.1.</span> <span class="nav-text">数据类型和变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算术运算符"><span class="nav-number">2.2.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eval-函数"><span class="nav-number">2.3.</span> <span class="nav-text">eval()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空语句"><span class="nav-number">2.4.</span> <span class="nav-text">空语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与或非"><span class="nav-number">2.5.</span> <span class="nav-text">与或非</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#range语句"><span class="nav-number">2.6.</span> <span class="nav-text">range语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表的截取"><span class="nav-number">2.7.</span> <span class="nav-text">列表的截取</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举个例子"><span class="nav-number">2.7.1.</span> <span class="nav-text">举个例子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#再举个例子"><span class="nav-number">2.7.2.</span> <span class="nav-text">再举个例子</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按需输出列表中的元素"><span class="nav-number">2.8.</span> <span class="nav-text">按需输出列表中的元素</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#指针"><span class="nav-number">2.8.1.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for循环"><span class="nav-number">2.8.2.</span> <span class="nav-text">for循环</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#奇妙缩进"><span class="nav-number">2.9.</span> <span class="nav-text">奇妙缩进</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Sunsea">
+  <p class="site-author-name" itemprop="name">Sunsea</p>
+  <div class="site-description" itemprop="description">每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/cybeird" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;cybeird" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/5923141742" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5923141742" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.facebook.com/profile.php?id=100006449520737" title="FB Page &amp;rarr; https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id=100006449520737" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://steamcommunity.com/id/birdisgrea" title="steam &amp;rarr; http:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;birdisgrea" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>steam</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.zhihu.com/people/blrd" title="知乎 &amp;rarr; http:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;blrd" rel="noopener" target="_blank"><i class="fa fa-fw fa-ra"></i>知乎</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Something Magical
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://muzhou.tech/" title="http:&#x2F;&#x2F;muzhou.tech" rel="noopener" target="_blank">MuZhou</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不能吃圣代啊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">NaNm</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">NaN:aN</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script><script src="/js/bookmark.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '76b54e9c106d9c2f6bc1',
+      clientSecret: '083edc379bee67139cff488492bf9c522212564f',
+      repo: 'blog-comments',
+      owner: 'Cybeird',
+      admin: ['Cybeird'],
+      id: 'bbef117bca2c9c33fa75bf7eb7a7c71d',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+</body>
+</html>
