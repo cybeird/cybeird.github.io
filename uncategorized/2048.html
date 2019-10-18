@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>undefined</span>
+              <span>1k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
             </span>
           
 
@@ -384,23 +384,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>　　没错，感到无聊的我决定要沉迷2048，但是并不想要去别的地方搞一搞，于是我开始想，能不能自己在自己的网站上做(嗯，clone一个)一个2048呢？这样就可以在自己的网站上颓废了。</p>
-<a id="more"></a>
-<p>　　在经过了千辛万苦，终于clone+修改+发布成功了 <a href="http://cybird.site/2048/" target="_blank" rel="noopener">没错，快点我</a>；<br>　　这其中最让人感到头疼的莫过于如何让hexo不渲染这个网页。</p>
+        <p>　　没错，感到无聊的我决定要沉迷2048，但是并不想要去别的地方搞一搞，于是我开始想，能不能自己在自己的网站上做(嗯，clone一个)一个2048呢？这样就可以在自己的网站上颓废了。<br><a id="more"></a><br>　　在经过了千辛万苦，终于clone+修改+发布成功了 <a href="http://cybird.site/2048/" target="_blank" rel="noopener">没错，快点我</a>；<br>　　这其中最让人感到头疼的莫过于如何让hexo不渲染这个网页。</p>
 <blockquote>
 <p>Hexo 博客中所见文章都是经由渲染的静态网页，而静态网页的样式都直接由 Hexo 的主题控制，所以 Hexo 博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。</p>
 </blockquote>
 <h2 id="创建自定义网页"><a href="#创建自定义网页" class="headerlink" title="创建自定义网页"></a>创建自定义网页</h2><p>　　网页可以是自己编写的，也可以是别人现成的源码。<br>　　网页编写完成后，在<code>Hexo\source</code>目录下创建一个文件夹<br>　　将 <code>html</code> 文件放置于此文件夹，并重命名为 <code>index.html</code> 。</p>
-<h2 id="跳过渲染"><a href="#跳过渲染" class="headerlink" title="跳过渲染"></a>跳过渲染</h2><h3 id="在html文件中添加跳过渲染指令"><a href="#在html文件中添加跳过渲染指令" class="headerlink" title="在html文件中添加跳过渲染指令"></a>在<code>html</code>文件中添加跳过渲染指令</h3><p>　　用编辑器打开放入<code>\Hexo\source&lt;/code>创建的文件夹中的 <code>index.html</code> 文件，在开头添加如下代码即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="跳过渲染"><a href="#跳过渲染" class="headerlink" title="跳过渲染"></a>跳过渲染</h2><h3 id="在html文件中添加跳过渲染指令"><a href="#在html文件中添加跳过渲染指令" class="headerlink" title="在html文件中添加跳过渲染指令"></a>在<code>html</code>文件中添加跳过渲染指令</h3><p>　　用编辑器打开放入<code>\Hexo\source\</code>创建的文件夹中的 <code>index.html</code> 文件，在开头添加如下代码即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
 <p>　　添加该指令后，执行 <code>hexo g</code>命令时便会跳过该 <code>index.html</code>文件，使得<code>index.html</code>不受当前 <code>hexo</code> 主题影响，完全是一个独立的网页，如果网页引用了 <code>css</code> 或 <code>js</code> ，这些 <code>css</code> 和 <code>js</code> 必须使用外链</p>
 <h3 id="在-config-yml文件中设置skip-render"><a href="#在-config-yml文件中设置skip-render" class="headerlink" title="在_config.yml文件中设置skip_render"></a>在<code>_config.yml</code>文件中设置<code>skip_render</code></h3><p>　　使用编辑器打开 <code>Hexo</code> 目录下的<code>_config.yml</code>文件，找到<code>skip_render</code></p>
-<p><code>skip_render</code>一般有以下四种常用参数：<br>    1. 跳过 <code>source</code> 目录下的 <code>test.html:</code> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip_render: test.html</span><br></pre></td></tr></table></figure>
+<p><code>skip_render</code>一般有以下四种常用参数：</p>
+<pre><code>1. 跳过 &lt;code&gt;source&lt;/code&gt; 目录下的 &lt;code&gt;test.html:&lt;/code&gt; 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip_render: test.html</span><br></pre></td></tr></table></figure>
 <p>　　2. 跳过<code>source</code>目录下 <code>test</code> 文件夹内所有文件：<code>skip_render: test/*</code><br>　　3. 跳过<code>source</code>目录下 <code>test</code> 文件夹内所有文件包括子文件夹以及子文件夹内的文件：<code>skip_render: test/**</code><br>　　4. 跳过多个路径：</p>
 <pre><code>skip_render:
 - test.html
-- test/*</code></pre><p>　　<code>_config.yml</code>对格式要求严格，注意填写参数时的格式，添加完成后便不会渲染指定文件/文件夹。</p>
+- test/*
+</code></pre><p>　　<code>_config.yml</code>对格式要求严格，注意填写参数时的格式，添加完成后便不会渲染指定文件/文件夹。</p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>　　执行<code>hexo g</code>和<code>hexo deploy</code>命令后便可以在博客上看到自己创建的网页，如果网页有特殊用途，可以在博客首页增加一个入口。<br>　　这时我们已经成功使得<code>hexo</code>不再渲染这个网页，然后让我们愉快玩耍吧！(你也可以通过站点概览下的“感到无聊”进入2048)</p>
 
     </div>
@@ -624,19 +623,7 @@
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+          <a href="http://47.94.228.187/kodexplorer/index.php" title="http:&#x2F;&#x2F;47.94.228.187&#x2F;kodexplorer&#x2F;index.php" rel="noopener" target="_blank">My Kodexplorer</a>
         </li>
       
     </ul>
@@ -663,12 +650,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">180k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">2:43</span>
 </div>
 
         

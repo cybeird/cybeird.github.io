@@ -376,7 +376,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>undefined</span>
+              <span>3.8k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -386,7 +386,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>NaN:aN</span>
+              <span>3 分钟</span>
             </span>
           
             <div class="post-description">这次的实验相对简单，这算是上半部分，仅仅只是操作界面及其相关，功能还尚未加入</div>
@@ -424,12 +424,14 @@
 <th>ID</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>下拉列表</td>
 <td>false</td>
 <td>IDC_COMBO1</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>  b) 放置一个<code>Group Box</code>、一个<code>EditControl</code>、一个<code>Button</code>控件，其属性设置如下：<br>​    ● Group Box”控件属性设置<br>​                <strong>Caption</strong>修改为<strong>添加结点</strong><br>​    ● EditControl控件属性设置</p>
 <table>
 <thead>
@@ -438,11 +440,13 @@
 <th>Number</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>IDC_EDIT_VAL</td>
 <td>True</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>​    ● Button控件属性设置</p>
 <table>
 <thead>
@@ -451,54 +455,46 @@
 <th>Caption</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>IDC_BUTTON_ADD</td>
 <td>确认添加</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ol start="5">
 <li>控件绑定变量</li>
 </ol>
 <p>​    只设置控制型变量，访问类型均设置为<code>private</code></p>
 <p>修改<code>BTreeDlg.g</code></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	CListBox mc_list;</span><br><span class="line">	CStatic mc_visit;</span><br><span class="line">	CComboBox mc_box;</span><br><span class="line">	CEdit mc_edit;</span><br><span class="line">	BIT_TREE bt</span><br></pre></td></tr></table></figure>
-
 <h3 id="建立新类NODE、BIT-TREE"><a href="#建立新类NODE、BIT-TREE" class="headerlink" title="建立新类NODE、BIT_TREE"></a>建立新类NODE、BIT_TREE</h3><p>在<strong>类视图</strong>中添加类，类名分别为<code>NODE</code>,<code>BIT_TREE</code></p>
 <ol>
 <li>类<code>NODE</code>添加<em>成员变量</em></li>
 </ol>
 <p>​    二叉链表结点类型，其元素类型为无符号整型。<br>​    该类不添加成员函数，其私有成员在二叉树类BIT_TREE的成员函数中直接引用。为此，需要将类BIT_TREE声明为类NODE的友元类。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//NODE.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> UINT	ELEM;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NODE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">BIT_TREE</span>;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	NODE(<span class="keyword">void</span>);</span><br><span class="line">	~NODE(<span class="keyword">void</span>);</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	ELEM	e;</span><br><span class="line">	NODE *lc, *rc;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <ol start="2">
 <li>类<code>BIT_TREE</code>添加<em>成员变量</em></li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    NODE   ht;  <span class="comment">//二叉树头结点</span></span><br></pre></td></tr></table></figure>
-
 <ol start="3">
 <li>类<code>BIT_TREE</code>添加<em>成员函数</em></li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//BIT_TREE.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"NODE.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BIT_TREE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	BIT_TREE(<span class="keyword">void</span>);</span><br><span class="line">	~BIT_TREE(<span class="keyword">void</span>);</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">InsertElem</span><span class="params">(ELEM pe)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">PreVisit</span><span class="params">(NODE *t, CListBox &amp;mbox)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">OrVisit</span><span class="params">(NODE *t, CListBox &amp;mbox)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">LastVisit</span><span class="params">(NODE *t, CListBox &amp;mbox)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">FreeTree</span><span class="params">(NODE *t)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">GetLeafNodeNum</span><span class="params">(NODE *t)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">GetTreeHeight</span><span class="params">(NODE *t)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">NODE* <span class="title">GetTreeBoot</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> ht.lc; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    NODE   ht;  <span class="comment">//二叉树头结点</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <ol start="4">
 <li>在<code>BIT_TREE.cpp</code>中对函数定义</li>
 </ol>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"StdAfx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"BIT_TREE.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"STACK_OR_QUENE.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VISIT_NODE(x,y) CString str;str.Format(<span class="meta-string">"%10d"</span>,x-&gt;e);y.AddString(str);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">BIT_TREE::BIT_TREE()</span><br><span class="line">&#123;<span class="comment">//在构造函数里初始化二叉树</span></span><br><span class="line">	ht.lc = <span class="literal">NULL</span>;	<span class="comment">//设置空树</span></span><br><span class="line">	ht.e = <span class="number">-1</span>;		<span class="comment">//元素域存入无符号最大值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">BIT_TREE::~BIT_TREE(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> BIT_TREE::InsertElem(ELEM pe)</span><br><span class="line">&#123;<span class="comment">//向树中插入结点，pe为待插入元素</span></span><br><span class="line">	NODE *p, *s;	s = <span class="keyword">new</span>(NODE);	s-&gt;e = pe;</span><br><span class="line">	s-&gt;lc = s-&gt;rc = <span class="literal">NULL</span>;<span class="comment">//插入结点总是叶结点</span></span><br><span class="line">	<span class="keyword">for</span> (p = &amp;ht;;)<span class="comment">//寻找待插入结点双亲结点指针p</span></span><br><span class="line">	&#123;	<span class="keyword">if</span> (p-&gt;e &lt; pe)</span><br><span class="line">		&#123;<span class="comment">//待插入结点元素值大于p指向结点元素值时，插入在p结点为根的右子树上</span></span><br><span class="line">		    <span class="keyword">if</span> (p-&gt;rc)p = p-&gt;rc;<span class="comment">//p的右子女存在，以p的右子女为根</span></span><br><span class="line">		    <span class="keyword">else</span></span><br><span class="line">		   &#123;  p-&gt;rc = s; <span class="keyword">break</span>;  &#125;<span class="comment">//待插入结点作为p的右子女，插入完成</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">      &#123;<span class="comment">//待插入结点元素值小于等于p指向结点元素值时，插入在p结点为根的左子树上</span></span><br><span class="line">		   <span class="keyword">if</span> (p-&gt;lc)p = p-&gt;lc;<span class="comment">//p的左子女存在，以p的左子女为根</span></span><br><span class="line">          <span class="keyword">else</span>  &#123; p-&gt;lc = s; <span class="keyword">break</span>;&#125;<span class="comment">//待插入结点作为p的左子女，插入完成</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> BIT_TREE::PreVisit(NODE *t, CListBox &amp;mbox)</span><br><span class="line">&#123;<span class="comment">//先序遍历</span></span><br><span class="line">	<span class="keyword">if</span> (t)</span><br><span class="line">	&#123;	VISIT_NODE(t, mbox)<span class="comment">//访问结点t</span></span><br><span class="line">		PreVisit(t-&gt;lc, mbox);<span class="comment">//先序遍历左子树</span></span><br><span class="line">		PreVisit(t-&gt;rc, mbox);<span class="comment">//先序遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> BIT_TREE::OrVisit(NODE *t, CListBox &amp;mbox)</span><br><span class="line">&#123;<span class="comment">//中序遍历</span></span><br><span class="line">	<span class="keyword">if</span> (t)</span><br><span class="line">	&#123;	OrVisit(t-&gt;lc, mbox);<span class="comment">//中序遍历左子树</span></span><br><span class="line">		VISIT_NODE(t, mbox)<span class="comment">//访问结点t</span></span><br><span class="line">		OrVisit(t-&gt;rc, mbox);<span class="comment">//中序遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> BIT_TREE::LastVisit(NODE *t, CListBox &amp;mbox)</span><br><span class="line">&#123;<span class="comment">//后序遍历</span></span><br><span class="line">	<span class="keyword">if</span> (t)</span><br><span class="line">	&#123;	LastVisit(t-&gt;lc, mbox);<span class="comment">//后序遍历左子树</span></span><br><span class="line">		LastVisit(t-&gt;rc, mbox);<span class="comment">//后序遍历右子树</span></span><br><span class="line">		VISIT_NODE(t, mbox)<span class="comment">//访问结点t</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> BIT_TREE::FreeTree(NODE *t)</span><br><span class="line">&#123;<span class="comment">//释放二叉链表，按后序遍历编写</span></span><br><span class="line">	<span class="keyword">if</span> (t)</span><br><span class="line">	&#123;	FreeTree(t-&gt;lc);<span class="comment">//释放左子树</span></span><br><span class="line">		FreeTree(t-&gt;rc);<span class="comment">//释放右子树</span></span><br><span class="line">		<span class="built_in">free</span>(t);<span class="comment">//释放根结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> BIT_TREE::GetLeafNodeNum(NODE *t)</span><br><span class="line">&#123;	<span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (t)</span><br><span class="line">	&#123;	n = GetLeafNodeNum(t-&gt;lc);	n += GetLeafNodeNum(t-&gt;rc);</span><br><span class="line">		<span class="keyword">if</span> (t-&gt;lc == <span class="literal">NULL</span> &amp;&amp; t-&gt;rc == <span class="literal">NULL</span>) n++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> BIT_TREE::GetTreeHeight(NODE *t)</span><br><span class="line">&#123;	<span class="keyword">int</span> lth=<span class="number">0</span>, rth;</span><br><span class="line">	<span class="keyword">if</span> (t)</span><br><span class="line">	&#123;	lth = GetTreeHeight(t-&gt;lc);	rth = GetTreeHeight(t-&gt;rc);</span><br><span class="line">		<span class="keyword">if</span> (lth &lt; rth) lth = rth;</span><br><span class="line">		lth++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> lth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="添加操作使用的常量数据定义"><a href="#添加操作使用的常量数据定义" class="headerlink" title="添加操作使用的常量数据定义"></a>添加操作使用的常量数据定义</h3><p>在<code>BTreeDlg.cpp</code>文件中添加以下定义</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span>		LEN	7</span></span><br><span class="line"><span class="keyword">char</span>  sss[][<span class="number">31</span>] = &#123; <span class="string">"先序遍历"</span>,<span class="string">"中序遍历"</span>,<span class="string">"后序遍历"</span>,</span><br><span class="line">		<span class="string">"广度遍历"</span>,</span><br><span class="line">		<span class="string">"非递归先序遍历"</span>,<span class="string">"非递归中序遍历"</span>,<span class="string">"非递归后序遍历"</span> &#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>		NUM	18</span></span><br><span class="line">ELEM	as[] = &#123; <span class="number">76</span>,<span class="number">42</span>,<span class="number">32</span>,<span class="number">17</span>, <span class="number">3</span>,<span class="number">98</span>,<span class="number">105</span>,<span class="number">89</span>,<span class="number">73</span>,<span class="number">54</span>,<span class="number">48</span>,<span class="number">20</span>,</span><br><span class="line">			  <span class="number">18</span>,<span class="number">10</span>, <span class="number">7</span>, <span class="number">4</span>,<span class="number">38</span>,<span class="number">26</span> &#125;;</span><br></pre></td></tr></table></figure>
-
 <p>需要在<code>BTreeDlg.cpp</code>文件中开始处添加</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"NODE.h"</span></span></span><br></pre></td></tr></table></figure>
-
 <h3 id="类CBTreeDlg添加成员变量"><a href="#类CBTreeDlg添加成员变量" class="headerlink" title="类CBTreeDlg添加成员变量"></a>类<code>CBTreeDlg</code>添加成员变量</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	BIT_TREE	bt;</span><br></pre></td></tr></table></figure>
-
 <p>需要在<code>BTreeDlg.h</code>文件中添加</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bit_tree.h"</span></span></span><br></pre></td></tr></table></figure>
-
 <h3 id="对话框初始化"><a href="#对话框初始化" class="headerlink" title="对话框初始化"></a>对话框初始化</h3><p> 在<code>BOOL CBTreeDlg::OnInitDialog()</code>函数中添加代码(<code>BTreeDlg.cpp</code>)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 在此添加额外的初始化代码</span></span><br><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; LEN; i++)</span><br><span class="line">    mc_box.AddString(sss[i]);</span><br><span class="line">mc_box.SetCurSel(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; NUM; i++)</span><br><span class="line">    bt.InsertElem(as[i]);</span><br><span class="line">OnSelchangeCombo1();</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>设置工程“字符集”属性，通过解决方案资源管理器，设置为多字符集</p>
 <p>到此，先看看工程由没有问题，生成工程，没有问题，则运行之.</p>
@@ -725,19 +721,7 @@
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+          <a href="http://47.94.228.187/kodexplorer/index.php" title="http:&#x2F;&#x2F;47.94.228.187&#x2F;kodexplorer&#x2F;index.php" rel="noopener" target="_blank">My Kodexplorer</a>
         </li>
       
     </ul>
@@ -764,12 +748,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">180k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">2:43</span>
 </div>
 
         

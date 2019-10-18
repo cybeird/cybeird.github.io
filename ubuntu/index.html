@@ -377,7 +377,7 @@
 <p>现在点击FireFox图标，您便可以使用FireFox浏览器冲浪</p>
 <p>或者按下 Alt+F2 组合键，弹出一个运行命令对话框。输入 firefox 后回车，同样可以启动FireFox</p>
 <h3 id="在菜单中找到-终端"><a href="#在菜单中找到-终端" class="headerlink" title="在菜单中找到 终端"></a>在菜单中找到 终端</h3><p>点击它便开启了一个终端窗口，您可以在终端窗口中运行命令</p>
-<p>也可以在控制台中输入命令。使用 Ctrl+Alt+[F1<del>F6] ，您可以切换到1</del>6号控制台</p>
+<p>也可以在控制台中输入命令。使用 Ctrl+Alt+[F1~F6] ，您可以切换到1~6号控制台</p>
 <p>使用 Ctrl+Alt+F7 可以返回图形界面（您可以使用 Ctrl+Alt+BackSpace 将图形界面关闭）</p>
 <h3 id="命令行提示符"><a href="#命令行提示符" class="headerlink" title="命令行提示符"></a>命令行提示符</h3><p>user@ubuntu:~$ 为命令提示符， @ 之前的部分为当前用户ID， @ 与 : 之间的部分，为您的主机名称， : 与 $ 之间的部分，为当前的路径。</p>
 <h3 id="退出系统"><a href="#退出系统" class="headerlink" title="退出系统"></a>退出系统</h3><p>您可以点击这一个图标来退出系统</p>
@@ -548,12 +548,12 @@
 <p>d      rwx   r-x   r-x</p>
 <p>第一组只有一个字符：</p>
 <ul>
-<li>d 文件夹         * - 普通文件               * l 链接              * b 块设备文件          * c 字符设备文件。</li>
+<li>d 文件夹         <em> - 普通文件               </em> l 链接              <em> b 块设备文件          </em> c 字符设备文件。</li>
 </ul>
 <p>剩下的3组分别为归属用户、归属群组、其它用户或群组对于该文件的权限。我们看它的格式</p>
 <p>rwx rwx   rwx</p>
 <ul>
-<li>r 可读             * w 可写            * x 可执行</li>
+<li>r 可读             <em> w 可写            </em> x 可执行</li>
 </ul>
 <p>它们的顺便不能颠倒，某一位置为空(-)，则表示不具有相应的权限。</p>
 <p>说明：Linux下的可执行文件并不是由扩展名（例如 .exe ）决定的，而是由其可执行权限位决定。</p>
@@ -704,7 +704,7 @@
 <p>或者使用Vim编辑器编辑 /etc/inputrc 文件，在插入模式下使用 Ctrl+v 组合键。按下 Ctrl+o ，这时编辑区新增一个 ^O 字符，等价于 \C-o</p>
 <p>通配符</p>
 <p>使用 ? 代表任意单个字符。例如 ???lo ，表示 lo 前有三个字符，它可以匹配 Hello</p>
-<p>使用 * 代表随意几个任意字符。例如 *.iso ，代表所有iso格式的文件。</p>
+<p>使用 <em> 代表随意几个任意字符。例如 </em>.iso ，代表所有iso格式的文件。</p>
 <p>说明：您可以将遍历补全和通配符结合使用，以提高效率。</p>
 <p>例如：</p>
 <p>cd */ 则遍历补全只补全文件夹</p>
@@ -746,9 +746,9 @@
 <p>这是因为Shell将文件名中的 ; 解析为按顺序执行命令。</p>
 <p>或者您的文件名以空白起始，而在Shell中，无论多少个空格，都将被解析为一个分隔符。您甚至不是使用命令重命名此文件。</p>
 <p>这个时候就要用到脱字符 \ 了，它能够将一个具有特殊涵义的字符转换普通字符。上面的两个任务，可以在文件名中每个特殊字符前加一个 \ ，像这样</p>
-<p>less ;xxx</p>
+<p>less \;xxx</p>
 <p>less \ \xxx</p>
-<p>less ;\ &amp;\xxx</p>
+<p>less \;\ \&amp;\xxx</p>
 <p>说明：也可以使用 “ 将文件名括起来，例如 less “; &amp;xxx” ，在很多情况下，这样甚至更方便。</p>
 <p>脱字符在Shell中也可以作为换行符，在一个命令的末尾添加一个 \ ，然后回车，在下一行继续输入命令剩余的部分，将一个命令拆分为多行且不影响它的执行（如果执行一个很长的命令，请将它拆分为多行以便于阅读）</p>
 <p>事实上换行符也符合脱字符的定义。回车键有两个涵义，一个是 执行 （Enter），另一个 换行 （折线箭头）。在Shell中它作为控制字符 执行 ，使用脱字符后，它便代表排版字符 换行 了。</p>
@@ -760,12 +760,12 @@
 <p>bash的自动补全默认只是补全命令、路径，如果想补全变量、参数等，通常需要使用复杂的组合键（见上面bash的介绍），即便您能够记住它们，快</p>
 <p>速准确的按下这些组合键，也是一种严峻的考验。而FISH的自动补全可以自动识别语法，补全正确的内容。并且具有语法高亮的功能，比如用MPLAYER放</p>
 <p>MP3：</p>
-<p>mpl<tab>(ayer) -l<tab>(oop) <tab>(0)</p>
-<p>-sh<tab>(uffle) -pl<tab>(aylist) <tab>(mp3_playlist)</p>
-<p>一阵猛按 <tab> 键，一个蛮长的命令就完成了。</p>
+<p>mpl<tab>(ayer) -l<tab>(oop) <tab>(0)</tab></tab></tab></p>
+<p>-sh<tab>(uffle) -pl<tab>(aylist) <tab>(mp3_playlist)</tab></tab></tab></p>
+<p>一阵猛按 <tab> 键，一个蛮长的命令就完成了。</tab></p>
 <p>补全结果不唯一时给出的提示中含有简短的说明，这样通常也不用看帮助了：）比如：</p>
 <p>mplayer -l</p>
-<p><tab> 后，自动将参数补全为 -lo 然后给出提示</p>
+<p><tab> 后，自动将参数补全为 -lo 然后给出提示</tab></p>
 <p>-{lo}adidx (Load index from file) -{lo}op (Loop playback) {花括号中为青色文字}</p>
 <p>它的语法高亮功能十分有用，如果你输入的命令是正确的，则用青色显示，正确的参数用白色显示，错误的则一律用红色。</p>
 <p>2.方便的历史纪录搜索</p>
@@ -1256,7 +1256,7 @@
 <p>/usr/local/share/fonts</p>
 <p>~/.fonts</p>
 <ul>
-<li>/etc/fonts/fonts.conf 文件的 <dir> 字段</li>
+<li>/etc/fonts/fonts.conf 文件的 <dir> 字段</dir></li>
 </ul>
 <p>多数支持GTK2或者Qt图形库的X客户端能够使用Xft字体渲染技术</p>
 <ul>
@@ -1347,16 +1347,16 @@
 <p>+[%X]设定显示格式，以下为date默认输出格式：</p>
 <p>date +%Y年%m月%d日%A%H:%M:%S%Z</p>
 <p>格式控制            %n 换行             %t 制表符</p>
-<p>小时                    %H(00<del>23) %I(01</del>12) %k(0<del>23) %l(1</del>12) %p(AM|PM)</p>
+<p>小时                    %H(00~23) %I(01~12) %k(0~23) %l(1~12) %p(AM|PM)</p>
 <p>分、秒                %M分钟(00~59)                  %S秒(00..61)              %T(hh:mm:ss) %r(hh:mm:ss [AM|PM])</p>
 <p>%s 从1970年1月1日00:00:00 UTC到目前为止的秒数              %X(%H:%M:%S)                 %Z时区</p>
-<p>星期                    %a(Sun<del>Sat) %A(Sunday</del>Saturday) %w : 一周中的第几天 (0..6)</p>
-<p>年份                    %Y(0000<del>9999) %y(00</del>99)</p>
-<p>月份                    %m(01<del>12) %b %h(Jan</del>Dec) %B(January~December)</p>
-<p>日期                    %d(01<del>31) %j(001</del>366)</p>
+<p>星期                    %a(Sun~Sat) %A(Sunday~Saturday) %w : 一周中的第几天 (0..6)</p>
+<p>年份                    %Y(0000~9999) %y(00~99)</p>
+<p>月份                    %m(01~12) %b %h(Jan~Dec) %B(January~December)</p>
+<p>日期                    %d(01~31) %j(001~366)</p>
 <p>%x(本地格式mm/dd/yy) %D(mm/dd/yy) %c</p>
 <p>一年中的第几周</p>
-<p>%U(00<del>53)以Sunday为一周的第一天 %W(00</del>53)以Monday为一周的第一天</p>
+<p>%U(00~53)以Sunday为一周的第一天 %W(00~53)以Monday为一周的第一天</p>
 <p>cal</p>
 <p>显示日历<br>文件管理</p>
 <p>一些细节</p>
@@ -1610,9 +1610,9 @@
 <p>-size &lt;大小&gt; 根据文件大小查找文件，单位b c w k M G</p>
 <p>-type &lt;文件类型&gt; 根据文件类型查找文件。b 块设备 c 字符设备 d 目录 p 管道文件 f 普通文件 l 链接 s 端口文件</p>
 <p>-user &lt;用户名&gt; 按归属用户查找文件</p>
-<p>-uid <uid> 按UID查找文件</p>
+<p>-uid <uid> 按UID查找文件</uid></p>
 <p>-group &lt;群组名&gt; 按归属群组查找文件</p>
-<p>-gid <gid> 按GID查找文件</p>
+<p>-gid <gid> 按GID查找文件</gid></p>
 <p>-empty 查找空文件</p>
 <p>grep &lt;字符串&gt;|”&lt;正则表达式&gt;” [文件名]<br>其它</p>
 <p>echo &lt;字符串&gt;</p>
@@ -1673,20 +1673,20 @@
 <p>(current) UNIX password: 原密码</p>
 <p>Enter new UNIX password: 新密码</p>
 <p>Retype new UNIX password: 确认新密码</p>
-<p>chsh [-s <Shell>] [用户名]</p>
+<p>chsh [-s <shell>] [用户名]</shell></p>
 <p>更改登录Shell</p>
 <p>usermod &lt;用户名&gt;</p>
 <p>修改用户账号</p>
 <p>-d &lt;目录&gt; 设定$HOME目录               -m 设定$HOME目录时自动建立                 </p>
-<p>-s <Shell> 修改用户登录Shell              -l &lt;新用户名&gt; 修改为新用户名</p>
-<p>-u <UID> 修改用户UID                      -g &lt;群组名&gt; 修改用户归属群组</p>
+<p>-s <shell> 修改用户登录Shell              -l &lt;新用户名&gt; 修改为新用户名</shell></p>
+<p>-u <uid> 修改用户UID                      -g &lt;群组名&gt; 修改用户归属群组</uid></p>
 <p>-G &lt;群组名&gt; 修改用户归属附加群组          -L 锁定帐户                -U 解除锁定              </p>
 <p>-e &lt;过期时间&gt; 设定用户账号过期时间                 -f &lt;缓冲天数&gt; 设定密码过期后多长时间关闭账号</p>
 <p>-c &lt;字符串&gt; 修改用户备注</p>
 <p>useradd &lt;用户名&gt;</p>
 <p>新建用户</p>
 <p>-d &lt;目录&gt; 设定$HOME目录               -m 自动建立$HOME目录           -M 不自动建立$HOME目录</p>
-<p>-s <Shell> 修改用户登录Shell              -l &lt;用户名&gt; 修改为新用户名               -u <UID> 修改用户UID</p>
+<p>-s <shell> 修改用户登录Shell              -l &lt;用户名&gt; 修改为新用户名               -u <uid> 修改用户UID</uid></shell></p>
 <p>-g &lt;群组名&gt; 修改用户归属群组                   -G &lt;群组名&gt; 修改用户归属附加群组</p>
 <p>-n 不建立以用户名为名称的群组                 -e &lt;过期时间&gt; 设定用户账号过期时间</p>
 <p>-f &lt;缓冲天数&gt; 设定密码过期后多长时间关闭账号                -c &lt;字符串&gt; 修改用户备注</p>
@@ -1755,9 +1755,9 @@
 <p>+|-|= &lt;nice值&gt;</p>
 <p>nice取值范围： -20~19</p>
 <p>进程表达式：</p>
-<p>-p <PID> 通过进程ID进行设定</p>
-<p>-g <PGID> 通过进程群组ID</p>
-<p>-u <UID> 通过进程拥有者UID设定</p>
+<p>-p <pid> 通过进程ID进行设定</pid></p>
+<p>-g <pgid> 通过进程群组ID</pgid></p>
+<p>-u <uid> 通过进程拥有者UID设定</uid></p>
 <p>top</p>
 <p>动态、交互式进程管理器</p>
 <p>-c 显示进程启动状态，包括参数、操作对象等；而不只是进程名</p>
@@ -1769,7 +1769,7 @@
 <p>-s 安全模式运行，禁用一些效互指令；</p>
 <p>-S 累积模式，输出每个进程的总的CPU时间，包括已死的子进程；</p>
 <p>交互命令：</p>
-<p><space> 立即刷新</p>
+<p><space> 立即刷新</space></p>
 <p>k 交互式杀死进程，提示输入进程 PID （默认发送信号15）</p>
 <p>r 设定renice，提示输入PID和renice值</p>
 <p>s 改变两次刷新时间间隔，以秒为单位</p>
@@ -1836,8 +1836,8 @@
 <p>iocharset=UTF-8 指定字符集，可简写为 utf8</p>
 <p>codepage=936 指定代码页，可简写为 cp936 西文系统代码页为 437</p>
 <p>umask=&lt;权限掩码&gt; 设定权限掩码</p>
-<p>uid=<UID> 设定归属用户</p>
-<p>gid=<GID> 设定归属群组</p>
+<p>uid=<uid> 设定归属用户</uid></p>
+<p>gid=<gid> 设定归属群组</gid></p>
 <p>remount 以不同选项重新挂载</p>
 <p>-L &lt;卷标&gt; 将带有特殊卷标的分区</p>
 <p>Tip</p>
@@ -1924,7 +1924,7 @@
 <p>-r 显示路由表，同 route             -a 所有连接                -t 只显示TCP协议            -U 只显示UDP协议</p>
 <p>-l 只显示正在监听的端口            -p 显示PID和进程名                  -c &lt;秒&gt; 刷新频率               </p>
 <ul>
-<li>http/ftp/ssh…… 为应用层协议                  * TCP/UDP为传输层协议           * IP/ICMP为网络层协议</li>
+<li>http/ftp/ssh…… 为应用层协议                  <em> TCP/UDP为传输层协议           </em> IP/ICMP为网络层协议</li>
 </ul>
 <p>lspci</p>
 <p>查看PCI总线连接的设备</p>
@@ -2010,10 +2010,10 @@
 <p>e 单词末尾 E 同上             0 行首 ^ 行首文字（行首空格之后）                  $ 行末</p>
 <p>H 页面顶部                M 页面中部               L 页面底部</p>
 <p>在其它模式中，您可以使用方向键移动光标，不过我们不推荐您那样作，您可以在配置文件中绑定插入模式下的功能键</p>
-<p>noremap! <M-j> <Down></p>
-<p>noremap! <M-k> <Up></p>
-<p>noremap! <M-h> <left></p>
-<p>noremap! <M-l> <Right></p>
+<p>noremap! <m-j> <down></down></m-j></p>
+<p>noremap! <m-k> <up></up></m-k></p>
+<p>noremap! <m-h> <left></left></m-h></p>
+<p>noremap! <m-l> <right></right></m-l></p>
 <p>………………</p>
 <p>&lt;作用范围&gt; &lt;键位&gt; &lt;功能&gt;</p>
 <p>其中，map!绑定的键盘映射，作用于所有模式；inoremap!绑定的映射，仅作用于插入模式。</p>
@@ -2074,7 +2074,7 @@
 <p>&lt;Ctrl+v&gt;&lt;键位&gt; 输入键位的名称</p>
 <p>键绑定、缩写</p>
 <p>前面我们已经向您介绍了键绑定，</p>
-<p>map! <M-j> <Down></p>
+<p>map! <m-j> <down></down></m-j></p>
 <p>尖括号及其中的内容，为Vim配置文件的约定，分别描述了按键和功能，表示将功能编写到按键上。如果绑定的只是普通字符，例如：</p>
 <p>map! xxx XXXXX</p>
 <p>表示将 fXXXXX 绑定到 xxx 上。当您键入 xxx 时，编辑器会自动替换为 XXXXX 。</p>
@@ -2304,7 +2304,7 @@
 <p><a href="ftp://192.168.0.1" target="_blank" rel="noopener">ftp://192.168.0.1</a></p>
 <p>c:\Windows\</p>
 <p>file:///C:/Windows/</p>
-<p>\127.0.0.1$C</p>
+<p>\127.0.0.1\$C</p>
 <p>……………………………………………………………………</p>
 <p>操作系统是一种非常精密的高科技产品，怎么可能如此混乱！！！他们是怎么作到的？？？</p>
 <p>Linux下的病毒少，是因为Linux的使用者少，骇客显然不愿意浪费气力去攻击没有人使用的操作系统。</p>
@@ -2526,19 +2526,7 @@
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+          <a href="http://47.94.228.187/kodexplorer/index.php" title="http:&#x2F;&#x2F;47.94.228.187&#x2F;kodexplorer&#x2F;index.php" rel="noopener" target="_blank">My Kodexplorer</a>
         </li>
       
     </ul>
@@ -2565,12 +2553,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">180k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">2:43</span>
 </div>
 
         

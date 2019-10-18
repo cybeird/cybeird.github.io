@@ -376,7 +376,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>undefined</span>
+              <span>1.1k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -386,7 +386,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
             </span>
           
             <div class="post-description">我之前在这个地方卡了许久，后来后知后觉的发现了错误</div>
@@ -407,7 +407,6 @@
 <li><p>但是每个成员函数在模板外定义的时候都要再声明一边类模板，这就是我所知道但却忘记的</p>
 <p>附上源码：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">numtype</span>&gt;				//定义类模板</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Compare</span> &#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Compare(numtype a, numtype b)</span><br><span class="line">		&#123;x=a;y=b;&#125;</span><br><span class="line">		<span class="function">numtype <span class="title">max</span><span class="params">()</span></span>;</span><br><span class="line">		<span class="function">numtype <span class="title">min</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		numtype x,y;</span><br><span class="line">&#125;;</span><br><span class="line">numtype Compare::max()</span><br><span class="line">&#123;<span class="keyword">return</span> (x&gt;y)?x:y;&#125;</span><br><span class="line">numtype Compare::min()</span><br><span class="line">&#123;<span class="keyword">return</span> (x&lt;y)?x:y;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Compare&lt;<span class="keyword">int</span>&gt; cmp1(<span class="number">3</span>,<span class="number">7</span>);														<span class="comment">//比较整数</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;cmp1.max()&lt;&lt;<span class="string">" is the Maximum of two interger numbers."</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;cmp1.min()&lt;&lt;<span class="string">" is the Minimum of two interger numbers."</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	Compare&lt;<span class="keyword">float</span>&gt; cmp2(<span class="number">45.78</span>, <span class="number">93.6</span>);											<span class="comment">//比较浮点数</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;cmp2.max()&lt;&lt;<span class="string">" is the Maximum of two interger numbers."</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;cmp2.min()&lt;&lt;<span class="string">" is the Minimum of two interger numbers."</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	Compare&lt;<span class="keyword">char</span>&gt; cmp3(<span class="string">'a'</span>, <span class="string">'A'</span>);												<span class="comment">//比较字符</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;cmp3.max()&lt;&lt;<span class="string">" is the Maximum of two interger numbers."</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;cmp3.min()&lt;&lt;<span class="string">" is the Minimum of two interger numbers."</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> sundea;<span class="built_in">cin</span>&gt;&gt;sundea;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>这是错误代码，实际上运行之后的错误报告已经告诉我问题了，许久才意识到</p>
 </li>
 </ol>
@@ -632,19 +631,7 @@
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+          <a href="http://47.94.228.187/kodexplorer/index.php" title="http:&#x2F;&#x2F;47.94.228.187&#x2F;kodexplorer&#x2F;index.php" rel="noopener" target="_blank">My Kodexplorer</a>
         </li>
       
     </ul>
@@ -671,12 +658,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">180k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">2:43</span>
 </div>
 
         

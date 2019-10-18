@@ -380,7 +380,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>undefined</span>
+              <span>1.2k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -390,7 +390,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
             </span>
           
             <div class="post-description">由于U盘丢失惨案而引起的一系列事件，刚好腾讯云也送了一个15天的云服务器可以拿来试试手</div>
@@ -432,25 +432,18 @@
 <p>不过我太弱了，所以入手的服务器也一样弱，跑<code>windows</code>卡顿很严重。而我对于<code>Linux</code>如何用手机愉快远程玩耍一窍不通，所以现在这儿立个<code>Flag</code></p>
 <h3 id="安装各类必要的环境依赖应用"><a href="#安装各类必要的环境依赖应用" class="headerlink" title="安装各类必要的环境依赖应用"></a>安装各类必要的环境依赖应用</h3><p><code>CentOS</code>环境安装依赖比较方便</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install 软件名称</span><br></pre></td></tr></table></figure>
-
 <p>就可以了</p>
 <h4 id="node-js安装"><a href="#node-js安装" class="headerlink" title="node js安装"></a><code>node js</code>安装</h4><p>安装 <code>Node.js</code> 的最佳方式是使用<code>nvm</code>。<code>nvm</code> 的开发者提供了一个自动安装 <code>nvm</code>的简单脚本：<br>cURL:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh</span><br></pre></td></tr></table></figure>
-<p>Wget:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh</span><br></pre></td></tr></table></figure>
-<p>安装完成后，重启终端并执行下列命令即可安装 Node.js。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install node</span><br></pre></td></tr></table></figure>
-
+<p>Wget:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh</span><br></pre></td></tr></table></figure></p>
+<p>安装完成后，重启终端并执行下列命令即可安装 Node.js。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install node</span><br></pre></td></tr></table></figure></p>
 <h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装<code>git</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install git</span><br></pre></td></tr></table></figure>
-
 <h4 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装<code>nginx</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install nginx</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p><code>nginx</code>用于托管静态博客，不过我最后考虑了一番还是没用上</p>
 </blockquote>
 <h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装<code>hexo</code></h4><p>我们使用 <code>Node.js</code>的包管理器 <code>npm</code> 安装 <code>hexo-cli</code> 和<code>hexo-server</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli hexo-server -g</span><br></pre></td></tr></table></figure>
-
 <p>如果这里报错了可以尝试再前面加上<code>sudo</code></p>
 <p>这之后就可以快乐布劳格了</p>
 <p>至于<code>hexo</code>的食用方式这里不再阐述</p>
@@ -677,19 +670,7 @@
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+          <a href="http://47.94.228.187/kodexplorer/index.php" title="http:&#x2F;&#x2F;47.94.228.187&#x2F;kodexplorer&#x2F;index.php" rel="noopener" target="_blank">My Kodexplorer</a>
         </li>
       
     </ul>
@@ -716,12 +697,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">180k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">2:43</span>
 </div>
 
         

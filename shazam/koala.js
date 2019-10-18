@@ -94,7 +94,7 @@ var koala = {
     r2 = r2 * r2; // Radius squared
 
     // End point is inside the circle and start point is outside
-    return edx * edx + edy * edy <= r2 && sdx * sdx + sdy * sdy > r2;
+    return edx * edx + edy * edy <= r2 && sdx * + sdy> r2;
   }
 
   Circle.addToVis = function(vis, circles, init) {
@@ -251,74 +251,4 @@ var koala = {
           startX = startPoint[0],
           startY = startPoint[1];
 
-      for (var i = 0; i <= numSplits; i++) {
-        breaks.push([startX + dx * i, startY + dy * i]);
-      }
-      return breaks;
-    }
-
-    function findAndSplit(startPoint, endPoint) {
-      var breaks = breakInterval(startPoint, endPoint, 4);
-      var circleToSplit = []
-
-      for (var i = 0; i < breaks.length - 1; i++) {
-        var sp = breaks[i],
-            ep = breaks[i+1];
-
-        var circle = splitableCircleAt(ep);
-        if (circle && circle.isSplitable() && circle.checkIntersection(sp, ep)) {
-          circle.split();
-        }
-      }
-    }
-
-    // Handle mouse events
-    var prevMousePosition = null;
-    function onMouseMove() {
-      var mousePosition = d3.mouse(vis.node());
-
-      // Do nothing if the mouse point is not valid
-      if (isNaN(mousePosition[0])) {
-        prevMousePosition = null;
-        return;
-      }
-
-      if (prevMousePosition) {
-        findAndSplit(prevMousePosition, mousePosition);
-      }
-      prevMousePosition = mousePosition;
-      d3.event.preventDefault();
-    }
-
-    // Handle touch events
-    var prevTouchPositions = {};
-    function onTouchMove() {
-      var touchPositions = d3.touches(vis.node());
-      for (var touchIndex = 0; touchIndex < touchPositions.length; touchIndex++) {
-        var touchPosition = touchPositions[touchIndex];
-        var prevTouchPosition = prevTouchPositions[touchPosition.identifier]
-        if (prevTouchPosition) {
-          findAndSplit(prevTouchPosition, touchPosition);
-        }
-        prevTouchPositions[touchPosition.identifier] = touchPosition;
-      }
-      d3.event.preventDefault();
-    }
-
-    function onTouchEnd() {
-      var touches = d3.event.changedTouches;
-      for (var touchIndex = 0; touchIndex < touches.length; touchIndex++) {
-        var touch = touches.item(touchIndex);
-        prevTouchPositions[touch.identifier] = null;
-      }
-      d3.event.preventDefault();
-    }
-
-    // Initialize interaction
-    d3.select(document.body)
-      .on('mousemove.koala', onMouseMove)
-      .on('touchmove.koala', onTouchMove)
-      .on('touchend.koala', onTouchEnd)
-      .on('touchcancel.koala', onTouchEnd);
-  };
-})();
+      for (var i = 0; i </=></your></your>

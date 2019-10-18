@@ -374,7 +374,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>undefined</span>
+              <span>11k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -384,7 +384,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>NaN:aN</span>
+              <span>10 分钟</span>
             </span>
           
 
@@ -539,7 +539,7 @@
 <p>&nbsp;</p>
 <p>而如果用动态规划，最多大概只有1000*100 = 100000个不同的问题，这和10的30次方比起来优势是很明显的。而实际情况并不会出现那么多不同的问题，比如在金矿模型中，如果所有的金矿所需人口都是1000个人，那么问题总数大约只有100个。</p>
 <p>&nbsp;</p>
-<p>非正式地，我们可以很容易得到动态规划所需时间，如果共有questionCount个相同的子问题，而每一个问题需要面对chooseCount种选择时，我们所需时间就为questionCount * chooseCount个常数。在金矿模型中，子问题最多有大概people * n 个(其中people是用于开采金矿的总人数，n是金矿的总数)，因此questionCount = people * n，而就像国王需要考虑是采用左部下的结果还是采用右部下的结果一样，每个问题面对两个选择，因此chooseCount = 2,所以程序运行时间为 T = O(questionCount * chooseCount) =O(people * n)，别忘了实际上需要的时间小于这个值，根据所遇到的具体情况有所不同。</p>
+<p>非正式地，我们可以很容易得到动态规划所需时间，如果共有questionCount个相同的子问题，而每一个问题需要面对chooseCount种选择时，我们所需时间就为questionCount <em> chooseCount个常数。在金矿模型中，子问题最多有大概people </em> n 个(其中people是用于开采金矿的总人数，n是金矿的总数)，因此questionCount = people <em> n，而就像国王需要考虑是采用左部下的结果还是采用右部下的结果一样，每个问题面对两个选择，因此chooseCount = 2,所以程序运行时间为 T = O(questionCount </em> chooseCount) =O(people * n)，别忘了实际上需要的时间小于这个值，根据所遇到的具体情况有所不同。</p>
 <p>&nbsp;</p>
 <p>这就是动态规划的魔力，它减少了大量的计算，因此我们需要动态规划！</p>
 <p>&nbsp;</p>
@@ -593,7 +593,7 @@
 <p>5、边界是一次购买就可以买完所有的书，处理方式请读者自己考虑。</p>
 <p>6、每次选择最多有7种方案，并且不会同时实施其中多种，因此方案的选择互不影响，所以有“子问题独立”。</p>
 <p>7、我可以用minMoney[i][j][k]来保存购买第1卷i本，第2卷j本，第3卷k本时所需的最少金钱。</p>
-<p>8、共有x * y * z 个问题，每个问题面对7种选择，时间为：O( x * y * z * 7) =  O( x * y * z )。</p>
+<p>8、共有x <em> y </em> z 个问题，每个问题面对7种选择，时间为：O( x <em> y </em> z <em> 7) =  O( x </em> y * z )。</p>
 <p>9、用函数MinMoney(i,j,k)来表示购买第1卷i本，第2卷j本，第3卷k本时所需的最少金钱，那么有：</p>
 <p>MinMoney(i,j,k)=min(s1,s2,s3,s4,s5,s6,s7),其中s1,s2,s3,s4,s5,s6,s7分别为对应的7种方案使用的最少金钱：</p>
 <p>s1 = 60 * 0.95 + MinMoney(i-1,j,k)</p>
@@ -952,19 +952,7 @@ int _tmain(int argc, _TCHAR* argv[])
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+          <a href="http://47.94.228.187/kodexplorer/index.php" title="http:&#x2F;&#x2F;47.94.228.187&#x2F;kodexplorer&#x2F;index.php" rel="noopener" target="_blank">My Kodexplorer</a>
         </li>
       
     </ul>
@@ -991,12 +979,12 @@ int _tmain(int argc, _TCHAR* argv[])
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">180k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">2:43</span>
 </div>
 
         

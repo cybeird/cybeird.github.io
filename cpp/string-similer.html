@@ -67,10 +67,12 @@
 <meta property="og:site_name" content="Sunsea的布劳格">
 <meta property="og:description" content="给定任意两个字符串，你能否写出一个算法来计算出它们的相似度呢？">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201212/09/1355029218_9181.jpg">
 <meta property="og:updated_time" content="2019-10-17T08:38:54.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算字符串的相似度(TOWQs)">
 <meta name="twitter:description" content="给定任意两个字符串，你能否写出一个算法来计算出它们的相似度呢？">
+<meta name="twitter:image" content="http://img.my.csdn.net/uploads/201212/09/1355029218_9181.jpg">
   <link rel="canonical" href="cybeird.coding.me/cpp/string-similer">
 
 
@@ -374,7 +376,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>undefined</span>
+              <span>3.7k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -384,7 +386,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>NaN:aN</span>
+              <span>3 分钟</span>
             </span>
           
             <div class="post-description">给定任意两个字符串，你能否写出一个算法来计算出它们的相似度呢？</div>
@@ -405,16 +407,9 @@
 <h3 id="问题分析："><a href="#问题分析：" class="headerlink" title="问题分析："></a>问题分析：</h3><p>　　当我们看到这一道题的第一个思路是通过写大量的函数，暴力枚举各种各样的情况，然后从中寻找出其中使其相似度最小的那一种情况。<br>　　但当我们仔细读一读题目就会发现一些规律:两个字符串的距离肯定不超过它们的长度之和。<br>　　实际上我们应该是可以通过递归使其转化成更小的问题来进行求解：<br>　　　　首先，读入了两个字符串A[1,…,lenA]、B[1,…,lenB].然后无非就是一下六种操作：<br>　　　　　1 修改A[1]为B[1]，接着再比较A[2,…,lenA]和B[2,…,lenB]的距离<br>　　　　　2 修改B[1]为A[1]，接着再比较A[2,…,lenA]和B[2,…,lenB]的距离<br>　　　　　3 删除A[1]，接着再比较A[2,…,lenA]和B[1,…,lenB]的距离<br>　　　　　4 删除B[1]，接着再比较A[1,…,lenA]和B[2,…,lenB]的距离<br>　　　　　5 将A[1]插入到字符串B的第一个字符之前，接着再比较A[2,…,lenA]和B[1,…,lenB]的距离<br>　　　　　6 将B[1]插入到字符串A的第一个字符之前，接着再比较A[1,…,lenA]和B[2,…,lenB]的距离<br>　　　　然后思路就比较好搞了，但是在这之前我们可以先进行归类就发现可以合并成三种操作：<br>　　　　　1 修改后比较A[2,…,lenA]和B[1,…,lenB]的距离<br>　　　　　2 修改后比较A[1,…,lenA]和B[2,…,lenB]的距离<br>　　　　　3 修改后比较A[2,…,lenA]和B[2,…,lenB]的距离<br>　　这样就可以很方便的写出递归的程序了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="built_in">string</span> A, <span class="keyword">int</span> beginA, <span class="built_in">string</span> B, <span class="keyword">int</span> beginB)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(beginA &gt; lenA)&#123;</span><br><span class="line">		<span class="keyword">if</span>(beginB &gt; lenB)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> lenB - beginB + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(beginB &gt; lenB)&#123;</span><br><span class="line">		<span class="keyword">if</span>(beginA &gt; lenA)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> lenA - beginA + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//如果字符串A已经读完了而且B已经读完了，直接返回0就可以了</span></span><br><span class="line">	<span class="comment">//如果一个读完而另一个没有读完，那么距离增加没有读完的字符串的剩余长度</span></span><br><span class="line">	<span class="keyword">if</span>(A[beginA] == B[beginB])</span><br><span class="line">		<span class="keyword">return</span> check(A, beginA + <span class="number">1</span>, B, beginB + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">int</span> c1,c2,c3;</span><br><span class="line">		c1 = check(A, beginA + <span class="number">1</span>, B, beginB);</span><br><span class="line">		c2 = check(A, beginA,     B, beginB + <span class="number">1</span>);</span><br><span class="line">		c3 = check(A, beginA + <span class="number">1</span>, B, beginB + <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">return</span> minplus(c1, c2, c3) + <span class="number">1</span>;				<span class="comment">//嗯，minplus是自己写的函数，用了比较三个数的最小值</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>　　然后就写完了我们的递归程序，思路也很明朗，不过有一点需要改进的地方。</p>
-<hr/>
-　　相信细心的你已经找到了问题所在：没错，这其中有着大量的重复计算！！！
-　　Just Like This！
-　　![](http://img.my.csdn.net/uploads/201212/09/1355029218_9181.jpg)
-### 问题优化
-　　但是如何解决呢？记忆化搜索？没错！
-　　我们所需要的仅仅只是新创建一个二维数组，然后对于每一次check，将其结果保存在数组中，然后在下次check的时候，先检查一下是否已经计算过，然后再返回值，这就完成了记忆化搜索，节省了大量的重复计算。
-
+<p><hr><br>　　相信细心的你已经找到了问题所在：没错，这其中有着大量的重复计算！！！<br>　　Just Like This！<br>　　<img src="http://img.my.csdn.net/uploads/201212/09/1355029218_9181.jpg" alt></p>
+<h3 id="问题优化"><a href="#问题优化" class="headerlink" title="问题优化"></a>问题优化</h3><p>　　但是如何解决呢？记忆化搜索？没错！<br>　　我们所需要的仅仅只是新创建一个二维数组，然后对于每一次check，将其结果保存在数组中，然后在下次check的时候，先检查一下是否已经计算过，然后再返回值，这就完成了记忆化搜索，节省了大量的重复计算。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="built_in">string</span> A, <span class="keyword">int</span> beginA, <span class="built_in">string</span> B, <span class="keyword">int</span> beginB, <span class="keyword">int</span> **temp)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> a, b, c;  </span><br><span class="line">    <span class="keyword">if</span>(beginA &gt; pAEnd) &#123;  </span><br><span class="line">        <span class="keyword">if</span>(beginB &gt; pBEnd) &#123;  </span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">            <span class="keyword">return</span> pBEnd - beginB + <span class="number">1</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">if</span>(beginB &gt; pBEnd) &#123;  </span><br><span class="line">        <span class="keyword">if</span>(beginA &gt; pAEnd) &#123;  </span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">            <span class="keyword">return</span> pAEnd - beginA + <span class="number">1</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//和刚才思路一样，到了这种地步并不需要去记忆化了</span></span><br><span class="line">    <span class="keyword">if</span>(strA[beginA] == strB[beginB]) &#123;  </span><br><span class="line">        <span class="keyword">if</span>(temp[beginA + <span class="number">1</span>][beginB + <span class="number">1</span>] != <span class="number">0</span>) &#123;  </span><br><span class="line">            a = temp[beginA + <span class="number">1</span>][beginB + <span class="number">1</span>];  </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">            a = check(strA, beginA + <span class="number">1</span>, strB, beginB + <span class="number">1</span>, temp);  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> a;  </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">        <span class="keyword">if</span>(temp[beginA + <span class="number">1</span>][beginB + <span class="number">1</span>] != <span class="number">0</span>) &#123;  </span><br><span class="line">            a = temp[beginA + <span class="number">1</span>][beginB + <span class="number">1</span>];  </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">            a = check(strA, beginA + <span class="number">1</span>, strB, beginB + <span class="number">1</span>, temp);  </span><br><span class="line">            temp[beginA + <span class="number">1</span>][beginB + <span class="number">1</span>] = a;  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">if</span>(temp[beginA + <span class="number">1</span>][beginB] != <span class="number">0</span>) &#123;  </span><br><span class="line">            b = temp[beginA + <span class="number">1</span>][beginB];  </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">            b = check(strA, beginA + <span class="number">1</span>, strB, beginB, temp);  </span><br><span class="line">            temp[beginA + <span class="number">1</span>][beginB] = b;  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">if</span>(temp[beginA][beginB + <span class="number">1</span>] != <span class="number">0</span>) &#123;  </span><br><span class="line">            c = temp[beginA][beginB + <span class="number">1</span>];  </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">            c = check(strA, beginA, strB, beginB + <span class="number">1</span>, temp);  </span><br><span class="line">            temp[beginA][beginB + <span class="number">1</span>] = c;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="comment">//若数组中有值，则直接调用，若没有，则check一次，然后将数组赋值(记忆化)</span></span><br><span class="line">        <span class="keyword">return</span> minplus(a, b, c) + <span class="number">1</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>　　当然，更加有趣(方便)的做法便是用动态规划了。<br>　　设Ai为字符串A的前i个字符（即为a[1],a[2],a[3]…a[i]）<br>　　设Bj为字符串B的前j个字符（即为b[1],b[2],b[3]…b[j]）<br>　　设 L(i,j)为使两个字符串和Ai和Bj相等的最小操作次数。<br>　　1. 当ai==bj时 显然 L(i,j) = L(i-1,j-1)<br>　　2. 当ai!=bj时<br>　　　　2.1. 若将它们修改为相等，则对两个字符串至少还要操作L(i-1,j-1)次<br>　　　　2.2. 若删除ai或在bj后添加ai，则对两个字符串至少还要操作L(i-1,j)次<br>　　　　2.3. 若删除bj或在ai后添加bj，则对两个字符串至少还要操作L(i,j-1)次<br>　　此时L(i,j) = min( L(i-1,j-1), L(i-1,j), L(i,j-1) ) + 1<br>　　显然，L(i,0)=i，L(0,j)=j, 再利用上述的递推公式，可以直接计算出L(i,j)值。L(i,0)代表Ai和B0，如果想把一个字符串和一个空字符串变的相同，那么之后删除非空串中的字符或者把空串变成和非空串相同的字符串，那么所需要操作的次数为i次。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="built_in">string</span> A, <span class="keyword">int</span> lenA, <span class="built_in">string</span> B, <span class="keyword">int</span> lenB)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lenA; i++) &#123;</span><br><span class="line">        temp[i][<span class="number">0</span>] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lenB; i++) &#123;  </span><br><span class="line">        temp[<span class="number">0</span>][i] = i;  </span><br><span class="line">    &#125;</span><br><span class="line">    temp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= len_a; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">1</span>; j &lt;= len_b; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(strA[i - <span class="number">1</span>] == strB[j - <span class="number">1</span>]) &#123;</span><br><span class="line">                temp[i][j] = temp[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                temp[i][j] = min(temp[i - <span class="number">1</span>][j], temp[i][j - <span class="number">1</span>], temp[i - <span class="number">1</span>][j - <span class="number">1</span>]) + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> temp[len_a][len_b];  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>　　嗯，好了，然后我就<a href="http://cybeird.tk/2048/" target="_blank" rel="noopener">无法自拔</a>了(自从加入了“鬼畜”的音乐之后。。。)</p>
@@ -510,7 +505,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题分析："><span class="nav-number">1.</span> <span class="nav-text">问题分析：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题分析："><span class="nav-number">1.</span> <span class="nav-text">问题分析：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题优化"><span class="nav-number">2.</span> <span class="nav-text">问题优化</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -642,19 +637,7 @@
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="http://soyjuice.tk/" title="http:&#x2F;&#x2F;soyjuice.tk" rel="noopener" target="_blank">Soy Juice</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://blog.csdn.net/janis_z" title="http:&#x2F;&#x2F;blog.csdn.net&#x2F;janis_z" rel="noopener" target="_blank">janis</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://cybird.site/2048" title="http:&#x2F;&#x2F;cybird.site&#x2F;2048" rel="noopener" target="_blank">二零四八</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://s2.ltmcpe.cn/?" title="https:&#x2F;&#x2F;s2.ltmcpe.cn&#x2F;?" rel="noopener" target="_blank">gyx</a>
+          <a href="http://47.94.228.187/kodexplorer/index.php" title="http:&#x2F;&#x2F;47.94.228.187&#x2F;kodexplorer&#x2F;index.php" rel="noopener" target="_blank">My Kodexplorer</a>
         </li>
       
     </ul>
@@ -681,12 +664,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">180k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">2:43</span>
 </div>
 
         

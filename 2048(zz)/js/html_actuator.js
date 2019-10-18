@@ -146,8 +146,8 @@ HTMLActuator.prototype.scoreTweetButton = function () {
   tweet.setAttribute("data-counturl", "http://cybeird.tk/2048(old)/");
   tweet.textContent = "easy mode";
 
-  var text = "I scored " + this.score + " points at ï¿½ï¿½ï¿½ï¿½ 2048, a game where you " +
-             "join ï¿½ï¿½ï¿½ï¿½ to score high! #ï¿½ï¿½ï¿½ï¿½2048";
+  var text = "I scored " + this.score + " points at ¾®¿Ú 2048, a game where you " +
+             "join ¾®¿Ú to score high! #¾®¿Ú2048";
   tweet.setAttribute("data-text", text);
 
   return tweet;
