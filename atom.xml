@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="cybeird.coding.me/"/>
-  <updated>2019-10-18T09:50:55.482Z</updated>
+  <updated>2019-10-19T07:12:50.048Z</updated>
   <id>cybeird.coding.me/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从头开始的Python(y)切片操作</title>
+    <link href="cybeird.coding.me/cpp/how-i-learn-python-2.html"/>
+    <id>cybeird.coding.me/cpp/how-i-learn-python-2.html</id>
+    <published>2019-10-19T06:17:05.000Z</published>
+    <updated>2019-10-19T07:12:50.048Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="索引方式"><a href="#索引方式" class="headerlink" title="索引方式"></a>索引方式</h3><p>这个也没什么好说的，一个从前往后跑的正索引，一个从后往前跑的负索引。</p><h3 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h3><p>实际上我在上一篇<a href="https://cybeird.coding.me/cpp/how-i-learn-python.html">文章</a>里提到过,关于列表的切来切去，不过后来我发现这个东西有很多可以说的地方，所以就可以专门用来水一篇文章了</p><h3 id="完全形态"><a href="#完全形态" class="headerlink" title="完全形态"></a>完全形态</h3><p>一个完整的表达式如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aList[_begin,_end,_step]</span><br></pre></td></tr></table></figure></p><ul><li><code>_begin</code> : 左端点，也是<strong>切片开始</strong>的地方(包括<code>_begin</code>本身)，而正负号则代表索引方式，正为正，负为负</li><li><code>_end</code> : 右端点，是<strong>切片结束</strong>的地方(也包括<code>_end</code>本身)，当然两个端点都是可以省略的，代表从头或者到尾</li><li><code>_step</code> : 步长，类比<code>range</code>，正负代表<strong>切取方向</strong></li></ul><h3 id="举点例子"><a href="#举点例子" class="headerlink" title="举点例子"></a>举点例子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aList = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure><h4 id="切取一个值"><a href="#切取一个值" class="headerlink" title="切取一个值"></a>切取一个值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">3</span>]</span><br><span class="line"><span class="comment">#3</span></span><br></pre></td></tr></table></figure><h4 id="切取全部值"><a href="#切取全部值" class="headerlink" title="切取全部值"></a>切取全部值</h4><p>正常切取全部<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aList[:]</span><br><span class="line">aList[::]</span><br><span class="line"><span class="comment">#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br></pre></td></tr></table></figure></p><p>反着切取全部<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aList[:: <span class="number">-1</span> ]</span><br><span class="line"><span class="comment">#[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]</span></span><br></pre></td></tr></table></figure></p><h4 id="切取部分值"><a href="#切取部分值" class="headerlink" title="切取部分值"></a>切取部分值</h4><p>从左往右取2到6<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">2</span>:<span class="number">6</span>]</span><br><span class="line">aList[<span class="number">-4</span>:<span class="number">-9</span>:<span class="number">-1</span>][::<span class="number">-1</span>]</span><br><span class="line"><span class="comment">#[2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure></p><p>欸第二种写法是不是有点超纲，实际上很好理解的</p><h4 id="反复切片"><a href="#反复切片" class="headerlink" title="反复切片"></a>反复切片</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">-4</span>:<span class="number">-9</span>:<span class="number">-1</span>][::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure><p>这个操作可以一直切下去，只要上次返回的是非空可切片对象</p><blockquote><p>而且切片的参数是可以直接写表达试的，这个操作很常见就不再多多阐述</p></blockquote><h3 id="切片应用的范围"><a href="#切片应用的范围" class="headerlink" title="切片应用的范围"></a>切片应用的范围</h3><p>实际上除了列表，字符串，元组乃至<code>range</code>函数都可以进行切片操作</p><h3 id="神奇操作汇总"><a href="#神奇操作汇总" class="headerlink" title="神奇操作汇总"></a>神奇操作汇总</h3><h4 id="拷贝操作"><a href="#拷贝操作" class="headerlink" title="拷贝操作"></a>拷贝操作</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bList = aList[:]</span><br></pre></td></tr></table></figure><h4 id="修改元素"><a href="#修改元素" class="headerlink" title="修改元素"></a>修改元素</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">3</span>] = [<span class="string">'a'</span>,<span class="string">'b'</span>]</span><br><span class="line"><span class="comment">#[0, 1, 2, ['a', 'b'], 4, 5, 6, 7, 8, 9]</span></span><br></pre></td></tr></table></figure><h4 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">3</span>:<span class="number">3</span>] = [<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'z'</span>]</span><br><span class="line"><span class="comment">#[0, 1, 2, 'x', 'y', 'z', 3, 4, 5, 6, 7, 8, 9]</span></span><br></pre></td></tr></table></figure><h4 id="替换元素"><a href="#替换元素" class="headerlink" title="替换元素"></a>替换元素</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">3</span>:<span class="number">6</span>] = [<span class="string">'A'</span>,<span class="string">'B'</span>]</span><br><span class="line"><span class="comment">#[0, 1, 2, 'A', 'B', 6, 7, 8, 9]</span></span><br></pre></td></tr></table></figure><h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><ul><li><p>使用<code>remove</code><br>删除单个元素，即首个符合条件的元素</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aList.remove(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></li><li><p>使用<code>pop</code><br>删除单个或者多个元素，按索引(元素所在位置)删除，且删除时会返回被删除的元素</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aList.pop(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></li><li><p>使用<code>del</code><br>根据索引删除，而且还可以删除指定范围中的值</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> aList[<span class="number">2</span>:<span class="number">4</span>] <span class="comment">#删除从第2个元素开始，到第4个为止的元素(但是不包括尾部元素)</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      Python中关于字符串的操作还是有很多的，很有必要拿来记录一下，因为有的真的是很好用
+    
+    </summary>
+    
+      <category term="cpp" scheme="cybeird.coding.me/categories/cpp/"/>
+    
+    
+      <category term="学习" scheme="cybeird.coding.me/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Python" scheme="cybeird.coding.me/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>如何在手机上更新博客</title>
@@ -473,32 +497,6 @@
     
     
       <category term="blog" scheme="cybeird.coding.me/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一次激動人心的更新! &amp;&amp; 增添酷炫的背景 &amp;&amp; 新的評論系統(beta)</title>
-    <link href="cybeird.coding.me/Post/an-amazing-update-hard-also.html"/>
-    <id>cybeird.coding.me/Post/an-amazing-update-hard-also.html</id>
-    <published>2017-04-29T02:57:55.000Z</published>
-    <updated>2019-10-17T08:38:49.036Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先必须要提的是一个悲伤的消息:<br><img src="http://ofshdv83w.bkt.clouddn.com/2017-04-29%2011-31-38%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt><br>恩,的确是这样,<code>多说</code>就这样告别了我们.</p><p>而在我还在感叹的时候,发现<code>hexo</code>已经更新到了<code>5.1.0</code>版本,吓得我赶紧看了一眼版本号然后决定更新.</p><p>不过我之前对<code>next</code>主题进行过很多作死向的修改(比如说看到<a href="http://muzhou.tech" target="_blank" rel="noopener">Muzhou</a>酷炫的背景样式,费(zhao)劲(zhe)心(jiao)机(cheng)自己也搞了一个(就是 <a href="#jump1"><strong>canvas-nest</strong></a> ).</p><p>但是当我仔细的看了看<code>next 5.1.0</code>的新特性之后,发现我好像就只需要备份个<code>languages</code>文件夹和<code>_config.yml</code>文档就够了…[因为新版本做的太赞啦!</p><p>不过这个酷炫的背景的代价是十分惨重的—-没错,如果你现在去看一眼<code>cup占用率</code>就会意识到这一点(移动端当我没说)</p><p>没关系,我们还是可以通过修改配置来使其更加<code>适宜</code><br>以下是配置参数:</p><ul><li><strong>color</strong> : 线条颜色, 默认: ‘0,0,0’ ；三个数字分别为(R,G,B)，注意用,分割</li><li><strong>opacity</strong> : 线条透明度（0~1）, 默认: 0.5</li><li><strong>count</strong> : 线条的总数量, 默认: 150</li><li><strong>zIndex</strong> : 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1</li></ul><p>这些属性配置在引用js的script标签中，作为它的一个属性值。所有的配置项都有默认值，如果你不知道怎么设置，可以先不设置这些配置项，就使用默认值看看效果也可以的。</p><p>实际上,你只需要把线条数量调少一点,就会舒服很多<br><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=274464535,326534350&amp;fm=23&amp;gp=0.jpg" alt><br>(but,what must we give in return?)</p><p>但是改用怎样的评论系统,又是一件令人头疼的事情</p><h4 id="来必力"><a href="#来必力" class="headerlink" title="来必力"></a>来必力</h4><p>　　当我最早想到的就是这个名字非常诡的评论系统(当时还是在<a href="http://theme-next.iissnan.com/third-party-services.html" target="_blank" rel="noopener">NexT 使用文档</a>里面看到的),然后当时都已经下定决心要用了,最后发现:<br><img src="http://ofshdv83w.bkt.clouddn.com/%E6%9D%A5%E5%BF%85%E5%8A%9B.png" alt><br>　　哦,免费版没有自定义CSS,也没有评论同步……<br>    直接放弃.</p><h4 id="友言"><a href="#友言" class="headerlink" title="友言"></a>友言</h4><pre><code>友言看起来不错,支持好几种社交网站,没有乱七八糟的功能</code></pre><p>　　但是,依旧是同一个问题:  <strong>不！支！持！评！论！同！步！</strong><br>　　相比与来必力来说,友言根本没有考虑什么评论存档的事情．市面上一般第三方评论都支持和WP原生评论互相同步,而友言偏偏不支持,可以的</p><h4 id="畅言"><a href="#畅言" class="headerlink" title="畅言"></a>畅言</h4><p>　　这个,我的网站,并没有备案,直接放弃</p><h4 id="网易云跟帖"><a href="#网易云跟帖" class="headerlink" title="网易云跟帖"></a>网易云跟帖</h4><p>　　我个人是很喜欢网易云音乐的,十分纯净，而且在移动端也有着十分出色的表现．<br>　　但是,网易云跟帖..着实有一些..<br>　　恩,我们要相信,随着时间的推移,会变得愈来愈好的!<br>　　那麽,就觉得是你了!网易云跟帖! —-&gt;<a href="http://cybird.site/Post/a-new-comment-system" target="_blank" rel="noopener">新的评论系统!</a></p><p><span id="jump1"> <strong> canvas-nest </strong></span></p><ul><li>一个基于html5 canvas绘制的网页背景效果</li><li>不依赖任何框架或者内库，比如不依赖jQuery，使用原生的javascript。</li><li>非常小，只有1.66kb，如果开启gzip，可以更小。</li><li>非常容易实现，配置简单，即使你不是web开发者，也能简单搞定。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      之前因为自己作死所导致的对主题本身所做的修改刚好可以趁这个机会修复了
-    
-    </summary>
-    
-      <category term="Post" scheme="cybeird.coding.me/categories/Post/"/>
-    
-    
-      <category term="hexo" scheme="cybeird.coding.me/tags/hexo/"/>
-    
-      <category term="blog" scheme="cybeird.coding.me/tags/blog/"/>
-    
-      <category term="update report" scheme="cybeird.coding.me/tags/update-report/"/>
     
   </entry>
   

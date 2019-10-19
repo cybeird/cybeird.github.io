@@ -59,19 +59,19 @@
   };
 </script>
 
-  <meta name="description" content="&amp;nbsp; 恩，这道题实在是太水了，你既可以用桶排序也可以用set。反正搞一搞就出来了，我就不废话了；；">
-<meta name="keywords" content="TOWQs,Trip Of WaterQuestions,cpp">
+  <meta name="description" content="Python中关于字符串的操作还是有很多的，很有必要拿来记录一下，因为有的真的是很好用">
+<meta name="keywords" content="学习,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="真的是很水的题目呢！(TOWQs)">
-<meta property="og:url" content="cybeird.coding.me/cpp/FromWordPress (26).html">
+<meta property="og:title" content="从头开始的Python(y)切片操作">
+<meta property="og:url" content="cybeird.coding.me/cpp/how-i-learn-python-2.html">
 <meta property="og:site_name" content="Sunsea的布劳格">
-<meta property="og:description" content="&amp;nbsp; 恩，这道题实在是太水了，你既可以用桶排序也可以用set。反正搞一搞就出来了，我就不废话了；；">
+<meta property="og:description" content="Python中关于字符串的操作还是有很多的，很有必要拿来记录一下，因为有的真的是很好用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-17T08:38:50.741Z">
+<meta property="og:updated_time" content="2019-10-19T07:12:50.048Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="真的是很水的题目呢！(TOWQs)">
-<meta name="twitter:description" content="&amp;nbsp; 恩，这道题实在是太水了，你既可以用桶排序也可以用set。反正搞一搞就出来了，我就不废话了；；">
-  <link rel="canonical" href="cybeird.coding.me/cpp/FromWordPress (26)">
+<meta name="twitter:title" content="从头开始的Python(y)切片操作">
+<meta name="twitter:description" content="Python中关于字符串的操作还是有很多的，很有必要拿来记录一下，因为有的真的是很好用">
+  <link rel="canonical" href="cybeird.coding.me/cpp/how-i-learn-python-2">
 
 
 <script id="page-configurations">
@@ -85,7 +85,7 @@
   };
 </script>
 
-  <title>真的是很水的题目呢！(TOWQs) | Sunsea的布劳格</title>
+  <title>从头开始的Python(y)切片操作 | Sunsea的布劳格</title>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93021468-1"></script>
   <script>
@@ -308,7 +308,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="cybeird.coding.me/cpp/FromWordPress (26).html">
+    <link itemprop="mainEntityOfPage" href="cybeird.coding.me/cpp/how-i-learn-python-2.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sunsea">
@@ -320,7 +320,7 @@
       <meta itemprop="name" content="Sunsea的布劳格">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">真的是很水的题目呢！(TOWQs)
+        <h1 class="post-title" itemprop="name headline">从头开始的Python(y)切片操作
 
           
         </h1>
@@ -336,19 +336,11 @@
                 
               
 
-              <time title="创建时间：2016-10-18 16:55:29" itemprop="dateCreated datePublished" datetime="2016-10-18T16:55:29+08:00">2016-10-18</time>
+              <time title="创建时间：2019-10-19 14:17:05 / 修改时间：15:12:50" itemprop="dateCreated datePublished" datetime="2019-10-19T14:17:05+08:00">2019-10-19</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-17 16:38:50" itemprop="dateModified" datetime="2019-10-17T16:38:50+08:00">2019-10-17</time>
-              </span>
             
           
             <span class="post-meta-item">
@@ -374,7 +366,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>335</span>
+              <span>985</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -387,6 +379,8 @@
               <span>1 分钟</span>
             </span>
           
+            <div class="post-description">Python中关于字符串的操作还是有很多的，很有必要拿来记录一下，因为有的真的是很好用</div>
+          
 
         </div>
       </header>
@@ -397,10 +391,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>&nbsp;</p>
-<p>恩，<a href="https://4.vijos.org:8888/p/1316" target="_blank" rel="noopener">这道题</a>实在是太水了，你既可以用桶排序也可以用set。反正搞一搞就出来了，我就不废话了；；</p>
-<a id="more"></a>
-<p><pre style="color:#000000;background:#f1f0f0;"><span style="color:#004a43;">#</span><span style="color:#004a43;">include </span><span style="color:#800000;">&lt;</span><span style="color:#40015a;">set</span><span style="color:#800000;">&gt;</span><br><span style="color:#004a43;">#</span><span style="color:#004a43;">include </span><span style="color:#800000;">&lt;</span><span style="color:#40015a;">cstdio</span><span style="color:#800000;">&gt;</span><br><span style="color:#400000;font-weight:bold;">using</span> <span style="color:#400000;font-weight:bold;">namespace</span> <span style="color:#00dddd;">std</span><span style="color:#806030;">;</span><br><span style="color:#400000;font-weight:bold;">int</span> n<span style="color:#806030;">,</span>tmp<span style="color:#806030;">;</span><br><span style="color:#800040;">set</span><span style="color:#806030;">&lt;</span><span style="color:#400000;font-weight:bold;">int</span><span style="color:#806030;">&gt;</span> S<span style="color:#806030;">;</span><br><span style="color:#800040;">set</span><span style="color:#806030;">&lt;</span><span style="color:#400000;font-weight:bold;">int</span><span style="color:#806030;">&gt;</span><span style="color:#806030;">::</span><span style="color:#800040;">iterator</span> it<span style="color:#806030;">;</span><br><span style="color:#400000;font-weight:bold;">int</span> <span style="color:#800000;font-weight:bold;">main</span><span style="color:#806030;">(</span><span style="color:#806030;">)</span><span style="color:#806030;">{</span><br>    <span style="color:#800040;">scanf</span><span style="color:#806030;">(</span><span style="color:#800000;">“</span><span style="color:#007997;">%d</span><span style="color:#800000;">“</span><span style="color:#806030;">,</span><span style="color:#806030;">&amp;</span>n<span style="color:#806030;">)</span><span style="color:#806030;">;</span><br>    <span style="color:#400000;font-weight:bold;">for</span> <span style="color:#806030;">(</span><span style="color:#400000;font-weight:bold;">int</span> i<span style="color:#806030;">=</span><span style="color:#c00000;">1</span><span style="color:#806030;">;</span>i<span style="color:#806030;">&lt;</span><span style="color:#806030;">=</span>n<span style="color:#806030;">;</span>i<span style="color:#806030;">+</span><span style="color:#806030;">+</span><span style="color:#806030;">)</span><span style="color:#806030;">{</span><br>        <span style="color:#800040;">scanf</span><span style="color:#806030;">(</span><span style="color:#800000;">“</span><span style="color:#007997;">%d</span><span style="color:#800000;">“</span><span style="color:#806030;">,</span><span style="color:#806030;">&amp;</span>tmp<span style="color:#806030;">)</span><span style="color:#806030;">;</span><br>        S<span style="color:#806030;">.</span>insert<span style="color:#806030;">(</span>tmp<span style="color:#806030;">)</span><span style="color:#806030;">;</span><br>    <span style="color:#806030;">}</span><br>    <span style="color:#800040;">printf</span><span style="color:#806030;">(</span><span style="color:#800000;">“</span><span style="color:#007997;">%d</span><span style="color:#0f6900;">\n</span><span style="color:#800000;">“</span><span style="color:#806030;">,</span>S<span style="color:#806030;">.</span>size<span style="color:#806030;">(</span><span style="color:#806030;">)</span><span style="color:#806030;">)</span><span style="color:#806030;">;</span><br>    <span style="color:#400000;font-weight:bold;">for</span> <span style="color:#806030;">(</span>it<span style="color:#806030;">=</span>S<span style="color:#806030;">.</span>begin<span style="color:#806030;">(</span><span style="color:#806030;">)</span><span style="color:#806030;">;</span>it<span style="color:#806030;">!</span><span style="color:#806030;">=</span>S<span style="color:#806030;">.</span>end<span style="color:#806030;">(</span><span style="color:#806030;">)</span><span style="color:#806030;">;</span>it<span style="color:#806030;">+</span><span style="color:#806030;">+</span><span style="color:#806030;">)</span><br>        <span style="color:#800040;">printf</span><span style="color:#806030;">(</span><span style="color:#800000;">“</span><span style="color:#007997;">%d</span> <span style="color:#800000;">“</span><span style="color:#806030;">,</span><span style="color:#806030;">*</span>it<span style="color:#806030;">)</span><span style="color:#806030;">;</span><br><span style="color:#806030;">}</span><br></pre><br>恩，就是这样。</p>
+        <h3 id="索引方式"><a href="#索引方式" class="headerlink" title="索引方式"></a>索引方式</h3><p>这个也没什么好说的，一个从前往后跑的正索引，一个从后往前跑的负索引。</p>
+<h3 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h3><p>实际上我在上一篇<a href="https://cybeird.coding.me/cpp/how-i-learn-python.html">文章</a>里提到过,关于列表的切来切去，不过后来我发现这个东西有很多可以说的地方，所以就可以专门用来水一篇文章了</p>
+<h3 id="完全形态"><a href="#完全形态" class="headerlink" title="完全形态"></a>完全形态</h3><p>一个完整的表达式如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aList[_begin,_end,_step]</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>_begin</code> : 左端点，也是<strong>切片开始</strong>的地方(包括<code>_begin</code>本身)，而正负号则代表索引方式，正为正，负为负</li>
+<li><code>_end</code> : 右端点，是<strong>切片结束</strong>的地方(也包括<code>_end</code>本身)，当然两个端点都是可以省略的，代表从头或者到尾</li>
+<li><code>_step</code> : 步长，类比<code>range</code>，正负代表<strong>切取方向</strong></li>
+</ul>
+<h3 id="举点例子"><a href="#举点例子" class="headerlink" title="举点例子"></a>举点例子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aList = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="切取一个值"><a href="#切取一个值" class="headerlink" title="切取一个值"></a>切取一个值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">3</span>]</span><br><span class="line"><span class="comment">#3</span></span><br></pre></td></tr></table></figure>
+<h4 id="切取全部值"><a href="#切取全部值" class="headerlink" title="切取全部值"></a>切取全部值</h4><p>正常切取全部<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aList[:]</span><br><span class="line">aList[::]</span><br><span class="line"><span class="comment">#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span><br></pre></td></tr></table></figure></p>
+<p>反着切取全部<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aList[:: <span class="number">-1</span> ]</span><br><span class="line"><span class="comment">#[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="切取部分值"><a href="#切取部分值" class="headerlink" title="切取部分值"></a>切取部分值</h4><p>从左往右取2到6<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">2</span>:<span class="number">6</span>]</span><br><span class="line">aList[<span class="number">-4</span>:<span class="number">-9</span>:<span class="number">-1</span>][::<span class="number">-1</span>]</span><br><span class="line"><span class="comment">#[2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure></p>
+<p>欸第二种写法是不是有点超纲，实际上很好理解的</p>
+<h4 id="反复切片"><a href="#反复切片" class="headerlink" title="反复切片"></a>反复切片</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">-4</span>:<span class="number">-9</span>:<span class="number">-1</span>][::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<p>这个操作可以一直切下去，只要上次返回的是非空可切片对象</p>
+<blockquote>
+<p>而且切片的参数是可以直接写表达试的，这个操作很常见就不再多多阐述</p>
+</blockquote>
+<h3 id="切片应用的范围"><a href="#切片应用的范围" class="headerlink" title="切片应用的范围"></a>切片应用的范围</h3><p>实际上除了列表，字符串，元组乃至<code>range</code>函数都可以进行切片操作</p>
+<h3 id="神奇操作汇总"><a href="#神奇操作汇总" class="headerlink" title="神奇操作汇总"></a>神奇操作汇总</h3><h4 id="拷贝操作"><a href="#拷贝操作" class="headerlink" title="拷贝操作"></a>拷贝操作</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bList = aList[:]</span><br></pre></td></tr></table></figure>
+<h4 id="修改元素"><a href="#修改元素" class="headerlink" title="修改元素"></a>修改元素</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">3</span>] = [<span class="string">'a'</span>,<span class="string">'b'</span>]</span><br><span class="line"><span class="comment">#[0, 1, 2, ['a', 'b'], 4, 5, 6, 7, 8, 9]</span></span><br></pre></td></tr></table></figure>
+<h4 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">3</span>:<span class="number">3</span>] = [<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'z'</span>]</span><br><span class="line"><span class="comment">#[0, 1, 2, 'x', 'y', 'z', 3, 4, 5, 6, 7, 8, 9]</span></span><br></pre></td></tr></table></figure>
+<h4 id="替换元素"><a href="#替换元素" class="headerlink" title="替换元素"></a>替换元素</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aList[<span class="number">3</span>:<span class="number">6</span>] = [<span class="string">'A'</span>,<span class="string">'B'</span>]</span><br><span class="line"><span class="comment">#[0, 1, 2, 'A', 'B', 6, 7, 8, 9]</span></span><br></pre></td></tr></table></figure>
+<h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><ul>
+<li><p>使用<code>remove</code><br>删除单个元素，即首个符合条件的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aList.remove(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>pop</code><br>删除单个或者多个元素，按索引(元素所在位置)删除，且删除时会返回被删除的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aList.pop(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>del</code><br>根据索引删除，而且还可以删除指定范围中的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> aList[<span class="number">2</span>:<span class="number">4</span>] <span class="comment">#删除从第2个元素开始，到第4个为止的元素(但是不包括尾部元素)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
 
     </div>
 
@@ -416,11 +440,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/TOWQs/" rel="tag"># TOWQs</a>
+              <a href="/tags/学习/" rel="tag"># 学习</a>
             
-              <a href="/tags/Trip-Of-WaterQuestions/" rel="tag"># Trip Of WaterQuestions</a>
-            
-              <a href="/tags/cpp/" rel="tag"># cpp</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
             
           </div>
         
@@ -430,8 +452,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/GANNE/HearthStone/how-to-kill-yourself-1.html" rel="next" title="How to kill yourself ? (1)">
-                  <i class="fa fa-chevron-left"></i> How to kill yourself ? (1)
+                <a href="/TECHNOLOGY/how-ssh-running-phone.html" rel="next" title="如何在手机上更新博客">
+                  <i class="fa fa-chevron-left"></i> 如何在手机上更新博客
                 </a>
               
             </div>
@@ -439,10 +461,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/magical/FromWordPress (22).html" rel="prev" title="无休止加班的成因">
-                  无休止加班的成因 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -491,6 +509,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#索引方式"><span class="nav-number">1.</span> <span class="nav-text">索引方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前情提要"><span class="nav-number">2.</span> <span class="nav-text">前情提要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全形态"><span class="nav-number">3.</span> <span class="nav-text">完全形态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举点例子"><span class="nav-number">4.</span> <span class="nav-text">举点例子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#切取一个值"><span class="nav-number">4.1.</span> <span class="nav-text">切取一个值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切取全部值"><span class="nav-number">4.2.</span> <span class="nav-text">切取全部值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切取部分值"><span class="nav-number">4.3.</span> <span class="nav-text">切取部分值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反复切片"><span class="nav-number">4.4.</span> <span class="nav-text">反复切片</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切片应用的范围"><span class="nav-number">5.</span> <span class="nav-text">切片应用的范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神奇操作汇总"><span class="nav-number">6.</span> <span class="nav-text">神奇操作汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拷贝操作"><span class="nav-number">6.1.</span> <span class="nav-text">拷贝操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改元素"><span class="nav-number">6.2.</span> <span class="nav-text">修改元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入元素"><span class="nav-number">6.3.</span> <span class="nav-text">插入元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换元素"><span class="nav-number">6.4.</span> <span class="nav-text">替换元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除元素"><span class="nav-number">6.5.</span> <span class="nav-text">删除元素</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -726,7 +746,7 @@
       repo: 'blog-comments',
       owner: 'Cybeird',
       admin: ['Cybeird'],
-      id: 'dbc1abd7d2cd8b7afac97f40a14f752f',
+      id: 'dbd4352e2546d1dc6d98b77020200e00',
         language: 'zh-CN',
       
       distractionFreeMode: 'true'
