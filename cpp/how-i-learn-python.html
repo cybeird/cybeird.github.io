@@ -67,7 +67,7 @@
 <meta property="og:site_name" content="Sunsea的布劳格">
 <meta property="og:description" content="一不小心就把Python选修课给选上了，既如此，那就勉为其难的学学吧">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-17T15:31:14.000Z">
+<meta property="og:updated_time" content="2019-10-21T11:52:57.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从头开始的Python(z)初次见面">
 <meta name="twitter:description" content="一不小心就把Python选修课给选上了，既如此，那就勉为其难的学学吧">
@@ -336,11 +336,19 @@
                 
               
 
-              <time title="创建时间：2019-10-17 21:53:31 / 修改时间：23:31:14" itemprop="dateCreated datePublished" datetime="2019-10-17T21:53:31+08:00">2019-10-17</time>
+              <time title="创建时间：2019-10-17 21:53:31" itemprop="dateCreated datePublished" datetime="2019-10-17T21:53:31+08:00">2019-10-17</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-21 19:52:57" itemprop="dateModified" datetime="2019-10-21T19:52:57+08:00">2019-10-21</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -366,7 +374,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>3.4k</span>
+              <span>3.6k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -417,12 +425,18 @@
 <p>这个a是左端,b是右端,c是步长。</p>
 <p>在[a,b]区间从左到右每隔c取值,默认c为1可以省略c参数，若c带负号表示反方向取值，即从右到左。</p>
 <h5 id="再举个例子"><a href="#再举个例子" class="headerlink" title="再举个例子"></a>再举个例子</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list[-1]            //取最后一个元素</span><br><span class="line">list[:-1]			//取除了最后一个的全部</span><br><span class="line">list[1:]			//从第二个开始取</span><br><span class="line">list[:2]			//取到第二个</span><br></pre></td></tr></table></figure>
-<p>这个时候就可以放两道例题了，第一道是<a href="货币转换1">货币转换</a>，第二道也是<a href="货币转换2">货币转换</a></p>
-<h4 id="按需输出列表中的元素"><a href="#按需输出列表中的元素" class="headerlink" title="按需输出列表中的元素"></a>按需输出列表中的元素</h4><h5 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">print(*a, sep = <span class="string">" "</span>)</span><br></pre></td></tr></table></figure>
-<h5 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [0, 1, 2, 3]</span><br><span class="line">[print(i,end = &quot; &quot;) for i in a]</span><br></pre></td></tr></table></figure>
-<h4 id="奇妙缩进"><a href="#奇妙缩进" class="headerlink" title="奇妙缩进"></a>奇妙缩进</h4><p>对于<a href="找素数">这道题</a>,我在某个关键的地方少了一个关键的<code>Tab</code>,然后输出的结果就疯了</p>
+<p>这个时候就可以放两道例题了，第一道是<em>货币转换</em><a href="货币转换">^1</a>，第二道也是<em>货币转换</em><a href="货币转换">^2</a></p>
+<h4 id="奇妙缩进"><a href="#奇妙缩进" class="headerlink" title="奇妙缩进"></a>奇妙缩进</h4><p>对于<em>这道题</em><a href="找素数">^3</a>,我在某个关键的地方少了一个关键的<code>Tab</code>,然后输出的结果就疯了</p>
 <p>这是我的错误代码,我在第11行不小心把<code>else</code>和<code>if</code>对齐了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">list1 = []</span><br><span class="line">num = 0</span><br><span class="line">for i in range (1,5) :</span><br><span class="line">    for j in range(1,5) :</span><br><span class="line">        for h in range(1,5) :</span><br><span class="line">            if i != j and j != h and i != h :</span><br><span class="line">                num = i *100 + j * 10 + h</span><br><span class="line">                for k in range(2, num//2+1):</span><br><span class="line">                    if (num % i) == 0:</span><br><span class="line">                        break</span><br><span class="line">                	else :</span><br><span class="line">                        list1.append(num)</span><br><span class="line">print(*list1, sep = &quot; &quot;)</span><br><span class="line">#[print(i,end = &quot; &quot;) for i in list1]</span><br></pre></td></tr></table></figure>
+<h4 id="输出方式"><a href="#输出方式" class="headerlink" title="输出方式"></a>输出方式</h4><p>对于一般的形式<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(sundea)</span><br></pre></td></tr></table></figure></p>
+<p>相当于<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(sundea, end=<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>而<code>end</code>的值是可以任意切换的，也可以换成<code>&quot; &quot;</code>，这样分隔符就由换行符变成空格了<br>而当我们打印一个列表的全部值的时候，有的时候会需要更改列表元素的分隔符，这个时候大概有两种方式</p>
+<h5 id="使用for和end搭配组合达成"><a href="#使用for和end搭配组合达成" class="headerlink" title="使用for和end搭配组合达成"></a>使用<code>for</code>和<code>end</code>搭配组合达成</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aList:</span><br><span class="line">    print(i,end=<span class="string">' '</span>)</span><br></pre></td></tr></table></figure>
+<p>但是这样的话最后的输出里会多一个空格，毕竟是模拟</p>
+<h5 id="使用join来达成"><a href="#使用join来达成" class="headerlink" title="使用join来达成"></a>使用<code>join</code>来达成</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">" "</span>.join(str(i) <span class="keyword">for</span> i <span class="keyword">in</span> aList))</span><br></pre></td></tr></table></figure>
+<p>这样就是很完美的换掉分隔符</p>
+<h4 id="使用sep轻松解决"><a href="#使用sep轻松解决" class="headerlink" title="使用sep轻松解决"></a>使用<code>sep</code>轻松解决</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(*aList, sep=<span class="string">" "</span>)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>人民币和美元是世界上通用的两种货币之一，写一个程序进行货币间币值转换，其中：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
 <p>人民币和美元间汇率固定为：1美元 = 6.78人民币。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
@@ -534,7 +548,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#我学Python"><span class="nav-number">1.</span> <span class="nav-text">我学Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再起征途"><span class="nav-number">2.</span> <span class="nav-text">再起征途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型和变量"><span class="nav-number">2.1.</span> <span class="nav-text">数据类型和变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算术运算符"><span class="nav-number">2.2.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eval-函数"><span class="nav-number">2.3.</span> <span class="nav-text">eval()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空语句"><span class="nav-number">2.4.</span> <span class="nav-text">空语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与或非"><span class="nav-number">2.5.</span> <span class="nav-text">与或非</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#range语句"><span class="nav-number">2.6.</span> <span class="nav-text">range语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表的截取"><span class="nav-number">2.7.</span> <span class="nav-text">列表的截取</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举个例子"><span class="nav-number">2.7.1.</span> <span class="nav-text">举个例子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#再举个例子"><span class="nav-number">2.7.2.</span> <span class="nav-text">再举个例子</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按需输出列表中的元素"><span class="nav-number">2.8.</span> <span class="nav-text">按需输出列表中的元素</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#指针"><span class="nav-number">2.8.1.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for循环"><span class="nav-number">2.8.2.</span> <span class="nav-text">for循环</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#奇妙缩进"><span class="nav-number">2.9.</span> <span class="nav-text">奇妙缩进</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#我学Python"><span class="nav-number">1.</span> <span class="nav-text">我学Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再起征途"><span class="nav-number">2.</span> <span class="nav-text">再起征途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型和变量"><span class="nav-number">2.1.</span> <span class="nav-text">数据类型和变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算术运算符"><span class="nav-number">2.2.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eval-函数"><span class="nav-number">2.3.</span> <span class="nav-text">eval()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空语句"><span class="nav-number">2.4.</span> <span class="nav-text">空语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与或非"><span class="nav-number">2.5.</span> <span class="nav-text">与或非</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#range语句"><span class="nav-number">2.6.</span> <span class="nav-text">range语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表的截取"><span class="nav-number">2.7.</span> <span class="nav-text">列表的截取</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举个例子"><span class="nav-number">2.7.1.</span> <span class="nav-text">举个例子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#再举个例子"><span class="nav-number">2.7.2.</span> <span class="nav-text">再举个例子</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#奇妙缩进"><span class="nav-number">2.8.</span> <span class="nav-text">奇妙缩进</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出方式"><span class="nav-number">2.9.</span> <span class="nav-text">输出方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用for和end搭配组合达成"><span class="nav-number">2.9.1.</span> <span class="nav-text">使用for和end搭配组合达成</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用join来达成"><span class="nav-number">2.9.2.</span> <span class="nav-text">使用join来达成</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用sep轻松解决"><span class="nav-number">2.10.</span> <span class="nav-text">使用sep轻松解决</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
