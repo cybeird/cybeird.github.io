@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Sunsea的布劳格" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-loading-bar.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="这次我们来做二叉树的一波应用，顺便好好写写实验报告">
+<meta name="keywords" content="学习,数据结构,哈夫曼">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构实验课の解题报告-Week5">
+<meta property="og:url" content="cybeird.coding.me/cpp/how-i-learn-data-5.html">
+<meta property="og:site_name" content="Sunsea的布劳格">
+<meta property="og:description" content="这次我们来做二叉树的一波应用，顺便好好写写实验报告">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-28T03:32:36.584Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构实验课の解题报告-Week5">
+<meta name="twitter:description" content="这次我们来做二叉树的一波应用，顺便好好写写实验报告">
+  <link rel="canonical" href="cybeird.coding.me/cpp/how-i-learn-data-5">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>数据结构实验课の解题报告-Week5 | Sunsea的布劳格</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93021468-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-93021468-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sunsea的布劳格</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Better to Run Than Curse the Road</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-sitemap">
+      
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-posts">
+      
+    
+
+    <a href="/categories/Post" rel="section"><i class="fa fa-fw fa-pencil"></i>随笔</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-technology">
+      
+    
+
+    <a href="/categories/TECHNOLOGY" rel="section"><i class="fa fa-fw fa-laptop"></i>科技</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-report">
+      
+    
+
+    <a href="/categories/cpp" rel="section"><i class="fa fa-fw fa-question-circle"></i>解题报告</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+
+  <a href="https://github.com/cybeird/cybeird.github.io.old" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="cybeird.coding.me/cpp/how-i-learn-data-5.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunsea">
+      <meta itemprop="description" content="每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunsea的布劳格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">数据结构实验课の解题报告-Week5
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-28 10:20:19 / 修改时间：11:32:36" itemprop="dateCreated datePublished" datetime="2019-10-28T10:20:19+08:00">2019-10-28</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>11k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>10 分钟</span>
+            </span>
+          
+            <div class="post-description">这次我们来做二叉树的一波应用，顺便好好写写实验报告</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="开局设置"><a href="#开局设置" class="headerlink" title="开局设置"></a>开局设置</h4><ol>
+<li>运行VS，建立对话框工程，工程名为<code>HFMTREE</code></li>
+<li>删除窗体上的提示、<code>确定</code>按钮；将<code>取消</code>按钮的标题改为<code>退出</code>；</li>
+<li>更改窗体字体字号，选择<code>宋体</code>，<code>小四号字</code>。</li>
+<li>对话框属性的标题<code>caption</code>改为<code>哈夫曼树编码译码</code></li>
+<li>在对话框窗体上放置三个按钮，属性分别设置为<br>|       ID            |         Caption    |<br>| —————— | ——————- |<br>| IDC_BUTTON_CREATE          |  生成哈夫曼树 |<br>| IDC_BUTTON_LOOK            |  查看哈夫曼编码 |<br>| IDC_BUTTON_CODING_DECODING |  编码译码 |</li>
+</ol>
+<h4 id="对应生成哈夫曼树按钮，插入新对话框"><a href="#对应生成哈夫曼树按钮，插入新对话框" class="headerlink" title="对应生成哈夫曼树按钮，插入新对话框"></a>对应<strong>生成哈夫曼树</strong>按钮，插入新对话框</h4><p>在新对话框中，实现输入数据，生成哈夫曼树，并显示静态三叉链表存储结构等功能。</p>
+<ol>
+<li>删除窗体上的提示、“确定”按钮；将“取消”按钮的标题改为“退出”；</li>
+<li>对话框属性设置<pre><code>ID               Caption           Font(Size)
+</code></pre>IDD_DLG_CREATE_TREE    生成哈夫曼树      宋体(16)</li>
+<li>新对话框添加类<br>   鼠标右键点击窗体非控件区域，点选“添加类”选项，在新页面“类名: ”栏输入类名称“DLG_TREE_CREATE”，按“确定”按钮</li>
+<li>在对话框窗体上添加控件<pre><code>放置一个“EditControl”、一个“Button”、一个“StaticText”、一个“ListControl”，属性分别设置为：
+</code></pre><ul>
+<li>EditControl属性设置<br>ID：<br>IDC_EDIT_VAL</li>
+<li>Button属性设置<br>|ID              |     Caption|<br>| ————- | ——– |<br>|IDC_BUTTON_CREATE    |       生成树|</li>
+<li>StaticText属性设置<br>Caption:<br>输入格式：字母权值，每组可用空格分隔或不分隔，如：a80C30 D40 B70|</li>
+<li>ListControl属性设置<br>|ID        |       Sort  |   View    |   Alignment|<br>| ——- | ——– | ———– | ———- |<br>|IDC_LIST_CREATE_TREE  |  None   |  Report   |    Top|</li>
+</ul>
+</li>
+<li>控件绑定变量<br>打开MFC类向导<br>| 控件ID | 类型 | 成员 |<br>| —— | —- | —- |<br>| IDC_EDIT_VAL | CEdit | mc_edit_val |<br>| IDE_LIST_CREATE_TREE | CListCtrl | mc_list_ctrl |</li>
+</ol>
+<h4 id="对应查看哈夫曼编码按钮，插入新对话框"><a href="#对应查看哈夫曼编码按钮，插入新对话框" class="headerlink" title="对应查看哈夫曼编码按钮，插入新对话框"></a>对应<strong>查看哈夫曼编码</strong>按钮，插入新对话框</h4><p>在新对话框中，实现哈夫曼编码显示。</p>
+<ol>
+<li>删除窗体上的提示、“确定”按钮；将“取消”按钮的标题改为“退出”；</li>
+<li>对话框属性设置<br>|ID         |  Caption   | Font(Size) |<br>| ———— | ———– | ———- |<br>|IDD_DLG_LIST_CODE  | 哈夫曼编码 |  宋体(16) |</li>
+<li>新对话框添加类<br>鼠标右键点击窗体非控件区域，点选“添加类”选项，在新页面“类名: ”栏输入类名称“DLG_LIST_CODE”，按“确定”按钮</li>
+<li>在对话框窗体上添加控件<br>放置一个“ListControl”，属性设置为：<br>| ID |   Sort  |   View  |  Alignment |<br>| — | ——– | ——- | ——– |<br>| IDC_LIST_CODE |    None   |  Report   |    Top  |<br>控件绑定变量：<br>| 控件ID | 类型 | 成员 |<br>| —— | —- | —- |<br>| IDC_LIST_CODE | CListCtrl | mc_list |</li>
+</ol>
+<h4 id="对应“编码译码”按钮，插入新对话框"><a href="#对应“编码译码”按钮，插入新对话框" class="headerlink" title="对应“编码译码”按钮，插入新对话框"></a>对应“编码译码”按钮，插入新对话框</h4><p>在新对话框中，实现输入文本数据，发报：生成编码；输入编码数据，收报：生成报文。</p>
+<ol>
+<li>删除窗体上的提示、“确定”按钮；将“取消”按钮的标题改为“退出”；</li>
+<li>对话框属性设置<br>| ID |   Caption |   Font(Size) |<br>| —- | ——- | ——— |<br>| IDD_DLG_MOVE  | 发报、收报  | 宋体(16) |</li>
+<li>新对话框添加类<br>鼠标右键点击窗体非控件区域，点选“添加类”选项，在新页面“类名: ”栏输入类名称“DLG_MOVE”，按“确定”按钮</li>
+<li>在对话框窗体上添加控件<br>放置二个“EditControl”、二个“Button”、一个“StaticText”，属性分别设置为：<ul>
+<li>EditControl属性设置<br>ID ：<br>IDC_EDIT_TEXT<br>IDC_EDIT_CODE</li>
+<li>Button属性设置<br>| ID  |   Caption  |<br>| —- | ——– |<br>| IDC_BUTTON_OUT |   发报  |<br>| IDC_BUTTON_IN  |   收报  |</li>
+<li>StaticText属性设置<br>ID： IDC_STATIC_OUT</li>
+</ul>
+</li>
+<li>控件绑定变量<br>打开MFC类向导<br>| 控件ID | 类型 | 成员 |<br>| —— | —- | —- |<br>| IDC_EDIT_CODE | CString | m_code |<br>| IDC_EDIT_TEXT | CString | m_text |<br>| IDC_STATIC_OUT | CString | m_out |</li>
+</ol>
+<h4 id="添加C-新类NODE"><a href="#添加C-新类NODE" class="headerlink" title="添加C++新类NODE"></a>添加C++新类<code>NODE</code></h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//NODE.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NODE</span>		//静态三叉链表结点类型</span></span><br><span class="line"><span class="class">&#123;</span>	 </span><br><span class="line">	<span class="keyword">int</span>		val;	<span class="comment">//值</span></span><br><span class="line">	<span class="keyword">int</span>		lc, rc, f;		<span class="comment">//三个指针</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">SetVal</span><span class="params">(<span class="keyword">int</span> v)</span> </span>&#123;val = v; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">SetLCPtr</span><span class="params">(<span class="keyword">int</span> ptr)</span> </span>&#123; lc = ptr; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">SetRCPtr</span><span class="params">(<span class="keyword">int</span> ptr)</span> </span>&#123; rc = ptr; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">SetFPtr</span><span class="params">(<span class="keyword">int</span> ptr)</span> </span>&#123; f = ptr; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">GetVal</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> val; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">GetLCPtr</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> lc; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">GetRCPtr</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> rc; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">GetFPtr</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> f; &#125;</span><br><span class="line">NODE();</span><br><span class="line">~NODE();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="添加C-新类CODE-ELEM"><a href="#添加C-新类CODE-ELEM" class="headerlink" title="添加C++新类CODE_ELEM"></a>添加C++新类<code>CODE_ELEM</code></h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ODE_ELEM.H</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CODE_ELEM</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> ch;		<span class="comment">//对应字符</span></span><br><span class="line">	<span class="keyword">char</span> bm[<span class="number">30</span>];	<span class="comment">//哈夫曼编码</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">SetChar</span><span class="params">(<span class="keyword">char</span> s)</span> </span>&#123; ch = s; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">SetCode</span><span class="params">(<span class="keyword">const</span> CString &amp;s)</span> </span>&#123; strcpy_s(bm,s); &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">char</span> <span class="title">GetChar</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> ch; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">char</span> *<span class="title">GetCode</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> bm;&#125;</span><br><span class="line">	CODE_ELEM();</span><br><span class="line">	~CODE_ELEM();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="添加C-新类CHFM-TREE"><a href="#添加C-新类CHFM-TREE" class="headerlink" title="添加C++新类CHFM_TREE"></a>添加C++新类<code>CHFM_TREE</code></h4><h5 id="添加成员变量"><a href="#添加成员变量" class="headerlink" title="添加成员变量"></a>添加成员变量</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CHFM_TREE.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"NODE.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ODE_ELEM.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CHFM_TREE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	NODE *p_ht;		<span class="comment">//静态三叉链表数组指针</span></span><br><span class="line">	<span class="keyword">int</span>	  num;		<span class="comment">//权值个数</span></span><br><span class="line">  CODE_ELEM *p_bm;	<span class="comment">//字符及其编码数组指针</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  CHFM_TREE();</span><br><span class="line">  ~CHFM_TREE();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="添加成员函数"><a href="#添加成员函数" class="headerlink" title="添加成员函数"></a>添加成员函数</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"NODE.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ODE_ELEM.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CHFM_TREE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	NODE *p_ht;		<span class="comment">//静态三叉链表数组指针</span></span><br><span class="line">	<span class="keyword">int</span>	  num;		<span class="comment">//权值个数</span></span><br><span class="line">	CODE_ELEM *p_bm;	<span class="comment">//字符及其编码数组指针</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">xFree</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">TestTreeEmpty</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> p_ht == <span class="literal">NULL</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">MoveCode</span><span class="params">(CString str, CString &amp;sss)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">GetCharPostion</span><span class="params">(<span class="keyword">char</span> a)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">DispHfmCode</span><span class="params">(CListCtrl &amp;plist)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">SetHfmCode</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">CreateTree</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">DispTree</span><span class="params">(CListCtrl &amp;plist)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">MoveData</span><span class="params">(CString &amp;str)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">InitTree</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line">	CHFM_TREE();</span><br><span class="line">	~CHFM_TREE();</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<p>以下函数定义写在 .cpp文件中</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>释放分配的存储空间</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CHFM_TREE::xFree()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (p_ht)</span><br><span class="line">		<span class="keyword">delete</span> [] p_ht;	<span class="comment">//释放分配的数组空间</span></span><br><span class="line">	<span class="keyword">if</span> (p_bm)</span><br><span class="line">		<span class="keyword">delete</span> [] p_bm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按n个权值分配存储空间、并初始化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CHFM_TREE::InitTree(<span class="keyword">int</span> n)</span><br><span class="line">&#123;	num = n;</span><br><span class="line">	xFree();<span class="comment">//释放原有树空间</span></span><br><span class="line">	p_ht =<span class="keyword">new</span> NODE[<span class="number">2</span> * n - <span class="number">1</span>];<span class="comment">//按权值个数分配空间</span></span><br><span class="line">	p_bm =<span class="keyword">new</span> CODE_ELEM[num];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span> * n - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;<span class="comment">//双亲、子女指针域全设置为空</span></span><br><span class="line">		p_ht[i].SetLCPtr(<span class="number">-1</span>);</span><br><span class="line">		p_ht[i].SetRCPtr(<span class="number">-1</span>);</span><br><span class="line">		p_ht[i].SetFPtr(<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从串str中解析权值及名称(字母)，填入三叉链表和字母表中</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CHFM_TREE::MoveData(CString &amp;str)</span><br><span class="line">&#123;	<span class="keyword">int</span> i, cnt,n;</span><br><span class="line">	<span class="keyword">for</span> (i = n = <span class="number">0</span>, cnt = <span class="number">-1</span>; i &lt;= str.GetLength(); i++)</span><br><span class="line">	&#123;	<span class="keyword">if</span> (str.GetAt(i) &gt;= <span class="string">'0'</span> &amp;&amp; str.GetAt(i) &lt;= <span class="string">'9'</span>)</span><br><span class="line">			n = n * <span class="number">10</span> + str.GetAt(i) - <span class="string">'0'</span>;</span><br><span class="line">		<span class="keyword">if</span> (str.GetAt(i)==<span class="number">0</span> || <span class="built_in">isalpha</span>(str.GetAt(i))) <span class="comment">//是字母</span></span><br><span class="line">		&#123;	p_ht[cnt++].SetVal(n);  p_ht[cnt].SetVal(n=<span class="number">0</span>);</span><br><span class="line">			p_bm[cnt].SetChar(str.GetAt(i) | <span class="number">0x20</span>);</span><br><span class="line">				<span class="comment">//不管大、小写字母，一律转为小写字母</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建立哈夫曼树</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CHFM_TREE::CreateTree()</span><br><span class="line">&#123;	<span class="keyword">int</span>  i, j,max, min;</span><br><span class="line">	<span class="keyword">for</span> (i = num; i &lt; <span class="number">2</span> * num - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;   max = min = <span class="number">-1</span>;</span><br><span class="line">	    <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">	    &#123;   <span class="keyword">if</span> (p_ht[j].GetFPtr() &gt;= <span class="number">0</span>)   <span class="keyword">continue</span>;</span><br><span class="line">	        <span class="keyword">if</span> (min == <span class="number">-1</span> || p_ht[j].GetVal() &lt; p_ht[min].GetVal())</span><br><span class="line">	        &#123;   max = min;   min = j;   <span class="keyword">continue</span>;       &#125;</span><br><span class="line">	        <span class="keyword">if</span> (max==<span class="number">-1</span>||p_ht[j].GetVal()&lt;p_ht[max].GetVal()) max = j;</span><br><span class="line">        &#125;</span><br><span class="line">        p_ht[i].SetVal( p_ht[max].GetVal() + p_ht[min].GetVal());</span><br><span class="line">        p_ht[min].SetFPtr(i); p_ht[max].SetFPtr(i);</span><br><span class="line">        p_ht[i].SetLCPtr(min);</span><br><span class="line">        p_ht[i].SetRCPtr(max);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示静态三叉链表结构</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CHFM_TREE::CreateTree()</span><br><span class="line">&#123;	<span class="keyword">int</span>  i, j,max, min;</span><br><span class="line">	<span class="keyword">for</span> (i = num; i &lt; <span class="number">2</span> * num - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;   max = min = <span class="number">-1</span>;</span><br><span class="line">	    <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">	    &#123;   <span class="keyword">if</span> (p_ht[j].GetFPtr() &gt;= <span class="number">0</span>)   <span class="keyword">continue</span>;</span><br><span class="line">	        <span class="keyword">if</span> (min == <span class="number">-1</span> || p_ht[j].GetVal() &lt; p_ht[min].GetVal())</span><br><span class="line">	        &#123;   max = min;   min = j;   <span class="keyword">continue</span>;       &#125;</span><br><span class="line">	        <span class="keyword">if</span> (max==<span class="number">-1</span>||p_ht[j].GetVal()&lt;p_ht[max].GetVal()) max = j;</span><br><span class="line">        &#125;</span><br><span class="line">        p_ht[i].SetVal( p_ht[max].GetVal() + p_ht[min].GetVal());</span><br><span class="line">        p_ht[min].SetFPtr(i); p_ht[max].SetFPtr(i);</span><br><span class="line">        p_ht[i].SetLCPtr(min);</span><br><span class="line">        p_ht[i].SetRCPtr(max);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成各字母对应的哈夫曼编码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CHFM_TREE::SetHfmCode()</span><br><span class="line">&#123;<span class="comment">//生成各字母对应的编码</span></span><br><span class="line">	CString str;	<span class="keyword">int</span>	i, j;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; num; i++) <span class="comment">//num个叶结点，逐个生成编码</span></span><br><span class="line">	&#123;	str = <span class="string">""</span>;</span><br><span class="line">		<span class="keyword">for</span>(j=i; p_ht[j].GetFPtr()!= <span class="number">-1</span>; j=p_ht[j].GetFPtr())</span><br><span class="line"> 		&#123;<span class="comment">//j是根结点时，循环结束。j从叶结点开始</span></span><br><span class="line">		     <span class="keyword">if</span> (p_ht[p_ht[j].GetFPtr()].GetLCPtr() == j)</span><br><span class="line">			 str.Insert(<span class="number">0</span>, <span class="string">'0'</span>); <span class="comment">//若j是其父结点的左子女</span></span><br><span class="line">		     <span class="keyword">else</span></span><br><span class="line">			 str.Insert(<span class="number">0</span>, <span class="string">'1'</span>);<span class="comment">//j是其父结点的右子女</span></span><br><span class="line">		&#125;</span><br><span class="line">		p_bm[i].SetCode(str);	<span class="comment">//存到数组中</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示各字母对应的哈夫曼编码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CHFM_TREE::DispHfmCode(CListCtrl &amp;plist)</span><br><span class="line">&#123;	<span class="keyword">int</span> i;	CString str;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; num; i++)</span><br><span class="line">	&#123;	str = p_bm[i].GetChar();</span><br><span class="line">		plist.InsertItem(i, str);	<span class="comment">//输出字母</span></span><br><span class="line">		str.Format(<span class="string">"%d"</span>, p_ht[i].GetVal());</span><br><span class="line">		plist.SetItemText(i, <span class="number">1</span>, str);	<span class="comment">//输出权值</span></span><br><span class="line">		plist.SetItemText(i, <span class="number">2</span>, p_bm[i].GetCode());	<span class="comment">//输出字母对应的编码</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>得到字母在数组中的下标</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>	CHFM_TREE::GetCharPostion(<span class="keyword">char</span> a)</span><br><span class="line">&#123;<span class="comment">//返回-1时，该字母不在数组中</span></span><br><span class="line">	<span class="keyword">int</span> j;</span><br><span class="line">	<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; num; j++)<span class="comment">//在字母、编码数组中寻找匹配字母</span></span><br><span class="line">		<span class="keyword">if</span> ((a | <span class="number">0x20</span>) == p_bm[j].GetChar())	<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">if</span> (j == num)	j = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按报文生成编码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CHFM_TREE::MoveText(CString str, CString &amp;sss)</span><br><span class="line">&#123;	<span class="comment">//参数：str中是报文字母序列串，sss用于存放生成的编码</span></span><br><span class="line">	<span class="keyword">int</span> I;	sss = <span class="string">""</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; str.GetLength(); i++)<span class="comment">//逐个字母编码加到sss上</span></span><br><span class="line">		sss += p_bm[GetCharPostion(str.GetAt(i))].GetCode();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按编码译成报文</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> CHFM_TREE::MoveCode(CString str, CString &amp;sss)</span><br><span class="line">&#123;<span class="comment">//参数：str中是编码串，sss用于存按编码译出的报文字母序列</span></span><br><span class="line">	<span class="keyword">bool</span>	  val = <span class="literal">true</span>;	<span class="keyword">int</span>	i,n;	sss = <span class="string">""</span>;</span><br><span class="line">	<span class="keyword">for</span> (n = <span class="number">0</span>; n &lt; str.GetLength();)</span><br><span class="line">	&#123;   <span class="keyword">for</span> (i = <span class="number">2</span> * num - <span class="number">2</span>; n &lt; str.GetLength() &amp;&amp;  </span><br><span class="line">           p_ht[i].GetLCPtr()!= <span class="number">-1</span>; n++) <span class="comment">//从根结点开始寻找编码匹配的叶结点</span></span><br><span class="line">	      <span class="keyword">if</span> (str.GetAt(n) == <span class="string">'0'</span>)	i = p_ht[i].GetLCPtr();</span><br><span class="line">		  <span class="keyword">else</span>   i = p_ht[i].GetRCPtr();</span><br><span class="line"></span><br><span class="line">  	    <span class="keyword">if</span> (p_ht[i].GetLCPtr() == <span class="number">-1</span>)</span><br><span class="line">		  sss += p_bm[i].GetChar();	<span class="comment">//找到, 对应字母加到sss</span></span><br><span class="line">       <span class="keyword">else</span> 	<span class="comment">//串结束，但不在叶结点,译码失败</span></span><br><span class="line">	    &#123;   val = <span class="literal">false</span>;   <span class="keyword">break</span>;  &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数和析构函数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CHFM_TREE::CHFM_TREE()</span><br><span class="line">&#123;</span><br><span class="line">	p_ht = <span class="literal">NULL</span>;	<span class="comment">//静态三叉链表数组指针置空</span></span><br><span class="line">	p_bm = <span class="literal">NULL</span>;	<span class="comment">//字母及其哈夫曼编码数组指针置空</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">CHFM_TREE::~CHFM_TREE()</span><br><span class="line">&#123;</span><br><span class="line">	xFree();		<span class="comment">//释放分配的存储空间</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="对话框类“DLG-TREE-CREATE”添加成员和消息映射"><a href="#对话框类“DLG-TREE-CREATE”添加成员和消息映射" class="headerlink" title="对话框类“DLG_TREE_CREATE”添加成员和消息映射"></a>对话框类“DLG_TREE_CREATE”添加成员和消息映射</h4><h5 id="添加成员变量-1"><a href="#添加成员变量-1" class="headerlink" title="添加成员变量"></a>添加成员变量</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  	CHFM_TREE* p_hfm;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用了类CHFM_TREE，需要声明。添加 <code>#include &quot;CHFM_TREE.h&quot;</code></p>
+</blockquote>
+<h5 id="添加成员函数，访问权限private"><a href="#添加成员函数，访问权限private" class="headerlink" title="添加成员函数，访问权限private"></a>添加成员函数，访问权限<code>private</code></h5><ul>
+<li><p>列表控件初始化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> DLG_TREE_CREATE::InitTbl()</span><br><span class="line">&#123;<span class="comment">//设置5列</span></span><br><span class="line">	mc_list_ctrl.InsertColumn(<span class="number">0</span>, <span class="string">"序号"</span>, LVCFMT_RIGHT, <span class="number">60</span>, <span class="number">-1</span>);</span><br><span class="line">	mc_list_ctrl.InsertColumn(<span class="number">1</span>, <span class="string">"权值"</span>, LVCFMT_RIGHT, <span class="number">80</span>, <span class="number">-1</span>);</span><br><span class="line">	mc_list_ctrl.InsertColumn(<span class="number">2</span>, <span class="string">"左子女"</span>, LVCFMT_RIGHT, <span class="number">60</span>, <span class="number">-1</span>);</span><br><span class="line">	mc_list_ctrl.InsertColumn(<span class="number">3</span>, <span class="string">"右子女"</span>, LVCFMT_RIGHT, <span class="number">60</span>, <span class="number">-1</span>);</span><br><span class="line">	mc_list_ctrl.InsertColumn(<span class="number">4</span>, <span class="string">"双亲"</span>, LVCFMT_RIGHT, <span class="number">60</span>, <span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输入数据合法性检测并得到权值个数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> DLG_TREE_CREATE::TestVal(CString &amp;str)</span><br><span class="line">&#123;<span class="comment">//返回0时非法，否则合法，且为权值个数</span></span><br><span class="line">	<span class="keyword">int</span>	val = <span class="number">0</span>, m, n;		n = str.GetLength();</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">0</span> || <span class="built_in">isalpha</span>(str.GetAt(<span class="number">0</span>)) == <span class="number">0</span>)	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;	<span class="keyword">if</span> ((str.GetAt(i) &gt;= <span class="string">'0'</span> &amp;&amp; str.GetAt(i) &lt;= <span class="string">'9'</span>) || str.GetAt(i) == <span class="number">0x20</span>)</span><br><span class="line">		    <span class="keyword">continue</span>;		<span class="comment">//数字或空格合法</span></span><br><span class="line">		m = str.GetAt(i) &amp; <span class="number">0x5f</span>;</span><br><span class="line">		<span class="keyword">if</span> (m&gt;=<span class="string">'A'</span>&amp;&amp;m&lt;=<span class="string">'Z'</span>&amp;&amp; i&lt;n<span class="number">-1</span> &amp;&amp;str.GetAt(i+<span class="number">1</span>)&gt;= <span class="string">'0'</span>&amp;&amp;str.GetAt(i+<span class="number">1</span>) &lt;= <span class="string">'9'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			val++;</span><br><span class="line">			<span class="keyword">continue</span>;<span class="comment">//字母后面必须是数字，合法</span></span><br><span class="line">		&#125;</span><br><span class="line">		val = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="添加消息映射函数"><a href="#添加消息映射函数" class="headerlink" title="添加消息映射函数"></a>添加消息映射函数</h5><ul>
+<li><p>对话框初始化函数，通过消息盒子添加</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">BOOL DLG_TREE_CREATE::OnInitDialog()</span><br><span class="line">&#123;</span><br><span class="line">	CDialogEx::OnInitDialog();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// <span class="doctag">TODO:</span>  在此添加额外的初始化</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;InitTbl();	<span class="comment">//列表控件初始化</span></span><br><span class="line">	<span class="keyword">return</span> TRUE;</span><br><span class="line">          <span class="comment">//return TRUE unless you set the focus to a control</span></span><br><span class="line">			  <span class="comment">// 异常: OCX 属性页应返回 FALSE</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>“生成树”按钮响应函数，通过类向导或双击按钮添加</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> DLG_TREE_CREATE::OnBnClickedButtonCreate()</span><br><span class="line">&#123;	<span class="comment">// <span class="doctag">TODO:</span> 在此添加控件通知处理程序代码</span></span><br><span class="line">	<span class="keyword">int</span> n;	CString str;</span><br><span class="line">	mc_edit_val.GetWindowText(str);	<span class="comment">//编辑控件内容串，送到str</span></span><br><span class="line">	<span class="keyword">if</span> ((n = TestVal(str))&gt;=<span class="number">5</span>)<span class="comment">//检测数据合法性，并得到权值个数</span></span><br><span class="line">	&#123;	p_hfm-&gt;InitTree(n);<span class="comment">//按n个权值分配静态三叉链表空间并初始化</span></span><br><span class="line">		p_hfm-&gt;MoveData(str);		<span class="comment">//接收权值及名称(字母)</span></span><br><span class="line">		p_hfm-&gt;CreateTree();		<span class="comment">//建立哈夫曼树</span></span><br><span class="line">		p_hfm-&gt;SetHfmCode();		<span class="comment">//生成各字母对应的编码</span></span><br><span class="line">		p_hfm-&gt;DispTree(mc_list_ctrl);<span class="comment">//显示哈夫曼树存储结构</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;MessageBox(<span class="string">"输入数据非法或权值少于5个!!!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="对话框类“DLG-LIST-CODE”添加成员和消息映射"><a href="#对话框类“DLG-LIST-CODE”添加成员和消息映射" class="headerlink" title="对话框类“DLG_LIST_CODE”添加成员和消息映射"></a>对话框类“DLG_LIST_CODE”添加成员和消息映射</h4><h5 id="添加成员变量-2"><a href="#添加成员变量-2" class="headerlink" title="添加成员变量"></a>添加成员变量</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  	CHFM_TREE* p_hfm;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用了类CHFM_TREE，需要声明。添加 #include “CHFM_TREE.h”</p>
+</blockquote>
+<h5 id="添加成员函数，访问权限private-1"><a href="#添加成员函数，访问权限private-1" class="headerlink" title="添加成员函数，访问权限private"></a>添加成员函数，访问权限private</h5><ul>
+<li><p>列表控件初始化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> DLG_LIST_CODE::InitTbl()</span><br><span class="line">&#123;<span class="comment">//设置3列</span></span><br><span class="line">	mc_list.InsertColumn(<span class="number">0</span>, <span class="string">"字符"</span>, LVCFMT_RIGHT, <span class="number">60</span>, <span class="number">-1</span>);</span><br><span class="line">	mc_list.InsertColumn(<span class="number">1</span>, <span class="string">"权值"</span>, LVCFMT_RIGHT, <span class="number">80</span>, <span class="number">-1</span>);</span><br><span class="line">	mc_list.InsertColumn(<span class="number">2</span>, <span class="string">"编码"</span>, LVCFMT_RIGHT, <span class="number">260</span>, <span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输入数据合法性检测并得到权值个数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> DLG_TREE_CREATE::TestVal(CString &amp;str)</span><br><span class="line">&#123;<span class="comment">//返回0时非法，否则合法，且为权值个数</span></span><br><span class="line">	<span class="keyword">int</span>	val = <span class="number">0</span>, m, n;		n = str.GetLength();</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">0</span> || <span class="built_in">isalpha</span>(str.GetAt(<span class="number">0</span>)) == <span class="number">0</span>)	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;	<span class="keyword">if</span> ((str.GetAt(i) &gt;= <span class="string">'0'</span> &amp;&amp; str.GetAt(i) &lt;= <span class="string">'9'</span>) || str.GetAt(i) == <span class="number">0x20</span>)</span><br><span class="line">		    <span class="keyword">continue</span>;		<span class="comment">//数字或空格合法</span></span><br><span class="line">		m = str.GetAt(i) &amp; <span class="number">0x5f</span>;</span><br><span class="line">		<span class="keyword">if</span> (m&gt;=<span class="string">'A'</span>&amp;&amp;m&lt;=<span class="string">'Z'</span>&amp;&amp; i&lt;n<span class="number">-1</span> &amp;&amp;str.GetAt(i+<span class="number">1</span>)&gt;= <span class="string">'0'</span>&amp;&amp;str.GetAt(i+<span class="number">1</span>) &lt;= <span class="string">'9'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			val++;</span><br><span class="line">			<span class="keyword">continue</span>;<span class="comment">//字母后面必须是数字，合法</span></span><br><span class="line">		&#125;</span><br><span class="line">		val = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="添加消息映射函数-1"><a href="#添加消息映射函数-1" class="headerlink" title="添加消息映射函数"></a>添加消息映射函数</h5><ul>
+<li>对话框初始化函数，通过消息盒子添加<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">BOOL DLG_LIST_CODE::OnInitDialog()</span><br><span class="line">&#123;</span><br><span class="line">	CDialogEx::OnInitDialog();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// <span class="doctag">TODO:</span>  在此添加额外的初始化</span></span><br><span class="line">	InitTbl();<span class="comment">//列表控件初始化</span></span><br><span class="line">	p_hfm-&gt;DispHfmCode(mc_list);<span class="comment">//显示字母、权值、编码return TRUE;</span></span><br><span class="line">          <span class="comment">//return TRUE unless you set the focus to a control</span></span><br><span class="line">			  <span class="comment">// 异常: OCX 属性页应返回 FALSE</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="对话框类“DLG-MOVE”添加成员和消息映射"><a href="#对话框类“DLG-MOVE”添加成员和消息映射" class="headerlink" title="对话框类“DLG_MOVE”添加成员和消息映射"></a>对话框类“DLG_MOVE”添加成员和消息映射</h4><h5 id="添加成员变量-3"><a href="#添加成员变量-3" class="headerlink" title="添加成员变量"></a>添加成员变量</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">private</span>:</span><br><span class="line">   	CHFM_TREE* p_hfm;</span><br><span class="line">```    </span><br><span class="line">&gt; 使用了类CHFM_TREE，需要声明。添加 <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"CHFM_TREE.h“</span></span></span><br><span class="line"><span class="meta"><span class="meta-string"></span></span></span><br><span class="line"><span class="meta"><span class="meta-string">##### 添加消息映射函数</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">* “发报”按钮响应函数，通过类向导或双击按钮添加</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">```cpp</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">void DLG_MOVE::OnBnClickedButtonOut()</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">&#123;	// TODO: 在此添加控件通知处理程序代码</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">	CString s, sss;</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">	mc_edit.GetWindowTextA(s);</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">	p_hfm-&gt;MoveText(s, sss); //按报文生成编码</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">	mc_code.SetWindowTextA(sss);</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">&#125;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>“收报”按钮响应函数，通过类向导或双击按钮添加</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> DLG_MOVE::OnBnClickedButtonIn()</span><br><span class="line">&#123;	<span class="comment">// <span class="doctag">TODO:</span> 在此添加控件通知处理程序代码</span></span><br><span class="line">	CString s,sss;</span><br><span class="line">	mc_code.GetWindowTextA(s);</span><br><span class="line">	<span class="keyword">if</span> (p_hfm-&gt;MoveCode(s, sss))<span class="comment">//按编码译成报文</span></span><br><span class="line">		mc_out.SetWindowTextA(sss);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;MessageBox(<span class="string">"编码错"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>消息过滤响应函数，通过消息盒子添加</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">BOOL DLG_MOVE::PreTranslateMessage(MSG* pMsg)</span><br><span class="line">&#123;<span class="comment">// <span class="doctag">TODO:</span> 在此添加专用代码和/或调用基类</span></span><br><span class="line">	CString str;</span><br><span class="line">	<span class="keyword">if</span> (pMsg-&gt;message == WM_KEYDOWN &amp;&amp; pMsg-&gt;wParam == VK_RETURN)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;	<span class="comment">//屏蔽“Enter”键按下消息，不处理</span></span><br><span class="line">	<span class="keyword">if</span> (pMsg-&gt;message == WM_CHAR)</span><br><span class="line">	&#123;	<span class="keyword">char</span> num = (TCHAR)pMsg-&gt;wParam;</span><br><span class="line">		<span class="keyword">if</span> (pMsg-&gt;hwnd ==mc_edit.m_hWnd &amp;&amp;</span><br><span class="line">            !(p_hfm-&gt;GetCharPostion(num)&gt;=<span class="number">0</span> || num == VK_BACK))</span><br><span class="line">		   <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span> (pMsg-&gt;hwnd == mc_code.m_hWnd &amp;&amp;</span><br><span class="line">           !(num == <span class="string">'0'</span> || num == <span class="string">'1'</span> || num == VK_BACK))</span><br><span class="line">		  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> CDialogEx::PreTranslateMessage(pMsg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="主对话框类“ChfmtreeDlg”添加成员和消息映射"><a href="#主对话框类“ChfmtreeDlg”添加成员和消息映射" class="headerlink" title="主对话框类“ChfmtreeDlg”添加成员和消息映射"></a>主对话框类“ChfmtreeDlg”添加成员和消息映射</h4><h5 id="添加成员变量-4"><a href="#添加成员变量-4" class="headerlink" title="添加成员变量"></a>添加成员变量</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">private</span>:</span><br><span class="line">	CHFM_TREE m_hfm;</span><br><span class="line">```    </span><br><span class="line">&gt; 使用了类CHFM_TREE，需要声明。添加 <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"CHFM_TREE.h“</span></span></span><br><span class="line"><span class="meta"><span class="meta-string"></span></span></span><br><span class="line"><span class="meta"><span class="meta-string">##### 添加消息映射函数</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">* “生成哈夫曼树”按钮响应函数，通过类向导或双击按钮添加</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">```cpp</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">void ChfmtreeDlg::OnBnClickedButtonCreate()</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">&#123;// TODO: 在此添加控件通知处理程序代码</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">	DLG_TREE_CREATE a;</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">	a.SetTreePtr(&amp;m_hfm);</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">	a.DoModal();</span></span></span><br><span class="line"><span class="meta"><span class="meta-string">&#125;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>“查看哈夫曼编码”按钮响应函数，通过类向导或双击按钮添加</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> ChfmtreeDlg::OnBnClickedButtonLook()</span><br><span class="line">&#123;	<span class="comment">// <span class="doctag">TODO:</span> 在此添加控件通知处理程序代码</span></span><br><span class="line">	<span class="keyword">if</span> (m_hfm.TestTreeEmpty())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;MessageBox(<span class="string">"还没有建立哈夫曼树"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	DLG_LIST_CODE a;</span><br><span class="line">	a.SetTreePtr(&amp;m_hfm);</span><br><span class="line">	a.DoModal();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>“编码、译码”按钮响应函数，通过类向导或双击按钮添加</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> ChfmtreeDlg::OnBnClickedButtonCodingDecoding()</span><br><span class="line">&#123;	<span class="comment">// <span class="doctag">TODO:</span> 在此添加控件通知处理程序代码</span></span><br><span class="line">	<span class="keyword">if</span> (m_hfm.TestTreeEmpty())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;MessageBox(<span class="string">"还没有建立哈夫曼树"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	DLG_MOVE a;</span><br><span class="line">	a.SetTreePtr(&amp;m_hfm);</span><br><span class="line">	a.DoModal();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>需要添加声明：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"DLG_TREE_CREATE.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"DLG_LIST_CODE.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"DLG_MOVE.h"</span></span></span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/学习/" rel="tag"># 学习</a>
+            
+              <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+            
+              <a href="/tags/哈夫曼/" rel="tag"># 哈夫曼</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/cpp/how-i-learn-python-2.html" rel="next" title="从头开始的Python(y)切片操作">
+                  <i class="fa fa-chevron-left"></i> 从头开始的Python(y)切片操作
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#开局设置"><span class="nav-number">1.</span> <span class="nav-text">开局设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对应生成哈夫曼树按钮，插入新对话框"><span class="nav-number">2.</span> <span class="nav-text">对应生成哈夫曼树按钮，插入新对话框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对应查看哈夫曼编码按钮，插入新对话框"><span class="nav-number">3.</span> <span class="nav-text">对应查看哈夫曼编码按钮，插入新对话框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对应“编码译码”按钮，插入新对话框"><span class="nav-number">4.</span> <span class="nav-text">对应“编码译码”按钮，插入新对话框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加C-新类NODE"><span class="nav-number">5.</span> <span class="nav-text">添加C++新类NODE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加C-新类CODE-ELEM"><span class="nav-number">6.</span> <span class="nav-text">添加C++新类CODE_ELEM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加C-新类CHFM-TREE"><span class="nav-number">7.</span> <span class="nav-text">添加C++新类CHFM_TREE</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加成员变量"><span class="nav-number">7.1.</span> <span class="nav-text">添加成员变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加成员函数"><span class="nav-number">7.2.</span> <span class="nav-text">添加成员函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对话框类“DLG-TREE-CREATE”添加成员和消息映射"><span class="nav-number">8.</span> <span class="nav-text">对话框类“DLG_TREE_CREATE”添加成员和消息映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加成员变量-1"><span class="nav-number">8.1.</span> <span class="nav-text">添加成员变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加成员函数，访问权限private"><span class="nav-number">8.2.</span> <span class="nav-text">添加成员函数，访问权限private</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加消息映射函数"><span class="nav-number">8.3.</span> <span class="nav-text">添加消息映射函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对话框类“DLG-LIST-CODE”添加成员和消息映射"><span class="nav-number">9.</span> <span class="nav-text">对话框类“DLG_LIST_CODE”添加成员和消息映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加成员变量-2"><span class="nav-number">9.1.</span> <span class="nav-text">添加成员变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加成员函数，访问权限private-1"><span class="nav-number">9.2.</span> <span class="nav-text">添加成员函数，访问权限private</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加消息映射函数-1"><span class="nav-number">9.3.</span> <span class="nav-text">添加消息映射函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对话框类“DLG-MOVE”添加成员和消息映射"><span class="nav-number">10.</span> <span class="nav-text">对话框类“DLG_MOVE”添加成员和消息映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加成员变量-3"><span class="nav-number">10.1.</span> <span class="nav-text">添加成员变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主对话框类“ChfmtreeDlg”添加成员和消息映射"><span class="nav-number">11.</span> <span class="nav-text">主对话框类“ChfmtreeDlg”添加成员和消息映射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#添加成员变量-4"><span class="nav-number">11.1.</span> <span class="nav-text">添加成员变量</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Sunsea">
+  <p class="site-author-name" itemprop="name">Sunsea</p>
+  <div class="site-description" itemprop="description">每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/cybeird" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;cybeird" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/5923141742" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5923141742" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.facebook.com/profile.php?id=100006449520737" title="FB Page &amp;rarr; https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id=100006449520737" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://steamcommunity.com/id/birdisgrea" title="steam &amp;rarr; http:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;birdisgrea" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>steam</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.zhihu.com/people/blrd" title="知乎 &amp;rarr; http:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;blrd" rel="noopener" target="_blank"><i class="fa fa-fw fa-ra"></i>知乎</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Something Magical
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://muzhou.tech/" title="http:&#x2F;&#x2F;muzhou.tech" rel="noopener" target="_blank">MuZhou</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://47.94.228.167/kodexplorer/index.php" title="http:&#x2F;&#x2F;47.94.228.167&#x2F;kodexplorer&#x2F;index.php" rel="noopener" target="_blank">My Kodexplorer</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不能吃圣代啊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">193k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:55</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script><script src="/js/bookmark.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '76b54e9c106d9c2f6bc1',
+      clientSecret: '083edc379bee67139cff488492bf9c522212564f',
+      repo: 'blog-comments',
+      owner: 'Cybeird',
+      admin: ['Cybeird'],
+      id: '55c9a1ce0dec67c580d906f25ecdb46a',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+</body>
+</html>
