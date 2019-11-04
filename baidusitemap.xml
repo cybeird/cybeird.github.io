@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>cybeird.coding.me/cpp/how-i-learn-python-3.html</loc>
+    <lastmod>2019-11-04</lastmod>
+  </url>  <url>
+    <loc>cybeird.coding.me/cpp/how-i-learn-data-3.html</loc>
+    <lastmod>2019-10-29</lastmod>
+  </url>  <url>
     <loc>cybeird.coding.me/cpp/how-i-learn-data-5.html</loc>
     <lastmod>2019-10-28</lastmod>
   </url>  <url>
@@ -119,9 +125,6 @@
     <lastmod>2019-10-17</lastmod>
   </url>  <url>
     <loc>cybeird.coding.me/cpp/how-i-learn-data-4.html</loc>
-    <lastmod>2019-10-17</lastmod>
-  </url>  <url>
-    <loc>cybeird.coding.me/cpp/how-i-learn-data-3.html</loc>
     <lastmod>2019-10-17</lastmod>
   </url>  <url>
     <loc>cybeird.coding.me/cpp/how-i-learn-data-2.html</loc>

@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>从头开始的Python(x)好好读数</title>
+    <url>/cpp/how-i-learn-python-3.html</url>
+    <content><![CDATA[<p>很多时候题目的内容很简单，但是数据给的方式很讨厌，以至于我们在做题的时候将大部分的代码力都耗费在了写数据读入上面。不过有的时候不是出题人的错，也不是数据的错</p>
+<h4 id="案例回放"><a href="#案例回放" class="headerlink" title="案例回放"></a>案例回放</h4><p>不久前的一天下午，我打开了<code>Python123</code>，开始水题。然后看到了这道水题</p>
+<blockquote>
+<p>在有序(正序)列表中添加一个元素，使列表仍保持有序。（列表中的元素为数值型数据）</p>
+</blockquote>
+<p>题目确实是很水的，但是当我看到数据的时候</p>
+<blockquote>
+<p>输入<br>[2,5,9,12]‪‬<br>7‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬<br>输出‬‪‬‮‬<br>[2, 5, 7, 9, 12]</p>
+</blockquote>
+<p>这就很难受了呀，因为我是这么写的<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">aList = eval(list(input()))</span><br></pre></td></tr></table></figure></p>
+<p>但是实际上直接<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">aList = eval(input())</span><br></pre></td></tr></table></figure></p>
+<p>就可以了，我当时还在研究这怎么切片来着（几乎切不了）</p>
+]]></content>
+      <categories>
+        <category>cpp</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构实验课の解题报告-Week5</title>
     <url>/cpp/how-i-learn-data-5.html</url>
     <content><![CDATA[<h4 id="开局设置"><a href="#开局设置" class="headerlink" title="开局设置"></a>开局设置</h4><ol>
@@ -621,7 +644,7 @@
 <ul>
 <li>类<code>TBL</code>添加成员函数<code>DeleteElem</code> ，属性<code>public</code></li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">bool</span> <span class="keyword">bool</span> TBL::DeleteElem(<span class="keyword">int</span> pos)</span><br><span class="line">&#123; <span class="comment">//参  数：pos为删除位置（从1开始）</span></span><br><span class="line">  <span class="comment">//返回值：true插入成功，否则失败</span></span><br><span class="line">	<span class="keyword">bool</span> val=<span class="literal">false</span>;	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">if</span>(pos&lt;=cnt &amp;&amp; pos&gt;<span class="number">0</span>)</span><br><span class="line">	&#123;	val=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=pos<span class="number">-1</span>;i&lt;cnt<span class="number">-1</span>;i++) </span><br><span class="line">			e[i]=e[i+<span class="number">1</span>]; 	<span class="comment">//向前移动元素</span></span><br><span class="line">		cnt--;			<span class="comment">//表中元素-1</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">bool</span> TBL::DeleteElem(<span class="keyword">int</span> pos)</span><br><span class="line">&#123; <span class="comment">//参  数：pos为删除位置（从1开始）</span></span><br><span class="line">  <span class="comment">//返回值：true插入成功，否则失败</span></span><br><span class="line">	<span class="keyword">bool</span> val=<span class="literal">false</span>;	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">if</span>(pos&lt;=cnt &amp;&amp; pos&gt;<span class="number">0</span>)</span><br><span class="line">	&#123;	val=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=pos<span class="number">-1</span>;i&lt;cnt<span class="number">-1</span>;i++) </span><br><span class="line">			e[i]=e[i+<span class="number">1</span>]; 	<span class="comment">//向前移动元素</span></span><br><span class="line">		cnt--;			<span class="comment">//表中元素-1</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>表中元素输出到列表框<code>DispTbl</code> 类<code>TBL</code>添加成员函数<code>DispTbl</code>，属性<code>public</code></li>
 </ul>
