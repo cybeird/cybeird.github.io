@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>如何更好的抄代码</title>
+    <url>/Post/a-better-way-to-copy-code.html</url>
+    <content><![CDATA[<p>未完待续</p>
+]]></content>
+      <categories>
+        <category>Post</category>
+      </categories>
+      <tags>
+        <tag>代码美化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构实验课の解题报告-Week6</title>
+    <url>/cpp/how-i-learn-data-6.html</url>
+    <content><![CDATA[<p>#### </p>
+]]></content>
+      <categories>
+        <category>cpp</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C艹实验课の解题报告-Week2</title>
     <url>/cpp/how-i-learn-c-3.html</url>
     <content><![CDATA[<h3 id="实验10-运算符重载"><a href="#实验10-运算符重载" class="headerlink" title="实验10 运算符重载"></a>实验10 运算符重载</h3><h4 id="实验-10-0"><a href="#实验-10-0" class="headerlink" title="实验 10.0"></a>实验 10.0</h4><p>定义一个复数类Complex，重载运算符”+”，使其能够用于复数之间的加减法运算。</p>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="cybeird.coding.me/"/>
-  <updated>2019-11-05T09:49:26.342Z</updated>
+  <updated>2019-11-11T03:03:46.549Z</updated>
   <id>cybeird.coding.me/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何更好的抄代码</title>
+    <link href="cybeird.coding.me/Post/a-better-way-to-copy-code.html"/>
+    <id>cybeird.coding.me/Post/a-better-way-to-copy-code.html</id>
+    <published>2019-11-11T02:59:54.000Z</published>
+    <updated>2019-11-11T03:03:46.549Z</updated>
+    
+    <content type="html"><![CDATA[<p>未完待续</p>]]></content>
+    
+    <summary type="html">
+    
+      有的时候网上抄来的代码观感很差，或者与我们平时写代码的风格完全不符，因而有强迫症的我们会花大把时间去该缩进就很烦，那么为什么不写个能帮你美化代码的程序一劳永逸呢
+    
+    </summary>
+    
+      <category term="Post" scheme="cybeird.coding.me/categories/Post/"/>
+    
+    
+      <category term="代码美化" scheme="cybeird.coding.me/tags/%E4%BB%A3%E7%A0%81%E7%BE%8E%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构实验课の解题报告-Week6</title>
+    <link href="cybeird.coding.me/cpp/how-i-learn-data-6.html"/>
+    <id>cybeird.coding.me/cpp/how-i-learn-data-6.html</id>
+    <published>2019-11-06T02:17:00.000Z</published>
+    <updated>2019-11-06T02:20:02.642Z</updated>
+    
+    <content type="html"><![CDATA[<p>#### </p>]]></content>
+    
+    <summary type="html">
+    
+      开始了新的旅程，没错这玩意终于要结课了，终于可以选择摆脱可视化的苦海了（实际上我鸽了一期，不过我不说的话应该也没人知道）
+    
+    </summary>
+    
+      <category term="cpp" scheme="cybeird.coding.me/categories/cpp/"/>
+    
+    
+      <category term="数据结构" scheme="cybeird.coding.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>C艹实验课の解题报告-Week2</title>
@@ -453,50 +497,6 @@
       <category term="学习" scheme="cybeird.coding.me/tags/%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="c++" scheme="cybeird.coding.me/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>过往</title>
-    <link href="cybeird.coding.me/Post/lost-thing.html"/>
-    <id>cybeird.coding.me/Post/lost-thing.html</id>
-    <published>2019-09-11T10:50:09.000Z</published>
-    <updated>2019-10-17T08:38:53.448Z</updated>
-    
-    <content type="html"><![CDATA[<p>我记得那大概是五六年级的事情吧，那个时候我还是需要乘坐公交车上下学来着，只记得每天放学回家的路程十分漫长。一开始这根本就是折磨，不过后来我也找到了属于自己的快乐。</p><p>那就是用一个很小很小的手机看小说，那个手机是真的很弱，什么都干不了只能打电话，发短信和浏览器，不过那几乎是我一天的快乐了×，×（我甚至还能记起来小说名字是叫超级学生啥的）</p><p>每次我上公交车基本都是以最快的速度占据最后边最右的靠窗位置，但是！</p><p>有一次我正在好好的坐着然后好好的看小说，然后来了三个大妈就把我围住了、</p><p>​    位置大概是这样</p><p>​    大妈 大妈 窗户</p><p>​    大妈 我。 窗户</p><p>当时大概是因为我没打招呼吧，反正三个大妈就一直在说什么现在的年轻人啊怎么怎么不理人啊，看手机啊，以后肯定成不了大气啊，往后必然是没有前途的啊</p><p>然后我当时的想法很神奇，我当时直接就觉得这几个老人属于无法正常交流的类型，然后我基本全程一言不发（然后默默的把小说换成了数学知识点，我甚至还能记起来是三角什么的）</p><p>现在我想了想觉得我当年的想法很正确，因为有的人和你不在一个世界的话是确实没办法正常交流的，很多时候你遇见这种人认真你就输了。你永远也说服不了他，而他亦是如此，那有何必浪费时间呢。</p><p><-- 因为不了解贫苦认证流程就被叫做有钱人的我感觉这可真蠢 --!></--></p>]]></content>
-    
-    <summary type="html">
-    
-      想起来了很小很小时候的玄奇经历
-    
-    </summary>
-    
-      <category term="Post" scheme="cybeird.coding.me/categories/Post/"/>
-    
-    
-      <category term="life" scheme="cybeird.coding.me/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>看似普通的室友中混入了奇怪的东西</title>
-    <link href="cybeird.coding.me/Post/a-newbie-of-my-roommates.html"/>
-    <id>cybeird.coding.me/Post/a-newbie-of-my-roommates.html</id>
-    <published>2019-09-06T05:58:01.000Z</published>
-    <updated>2019-10-17T08:38:48.974Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="信息竞赛及相关"><a href="#信息竞赛及相关" class="headerlink" title="信息竞赛及相关"></a>信息竞赛及相关</h3><p>讲道理，即便是到现在我也没有开始感受到信息竞赛的用武之地（除了上课不听课裸考拿满分之外），虽然<code>acm</code>失利，但是也并未因此提起我的斗志，这就很难受，教科书实在是太没有挑战性了</p><h3 id="奇葩及相关"><a href="#奇葩及相关" class="headerlink" title="奇葩及相关"></a>奇葩及相关</h3><p>说到这个，我也想起来了我年轻的时候也大概是这个样子吧。</p><p>八说辣，一个只会玩王者荣耀的井底之蛙而已，我的时间还没充裕到这种程度</p>]]></content>
-    
-    <summary type="html">
-    
-      这个学期基本和上个学期没啥区别，除了某两门剩下的依旧全是水。
-    
-    </summary>
-    
-      <category term="Post" scheme="cybeird.coding.me/categories/Post/"/>
-    
-    
-      <category term="Daily Life" scheme="cybeird.coding.me/tags/Daily-Life/"/>
     
   </entry>
   
