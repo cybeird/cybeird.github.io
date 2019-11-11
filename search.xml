@@ -427,6 +427,7 @@
 <h4 id="安装xampp"><a href="#安装xampp" class="headerlink" title="安装xampp"></a>安装<code>xampp</code></h4><p>直接使用安装命令即可</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo ./xampp-linux-x64-7.3.10-0-installer.run</span><br></pre></td></tr></table></figure>
 <p>如果嫌下载速度太慢可以参考这篇<a href="https://cybeird.coding.me/TECHNOLOGY/how-keep-running.html">文章</a>，使其在后台一直保持下载</p>
+<p>这里也可以直接用我的链接来下载<br><a href="http://cybird.site/kodexplorer/index.php?share/file&amp;user=1&amp;sid=98VaZIx6" target="_blank" rel="noopener">xampp</a><br>提取密码:sundea</p>
 <h4 id="启动与停止xampp"><a href="#启动与停止xampp" class="headerlink" title="启动与停止xampp"></a>启动与停止<code>xampp</code></h4><h5 id="启动xampp"><a href="#启动xampp" class="headerlink" title="启动xampp"></a>启动<code>xampp</code></h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo /opt/lampp/xampp start</span><br></pre></td></tr></table></figure>
 <p>在启动之后，可以在自己的电脑或手机浏览器上输入你的云服务器IP地址，就可以看到<code>xampp</code>的默认页面，代表你的<code>xampp</code>正常使用，默认端口为80。</p>
 <blockquote>
@@ -441,6 +442,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget http://static.kodcloud.com/update/download/kodexplorer4.40.zip</span><br></pre></td></tr></table></figure>
 <p>创建一个文件夹，这样把文件解压到这里</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo mkdir kodexplorer</span><br></pre></td></tr></table></figure>
+<p>这里也可以直接用我的链接来下载<br><a href="http://cybird.site/kodexplorer/index.php?share/file&amp;user=1&amp;sid=VqyPipG5" target="_blank" rel="noopener">kodexplorer</a><br>提取密码:sundea</p>
 <p>解压(注意这里的版本号与下载的要一致)</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">unzip kodexplorer4.40.zip -d ./kodexplorer</span><br></pre></td></tr></table></figure>
 <p>进入对应文件夹设置权限</p>
