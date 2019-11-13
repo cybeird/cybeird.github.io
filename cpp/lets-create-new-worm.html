@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Sunsea的布劳格" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-loading-bar.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="部署在了我的linux服务器上，方便我到处跑来写作业">
+<meta name="keywords" content="Python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何从零开始搞爬虫">
+<meta property="og:url" content="cybeird.coding.me/cpp/lets-create-new-worm.html">
+<meta property="og:site_name" content="Sunsea的布劳格">
+<meta property="og:description" content="部署在了我的linux服务器上，方便我到处跑来写作业">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-12T09:55:44.563Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何从零开始搞爬虫">
+<meta name="twitter:description" content="部署在了我的linux服务器上，方便我到处跑来写作业">
+  <link rel="canonical" href="cybeird.coding.me/cpp/lets-create-new-worm">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>如何从零开始搞爬虫 | Sunsea的布劳格</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93021468-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-93021468-1');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sunsea的布劳格</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Better to Run Than Curse the Road</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-sitemap">
+      
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-posts">
+      
+    
+
+    <a href="/categories/Post" rel="section"><i class="fa fa-fw fa-pencil"></i>随笔</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-technology">
+      
+    
+
+    <a href="/categories/TECHNOLOGY" rel="section"><i class="fa fa-fw fa-laptop"></i>科技</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-report">
+      
+    
+
+    <a href="/categories/cpp" rel="section"><i class="fa fa-fw fa-question-circle"></i>解题报告</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a class="book-mark-link book-mark-link-fixed" href="#"></a>
+
+  <a href="https://github.com/cybeird/cybeird.github.io.old" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="cybeird.coding.me/cpp/lets-create-new-worm.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sunsea">
+      <meta itemprop="description" content="每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunsea的布劳格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">如何从零开始搞爬虫
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-12 17:18:31 / 修改时间：17:55:44" itemprop="dateCreated datePublished" datetime="2019-11-12T17:18:31+08:00">2019-11-12</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>2.5k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>2 分钟</span>
+            </span>
+          
+            <div class="post-description">部署在了我的linux服务器上，方便我到处跑来写作业</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>由于我的云服务器上是CentOS，所以想要装个最新的版本<br>先从安装依赖开始吧</p>
+<p>###安装<code>python3</code></p>
+<h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel</span><br></pre></td></tr></table></figure>
+<p>如果系统莫得<code>gcc</code>的话还要先安装一下，也可以通过<code>gcc --version</code>查看<code>gcc</code>版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc</span><br></pre></td></tr></table></figure></p>
+<h4 id="下载并释放Python"><a href="#下载并释放Python" class="headerlink" title="下载并释放Python"></a>下载并释放Python</h4><p>我们可以去<a href="https://www.python.org/ftp/python/" target="_blank" rel="noopener">官网</a>下载，不过最方便的还是直接运行命令（我这里的版本是<code>3.8.0</code>）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz</span><br></pre></td></tr></table></figure></p>
+<p>也可以直接用我这个<a href="http://47.94.228.167/kodexplorer/index.php?share/file&amp;user=1&amp;sid=6H8DaJIb" target="_blank" rel="noopener">链接</a>来下载，密码依旧是sundea<br>然后对其进行解压<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf Python-3.8.0.tgz</span><br></pre></td></tr></table></figure></p>
+<h4 id="新建存放python3的文件夹"><a href="#新建存放python3的文件夹" class="headerlink" title="新建存放python3的文件夹"></a>新建存放python3的文件夹</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/python3</span><br></pre></td></tr></table></figure>
+<h4 id="执行配置文件，编译，编译安装"><a href="#执行配置文件，编译，编译安装" class="headerlink" title="执行配置文件，编译，编译安装"></a>执行配置文件，编译，编译安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd Python-3.8.0</span><br><span class="line">./configure --prefix=/usr/local/python3</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h4 id="建立软连接或者配置Python3环境变量"><a href="#建立软连接或者配置Python3环境变量" class="headerlink" title="建立软连接或者配置Python3环境变量"></a>建立软连接或者配置Python3环境变量</h4><h5 id="建立软连接"><a href="#建立软连接" class="headerlink" title="建立软连接"></a>建立软连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/python3.8 /usr/bin/python3</span><br><span class="line">ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3</span><br></pre></td></tr></table></figure>
+<h5 id="配置Python3环境变量"><a href="#配置Python3环境变量" class="headerlink" title="配置Python3环境变量"></a>配置Python3环境变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>export PATH = $PATH:$$$HOME/bin:/usr/local/python3/bin</p>
+</blockquote>
+<h4 id="测试可用性"><a href="#测试可用性" class="headerlink" title="测试可用性"></a>测试可用性</h4><p>这个时候直接输入<code>python3</code>应当就可以正常进入了</p>
+<h3 id="安装爬虫必备的库"><a href="#安装爬虫必备的库" class="headerlink" title="安装爬虫必备的库"></a>安装爬虫必备的库</h3><p>安装Python3常用的爬虫库：<strong>requests、selenium、beautifulsoup4、pyquery、pymysql、pymongo、redis、flask、django、jupyter</strong>和<strong>scrapy</strong>框架。<br>进入控制台，用<code>pip3 list</code>命令查看系统已经安装了哪些第三方包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Package    Version</span><br><span class="line">---------- ---------</span><br><span class="line">certifi    2019.9.11</span><br><span class="line">chardet    3.0.4</span><br><span class="line">idna       2.8</span><br><span class="line">pip        19.3.1</span><br><span class="line">requests   2.22.0</span><br><span class="line">setuptools 41.2.0</span><br><span class="line">urllib3    1.25.7</span><br></pre></td></tr></table></figure></p>
+<h4 id="用pip安装"><a href="#用pip安装" class="headerlink" title="用pip安装"></a>用<code>pip</code>安装</h4><h3 id="安装爬虫工具"><a href="#安装爬虫工具" class="headerlink" title="安装爬虫工具"></a>安装爬虫工具</h3><h4 id="下载Twisted和redis"><a href="#下载Twisted和redis" class="headerlink" title="下载Twisted和redis"></a>下载<code>Twisted</code>和<code>redis</code></h4><p>这里也直接使用<code>wget</code>命令下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://pypi.python.org/paredisckages/source/T/Twisted/Twisted-18.4.0.tar.bz2 </span><br><span class="line">wget http://download.redis.io/releases/redis-4.0.11.tar.gz</span><br></pre></td></tr></table></figure></p>
+<h4 id="安装scrapy"><a href="#安装scrapy" class="headerlink" title="安装scrapy"></a>安装<code>scrapy</code></h4><h5 id="解压到目录"><a href="#解压到目录" class="headerlink" title="解压到目录"></a>解压到目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -jxvf Twisted-18.4.0.tar.bz2 -C /usr/local/src/</span><br></pre></td></tr></table></figure>
+<h5 id="进入目录并安装"><a href="#进入目录并安装" class="headerlink" title="进入目录并安装"></a>进入目录并安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/Twisted-18.4.0</span><br><span class="line">python3 setup.py install</span><br><span class="line">pip3 install scrapy</span><br></pre></td></tr></table></figure>
+<h4 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装<code>redis</code></h4><h5 id="解压到目录-1"><a href="#解压到目录-1" class="headerlink" title="解压到目录"></a>解压到目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-4.0.11.tar.gz -C /usr/local/src/</span><br></pre></td></tr></table></figure>
+<h5 id="进入目录并编译安装"><a href="#进入目录并编译安装" class="headerlink" title="进入目录并编译安装"></a>进入目录并编译安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/redis-4.0.11</span><br><span class="line">make MALLOC=libc</span><br></pre></td></tr></table></figure>
+<h5 id="将-usr-local-redis-4-0-9-src目录下的文件加到-usr-local-bin目录"><a href="#将-usr-local-redis-4-0-9-src目录下的文件加到-usr-local-bin目录" class="headerlink" title="将/usr/local/redis-4.0.9/src目录下的文件加到/usr/local/bin目录"></a>将/usr/local/redis-4.0.9/src目录下的文件加到/usr/local/bin目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd src &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h5 id="启动Redis"><a href="#启动Redis" class="headerlink" title="启动Redis"></a>启动Redis</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./redis-server</span><br></pre></td></tr></table></figure>
+<h5 id="安装scrapy-redis模块"><a href="#安装scrapy-redis模块" class="headerlink" title="安装scrapy_redis模块"></a>安装scrapy_redis模块</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install scrapy_redis</span><br></pre></td></tr></table></figure>
+<h5 id="以后台进程方式启动："><a href="#以后台进程方式启动：" class="headerlink" title="以后台进程方式启动："></a>以后台进程方式启动：</h5><ol>
+<li><p>修改/usr/local/redis-4.0.9/redis.conf：    daemonize no   将值改为yes 保存退出</p>
+</li>
+<li><p>指定redis.conf文件启动</p>
+</li>
+</ol>
+<p>./redis-server /usr/local/redis-4.0.6/redis.conf</p>
+<h5 id="设置redis远程连接："><a href="#设置redis远程连接：" class="headerlink" title="设置redis远程连接："></a>设置redis远程连接：</h5><ol>
+<li>因为redis默认设置允许本地连接，所以我们要将redis.conf中将bind 127.0.0.1 改为bind 0.0.0.0或者注释该行</li>
+<li>另外，阿里云ECS有一个安全组，找到并添加规则允许6379端口访问</li>
+</ol>
+<h5 id="设置redis连接密码："><a href="#设置redis连接密码：" class="headerlink" title="设置redis连接密码："></a>设置redis连接密码：</h5><p>在<code>redis.conf</code>中搜索<code>requirepass</code>这一行，然后在合适的位置添加配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requirepass yourpassword</span><br></pre></td></tr></table></figure></p>
+<p>Redis有密码连接方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h serverip -p 6379 -a yourpassword</span><br></pre></td></tr></table></figure></p>
+<p>设置完成后执行/usr/local/bin/redis-server /usr/local/src/redis-4.0.11/redis.conf 更新配置</p>
+<h5 id="设置Redis开机启动"><a href="#设置Redis开机启动" class="headerlink" title="设置Redis开机启动"></a>设置Redis开机启动</h5><ol>
+<li>切换到/etc/init.d目录下</li>
+<li>执行自启命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig redisd on</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>如果显示<code>service redisd does not support chkconfig</code>解决方法：<br>使用vim编辑redisd文件，在第一行加入如下两行注释，保存退出<br><code>chkconfig:   2345 90 10</code><br><code>description:  Redis is a persistent key-value database</code><br>注释的意思是，redis服务必须在运行级2，3，4，5下被启动或关闭，启动的优先级是90，关闭的优先级是10。<br>执行开机自启命令chkconfig redisd on，这个时候应该就能成功了</p>
+</blockquote>
+<ol start="3">
+<li>现在可以直接已服务的形式启动和关闭redis了</li>
+</ol>
+<ul>
+<li>启动：systemctl start redisd</li>
+<li>关闭：systemctl stop redisd</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Python/" rel="tag"># Python</a>
+            
+              <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/Post/a-better-way-to-copy-code.html" rel="next" title="如何更好的抄代码">
+                  <i class="fa fa-chevron-left"></i> 如何更好的抄代码
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖包"><span class="nav-number">1.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载并释放Python"><span class="nav-number">2.</span> <span class="nav-text">下载并释放Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建存放python3的文件夹"><span class="nav-number">3.</span> <span class="nav-text">新建存放python3的文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行配置文件，编译，编译安装"><span class="nav-number">4.</span> <span class="nav-text">执行配置文件，编译，编译安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立软连接或者配置Python3环境变量"><span class="nav-number">5.</span> <span class="nav-text">建立软连接或者配置Python3环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#建立软连接"><span class="nav-number">5.1.</span> <span class="nav-text">建立软连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置Python3环境变量"><span class="nav-number">5.2.</span> <span class="nav-text">配置Python3环境变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试可用性"><span class="nav-number">6.</span> <span class="nav-text">测试可用性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装爬虫必备的库"><span class="nav-number"></span> <span class="nav-text">安装爬虫必备的库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用pip安装"><span class="nav-number">1.</span> <span class="nav-text">用pip安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装爬虫工具"><span class="nav-number"></span> <span class="nav-text">安装爬虫工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载Twisted和redis"><span class="nav-number">1.</span> <span class="nav-text">下载Twisted和redis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装scrapy"><span class="nav-number">2.</span> <span class="nav-text">安装scrapy</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解压到目录"><span class="nav-number">2.1.</span> <span class="nav-text">解压到目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入目录并安装"><span class="nav-number">2.2.</span> <span class="nav-text">进入目录并安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装redis"><span class="nav-number">3.</span> <span class="nav-text">安装redis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解压到目录-1"><span class="nav-number">3.1.</span> <span class="nav-text">解压到目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入目录并编译安装"><span class="nav-number">3.2.</span> <span class="nav-text">进入目录并编译安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将-usr-local-redis-4-0-9-src目录下的文件加到-usr-local-bin目录"><span class="nav-number">3.3.</span> <span class="nav-text">将/usr/local/redis-4.0.9/src目录下的文件加到/usr/local/bin目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启动Redis"><span class="nav-number">3.4.</span> <span class="nav-text">启动Redis</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装scrapy-redis模块"><span class="nav-number">3.5.</span> <span class="nav-text">安装scrapy_redis模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#以后台进程方式启动："><span class="nav-number">3.6.</span> <span class="nav-text">以后台进程方式启动：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置redis远程连接："><span class="nav-number">3.7.</span> <span class="nav-text">设置redis远程连接：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置redis连接密码："><span class="nav-number">3.8.</span> <span class="nav-text">设置redis连接密码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置Redis开机启动"><span class="nav-number">3.9.</span> <span class="nav-text">设置Redis开机启动</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Sunsea">
+  <p class="site-author-name" itemprop="name">Sunsea</p>
+  <div class="site-description" itemprop="description">每逢你想要批评别人的时候，你就要记得，这个世界上并不是人人拥有你的优越条件</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">103</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">99</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/cybeird" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;cybeird" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/5923141742" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5923141742" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.facebook.com/profile.php?id=100006449520737" title="FB Page &amp;rarr; https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id=100006449520737" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://steamcommunity.com/id/birdisgrea" title="steam &amp;rarr; http:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;birdisgrea" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>steam</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.zhihu.com/people/blrd" title="知乎 &amp;rarr; http:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;blrd" rel="noopener" target="_blank"><i class="fa fa-fw fa-ra"></i>知乎</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Something Magical
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://muzhou.tech/" title="http:&#x2F;&#x2F;muzhou.tech" rel="noopener" target="_blank">MuZhou</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://47.94.228.167/kodexplorer/index.php" title="http:&#x2F;&#x2F;47.94.228.167&#x2F;kodexplorer&#x2F;index.php" rel="noopener" target="_blank">My Kodexplorer</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不能吃圣代啊</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">202k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:04</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script><script src="/js/bookmark.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '76b54e9c106d9c2f6bc1',
+      clientSecret: '083edc379bee67139cff488492bf9c522212564f',
+      repo: 'blog-comments',
+      owner: 'Cybeird',
+      admin: ['Cybeird'],
+      id: '9f79036321f0eb086802a8d9e1d4444a',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+</body>
+</html>

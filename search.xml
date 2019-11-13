@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>如何从零开始搞爬虫</title>
+    <url>/cpp/lets-create-new-worm.html</url>
+    <content><![CDATA[<p>由于我的云服务器上是CentOS，所以想要装个最新的版本<br>先从安装依赖开始吧</p>
+<p>###安装<code>python3</code></p>
+<h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel</span><br></pre></td></tr></table></figure>
+<p>如果系统莫得<code>gcc</code>的话还要先安装一下，也可以通过<code>gcc --version</code>查看<code>gcc</code>版本<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install gcc</span><br></pre></td></tr></table></figure></p>
+<h4 id="下载并释放Python"><a href="#下载并释放Python" class="headerlink" title="下载并释放Python"></a>下载并释放Python</h4><p>我们可以去<a href="https://www.python.org/ftp/python/" target="_blank" rel="noopener">官网</a>下载，不过最方便的还是直接运行命令（我这里的版本是<code>3.8.0</code>）<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz</span><br></pre></td></tr></table></figure></p>
+<p>也可以直接用我这个<a href="http://47.94.228.167/kodexplorer/index.php?share/file&amp;user=1&amp;sid=6H8DaJIb" target="_blank" rel="noopener">链接</a>来下载，密码依旧是sundea<br>然后对其进行解压<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -zxvf Python-3.8.0.tgz</span><br></pre></td></tr></table></figure></p>
+<h4 id="新建存放python3的文件夹"><a href="#新建存放python3的文件夹" class="headerlink" title="新建存放python3的文件夹"></a>新建存放python3的文件夹</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir /usr/local/python3</span><br></pre></td></tr></table></figure>
+<h4 id="执行配置文件，编译，编译安装"><a href="#执行配置文件，编译，编译安装" class="headerlink" title="执行配置文件，编译，编译安装"></a>执行配置文件，编译，编译安装</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd Python-3.8.0</span><br><span class="line">./configure --prefix=/usr/local/python3</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h4 id="建立软连接或者配置Python3环境变量"><a href="#建立软连接或者配置Python3环境变量" class="headerlink" title="建立软连接或者配置Python3环境变量"></a>建立软连接或者配置Python3环境变量</h4><h5 id="建立软连接"><a href="#建立软连接" class="headerlink" title="建立软连接"></a>建立软连接</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/python3.8 /usr/bin/python3</span><br><span class="line">ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3</span><br></pre></td></tr></table></figure>
+<h5 id="配置Python3环境变量"><a href="#配置Python3环境变量" class="headerlink" title="配置Python3环境变量"></a>配置Python3环境变量</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>export PATH = $PATH:$$$HOME/bin:/usr/local/python3/bin</p>
+</blockquote>
+<h4 id="测试可用性"><a href="#测试可用性" class="headerlink" title="测试可用性"></a>测试可用性</h4><p>这个时候直接输入<code>python3</code>应当就可以正常进入了</p>
+<h3 id="安装爬虫必备的库"><a href="#安装爬虫必备的库" class="headerlink" title="安装爬虫必备的库"></a>安装爬虫必备的库</h3><p>安装Python3常用的爬虫库：<strong>requests、selenium、beautifulsoup4、pyquery、pymysql、pymongo、redis、flask、django、jupyter</strong>和<strong>scrapy</strong>框架。<br>进入控制台，用<code>pip3 list</code>命令查看系统已经安装了哪些第三方包<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Package    Version</span><br><span class="line">---------- ---------</span><br><span class="line">certifi    2019.9.11</span><br><span class="line">chardet    3.0.4</span><br><span class="line">idna       2.8</span><br><span class="line">pip        19.3.1</span><br><span class="line">requests   2.22.0</span><br><span class="line">setuptools 41.2.0</span><br><span class="line">urllib3    1.25.7</span><br></pre></td></tr></table></figure></p>
+<h4 id="用pip安装"><a href="#用pip安装" class="headerlink" title="用pip安装"></a>用<code>pip</code>安装</h4><h3 id="安装爬虫工具"><a href="#安装爬虫工具" class="headerlink" title="安装爬虫工具"></a>安装爬虫工具</h3><h4 id="下载Twisted和redis"><a href="#下载Twisted和redis" class="headerlink" title="下载Twisted和redis"></a>下载<code>Twisted</code>和<code>redis</code></h4><p>这里也直接使用<code>wget</code>命令下载<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https://pypi.python.org/paredisckages/source/T/Twisted/Twisted-18.4.0.tar.bz2 </span><br><span class="line">wget http://download.redis.io/releases/redis-4.0.11.tar.gz</span><br></pre></td></tr></table></figure></p>
+<h4 id="安装scrapy"><a href="#安装scrapy" class="headerlink" title="安装scrapy"></a>安装<code>scrapy</code></h4><h5 id="解压到目录"><a href="#解压到目录" class="headerlink" title="解压到目录"></a>解压到目录</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -jxvf Twisted-18.4.0.tar.bz2 -C /usr/local/src/</span><br></pre></td></tr></table></figure>
+<h5 id="进入目录并安装"><a href="#进入目录并安装" class="headerlink" title="进入目录并安装"></a>进入目录并安装</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /usr/local/src/Twisted-18.4.0</span><br><span class="line">python3 setup.py install</span><br><span class="line">pip3 install scrapy</span><br></pre></td></tr></table></figure>
+<h4 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装<code>redis</code></h4><h5 id="解压到目录-1"><a href="#解压到目录-1" class="headerlink" title="解压到目录"></a>解压到目录</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -zxvf redis-4.0.11.tar.gz -C /usr/local/src/</span><br></pre></td></tr></table></figure>
+<h5 id="进入目录并编译安装"><a href="#进入目录并编译安装" class="headerlink" title="进入目录并编译安装"></a>进入目录并编译安装</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /usr/local/src/redis-4.0.11</span><br><span class="line">make MALLOC=libc</span><br></pre></td></tr></table></figure>
+<h5 id="将-usr-local-redis-4-0-9-src目录下的文件加到-usr-local-bin目录"><a href="#将-usr-local-redis-4-0-9-src目录下的文件加到-usr-local-bin目录" class="headerlink" title="将/usr/local/redis-4.0.9/src目录下的文件加到/usr/local/bin目录"></a>将/usr/local/redis-4.0.9/src目录下的文件加到/usr/local/bin目录</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd src &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h5 id="启动Redis"><a href="#启动Redis" class="headerlink" title="启动Redis"></a>启动Redis</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">./redis-server</span><br></pre></td></tr></table></figure>
+<h5 id="安装scrapy-redis模块"><a href="#安装scrapy-redis模块" class="headerlink" title="安装scrapy_redis模块"></a>安装scrapy_redis模块</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install scrapy_redis</span><br></pre></td></tr></table></figure>
+<h5 id="以后台进程方式启动："><a href="#以后台进程方式启动：" class="headerlink" title="以后台进程方式启动："></a>以后台进程方式启动：</h5><ol>
+<li><p>修改/usr/local/redis-4.0.9/redis.conf：    daemonize no   将值改为yes 保存退出</p>
+</li>
+<li><p>指定redis.conf文件启动</p>
+</li>
+</ol>
+<p>./redis-server /usr/local/redis-4.0.6/redis.conf</p>
+<h5 id="设置redis远程连接："><a href="#设置redis远程连接：" class="headerlink" title="设置redis远程连接："></a>设置redis远程连接：</h5><ol>
+<li>因为redis默认设置允许本地连接，所以我们要将redis.conf中将bind 127.0.0.1 改为bind 0.0.0.0或者注释该行</li>
+<li>另外，阿里云ECS有一个安全组，找到并添加规则允许6379端口访问</li>
+</ol>
+<h5 id="设置redis连接密码："><a href="#设置redis连接密码：" class="headerlink" title="设置redis连接密码："></a>设置redis连接密码：</h5><p>在<code>redis.conf</code>中搜索<code>requirepass</code>这一行，然后在合适的位置添加配置<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">requirepass yourpassword</span><br></pre></td></tr></table></figure></p>
+<p>Redis有密码连接方式<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">redis-cli -h serverip -p 6379 -a yourpassword</span><br></pre></td></tr></table></figure></p>
+<p>设置完成后执行/usr/local/bin/redis-server /usr/local/src/redis-4.0.11/redis.conf 更新配置</p>
+<h5 id="设置Redis开机启动"><a href="#设置Redis开机启动" class="headerlink" title="设置Redis开机启动"></a>设置Redis开机启动</h5><ol>
+<li>切换到/etc/init.d目录下</li>
+<li>执行自启命令<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chkconfig redisd on</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>如果显示<code>service redisd does not support chkconfig</code>解决方法：<br>使用vim编辑redisd文件，在第一行加入如下两行注释，保存退出<br><code>chkconfig:   2345 90 10</code><br><code>description:  Redis is a persistent key-value database</code><br>注释的意思是，redis服务必须在运行级2，3，4，5下被启动或关闭，启动的优先级是90，关闭的优先级是10。<br>执行开机自启命令chkconfig redisd on，这个时候应该就能成功了</p>
+</blockquote>
+<ol start="3">
+<li>现在可以直接已服务的形式启动和关闭redis了</li>
+</ol>
+<ul>
+<li>启动：systemctl start redisd</li>
+<li>关闭：systemctl stop redisd</li>
+</ul>
+]]></content>
+      <categories>
+        <category>cpp</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何更好的抄代码</title>
     <url>/Post/a-better-way-to-copy-code.html</url>
     <content><![CDATA[<p>未完待续</p>
