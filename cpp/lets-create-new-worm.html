@@ -67,7 +67,7 @@
 <meta property="og:site_name" content="Sunsea的布劳格">
 <meta property="og:description" content="部署在了我的linux服务器上，方便我到处跑来写作业">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-12T09:55:44.563Z">
+<meta property="og:updated_time" content="2019-11-18T11:28:33.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何从零开始搞爬虫">
 <meta name="twitter:description" content="部署在了我的linux服务器上，方便我到处跑来写作业">
@@ -336,11 +336,19 @@
                 
               
 
-              <time title="创建时间：2019-11-12 17:18:31 / 修改时间：17:55:44" itemprop="dateCreated datePublished" datetime="2019-11-12T17:18:31+08:00">2019-11-12</time>
+              <time title="创建时间：2019-11-12 17:18:31" itemprop="dateCreated datePublished" datetime="2019-11-12T17:18:31+08:00">2019-11-12</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-18 19:28:33" itemprop="dateModified" datetime="2019-11-18T19:28:33+08:00">2019-11-18</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -366,7 +374,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>2.5k</span>
+              <span>3.3k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -376,7 +384,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
           
             <div class="post-description">部署在了我的linux服务器上，方便我到处跑来写作业</div>
@@ -406,7 +414,10 @@
 </blockquote>
 <h4 id="测试可用性"><a href="#测试可用性" class="headerlink" title="测试可用性"></a>测试可用性</h4><p>这个时候直接输入<code>python3</code>应当就可以正常进入了</p>
 <h3 id="安装爬虫必备的库"><a href="#安装爬虫必备的库" class="headerlink" title="安装爬虫必备的库"></a>安装爬虫必备的库</h3><p>安装Python3常用的爬虫库：<strong>requests、selenium、beautifulsoup4、pyquery、pymysql、pymongo、redis、flask、django、jupyter</strong>和<strong>scrapy</strong>框架。<br>进入控制台，用<code>pip3 list</code>命令查看系统已经安装了哪些第三方包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Package    Version</span><br><span class="line">---------- ---------</span><br><span class="line">certifi    2019.9.11</span><br><span class="line">chardet    3.0.4</span><br><span class="line">idna       2.8</span><br><span class="line">pip        19.3.1</span><br><span class="line">requests   2.22.0</span><br><span class="line">setuptools 41.2.0</span><br><span class="line">urllib3    1.25.7</span><br></pre></td></tr></table></figure></p>
-<h4 id="用pip安装"><a href="#用pip安装" class="headerlink" title="用pip安装"></a>用<code>pip</code>安装</h4><h3 id="安装爬虫工具"><a href="#安装爬虫工具" class="headerlink" title="安装爬虫工具"></a>安装爬虫工具</h3><h4 id="下载Twisted和redis"><a href="#下载Twisted和redis" class="headerlink" title="下载Twisted和redis"></a>下载<code>Twisted</code>和<code>redis</code></h4><p>这里也直接使用<code>wget</code>命令下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://pypi.python.org/paredisckages/source/T/Twisted/Twisted-18.4.0.tar.bz2 </span><br><span class="line">wget http://download.redis.io/releases/redis-4.0.11.tar.gz</span><br></pre></td></tr></table></figure></p>
+<h4 id="用pip安装"><a href="#用pip安装" class="headerlink" title="用pip安装"></a>用<code>pip</code>安装</h4><p>直接使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install [filename] #[filename]就是库名</span><br></pre></td></tr></table></figure></p>
+<p>来进行安装</p>
+<h3 id="安装爬虫工具"><a href="#安装爬虫工具" class="headerlink" title="安装爬虫工具"></a>安装爬虫工具</h3><p>现在我们有了<code>pip3</code>，<code>redis</code>用<code>pip3</code>来安装是完全没有问题的</p>
+<h4 id="下载Twisted和redis"><a href="#下载Twisted和redis" class="headerlink" title="下载Twisted和redis"></a>下载<code>Twisted</code>和<code>redis</code></h4><p>这里也直接使用<code>wget</code>命令下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://pypi.python.org/paredisckages/source/T/Twisted/Twisted-18.4.0.tar.bz2 </span><br><span class="line">wget http://download.redis.io/releases/redis-4.0.11.tar.gz</span><br></pre></td></tr></table></figure></p>
 <h4 id="安装scrapy"><a href="#安装scrapy" class="headerlink" title="安装scrapy"></a>安装<code>scrapy</code></h4><h5 id="解压到目录"><a href="#解压到目录" class="headerlink" title="解压到目录"></a>解压到目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -jxvf Twisted-18.4.0.tar.bz2 -C /usr/local/src/</span><br></pre></td></tr></table></figure>
 <h5 id="进入目录并安装"><a href="#进入目录并安装" class="headerlink" title="进入目录并安装"></a>进入目录并安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/Twisted-18.4.0</span><br><span class="line">python3 setup.py install</span><br><span class="line">pip3 install scrapy</span><br></pre></td></tr></table></figure>
 <h4 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装<code>redis</code></h4><h5 id="解压到目录-1"><a href="#解压到目录-1" class="headerlink" title="解压到目录"></a>解压到目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-4.0.11.tar.gz -C /usr/local/src/</span><br></pre></td></tr></table></figure>
@@ -443,6 +454,13 @@
 <li>启动：systemctl start redisd</li>
 <li>关闭：systemctl stop redisd</li>
 </ul>
+<h3 id="爬虫基础"><a href="#爬虫基础" class="headerlink" title="爬虫基础"></a>爬虫基础</h3><h4 id="使用Requests库进行爬取"><a href="#使用Requests库进行爬取" class="headerlink" title="使用Requests库进行爬取"></a>使用<code>Requests</code>库进行爬取</h4><h5 id="Requests库的基本用法"><a href="#Requests库的基本用法" class="headerlink" title="Requests库的基本用法"></a><code>Requests</code>库的基本用法</h5><p>我们之前已经对大部分的常用库进行了安装，而使用方式如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r = requests.get(urlstr, params)</span><br></pre></td></tr></table></figure></p>
+<p>其中，参数<code>urlstr</code>就是所爬取的网页的<strong>url</strong>，参数<code>params</code>则用来提供一些制定的值，用来返回不同的网页内容<br>示例代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">r = requests.get(<span class="string">'https://xshg.github.io/hbupybook/numberDemo.html'</span>)</span><br><span class="line">print(r.text)</span><br><span class="line">print(r.status_code)</span><br><span class="line">print(r.apparent_encoding)</span><br><span class="line">print(r.text[:<span class="number">50</span>])</span><br><span class="line"><span class="comment">#r.encoding = r.apparent_encoding</span></span><br></pre></td></tr></table></figure></p>
+<p>使用<code>Requests</code>的<strong>get</strong>方法获取的对象的常用属性<br>| 属    性 | 含   义 |<br>| ———– | ———– |<br>| apparent_encoding | <code>Requests</code>根据网页内容推测最佳编码方式 |<br>| content | 数据的二进制编码格式 |<br>| encoding | 页面自身的编码方式，可根据需求更改 |<br>| status_code | 网站的响应状态码 |<br>| text | 返回的<code>HTML</code>字符 |<br>| url | 请求的网页的地址 |</p>
+<p>常见的网页响应状态码<br>| 数字    | 状态  |<br>| ———– | ———– |<br>| 200 | 成功访问并读取 |<br>| 301 | 请求的页面已经永久移动 |<br>| 401 | 服务器要求身份验证 |<br>| 403 | 服务器拒绝请求 |<br>| 404 | 服务器找不到请求的界面 |</p>
+<blockquote>
+<p>若爬取HTML代码时出现乱码，可以尝试使用<code>r.encoding = r.apparent_encoding</code>来解决这个问题</p>
+</blockquote>
 
     </div>
 
@@ -527,7 +545,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖包"><span class="nav-number">1.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载并释放Python"><span class="nav-number">2.</span> <span class="nav-text">下载并释放Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建存放python3的文件夹"><span class="nav-number">3.</span> <span class="nav-text">新建存放python3的文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行配置文件，编译，编译安装"><span class="nav-number">4.</span> <span class="nav-text">执行配置文件，编译，编译安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立软连接或者配置Python3环境变量"><span class="nav-number">5.</span> <span class="nav-text">建立软连接或者配置Python3环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#建立软连接"><span class="nav-number">5.1.</span> <span class="nav-text">建立软连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置Python3环境变量"><span class="nav-number">5.2.</span> <span class="nav-text">配置Python3环境变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试可用性"><span class="nav-number">6.</span> <span class="nav-text">测试可用性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装爬虫必备的库"><span class="nav-number"></span> <span class="nav-text">安装爬虫必备的库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用pip安装"><span class="nav-number">1.</span> <span class="nav-text">用pip安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装爬虫工具"><span class="nav-number"></span> <span class="nav-text">安装爬虫工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载Twisted和redis"><span class="nav-number">1.</span> <span class="nav-text">下载Twisted和redis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装scrapy"><span class="nav-number">2.</span> <span class="nav-text">安装scrapy</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解压到目录"><span class="nav-number">2.1.</span> <span class="nav-text">解压到目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入目录并安装"><span class="nav-number">2.2.</span> <span class="nav-text">进入目录并安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装redis"><span class="nav-number">3.</span> <span class="nav-text">安装redis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解压到目录-1"><span class="nav-number">3.1.</span> <span class="nav-text">解压到目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入目录并编译安装"><span class="nav-number">3.2.</span> <span class="nav-text">进入目录并编译安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将-usr-local-redis-4-0-9-src目录下的文件加到-usr-local-bin目录"><span class="nav-number">3.3.</span> <span class="nav-text">将/usr/local/redis-4.0.9/src目录下的文件加到/usr/local/bin目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启动Redis"><span class="nav-number">3.4.</span> <span class="nav-text">启动Redis</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装scrapy-redis模块"><span class="nav-number">3.5.</span> <span class="nav-text">安装scrapy_redis模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#以后台进程方式启动："><span class="nav-number">3.6.</span> <span class="nav-text">以后台进程方式启动：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置redis远程连接："><span class="nav-number">3.7.</span> <span class="nav-text">设置redis远程连接：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置redis连接密码："><span class="nav-number">3.8.</span> <span class="nav-text">设置redis连接密码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置Redis开机启动"><span class="nav-number">3.9.</span> <span class="nav-text">设置Redis开机启动</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖包"><span class="nav-number">1.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载并释放Python"><span class="nav-number">2.</span> <span class="nav-text">下载并释放Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建存放python3的文件夹"><span class="nav-number">3.</span> <span class="nav-text">新建存放python3的文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行配置文件，编译，编译安装"><span class="nav-number">4.</span> <span class="nav-text">执行配置文件，编译，编译安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立软连接或者配置Python3环境变量"><span class="nav-number">5.</span> <span class="nav-text">建立软连接或者配置Python3环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#建立软连接"><span class="nav-number">5.1.</span> <span class="nav-text">建立软连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置Python3环境变量"><span class="nav-number">5.2.</span> <span class="nav-text">配置Python3环境变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试可用性"><span class="nav-number">6.</span> <span class="nav-text">测试可用性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装爬虫必备的库"><span class="nav-number"></span> <span class="nav-text">安装爬虫必备的库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用pip安装"><span class="nav-number">1.</span> <span class="nav-text">用pip安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装爬虫工具"><span class="nav-number"></span> <span class="nav-text">安装爬虫工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载Twisted和redis"><span class="nav-number">1.</span> <span class="nav-text">下载Twisted和redis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装scrapy"><span class="nav-number">2.</span> <span class="nav-text">安装scrapy</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解压到目录"><span class="nav-number">2.1.</span> <span class="nav-text">解压到目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入目录并安装"><span class="nav-number">2.2.</span> <span class="nav-text">进入目录并安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装redis"><span class="nav-number">3.</span> <span class="nav-text">安装redis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解压到目录-1"><span class="nav-number">3.1.</span> <span class="nav-text">解压到目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入目录并编译安装"><span class="nav-number">3.2.</span> <span class="nav-text">进入目录并编译安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将-usr-local-redis-4-0-9-src目录下的文件加到-usr-local-bin目录"><span class="nav-number">3.3.</span> <span class="nav-text">将/usr/local/redis-4.0.9/src目录下的文件加到/usr/local/bin目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启动Redis"><span class="nav-number">3.4.</span> <span class="nav-text">启动Redis</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装scrapy-redis模块"><span class="nav-number">3.5.</span> <span class="nav-text">安装scrapy_redis模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#以后台进程方式启动："><span class="nav-number">3.6.</span> <span class="nav-text">以后台进程方式启动：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置redis远程连接："><span class="nav-number">3.7.</span> <span class="nav-text">设置redis远程连接：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置redis连接密码："><span class="nav-number">3.8.</span> <span class="nav-text">设置redis连接密码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置Redis开机启动"><span class="nav-number">3.9.</span> <span class="nav-text">设置Redis开机启动</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#爬虫基础"><span class="nav-number"></span> <span class="nav-text">爬虫基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Requests库进行爬取"><span class="nav-number">1.</span> <span class="nav-text">使用Requests库进行爬取</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Requests库的基本用法"><span class="nav-number">1.1.</span> <span class="nav-text">Requests库的基本用法</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -655,11 +673,167 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://muzhou.tech/" title="http:&#x2F;&#x2F;muzhou.tech" rel="noopener" target="_blank">MuZhou</a>
+          <a href="/j" title="j">0</a>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="http://47.94.228.167/kodexplorer/index.php" title="http:&#x2F;&#x2F;47.94.228.167&#x2F;kodexplorer&#x2F;index.php" rel="noopener" target="_blank">My Kodexplorer</a>
+          <a href="/o" title="o">1</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/k" title="k">2</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/e" title="e">3</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/r" title="r">4</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/x" title="x">5</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/i" title="i">6</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/a" title="a">7</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/o" title="o">8</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/x" title="x">9</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/i" title="i">10</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/:" title=":">11</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/h" title="h">12</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/t" title="t">13</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/t" title="t">14</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/p" title="p">15</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/s" title="s">16</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/:" title=":">17</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/" title="&#x2F;">18</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/" title="&#x2F;">19</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/j" title="j">20</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/o" title="o">21</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/k" title="k">22</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/e" title="e">23</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/r" title="r">24</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/x" title="x">25</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/i" title="i">26</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/a" title="a">27</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/o" title="o">28</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/x" title="x">29</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/i" title="i">30</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/." title=".">31</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/g" title="g">32</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/i" title="i">33</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/t" title="t">34</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/h" title="h">35</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/u" title="u">36</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/b" title="b">37</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/." title=".">38</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/i" title="i">39</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="/o" title="o">40</a>
         </li>
       
     </ul>
@@ -686,12 +860,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">202k</span>
+    <span title="站点总字数">203k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:04</span>
+    <span title="站点阅读时长">3:05</span>
 </div>
 
         
