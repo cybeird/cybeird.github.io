@@ -67,7 +67,7 @@
 <meta property="og:site_name" content="Sunsea的布劳格">
 <meta property="og:description" content="部署在了我的linux服务器上，方便我到处跑来写作业">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T11:28:33.305Z">
+<meta property="og:updated_time" content="2019-11-25T12:27:04.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何从零开始搞爬虫">
 <meta name="twitter:description" content="部署在了我的linux服务器上，方便我到处跑来写作业">
@@ -347,7 +347,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-18 19:28:33" itemprop="dateModified" datetime="2019-11-18T19:28:33+08:00">2019-11-18</time>
+                <time title="修改时间：2019-11-25 20:27:04" itemprop="dateModified" datetime="2019-11-25T20:27:04+08:00">2019-11-25</time>
               </span>
             
           
@@ -374,7 +374,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>3.3k</span>
+              <span>3.2k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -400,8 +400,7 @@
 
       
         <p>由于我的云服务器上是CentOS，所以想要装个最新的版本<br>先从安装依赖开始吧</p>
-<p>###安装<code>python3</code></p>
-<h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel</span><br></pre></td></tr></table></figure>
+<h3 id="安装python3"><a href="#安装python3" class="headerlink" title="安装python3"></a>安装<code>python3</code></h3><h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel</span><br></pre></td></tr></table></figure>
 <p>如果系统莫得<code>gcc</code>的话还要先安装一下，也可以通过<code>gcc --version</code>查看<code>gcc</code>版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc</span><br></pre></td></tr></table></figure></p>
 <h4 id="下载并释放Python"><a href="#下载并释放Python" class="headerlink" title="下载并释放Python"></a>下载并释放Python</h4><p>我们可以去<a href="https://www.python.org/ftp/python/" target="_blank" rel="noopener">官网</a>下载，不过最方便的还是直接运行命令（我这里的版本是<code>3.8.0</code>）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz</span><br></pre></td></tr></table></figure></p>
 <p>也可以直接用我这个<a href="http://47.94.228.167/kodexplorer/index.php?share/file&amp;user=1&amp;sid=6H8DaJIb" target="_blank" rel="noopener">链接</a>来下载，密码依旧是sundea<br>然后对其进行解压<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf Python-3.8.0.tgz</span><br></pre></td></tr></table></figure></p>
@@ -456,8 +455,72 @@
 </ul>
 <h3 id="爬虫基础"><a href="#爬虫基础" class="headerlink" title="爬虫基础"></a>爬虫基础</h3><h4 id="使用Requests库进行爬取"><a href="#使用Requests库进行爬取" class="headerlink" title="使用Requests库进行爬取"></a>使用<code>Requests</code>库进行爬取</h4><h5 id="Requests库的基本用法"><a href="#Requests库的基本用法" class="headerlink" title="Requests库的基本用法"></a><code>Requests</code>库的基本用法</h5><p>我们之前已经对大部分的常用库进行了安装，而使用方式如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r = requests.get(urlstr, params)</span><br></pre></td></tr></table></figure></p>
 <p>其中，参数<code>urlstr</code>就是所爬取的网页的<strong>url</strong>，参数<code>params</code>则用来提供一些制定的值，用来返回不同的网页内容<br>示例代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">r = requests.get(<span class="string">'https://xshg.github.io/hbupybook/numberDemo.html'</span>)</span><br><span class="line">print(r.text)</span><br><span class="line">print(r.status_code)</span><br><span class="line">print(r.apparent_encoding)</span><br><span class="line">print(r.text[:<span class="number">50</span>])</span><br><span class="line"><span class="comment">#r.encoding = r.apparent_encoding</span></span><br></pre></td></tr></table></figure></p>
-<p>使用<code>Requests</code>的<strong>get</strong>方法获取的对象的常用属性<br>| 属    性 | 含   义 |<br>| ———– | ———– |<br>| apparent_encoding | <code>Requests</code>根据网页内容推测最佳编码方式 |<br>| content | 数据的二进制编码格式 |<br>| encoding | 页面自身的编码方式，可根据需求更改 |<br>| status_code | 网站的响应状态码 |<br>| text | 返回的<code>HTML</code>字符 |<br>| url | 请求的网页的地址 |</p>
-<p>常见的网页响应状态码<br>| 数字    | 状态  |<br>| ———– | ———– |<br>| 200 | 成功访问并读取 |<br>| 301 | 请求的页面已经永久移动 |<br>| 401 | 服务器要求身份验证 |<br>| 403 | 服务器拒绝请求 |<br>| 404 | 服务器找不到请求的界面 |</p>
+<p>使用<code>Requests</code>的<strong>get</strong>方法获取的对象的常用属性</p>
+<table>
+<thead>
+<tr>
+<th>属    性</th>
+<th>含   义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apparent_encoding</td>
+<td><code>Requests</code>根据网页内容推测最佳编码方式</td>
+</tr>
+<tr>
+<td>content</td>
+<td>数据的二进制编码格式</td>
+</tr>
+<tr>
+<td>encoding</td>
+<td>页面自身的编码方式，可根据需求更改</td>
+</tr>
+<tr>
+<td>status_code</td>
+<td>网站的响应状态码</td>
+</tr>
+<tr>
+<td>text</td>
+<td>返回的<code>HTML</code>字符</td>
+</tr>
+<tr>
+<td>url</td>
+<td>请求的网页的地址</td>
+</tr>
+</tbody>
+</table>
+<p>常见的网页响应状态码</p>
+<table>
+<thead>
+<tr>
+<th>数字</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>成功访问并读取</td>
+</tr>
+<tr>
+<td>301</td>
+<td>请求的页面已经永久移动</td>
+</tr>
+<tr>
+<td>401</td>
+<td>服务器要求身份验证</td>
+</tr>
+<tr>
+<td>403</td>
+<td>服务器拒绝请求</td>
+</tr>
+<tr>
+<td>404</td>
+<td>服务器找不到请求的界面</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>若爬取HTML代码时出现乱码，可以尝试使用<code>r.encoding = r.apparent_encoding</code>来解决这个问题</p>
 </blockquote>
@@ -497,6 +560,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Post/my-blog-in-baidu.html" rel="prev" title="百度收录啦我的博客啦">
+                  百度收录啦我的博客啦 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -545,7 +612,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖包"><span class="nav-number">1.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载并释放Python"><span class="nav-number">2.</span> <span class="nav-text">下载并释放Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建存放python3的文件夹"><span class="nav-number">3.</span> <span class="nav-text">新建存放python3的文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行配置文件，编译，编译安装"><span class="nav-number">4.</span> <span class="nav-text">执行配置文件，编译，编译安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立软连接或者配置Python3环境变量"><span class="nav-number">5.</span> <span class="nav-text">建立软连接或者配置Python3环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#建立软连接"><span class="nav-number">5.1.</span> <span class="nav-text">建立软连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置Python3环境变量"><span class="nav-number">5.2.</span> <span class="nav-text">配置Python3环境变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试可用性"><span class="nav-number">6.</span> <span class="nav-text">测试可用性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装爬虫必备的库"><span class="nav-number"></span> <span class="nav-text">安装爬虫必备的库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用pip安装"><span class="nav-number">1.</span> <span class="nav-text">用pip安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装爬虫工具"><span class="nav-number"></span> <span class="nav-text">安装爬虫工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载Twisted和redis"><span class="nav-number">1.</span> <span class="nav-text">下载Twisted和redis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装scrapy"><span class="nav-number">2.</span> <span class="nav-text">安装scrapy</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解压到目录"><span class="nav-number">2.1.</span> <span class="nav-text">解压到目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入目录并安装"><span class="nav-number">2.2.</span> <span class="nav-text">进入目录并安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装redis"><span class="nav-number">3.</span> <span class="nav-text">安装redis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解压到目录-1"><span class="nav-number">3.1.</span> <span class="nav-text">解压到目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入目录并编译安装"><span class="nav-number">3.2.</span> <span class="nav-text">进入目录并编译安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将-usr-local-redis-4-0-9-src目录下的文件加到-usr-local-bin目录"><span class="nav-number">3.3.</span> <span class="nav-text">将/usr/local/redis-4.0.9/src目录下的文件加到/usr/local/bin目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启动Redis"><span class="nav-number">3.4.</span> <span class="nav-text">启动Redis</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装scrapy-redis模块"><span class="nav-number">3.5.</span> <span class="nav-text">安装scrapy_redis模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#以后台进程方式启动："><span class="nav-number">3.6.</span> <span class="nav-text">以后台进程方式启动：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置redis远程连接："><span class="nav-number">3.7.</span> <span class="nav-text">设置redis远程连接：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置redis连接密码："><span class="nav-number">3.8.</span> <span class="nav-text">设置redis连接密码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置Redis开机启动"><span class="nav-number">3.9.</span> <span class="nav-text">设置Redis开机启动</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#爬虫基础"><span class="nav-number"></span> <span class="nav-text">爬虫基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Requests库进行爬取"><span class="nav-number">1.</span> <span class="nav-text">使用Requests库进行爬取</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Requests库的基本用法"><span class="nav-number">1.1.</span> <span class="nav-text">Requests库的基本用法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装python3"><span class="nav-number">1.</span> <span class="nav-text">安装python3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖包"><span class="nav-number">1.1.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载并释放Python"><span class="nav-number">1.2.</span> <span class="nav-text">下载并释放Python</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建存放python3的文件夹"><span class="nav-number">1.3.</span> <span class="nav-text">新建存放python3的文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行配置文件，编译，编译安装"><span class="nav-number">1.4.</span> <span class="nav-text">执行配置文件，编译，编译安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立软连接或者配置Python3环境变量"><span class="nav-number">1.5.</span> <span class="nav-text">建立软连接或者配置Python3环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#建立软连接"><span class="nav-number">1.5.1.</span> <span class="nav-text">建立软连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置Python3环境变量"><span class="nav-number">1.5.2.</span> <span class="nav-text">配置Python3环境变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试可用性"><span class="nav-number">1.6.</span> <span class="nav-text">测试可用性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装爬虫必备的库"><span class="nav-number">2.</span> <span class="nav-text">安装爬虫必备的库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用pip安装"><span class="nav-number">2.1.</span> <span class="nav-text">用pip安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装爬虫工具"><span class="nav-number">3.</span> <span class="nav-text">安装爬虫工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载Twisted和redis"><span class="nav-number">3.1.</span> <span class="nav-text">下载Twisted和redis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装scrapy"><span class="nav-number">3.2.</span> <span class="nav-text">安装scrapy</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解压到目录"><span class="nav-number">3.2.1.</span> <span class="nav-text">解压到目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入目录并安装"><span class="nav-number">3.2.2.</span> <span class="nav-text">进入目录并安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装redis"><span class="nav-number">3.3.</span> <span class="nav-text">安装redis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解压到目录-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">解压到目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入目录并编译安装"><span class="nav-number">3.3.2.</span> <span class="nav-text">进入目录并编译安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将-usr-local-redis-4-0-9-src目录下的文件加到-usr-local-bin目录"><span class="nav-number">3.3.3.</span> <span class="nav-text">将/usr/local/redis-4.0.9/src目录下的文件加到/usr/local/bin目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启动Redis"><span class="nav-number">3.3.4.</span> <span class="nav-text">启动Redis</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装scrapy-redis模块"><span class="nav-number">3.3.5.</span> <span class="nav-text">安装scrapy_redis模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#以后台进程方式启动："><span class="nav-number">3.3.6.</span> <span class="nav-text">以后台进程方式启动：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置redis远程连接："><span class="nav-number">3.3.7.</span> <span class="nav-text">设置redis远程连接：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置redis连接密码："><span class="nav-number">3.3.8.</span> <span class="nav-text">设置redis连接密码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置Redis开机启动"><span class="nav-number">3.3.9.</span> <span class="nav-text">设置Redis开机启动</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#爬虫基础"><span class="nav-number">4.</span> <span class="nav-text">爬虫基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Requests库进行爬取"><span class="nav-number">4.1.</span> <span class="nav-text">使用Requests库进行爬取</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Requests库的基本用法"><span class="nav-number">4.1.1.</span> <span class="nav-text">Requests库的基本用法</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -564,7 +631,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">103</span>
+          <span class="site-state-item-count">104</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -590,7 +657,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">99</span>
+        <span class="site-state-item-count">101</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
