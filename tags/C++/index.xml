@@ -1,27 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>C&#43;&#43; on Sundea&#39;s Blog</title>
-    <link>http://cybeird.github.io/tags/C&#43;&#43;/</link>
-    <description>Recent content in C&#43;&#43; on Sundea&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Tue, 09 Aug 2022 16:02:18 +0800</lastBuildDate><atom:link href="http://cybeird.github.io/tags/C++/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>GraphicsDraw图像绘画同步项目当前存在的些许问题及解决方式</title>
-      <link>http://cybeird.github.io/post/GraphicsDraw-updata/</link>
-      <pubDate>Tue, 09 Aug 2022 16:02:18 +0800</pubDate>
-      
-      <guid>http://cybeird.github.io/post/GraphicsDraw-updata/</guid>
-      <description>
-        
-          
-            总览 程序首先分为三个部分：绘图、数据库存储、TCP传输 程序设计模式使用单例模式，尽可能保证函数的功能单一化 绘图 重构qgraphicsitem类 在调用此类中已有的图形后，通过重构和Qpaint来构筑自定义的图形，并能正常进行绘制 数据库存储 数据库的增删改查函数 增 获取数据表名，数据名和
-          
-          
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C++ on Sundea's Blog</title><link>http://cybeird.github.io/tags/C++/</link><description>Recent content in C++ on Sundea's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 09 Aug 2022 16:02:18 +0800</lastBuildDate><atom:link href="http://cybeird.github.io/tags/C++/index.xml" rel="self" type="application/rss+xml"/><item><title>GraphicsDraw图像绘画同步项目当前存在的些许问题及解决方式</title><link>http://cybeird.github.io/post/GraphicsDraw-updata/</link><pubDate>Tue, 09 Aug 2022 16:02:18 +0800</pubDate><guid>http://cybeird.github.io/post/GraphicsDraw-updata/</guid><description>
+总览 程序首先分为三个部分：绘图、数据库存储、TCP传输 程序设计模式使用单例模式，尽可能保证函数的功能单一化 绘图 重构qgraphicsitem类 在调用此类中已有的图形后，通过重构和Qpaint来构筑自定义的图形，并能正常进行绘制 数据库存储 数据库的增删改查函数 增 获取数据表名，数据名和</description></item></channel></rss>
