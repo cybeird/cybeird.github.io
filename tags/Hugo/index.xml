@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Sundea&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/Hugo/</link>
+    <description>Recent content in Hugo on Sundea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 10 Aug 2022 10:11:43 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/Hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建Hugo博客时踩的一些坑</title>
+      <link>https://cybeird.github.io/post/hugo-keng/</link>
+      <pubDate>Wed, 10 Aug 2022 10:11:43 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/hugo-keng/</guid>
+      <description>
+        
+          
+            措施1 修改静态配置文件，将url改为https
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

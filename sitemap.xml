@@ -2,10 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cybeird.github.io/tags/C&#43;&#43;/</loc>
-    <lastmod>2022-08-09T16:02:18+08:00</lastmod>
+    <loc>https://cybeird.github.io/tags/Blog/</loc>
+    <lastmod>2022-08-10T10:11:43+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/categories/Blog/</loc>
+    <lastmod>2022-08-10T10:11:43+08:00</lastmod>
   </url><url>
     <loc>https://cybeird.github.io/categories/</loc>
+    <lastmod>2022-08-10T10:11:43+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/tags/Hugo/</loc>
+    <lastmod>2022-08-10T10:11:43+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/post/</loc>
+    <lastmod>2022-08-10T10:11:43+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/</loc>
+    <lastmod>2022-08-10T10:11:43+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/tags/</loc>
+    <lastmod>2022-08-10T10:11:43+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/post/hugo-keng/</loc>
+    <lastmod>2022-08-10T10:11:43+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/tags/C&#43;&#43;/</loc>
     <lastmod>2022-08-09T16:02:18+08:00</lastmod>
   </url><url>
     <loc>https://cybeird.github.io/categories/CPP/</loc>
@@ -14,16 +35,7 @@
     <loc>https://cybeird.github.io/post/GraphicsDraw-updata/</loc>
     <lastmod>2022-08-09T16:02:18+08:00</lastmod>
   </url><url>
-    <loc>https://cybeird.github.io/post/</loc>
-    <lastmod>2022-08-09T16:02:18+08:00</lastmod>
-  </url><url>
     <loc>https://cybeird.github.io/tags/Qt%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2022-08-09T16:02:18+08:00</lastmod>
-  </url><url>
-    <loc>https://cybeird.github.io/</loc>
-    <lastmod>2022-08-09T16:02:18+08:00</lastmod>
-  </url><url>
-    <loc>https://cybeird.github.io/tags/</loc>
     <lastmod>2022-08-09T16:02:18+08:00</lastmod>
   </url><url>
     <loc>https://cybeird.github.io/tags/TCP/</loc>
@@ -37,5 +49,32 @@
   </url><url>
     <loc>https://cybeird.github.io/tags/%E7%BB%98%E5%9B%BE/</loc>
     <lastmod>2022-08-09T16:02:18+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/categories/Technology/</loc>
+    <lastmod>2016-10-26T17:38:47+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/post/1024-festival/</loc>
+    <lastmod>2016-10-26T17:38:47+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/tags/hexo/</loc>
+    <lastmod>2016-10-20T20:12:05+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/categories/Post/</loc>
+    <lastmod>2016-10-20T20:12:05+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/post/Form-Begining/</loc>
+    <lastmod>2016-10-20T20:12:05+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/post/from-WP-to-HEXO/</loc>
+    <lastmod>2016-10-20T19:01:24+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/categories/GANNE/</loc>
+    <lastmod>2016-10-18T16:06:30+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/categories/HearthStone/</loc>
+    <lastmod>2016-10-18T16:06:30+08:00</lastmod>
+  </url><url>
+    <loc>https://cybeird.github.io/post/how-to-kill-yourself/</loc>
+    <lastmod>2016-10-18T16:06:30+08:00</lastmod>
   </url>
 </urlset>

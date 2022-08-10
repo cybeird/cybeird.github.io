@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology on Sundea&#39;s Blog</title>
+    <link>https://cybeird.github.io/categories/Technology/</link>
+    <description>Recent content in Technology on Sundea&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 26 Oct 2016 17:38:47 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/Technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从我做起 - 抵制1024程序员节</title>
+      <link>https://cybeird.github.io/post/1024-festival/</link>
+      <pubDate>Wed, 26 Oct 2016 17:38:47 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/1024-festival/</guid>
+      <description>
+        
+          
+            &lt;p&gt;今天是10月24日，我的微信朋友圈多了很多所谓的「1024程序员节」的庆祝贴，还多了很多「程序员鼓励师」，「AV女郎鼓励程序员」之类的恶搞图片。让我一阵一阵恶心，觉得自己应该写点什么了。&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,23 @@
     <description>Recent content on Sundea&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 09 Aug 2022 16:02:18 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Aug 2022 10:11:43 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建Hugo博客时踩的一些坑</title>
+      <link>https://cybeird.github.io/post/hugo-keng/</link>
+      <pubDate>Wed, 10 Aug 2022 10:11:43 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/hugo-keng/</guid>
+      <description>
+        
+          
+            措施1 修改静态配置文件，将url改为https
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>GraphicsDraw图像绘画同步项目当前存在的些许问题及解决方式</title>
       <link>https://cybeird.github.io/post/GraphicsDraw-updata/</link>
@@ -17,6 +33,70 @@
         
           
             总览 程序首先分为三个部分：绘图、数据库存储、TCP传输 程序设计模式使用单例模式，尽可能保证函数的功能单一化 绘图 重构qgraphicsitem类 在调用此类中已有的图形后，通过重构和Qpaint来构筑自定义的图形，并能正常进行绘制 数据库存储 数据库的增删改查函数 增 获取数据表名，数据名和
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>从我做起 - 抵制1024程序员节</title>
+      <link>https://cybeird.github.io/post/1024-festival/</link>
+      <pubDate>Wed, 26 Oct 2016 17:38:47 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/1024-festival/</guid>
+      <description>
+        
+          
+            &lt;p&gt;今天是10月24日，我的微信朋友圈多了很多所谓的「1024程序员节」的庆祝贴，还多了很多「程序员鼓励师」，「AV女郎鼓励程序员」之类的恶搞图片。让我一阵一阵恶心，觉得自己应该写点什么了。&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>从头开始吧!少年，感受这一切</title>
+      <link>https://cybeird.github.io/post/Form-Begining/</link>
+      <pubDate>Thu, 20 Oct 2016 20:12:05 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/Form-Begining/</guid>
+      <description>
+        
+          
+            这个简陋的网站可算是有了几分雏形了 现在终于不用再去忍受哪令人作呕的超长域名了，而仅仅只需要用cybeird.tk就可以访问了(当然，你也可以用cybeird.github.io来进入，实际上并没有什么区别) 而接下来要做的事情可能就是从我的wordpress那块把我的博客都转载过来
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>从WP到HEXO</title>
+      <link>https://cybeird.github.io/post/from-WP-to-HEXO/</link>
+      <pubDate>Thu, 20 Oct 2016 19:01:24 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/from-WP-to-HEXO/</guid>
+      <description>
+        
+          
+            实际上，很久以前就对wordpress中十分诡异的对中文字体的支持颇有微词了，而同时作为一个穷逼，并没有钱去获得全托管的网站，对于网站的CSS也是表示毫无权限。 在经历了无穷无尽，水深火热的小白期后，终于成为了一个菜鸟，然后照着谷歌上的教程终于成功的搭建起了自己的网站(想想也是很不
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>How to Kill Yourself ?</title>
+      <link>https://cybeird.github.io/post/how-to-kill-yourself/</link>
+      <pubDate>Tue, 18 Oct 2016 16:06:30 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-to-kill-yourself/</guid>
+      <description>
+        
+          
+            无法提供摘要。这是一篇受保护的文章。 继续阅读 →
           
           
         
