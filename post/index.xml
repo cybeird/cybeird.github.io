@@ -40,6 +40,39 @@
     </item>
     
     <item>
+      <title>既可以在线，也可以离线使用的markdown编辑器</title>
+      <link>https://cybeird.github.io/post/markdown-editor/</link>
+      <pubDate>Sat, 29 Oct 2016 10:26:16 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/markdown-editor/</guid>
+      <description>
+        
+          
+            &lt;p&gt;　　之前一直在找有没有什么比较好用的&lt;code&gt;markdown&lt;/code&gt;文本编辑器(没错，我之前一直都使用的Sublime这个几近万能的工具，然而..)。因为hexo所搭署的静态博客更新一次实在是很麻烦，如果无法实时预览的话一不小心就会发生排版爆炸的可怕事件(没错我之前因为少打了一个代码注释的符号从而引发了惨案)
+　　&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>HEXO 加入外链播放器的一些技巧(如何设置背景音乐)</title>
+      <link>https://cybeird.github.io/post/some-tips/</link>
+      <pubDate>Thu, 27 Oct 2016 14:08:13 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/some-tips/</guid>
+      <description>
+        
+          
+            &lt;p&gt;　　今天又去研究了一下关于hexo插入外链播放器的东西，结果还真的搞出来一些非常有趣的东西。&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Coding Is Great</title>
       <link>https://cybeird.github.io/post/coding-is-great/</link>
       <pubDate>Wed, 26 Oct 2016 18:54:24 +0800</pubDate>
@@ -188,6 +221,38 @@
           
             &lt;p&gt;如果奇迹有颜色，那么一定是“vijos上的橙名！”色；；&lt;/p&gt;
 &lt;p&gt;没错，为了RP而奋斗的我，又一次的在&lt;a href=&#34;https://vijos.org/training&#34;&gt;训练营&lt;/a&gt;中发现了一道十分水的&lt;a href=&#34;https://vijos.org/p/1130&#34;&gt;题目&lt;/a&gt;！&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://cybeird.github.io/post/hello-world/</link>
+      <pubDate>Sun, 18 Oct 2015 16:06:30 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/hello-world/</guid>
+      <description>
+        
+          
+            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing Run server $ hexo server More info: Server Generate static files $ hexo generate More info: Generating Deploy to remote sites $ hexo deploy More info: Deployment
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>计算字符串的相似度(TOWQs)</title>
+      <link>https://cybeird.github.io/post/string-similer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cybeird.github.io/post/string-similer/</guid>
+      <description>
+        
+          
+            许多程序会大量的使用字符串。对于不同的字符串，我们希望能有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操作方法为: 1 修改一个字符(如把“a”替换为“b”); 2 增加一个字符(如把“abdd”变为“aebdd”)； 3 删除一个字符(如把“travel
           
           
         

@@ -6,7 +6,23 @@
     <description>Recent content in hexo on Sundea&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 26 Oct 2016 18:54:24 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Oct 2016 14:08:13 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HEXO 加入外链播放器的一些技巧(如何设置背景音乐)</title>
+      <link>https://cybeird.github.io/post/some-tips/</link>
+      <pubDate>Thu, 27 Oct 2016 14:08:13 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/some-tips/</guid>
+      <description>
+        
+          
+            &lt;p&gt;　　今天又去研究了一下关于hexo插入外链播放器的东西，结果还真的搞出来一些非常有趣的东西。&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Coding Is Great</title>
       <link>https://cybeird.github.io/post/coding-is-great/</link>
@@ -49,6 +65,22 @@
         
           
             实际上，很久以前就对wordpress中十分诡异的对中文字体的支持颇有微词了，而同时作为一个穷逼，并没有钱去获得全托管的网站，对于网站的CSS也是表示毫无权限。 在经历了无穷无尽，水深火热的小白期后，终于成为了一个菜鸟，然后照着谷歌上的教程终于成功的搭建起了自己的网站(想想也是很不
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://cybeird.github.io/post/hello-world/</link>
+      <pubDate>Sun, 18 Oct 2015 16:06:30 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/hello-world/</guid>
+      <description>
+        
+          
+            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing Run server $ hexo server More info: Server Generate static files $ hexo generate More info: Generating Deploy to remote sites $ hexo deploy More info: Deployment
           
           
         

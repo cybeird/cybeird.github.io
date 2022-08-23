@@ -6,7 +6,24 @@
     <description>Recent content in Technology on Sundea&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 26 Oct 2016 17:38:47 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/Technology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Oct 2016 10:26:16 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/Technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>既可以在线，也可以离线使用的markdown编辑器</title>
+      <link>https://cybeird.github.io/post/markdown-editor/</link>
+      <pubDate>Sat, 29 Oct 2016 10:26:16 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/markdown-editor/</guid>
+      <description>
+        
+          
+            &lt;p&gt;　　之前一直在找有没有什么比较好用的&lt;code&gt;markdown&lt;/code&gt;文本编辑器(没错，我之前一直都使用的Sublime这个几近万能的工具，然而..)。因为hexo所搭署的静态博客更新一次实在是很麻烦，如果无法实时预览的话一不小心就会发生排版爆炸的可怕事件(没错我之前因为少打了一个代码注释的符号从而引发了惨案)
+　　&lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>从我做起 - 抵制1024程序员节</title>
       <link>https://cybeird.github.io/post/1024-festival/</link>
@@ -59,6 +76,22 @@
     &lt;/picture&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://cybeird.github.io/post/hello-world/</link>
+      <pubDate>Sun, 18 Oct 2015 16:06:30 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/hello-world/</guid>
+      <description>
+        
+          
+            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing Run server $ hexo server More info: Server Generate static files $ hexo generate More info: Generating Deploy to remote sites $ hexo deploy More info: Deployment
           
           
         
