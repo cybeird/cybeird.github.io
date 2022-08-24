@@ -6,7 +6,16 @@
     <description>Recent content in Trip Of WaterQuestions on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Oct 2016 21:01:34 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/trip-of-waterquestions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Oct 2016 17:01:35 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/trip-of-waterquestions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算字符串的相似度(TOWQs)</title>
+      <link>https://cybeird.github.io/post/string-similer/</link>
+      <pubDate>Thu, 27 Oct 2016 17:01:35 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/string-similer/</guid>
+      <description>许多程序会大量的使用字符串。对于不同的字符串，我们希望能有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操</description>
+    </item>
+    
     <item>
       <title>Gooooloooowoooocooo！{鱼人语：好水的题啊!}(TOWQs)</title>
       <link>https://cybeird.github.io/post/gooooloooowoooocooo/</link>
@@ -15,15 +24,6 @@
       <guid>https://cybeird.github.io/post/gooooloooowoooocooo/</guid>
       <description>&lt;p&gt;如果奇迹有颜色，那么一定是“vijos上的橙名！”色；；&lt;/p&gt;
 &lt;p&gt;没错，为了RP而奋斗的我，又一次的在&lt;a href=&#34;https://vijos.org/training&#34;&gt;训练营&lt;/a&gt;中发现了一道十分水的&lt;a href=&#34;https://vijos.org/p/1130&#34;&gt;题目&lt;/a&gt;！&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>计算字符串的相似度(TOWQs)</title>
-      <link>https://cybeird.github.io/post/string-similer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cybeird.github.io/post/string-similer/</guid>
-      <description>许多程序会大量的使用字符串。对于不同的字符串，我们希望能有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操</description>
     </item>
     
   </channel>

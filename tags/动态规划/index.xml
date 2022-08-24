@@ -19,7 +19,7 @@
     <item>
       <title>计算字符串的相似度(TOWQs)</title>
       <link>https://cybeird.github.io/post/string-similer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 27 Oct 2016 17:01:35 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/string-similer/</guid>
       <description>许多程序会大量的使用字符串。对于不同的字符串，我们希望能有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操</description>
