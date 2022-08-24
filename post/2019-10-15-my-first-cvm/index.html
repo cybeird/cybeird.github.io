@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>云服务器初探A-基本操作 - Sundae&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sundedi" /><meta name="description" content="由于U盘丢失惨案而引起的一系列事件，刚好腾讯云也送了一个15天的云服务器可以拿来试试手" /><meta name="keywords" content="Hugo, theme, even, c&#43;&#43;, qt" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://cybeird.github.io/post/2019-10-15-my-first-cvm/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="云服务器初探A-基本操作" />
+<meta property="og:description" content="由于U盘丢失惨案而引起的一系列事件，刚好腾讯云也送了一个15天的云服务器可以拿来试试手" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cybeird.github.io/post/2019-10-15-my-first-cvm/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-10-15T12:51:14+00:00" />
+<meta property="article:modified_time" content="2019-10-15T12:51:14+00:00" />
+
+<meta itemprop="name" content="云服务器初探A-基本操作">
+<meta itemprop="description" content="由于U盘丢失惨案而引起的一系列事件，刚好腾讯云也送了一个15天的云服务器可以拿来试试手"><meta itemprop="datePublished" content="2019-10-15T12:51:14+00:00" />
+<meta itemprop="dateModified" content="2019-10-15T12:51:14+00:00" />
+<meta itemprop="wordCount" content="931">
+<meta itemprop="keywords" content="云服务器,blog,hexo," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="云服务器初探A-基本操作"/>
+<meta name="twitter:description" content="由于U盘丢失惨案而引起的一系列事件，刚好腾讯云也送了一个15天的云服务器可以拿来试试手"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Sundae&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Sundae&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">云服务器初探A-基本操作</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-10-15 </span>
+        <div class="post-category">
+            <a href="/categories/technology/"> TECHNOLOGY </a>
+            </div>
+          <span class="more-meta"> 约 931 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#与云服务器cvm的第一次邂逅">与云服务器CVM的第一次邂逅</a></li>
+            <li><a href="#如何优雅的进进出出">如何优雅的进进出出</a></li>
+            <li><a href="#安装各类必要的环境依赖应用">安装各类必要的环境依赖应用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="与云服务器cvm的第一次邂逅">与云服务器CVM的第一次邂逅</h3>
+<p>我在一次更新博客的时候突然想起来之前好像给我的博客绑过一个域名(cybird.site)，不过后来好像炸了，我一直以为过期了，然后就上线查看了一番。</p>
+<p>结果不仅发现我的域名还没过期（还剩几个月），还&quot;意外&quot;在腾讯云发现了云服务器白给活动</p>
+<p><img src="https://i.loli.net/2019/10/15/ORmZHtKxUQdVwvl.png" alt="0元试用.png"></p>
+<p>这就很舒服了，毫不犹豫瞎搞就完事了</p>
+<p>当然我大概把几个提供的系统都试了一番，发现我还是用<code>centos</code>吧</p>
+<h3 id="如何优雅的进进出出">如何优雅的进进出出</h3>
+<h4 id="使用putty登入云服务器">使用<code>puTTy</code>登入云服务器</h4>
+<p><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">这里</a>是<code>puTTy</code>的下载地址.</p>
+<p>然后对其进行配置</p>
+<p><img src="https://main.qcloudimg.com/raw/7ac87da9721ef7d64fe8cac81a3dab33.png" alt="PuTTy"></p>
+<p>参数举例说明如下：</p>
+<ul>
+<li>Host Name（or IP address）：云服务器的公网IP（登录 <a href="https://console.cloud.tencent.com/cvm/index">云服务器控制台</a>，可在列表页及详情页中获取公网 IP）。</li>
+<li>Port：云服务器的端口，必须设置为22。</li>
+<li>Connect type：选择<code>SSH</code>。</li>
+<li>Saved Sessions：填写会话名称，例如 test。
+配置 <code>Host Name</code>后，再配置 <code>Saved Sessions</code> 并保存，则后续使用时您可直接双击 <code>Saved Sessions</code> 下保存的会话名称即可登录服务器。</li>
+</ul>
+<p>完成操作之后进到这个界面，输入账号密码即可开始快乐</p>
+<p><img src="https://i.loli.net/2019/10/15/8tU2s7zHDPYGhVZ.png" alt="进入服务器.png"></p>
+<h4 id="在云服务器上交互文件">在云服务器上交互文件</h4>
+<p>这里我们使用一款叫做<code>WinSCP</code>的<a href="https://winscp.net/eng/download.php">软件</a></p>
+<p><img src="https://i.loli.net/2019/10/15/2b8Uol3Sy9eOvu1.png" alt="来交互吧.png"></p>
+<p>这里不必多说，先把各类信息输好就行了</p>
+<p>在左边选取要上传的文件，右边选取要放置的目录然后点击<code>上传</code>即可，反之亦然</p>
+<p>不过直接拖拽也是可以的</p>
+<p><img src="https://i.loli.net/2019/10/15/FN9bfqDPaYy6ZBp.png" alt="交互.png"></p>
+<p>这样一来各种意义上来说都方便许多（直接拿来当网盘存存文件也挺好)</p>
+<p>不过我太弱了，所以入手的服务器也一样弱，跑<code>windows</code>卡顿很严重。而我对于<code>Linux</code>如何用手机愉快远程玩耍一窍不通，所以现在这儿立个<code>Flag</code></p>
+<h3 id="安装各类必要的环境依赖应用">安装各类必要的环境依赖应用</h3>
+<p><code>CentOS</code>环境安装依赖比较方便</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yum install 软件名称
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>就可以了</p>
+<h4 id="node-js-安装"><code>node js </code>安装</h4>
+<p>安装 <code>Node.js</code> 的最佳方式是使用<code> nvm</code>。<code>nvm</code> 的开发者提供了一个自动安装 <code>nvm </code>的简单脚本：
+cURL:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Wget:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完成后，重启终端并执行下列命令即可安装 Node.js。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nvm install node
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="安装git">安装<code>git</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yum -y install git 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="安装nginx">安装<code>nginx</code></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yum -y install nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><code>nginx</code>用于托管静态博客，不过我最后考虑了一番还是没用上</p>
+</blockquote>
+<h4 id="安装hexo">安装<code>hexo</code></h4>
+<p>我们使用 <code>Node.js </code>的包管理器 <code>npm</code> 安装 <code>hexo-cli</code> 和<code> hexo-server</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm install hexo-cli hexo-server -g
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果这里报错了可以尝试再前面加上<code>sudo</code></p>
+<p>这之后就可以快乐布劳格了</p>
+<p>至于<code>hexo</code>的食用方式这里不再阐述</p>
+<p>不过当在云服务器进行<code>hexo s</code>操作后，可以通过在浏览器中输入<code>http://服务器IP:4000/ </code>进入</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Sundedi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-10-15
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">云服务器</a>
+          <a href="/tags/blog/">blog</a>
+          <a href="/tags/hexo/">hexo</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2019-10-15-my-first-cvm-2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">云服务器初探B-转移博客</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2019-10-13-when-i-am-learning-py/">
+            <span class="next-text nav-default">when-i-am-learning-py</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:cybeird@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://cybeird.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Sundedi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

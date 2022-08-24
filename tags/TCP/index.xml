@@ -6,7 +6,16 @@
     <description>Recent content in TCP on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 09 Aug 2022 16:02:18 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Aug 2022 17:49:17 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的项目正在蒸蒸日上了！</title>
+      <link>https://cybeird.github.io/post/my-program-updating/</link>
+      <pubDate>Wed, 24 Aug 2022 17:49:17 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/my-program-updating/</guid>
+      <description>总任务清单 使用sqlite 较为简单，qt自带sqlite驱动，配置即可 sqlite基本不需要什么启动项或者应用程序来使用，他就像Markdo</description>
+    </item>
+    
     <item>
       <title>GraphicsDraw图像绘画同步项目当前存在的些许问题及解决方式</title>
       <link>https://cybeird.github.io/post/graphicsdraw-updata/</link>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>算法第五课-动态规划以及几个小问题 - Sundae&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sundedi" /><meta name="description" content="诶，还是勉为其难的写点题吧。" /><meta name="keywords" content="Hugo, theme, even, c&#43;&#43;, qt" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://cybeird.github.io/post/2021-09-28-algorithm-analysis-learning-5/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="算法第五课-动态规划以及几个小问题" />
+<meta property="og:description" content="诶，还是勉为其难的写点题吧。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cybeird.github.io/post/2021-09-28-algorithm-analysis-learning-5/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-28T08:12:21+00:00" />
+<meta property="article:modified_time" content="2021-09-28T08:12:21+00:00" />
+
+<meta itemprop="name" content="算法第五课-动态规划以及几个小问题">
+<meta itemprop="description" content="诶，还是勉为其难的写点题吧。"><meta itemprop="datePublished" content="2021-09-28T08:12:21+00:00" />
+<meta itemprop="dateModified" content="2021-09-28T08:12:21+00:00" />
+<meta itemprop="wordCount" content="637">
+<meta itemprop="keywords" content="DP,c艹,algorithm," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="算法第五课-动态规划以及几个小问题"/>
+<meta name="twitter:description" content="诶，还是勉为其难的写点题吧。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Sundae&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Sundae&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">算法第五课-动态规划以及几个小问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-28 </span>
+        <div class="post-category">
+            <a href="/categories/afterread/"> AfterRead </a>
+            <a href="/categories/algorithm-analysis/"> Algorithm Analysis </a>
+            </div>
+          <span class="more-meta"> 约 637 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#老师所给的实验题目索引如下">老师所给的实验题目索引如下</a>
+      <ul>
+        <li><a href="#实验二动态规划算法">实验二.动态规划算法←</a>
+          <ul>
+            <li><a href="#基本题一-最长公共子序列问题">基本题一 最长公共子序列问题</a></li>
+            <li><a href="#基本题二最大字段和问题">基本题二:最大字段和问题</a></li>
+            <li><a href="#提高题一用动态规划法求解01-背包问题">提高题一:用动态规划法求解0/1 背包问题</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="老师所给的实验题目索引如下">老师所给的实验题目索引如下</h1>
+<h2 id="实验二动态规划算法">实验二.动态规划算法←</h2>
+<h3 id="基本题一-最长公共子序列问题">基本题一 最长公共子序列问题</h3>
+<h4 id="一实验目的与要求">一、实验目的与要求</h4>
+<p>1、熟悉最长公共子序列问题的算法;</p>
+<p>2、初步掌握动态规划算法;</p>
+<h4 id="二实验题">二、实验题</h4>
+<p>若给定序列X={x1,x2,&hellip;xm},则另一序列Z={z1,z2,&hellip;zk}，是X的子序列是指存在一个严格递增下标序列{i1,i2,&hellip;ik}使得对于所有j=1,2&hellip;k有:zj=xij。例如，序列Z={B, C, D, B}是序列X={A, B, C, B, D, A, B}的子序列，相应的递增下标序列为{2, 3, 5，7}。</p>
+<p>给定2个序列X和Y,当另一序列Z既是X的子序列又是Y的子序列时，称Z是序列X和Y的公共子序列。</p>
+<p>给定2个序列X={x1,x2,&hellip;xm}和Y={y1,y2,&hellip;yn}，找出X和Y的最长公共子序列。</p>
+<h3 id="基本题二最大字段和问题">基本题二:最大字段和问题</h3>
+<h4 id="一实验目的与要求-1">一、实验目的与要求</h4>
+<p>1、熟悉最长最大字段和问题的算法;</p>
+<p>2、进一步掌握动态规划算法;</p>
+<h4 id="二实验题-1">二、实验题</h4>
+<p>若给定n个整数组成的序列a1，a2, a3&hellip;</p>
+<p>求该序列形如a1+a2+a3+&hellip;..+an的最大值。</p>
+<h3 id="提高题一用动态规划法求解01-背包问题">提高题一:用动态规划法求解0/1 背包问题</h3>
+<h4 id="一实验要求与目的">一、实验要求与目的</h4>
+<p>1、掌握动态规划算法求解问题的一般特征和步骤。</p>
+<p>2、使用动态规划法编程，求解0/1背包问题。</p>
+<h4 id="二实验内容">二、实验内容</h4>
+<p>1、问题描述:给定n种物品和一个背包，物品i的重量是W; 其价值为V，问如何选择装入背包的物品，使得装入背包的物品的总价值最大?</p>
+<p>2、算法描述。</p>
+<p>3、程序实现;给出实例测试结果。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Sundedi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-09-28
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/dp/">DP</a>
+          <a href="/tags/c%E8%89%B9/">c艹</a>
+          <a href="/tags/algorithm/">algorithm</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/graphicsdraw-updata/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GraphicsDraw图像绘画同步项目当前存在的些许问题及解决方式</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2021-09-15-forget-to-get-some-books/">
+            <span class="next-text nav-default">forget-to-get-some-books</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:cybeird@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://cybeird.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Sundedi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
