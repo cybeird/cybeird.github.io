@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Post on Sundea&#39;s Blog</title>
-    <link>https://cybeird.github.io/categories/Post/</link>
-    <description>Recent content in Post on Sundea&#39;s Blog</description>
+    <title>Post on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/categories/post/</link>
+    <description>Recent content in Post on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Thu, 27 Oct 2016 14:08:13 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/Post/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 27 Oct 2016 14:08:13 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HEXO 加入外链播放器的一些技巧(如何设置背景音乐)</title>
       <link>https://cybeird.github.io/post/some-tips/</link>
       <pubDate>Thu, 27 Oct 2016 14:08:13 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/some-tips/</guid>
-      <description>
-        
-          
-            &lt;p&gt;　　今天又去研究了一下关于hexo插入外链播放器的东西，结果还真的搞出来一些非常有趣的东西。&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;　　今天又去研究了一下关于hexo插入外链播放器的东西，结果还真的搞出来一些非常有趣的东西。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,14 +22,7 @@
       <pubDate>Wed, 26 Oct 2016 18:54:24 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/coding-is-great/</guid>
-      <description>
-        
-          
-            &lt;p&gt;　　今天真是令人感到高兴，终于解决掉了我的网站加载速度贼慢的坑爹问题。&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;　　今天真是令人感到高兴，终于解决掉了我的网站加载速度贼慢的坑爹问题。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,46 +31,25 @@
       <pubDate>Tue, 25 Oct 2016 09:05:43 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/god-damn-it/</guid>
-      <description>
-        
-          
-            &lt;p&gt;　　苍天已死，黄天当立！&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;　　苍天已死，黄天当立！&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>从头开始吧!少年，感受这一切</title>
-      <link>https://cybeird.github.io/post/Form-Begining/</link>
+      <link>https://cybeird.github.io/post/form-begining/</link>
       <pubDate>Thu, 20 Oct 2016 20:12:05 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/post/Form-Begining/</guid>
-      <description>
-        
-          
-            这个简陋的网站可算是有了几分雏形了 现在终于不用再去忍受哪令人作呕的超长域名了，而仅仅只需要用cybeird.tk就可以访问了(当然，你也可以用cybeird.github.io来进入，实际上并没有什么区别) 而接下来要做的事情可能就是从我的wordpress那块把我的博客都转载过来
-          
-          
-        
-      </description>
+      <guid>https://cybeird.github.io/post/form-begining/</guid>
+      <description>这个简陋的网站可算是有了几分雏形了 现在终于不用再去忍受哪令人作呕的超长域名了，而仅仅只需要用cybeird.tk就可以访问了(当然，你也可以</description>
     </item>
     
     <item>
       <title>从WP到HEXO</title>
-      <link>https://cybeird.github.io/post/from-WP-to-HEXO/</link>
+      <link>https://cybeird.github.io/post/from-wp-to-hexo/</link>
       <pubDate>Thu, 20 Oct 2016 19:01:24 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/post/from-WP-to-HEXO/</guid>
-      <description>
-        
-          
-            实际上，很久以前就对wordpress中十分诡异的对中文字体的支持颇有微词了，而同时作为一个穷逼，并没有钱去获得全托管的网站，对于网站的CSS也是表示毫无权限。 在经历了无穷无尽，水深火热的小白期后，终于成为了一个菜鸟，然后照着谷歌上的教程终于成功的搭建起了自己的网站(想想也是很不
-          
-          
-        
-      </description>
+      <guid>https://cybeird.github.io/post/from-wp-to-hexo/</guid>
+      <description>实际上，很久以前就对wordpress中十分诡异的对中文字体的支持颇有微词了，而同时作为一个穷逼，并没有钱去获得全托管的网站，对于网站的CS</description>
     </item>
     
   </channel>

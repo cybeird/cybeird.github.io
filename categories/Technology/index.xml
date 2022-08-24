@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Technology on Sundea&#39;s Blog</title>
-    <link>https://cybeird.github.io/categories/Technology/</link>
-    <description>Recent content in Technology on Sundea&#39;s Blog</description>
+    <title>Technology on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/categories/technology/</link>
+    <description>Recent content in Technology on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sat, 29 Oct 2016 10:26:16 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/Technology/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 29 Oct 2016 10:26:16 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>既可以在线，也可以离线使用的markdown编辑器</title>
       <link>https://cybeird.github.io/post/markdown-editor/</link>
       <pubDate>Sat, 29 Oct 2016 10:26:16 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/markdown-editor/</guid>
-      <description>
-        
-          
-            &lt;p&gt;　　之前一直在找有没有什么比较好用的&lt;code&gt;markdown&lt;/code&gt;文本编辑器(没错，我之前一直都使用的Sublime这个几近万能的工具，然而..)。因为hexo所搭署的静态博客更新一次实在是很麻烦，如果无法实时预览的话一不小心就会发生排版爆炸的可怕事件(没错我之前因为少打了一个代码注释的符号从而引发了惨案)
-　　&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;　　之前一直在找有没有什么比较好用的&lt;code&gt;markdown&lt;/code&gt;文本编辑器(没错，我之前一直都使用的Sublime这个几近万能的工具，然而..)。因为hexo所搭署的静态博客更新一次实在是很麻烦，如果无法实时预览的话一不小心就会发生排版爆炸的可怕事件(没错我之前因为少打了一个代码注释的符号从而引发了惨案)
+　　&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -30,14 +23,7 @@
       <pubDate>Wed, 26 Oct 2016 17:38:47 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/1024-festival/</guid>
-      <description>
-        
-          
-            &lt;p&gt;今天是10月24日，我的微信朋友圈多了很多所谓的「1024程序员节」的庆祝贴，还多了很多「程序员鼓励师」，「AV女郎鼓励程序员」之类的恶搞图片。让我一阵一阵恶心，觉得自己应该写点什么了。&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;今天是10月24日，我的微信朋友圈多了很多所谓的「1024程序员节」的庆祝贴，还多了很多「程序员鼓励师」，「AV女郎鼓励程序员」之类的恶搞图片。让我一阵一阵恶心，觉得自己应该写点什么了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,40 +32,7 @@
       <pubDate>Mon, 24 Oct 2016 19:22:47 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/ios-hot-chicken/</guid>
-      <description>
-        
-          
-            &lt;p&gt;&lt;figure&gt;
-  &lt;picture&gt;
-
-    
-      
-        
-        
-        
-        
-        
-        
-    &lt;img
-      loading=&#34;lazy&#34;
-      decoding=&#34;async&#34;
-      alt=&#34;&#34;
-      
-        class=&#34;image_figure image_external image_processed&#34;
-        width=&#34;680&#34;
-        height=&#34;595&#34;
-        src=&#34;https://cybeird.github.io/145528330678280402_11692213862281453512.png&#34;
-      
-      
-    /&gt;
-
-    &lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;&lt;img src=&#34;http://n1.itc.cn/img8/wb/recom/2016/02/12/145528330678280402.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -88,14 +41,7 @@
       <pubDate>Sun, 18 Oct 2015 16:06:30 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/hello-world/</guid>
-      <description>
-        
-          
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing Run server $ hexo server More info: Server Generate static files $ hexo generate More info: Generating Deploy to remote sites $ hexo deploy More info: Deployment
-          
-          
-        
-      </description>
+      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post 1 $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing Run server 1 $ hexo server More info: Server Generate static files 1 $ hexo generate More info:</description>
     </item>
     
   </channel>

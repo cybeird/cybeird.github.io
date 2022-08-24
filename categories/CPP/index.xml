@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cpp on Sundea&#39;s Blog</title>
+    <title>cpp on Sundae&#39;s Blog</title>
     <link>https://cybeird.github.io/categories/cpp/</link>
-    <description>Recent content in cpp on Sundea&#39;s Blog</description>
+    <description>Recent content in cpp on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>en</language>
     <lastBuildDate>Tue, 09 Aug 2022 16:02:18 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/cpp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GraphicsDraw图像绘画同步项目当前存在的些许问题及解决方式</title>
-      <link>https://cybeird.github.io/post/GraphicsDraw-updata/</link>
+      <link>https://cybeird.github.io/post/graphicsdraw-updata/</link>
       <pubDate>Tue, 09 Aug 2022 16:02:18 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/post/GraphicsDraw-updata/</guid>
-      <description>
-        
-          
-            总览 程序首先分为三个部分：绘图、数据库存储、TCP传输 程序设计模式使用单例模式，尽可能保证函数的功能单一化 绘图 重构qgraphicsitem类 在调用此类中已有的图形后，通过重构和Qpaint来构筑自定义的图形，并能正常进行绘制 数据库存储 数据库的增删改查函数 增 获取数据表名，数据名和
-          
-          
-        
-      </description>
+      <guid>https://cybeird.github.io/post/graphicsdraw-updata/</guid>
+      <description>总览 程序首先分为三个部分：绘图、数据库存储、TCP传输 程序设计模式使用单例模式，尽可能保证函数的功能单一化 绘图 重构qgraphicsitem</description>
     </item>
     
     <item>
@@ -29,15 +22,8 @@
       <pubDate>Tue, 11 Oct 2016 21:01:34 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/gooooloooowoooocooo/</guid>
-      <description>
-        
-          
-            &lt;p&gt;如果奇迹有颜色，那么一定是“vijos上的橙名！”色；；&lt;/p&gt;
-&lt;p&gt;没错，为了RP而奋斗的我，又一次的在&lt;a href=&#34;https://vijos.org/training&#34;&gt;训练营&lt;/a&gt;中发现了一道十分水的&lt;a href=&#34;https://vijos.org/p/1130&#34;&gt;题目&lt;/a&gt;！&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;如果奇迹有颜色，那么一定是“vijos上的橙名！”色；；&lt;/p&gt;
+&lt;p&gt;没错，为了RP而奋斗的我，又一次的在&lt;a href=&#34;https://vijos.org/training&#34;&gt;训练营&lt;/a&gt;中发现了一道十分水的&lt;a href=&#34;https://vijos.org/p/1130&#34;&gt;题目&lt;/a&gt;！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,14 +32,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cybeird.github.io/post/string-similer/</guid>
-      <description>
-        
-          
-            许多程序会大量的使用字符串。对于不同的字符串，我们希望能有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操作方法为: 1 修改一个字符(如把“a”替换为“b”); 2 增加一个字符(如把“abdd”变为“aebdd”)； 3 删除一个字符(如把“travel
-          
-          
-        
-      </description>
+      <description>许多程序会大量的使用字符串。对于不同的字符串，我们希望能有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操</description>
     </item>
     
   </channel>

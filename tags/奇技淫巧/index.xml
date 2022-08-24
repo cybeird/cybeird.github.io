@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>奇技淫巧 on Sundea&#39;s Blog</title>
+    <title>奇技淫巧 on Sundae&#39;s Blog</title>
     <link>https://cybeird.github.io/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</link>
-    <description>Recent content in 奇技淫巧 on Sundea&#39;s Blog</description>
+    <description>Recent content in 奇技淫巧 on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>en</language>
     <lastBuildDate>Thu, 27 Oct 2016 14:08:13 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HEXO 加入外链播放器的一些技巧(如何设置背景音乐)</title>
@@ -13,14 +13,7 @@
       <pubDate>Thu, 27 Oct 2016 14:08:13 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/some-tips/</guid>
-      <description>
-        
-          
-            &lt;p&gt;　　今天又去研究了一下关于hexo插入外链播放器的东西，结果还真的搞出来一些非常有趣的东西。&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;　　今天又去研究了一下关于hexo插入外链播放器的东西，结果还真的搞出来一些非常有趣的东西。&lt;/p&gt;</description>
     </item>
     
   </channel>

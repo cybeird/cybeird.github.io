@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sundea&#39;s Blog</title>
+    <title>Sundae&#39;s Blog</title>
     <link>https://cybeird.github.io/</link>
-    <description>Recent content on Sundea&#39;s Blog</description>
+    <description>Recent content on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>en</language>
     <lastBuildDate>Wed, 10 Aug 2022 10:11:43 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>创建Hugo博客时踩的一些坑</title>
@@ -13,30 +13,16 @@
       <pubDate>Wed, 10 Aug 2022 10:11:43 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/hugo-keng/</guid>
-      <description>
-        
-          
-            措施1 修改静态配置文件，将url改为https
-          
-          
-        
-      </description>
+      <description>措施1 修改静态配置文件，将url改为https</description>
     </item>
     
     <item>
       <title>GraphicsDraw图像绘画同步项目当前存在的些许问题及解决方式</title>
-      <link>https://cybeird.github.io/post/GraphicsDraw-updata/</link>
+      <link>https://cybeird.github.io/post/graphicsdraw-updata/</link>
       <pubDate>Tue, 09 Aug 2022 16:02:18 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/post/GraphicsDraw-updata/</guid>
-      <description>
-        
-          
-            总览 程序首先分为三个部分：绘图、数据库存储、TCP传输 程序设计模式使用单例模式，尽可能保证函数的功能单一化 绘图 重构qgraphicsitem类 在调用此类中已有的图形后，通过重构和Qpaint来构筑自定义的图形，并能正常进行绘制 数据库存储 数据库的增删改查函数 增 获取数据表名，数据名和
-          
-          
-        
-      </description>
+      <guid>https://cybeird.github.io/post/graphicsdraw-updata/</guid>
+      <description>总览 程序首先分为三个部分：绘图、数据库存储、TCP传输 程序设计模式使用单例模式，尽可能保证函数的功能单一化 绘图 重构qgraphicsitem</description>
     </item>
     
     <item>
@@ -45,15 +31,8 @@
       <pubDate>Sat, 29 Oct 2016 10:26:16 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/markdown-editor/</guid>
-      <description>
-        
-          
-            &lt;p&gt;　　之前一直在找有没有什么比较好用的&lt;code&gt;markdown&lt;/code&gt;文本编辑器(没错，我之前一直都使用的Sublime这个几近万能的工具，然而..)。因为hexo所搭署的静态博客更新一次实在是很麻烦，如果无法实时预览的话一不小心就会发生排版爆炸的可怕事件(没错我之前因为少打了一个代码注释的符号从而引发了惨案)
-　　&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;　　之前一直在找有没有什么比较好用的&lt;code&gt;markdown&lt;/code&gt;文本编辑器(没错，我之前一直都使用的Sublime这个几近万能的工具，然而..)。因为hexo所搭署的静态博客更新一次实在是很麻烦，如果无法实时预览的话一不小心就会发生排版爆炸的可怕事件(没错我之前因为少打了一个代码注释的符号从而引发了惨案)
+　　&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -62,14 +41,7 @@
       <pubDate>Thu, 27 Oct 2016 14:08:13 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/some-tips/</guid>
-      <description>
-        
-          
-            &lt;p&gt;　　今天又去研究了一下关于hexo插入外链播放器的东西，结果还真的搞出来一些非常有趣的东西。&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;　　今天又去研究了一下关于hexo插入外链播放器的东西，结果还真的搞出来一些非常有趣的东西。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -78,14 +50,7 @@
       <pubDate>Wed, 26 Oct 2016 18:54:24 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/coding-is-great/</guid>
-      <description>
-        
-          
-            &lt;p&gt;　　今天真是令人感到高兴，终于解决掉了我的网站加载速度贼慢的坑爹问题。&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;　　今天真是令人感到高兴，终于解决掉了我的网站加载速度贼慢的坑爹问题。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -94,14 +59,7 @@
       <pubDate>Wed, 26 Oct 2016 17:38:47 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/1024-festival/</guid>
-      <description>
-        
-          
-            &lt;p&gt;今天是10月24日，我的微信朋友圈多了很多所谓的「1024程序员节」的庆祝贴，还多了很多「程序员鼓励师」，「AV女郎鼓励程序员」之类的恶搞图片。让我一阵一阵恶心，觉得自己应该写点什么了。&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;今天是10月24日，我的微信朋友圈多了很多所谓的「1024程序员节」的庆祝贴，还多了很多「程序员鼓励师」，「AV女郎鼓励程序员」之类的恶搞图片。让我一阵一阵恶心，觉得自己应该写点什么了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -110,14 +68,7 @@
       <pubDate>Tue, 25 Oct 2016 09:05:43 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/god-damn-it/</guid>
-      <description>
-        
-          
-            &lt;p&gt;　　苍天已死，黄天当立！&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;　　苍天已死，黄天当立！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -126,72 +77,25 @@
       <pubDate>Mon, 24 Oct 2016 19:22:47 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/ios-hot-chicken/</guid>
-      <description>
-        
-          
-            &lt;p&gt;&lt;figure&gt;
-  &lt;picture&gt;
-
-    
-      
-        
-        
-        
-        
-        
-        
-    &lt;img
-      loading=&#34;lazy&#34;
-      decoding=&#34;async&#34;
-      alt=&#34;&#34;
-      
-        class=&#34;image_figure image_external image_processed&#34;
-        width=&#34;680&#34;
-        height=&#34;595&#34;
-        src=&#34;https://cybeird.github.io/145528330678280402_11692213862281453512.png&#34;
-      
-      
-    /&gt;
-
-    &lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;&lt;img src=&#34;http://n1.itc.cn/img8/wb/recom/2016/02/12/145528330678280402.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>从头开始吧!少年，感受这一切</title>
-      <link>https://cybeird.github.io/post/Form-Begining/</link>
+      <link>https://cybeird.github.io/post/form-begining/</link>
       <pubDate>Thu, 20 Oct 2016 20:12:05 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/post/Form-Begining/</guid>
-      <description>
-        
-          
-            这个简陋的网站可算是有了几分雏形了 现在终于不用再去忍受哪令人作呕的超长域名了，而仅仅只需要用cybeird.tk就可以访问了(当然，你也可以用cybeird.github.io来进入，实际上并没有什么区别) 而接下来要做的事情可能就是从我的wordpress那块把我的博客都转载过来
-          
-          
-        
-      </description>
+      <guid>https://cybeird.github.io/post/form-begining/</guid>
+      <description>这个简陋的网站可算是有了几分雏形了 现在终于不用再去忍受哪令人作呕的超长域名了，而仅仅只需要用cybeird.tk就可以访问了(当然，你也可以</description>
     </item>
     
     <item>
       <title>从WP到HEXO</title>
-      <link>https://cybeird.github.io/post/from-WP-to-HEXO/</link>
+      <link>https://cybeird.github.io/post/from-wp-to-hexo/</link>
       <pubDate>Thu, 20 Oct 2016 19:01:24 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/post/from-WP-to-HEXO/</guid>
-      <description>
-        
-          
-            实际上，很久以前就对wordpress中十分诡异的对中文字体的支持颇有微词了，而同时作为一个穷逼，并没有钱去获得全托管的网站，对于网站的CSS也是表示毫无权限。 在经历了无穷无尽，水深火热的小白期后，终于成为了一个菜鸟，然后照着谷歌上的教程终于成功的搭建起了自己的网站(想想也是很不
-          
-          
-        
-      </description>
+      <guid>https://cybeird.github.io/post/from-wp-to-hexo/</guid>
+      <description>实际上，很久以前就对wordpress中十分诡异的对中文字体的支持颇有微词了，而同时作为一个穷逼，并没有钱去获得全托管的网站，对于网站的CS</description>
     </item>
     
     <item>
@@ -200,14 +104,7 @@
       <pubDate>Tue, 18 Oct 2016 16:06:30 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/how-to-kill-yourself/</guid>
-      <description>
-        
-          
-            无法提供摘要。这是一篇受保护的文章。 继续阅读 →
-          
-          
-        
-      </description>
+      <description>无法提供摘要。这是一篇受保护的文章。 继续阅读 →</description>
     </item>
     
     <item>
@@ -216,15 +113,8 @@
       <pubDate>Tue, 11 Oct 2016 21:01:34 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/gooooloooowoooocooo/</guid>
-      <description>
-        
-          
-            &lt;p&gt;如果奇迹有颜色，那么一定是“vijos上的橙名！”色；；&lt;/p&gt;
-&lt;p&gt;没错，为了RP而奋斗的我，又一次的在&lt;a href=&#34;https://vijos.org/training&#34;&gt;训练营&lt;/a&gt;中发现了一道十分水的&lt;a href=&#34;https://vijos.org/p/1130&#34;&gt;题目&lt;/a&gt;！&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;如果奇迹有颜色，那么一定是“vijos上的橙名！”色；；&lt;/p&gt;
+&lt;p&gt;没错，为了RP而奋斗的我，又一次的在&lt;a href=&#34;https://vijos.org/training&#34;&gt;训练营&lt;/a&gt;中发现了一道十分水的&lt;a href=&#34;https://vijos.org/p/1130&#34;&gt;题目&lt;/a&gt;！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -233,14 +123,7 @@
       <pubDate>Sun, 18 Oct 2015 16:06:30 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/hello-world/</guid>
-      <description>
-        
-          
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing Run server $ hexo server More info: Server Generate static files $ hexo generate More info: Generating Deploy to remote sites $ hexo deploy More info: Deployment
-          
-          
-        
-      </description>
+      <description>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post 1 $ hexo new &amp;#34;My New Post&amp;#34; More info: Writing Run server 1 $ hexo server More info: Server Generate static files 1 $ hexo generate More info:</description>
     </item>
     
     <item>
@@ -249,14 +132,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cybeird.github.io/post/string-similer/</guid>
-      <description>
-        
-          
-            许多程序会大量的使用字符串。对于不同的字符串，我们希望能有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操作方法为: 1 修改一个字符(如把“a”替换为“b”); 2 增加一个字符(如把“abdd”变为“aebdd”)； 3 删除一个字符(如把“travel
-          
-          
-        
-      </description>
+      <description>许多程序会大量的使用字符串。对于不同的字符串，我们希望能有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操</description>
     </item>
     
   </channel>

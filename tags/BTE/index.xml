@@ -1,52 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>BTE on Sundea&#39;s Blog</title>
-    <link>https://cybeird.github.io/tags/BTE/</link>
-    <description>Recent content in BTE on Sundea&#39;s Blog</description>
+    <title>BTE on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/bte/</link>
+    <description>Recent content in BTE on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Mon, 24 Oct 2016 19:22:47 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/BTE/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Oct 2016 19:22:47 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/bte/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如果你恨一个程序员 忽悠他去做iOS开发</title>
       <link>https://cybeird.github.io/post/ios-hot-chicken/</link>
       <pubDate>Mon, 24 Oct 2016 19:22:47 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/ios-hot-chicken/</guid>
-      <description>
-        
-          
-            &lt;p&gt;&lt;figure&gt;
-  &lt;picture&gt;
-
-    
-      
-        
-        
-        
-        
-        
-        
-    &lt;img
-      loading=&#34;lazy&#34;
-      decoding=&#34;async&#34;
-      alt=&#34;&#34;
-      
-        class=&#34;image_figure image_external image_processed&#34;
-        width=&#34;680&#34;
-        height=&#34;595&#34;
-        src=&#34;https://cybeird.github.io/145528330678280402_11692213862281453512.png&#34;
-      
-      
-    /&gt;
-
-    &lt;/picture&gt;
-&lt;/figure&gt;
-&lt;/p&gt;
-          
-          
-        
-      </description>
+      <description>&lt;p&gt;&lt;img src=&#34;http://n1.itc.cn/img8/wb/recom/2016/02/12/145528330678280402.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
