@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>我要入门 on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/%E6%88%91%E8%A6%81%E5%85%A5%E9%97%A8/</link>
+    <description>Recent content in 我要入门 on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 23 Oct 2016 09:50:54 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E6%88%91%E8%A6%81%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>『3』我要入门！让你们见识一下树和二叉树的力量！</title>
+      <link>https://cybeird.github.io/post/i-want-to-learn-3rd/</link>
+      <pubDate>Sun, 23 Oct 2016 09:50:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/i-want-to-learn-3rd/</guid>
+      <description>&lt;p&gt;　　二叉树的递归定义如下：二叉树要么为空，要么由根节点(root)、左子树(left subtree)和右子树(right subtree)组成，而左子树和右子树分别是一棵二叉树。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

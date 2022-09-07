@@ -125,20 +125,101 @@
     </item>
     
     <item>
-      <title>文本编辑器</title>
-      <link>https://cybeird.github.io/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/</link>
-      <pubDate>Sat, 29 Oct 2016 10:26:16 +0800</pubDate>
+      <title>BFS</title>
+      <link>https://cybeird.github.io/tags/bfs/</link>
+      <pubDate>Sun, 13 Nov 2016 15:15:22 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
+      <guid>https://cybeird.github.io/tags/bfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COGS</title>
+      <link>https://cybeird.github.io/tags/cogs/</link>
+      <pubDate>Sun, 13 Nov 2016 15:15:22 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/cogs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kruskal</title>
+      <link>https://cybeird.github.io/tags/kruskal/</link>
+      <pubDate>Sun, 13 Nov 2016 15:15:22 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/kruskal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>并查集</title>
+      <link>https://cybeird.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
+      <pubDate>Sun, 13 Nov 2016 15:15:22 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>动态规划</title>
       <link>https://cybeird.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
-      <pubDate>Fri, 28 Oct 2016 08:55:57 +0800</pubDate>
+      <pubDate>Sun, 13 Nov 2016 15:15:22 +0800</pubDate>
       
       <guid>https://cybeird.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>宽度优先搜索</title>
+      <link>https://cybeird.github.io/tags/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Sun, 13 Nov 2016 15:15:22 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>最小生成树</title>
+      <link>https://cybeird.github.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
+      <pubDate>Sun, 13 Nov 2016 15:15:22 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>queue</title>
+      <link>https://cybeird.github.io/tags/queue/</link>
+      <pubDate>Tue, 08 Nov 2016 20:49:19 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/queue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stack</title>
+      <link>https://cybeird.github.io/tags/stack/</link>
+      <pubDate>Tue, 08 Nov 2016 20:49:19 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/stack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>栈</title>
+      <link>https://cybeird.github.io/tags/%E6%A0%88/</link>
+      <pubDate>Tue, 08 Nov 2016 20:49:19 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E6%A0%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>文本编辑器</title>
+      <link>https://cybeird.github.io/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/</link>
+      <pubDate>Sat, 29 Oct 2016 10:26:16 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
       <description></description>
     </item>
     
@@ -184,15 +265,6 @@
       <pubDate>Fri, 28 Oct 2016 08:55:57 +0800</pubDate>
       
       <guid>https://cybeird.github.io/tags/%E8%B4%AA%E5%BF%83/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>栈</title>
-      <link>https://cybeird.github.io/tags/%E6%A0%88/</link>
-      <pubDate>Fri, 28 Oct 2016 08:55:57 +0800</pubDate>
-      
-      <guid>https://cybeird.github.io/tags/%E6%A0%88/</guid>
       <description></description>
     </item>
     
@@ -256,6 +328,33 @@
       <pubDate>Mon, 24 Oct 2016 19:22:47 +0800</pubDate>
       
       <guid>https://cybeird.github.io/tags/apple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binary Tree</title>
+      <link>https://cybeird.github.io/tags/binary-tree/</link>
+      <pubDate>Sun, 23 Oct 2016 09:50:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/binary-tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据结构基础</title>
+      <link>https://cybeird.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 23 Oct 2016 09:50:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>我要入门</title>
+      <link>https://cybeird.github.io/tags/%E6%88%91%E8%A6%81%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sun, 23 Oct 2016 09:50:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E6%88%91%E8%A6%81%E5%85%A5%E9%97%A8/</guid>
       <description></description>
     </item>
     

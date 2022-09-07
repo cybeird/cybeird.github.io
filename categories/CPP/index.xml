@@ -26,6 +26,24 @@
     </item>
     
     <item>
+      <title>令人感到恐惧的DAY1?</title>
+      <link>https://cybeird.github.io/post/5-days-left/</link>
+      <pubDate>Sun, 13 Nov 2016 15:15:22 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/5-days-left/</guid>
+      <description>第一题？最小生成树啊 今天的第一题就让我不懂了，题意描述的太不清楚了(当然不是因为我蒟蒻!)，反正就是，怎么看都是走地道的话怎么都最多只能携带</description>
+    </item>
+    
+    <item>
+      <title>队列中取最大值操作</title>
+      <link>https://cybeird.github.io/post/how-to-get-the-maxelement-in-queue/</link>
+      <pubDate>Tue, 08 Nov 2016 20:49:19 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-to-get-the-maxelement-in-queue/</guid>
+      <description>&lt;p&gt;本文从&lt;a href=&#34;http://blog.jobbole.com/106940/#comment-158883&#34;&gt;漫画算法：最小栈的实现&lt;/a&gt;的评论区得到启发，有所感触，从而写下这篇博文.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>关于奶牛的几道水题</title>
       <link>https://cybeird.github.io/post/water-cow/</link>
       <pubDate>Fri, 28 Oct 2016 08:55:57 +0800</pubDate>
@@ -41,6 +59,15 @@
       
       <guid>https://cybeird.github.io/post/string-similer/</guid>
       <description>许多程序会大量的使用字符串。对于不同的字符串，我们希望能有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操</description>
+    </item>
+    
+    <item>
+      <title>『3』我要入门！让你们见识一下树和二叉树的力量！</title>
+      <link>https://cybeird.github.io/post/i-want-to-learn-3rd/</link>
+      <pubDate>Sun, 23 Oct 2016 09:50:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/i-want-to-learn-3rd/</guid>
+      <description>&lt;p&gt;　　二叉树的递归定义如下：二叉树要么为空，要么由根节点(root)、左子树(left subtree)和右子树(right subtree)组成，而左子树和右子树分别是一棵二叉树。&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -25,5 +25,14 @@
       <description>总览 程序首先分为三个部分：绘图、数据库存储、TCP传输 程序设计模式使用单例模式，尽可能保证函数的功能单一化 绘图 重构qgraphicsitem</description>
     </item>
     
+    <item>
+      <title>『3』我要入门！让你们见识一下树和二叉树的力量！</title>
+      <link>https://cybeird.github.io/post/i-want-to-learn-3rd/</link>
+      <pubDate>Sun, 23 Oct 2016 09:50:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/i-want-to-learn-3rd/</guid>
+      <description>&lt;p&gt;　　二叉树的递归定义如下：二叉树要么为空，要么由根节点(root)、左子树(left subtree)和右子树(right subtree)组成，而左子树和右子树分别是一棵二叉树。&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

@@ -6,7 +6,16 @@
     <description>Recent content in 栈 on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 28 Oct 2016 08:55:57 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E6%A0%88/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Nov 2016 20:49:19 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E6%A0%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>队列中取最大值操作</title>
+      <link>https://cybeird.github.io/post/how-to-get-the-maxelement-in-queue/</link>
+      <pubDate>Tue, 08 Nov 2016 20:49:19 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-to-get-the-maxelement-in-queue/</guid>
+      <description>&lt;p&gt;本文从&lt;a href=&#34;http://blog.jobbole.com/106940/#comment-158883&#34;&gt;漫画算法：最小栈的实现&lt;/a&gt;的评论区得到启发，有所感触，从而写下这篇博文.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>关于奶牛的几道水题</title>
       <link>https://cybeird.github.io/post/water-cow/</link>

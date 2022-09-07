@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>queue on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/queue/</link>
+    <description>Recent content in queue on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 08 Nov 2016 20:49:19 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/queue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>队列中取最大值操作</title>
+      <link>https://cybeird.github.io/post/how-to-get-the-maxelement-in-queue/</link>
+      <pubDate>Tue, 08 Nov 2016 20:49:19 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-to-get-the-maxelement-in-queue/</guid>
+      <description>&lt;p&gt;本文从&lt;a href=&#34;http://blog.jobbole.com/106940/#comment-158883&#34;&gt;漫画算法：最小栈的实现&lt;/a&gt;的评论区得到启发，有所感触，从而写下这篇博文.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
