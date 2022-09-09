@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on Sundae&#39;s Blog</title>
+    <title>blog on Sundae&#39;s Blog</title>
     <link>https://cybeird.github.io/tags/blog/</link>
-    <description>Recent content in Blog on Sundae&#39;s Blog</description>
+    <description>Recent content in blog on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 10 Aug 2022 10:11:43 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
@@ -14,6 +14,24 @@
       
       <guid>https://cybeird.github.io/post/hugo-keng/</guid>
       <description>措施1 修改静态配置文件，将url改为https</description>
+    </item>
+    
+    <item>
+      <title>新的评论系统终于建成</title>
+      <link>https://cybeird.github.io/post/a-new-comment-system/</link>
+      <pubDate>Sat, 29 Apr 2017 13:28:03 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/a-new-comment-system/</guid>
+      <description>&lt;p&gt;最后还是决定用网易云跟帖作为新的评论系统(为什么不用Disqus?恩,这是过好问题)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>一次激動人心的更新! &amp;&amp; 增添酷炫的背景 &amp;&amp; 新的評論系統(beta)</title>
+      <link>https://cybeird.github.io/post/an-amazing-update-hard-also/</link>
+      <pubDate>Sat, 29 Apr 2017 10:57:55 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/an-amazing-update-hard-also/</guid>
+      <description>首先必须要提的是一个悲伤的消息: 恩,的确是这样,多说就这样告别了我们. 而在我还在感叹的时候,发现hexo已经更新到了5.1.0版本,吓得我赶</description>
     </item>
     
   </channel>

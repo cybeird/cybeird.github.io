@@ -45,6 +45,15 @@
     </item>
     
     <item>
+      <title>见鬼，这些符号到底有什么不同？</title>
+      <link>https://cybeird.github.io/post/diffence-between-many-simple/</link>
+      <pubDate>Fri, 03 Sep 2021 12:11:48 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/diffence-between-many-simple/</guid>
+      <description>引子&amp;ndash;二叉树交换左右子树 昨日的题目大概是这样？ 1 2 3 4 5 6 7 8 9 10 11 12 13 void change(bitnode *&amp;amp;t, int x, int y) { bitnode *temp = new bitnode; if (t) { if (t==NULL)re</description>
+    </item>
+    
+    <item>
       <title>算法第一课-分治下的归并</title>
       <link>https://cybeird.github.io/post/algorithm-analysis-learning-1/</link>
       <pubDate>Thu, 02 Sep 2021 17:00:49 +0800</pubDate>
