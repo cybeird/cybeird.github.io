@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>binarySearch on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/binarysearch/</link>
+    <description>Recent content in binarySearch on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 07 Sep 2021 08:21:43 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/binarysearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>算法第二课-二分后查找</title>
+      <link>https://cybeird.github.io/post/algorithm-analysis-learning-2/</link>
+      <pubDate>Tue, 07 Sep 2021 08:21:43 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/algorithm-analysis-learning-2/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

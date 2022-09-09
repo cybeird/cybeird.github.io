@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>强势 on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/%E5%BC%BA%E5%8A%BF/</link>
+    <description>Recent content in 强势 on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 02 Nov 2016 17:40:33 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E5%BC%BA%E5%8A%BF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如果我想更改我的域名,该怎么办?</title>
+      <link>https://cybeird.github.io/post/301-redirect-bt/</link>
+      <pubDate>Wed, 02 Nov 2016 17:40:33 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/301-redirect-bt/</guid>
+      <description>&lt;p&gt;　　之前一直有人抱怨说我的域名实在是太长了(有吗？)而且很难记(&lt;code&gt;cybeird&lt;/code&gt;？)，于是我进行了各种研究(实际上就是&lt;code&gt;google&lt;/code&gt;了一下)，发现有用一些解决方法的。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>别做题了！一起来颓废吧！</title>
+      <link>https://cybeird.github.io/post/2048/</link>
+      <pubDate>Wed, 26 Oct 2016 15:00:38 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/2048/</guid>
+      <description>&lt;p&gt;　　没错，感到无聊的我决定要沉迷2048，但是并不想要去别的地方搞一搞，于是我开始想，能不能自己在自己的网站上做(嗯，clone一个)一个2048呢？这样就可以在自己的网站上颓废了。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithm on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/algorithm/</link>
+    <description>Recent content in algorithm on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 Sep 2021 08:12:21 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>算法第五课-动态规划以及几个小问题</title>
+      <link>https://cybeird.github.io/post/algorithm-analysis-learning-5/</link>
+      <pubDate>Tue, 28 Sep 2021 08:12:21 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/algorithm-analysis-learning-5/</guid>
+      <description>老师所给的实验题目索引如下 实验二.动态规划算法← 基本题一 最长公共子序列问题 一、实验目的与要求 1、熟悉最长公共子序列问题的算法; 2、初步掌握动</description>
+    </item>
+    
+    <item>
+      <title>算法第四课-DP靠顿悟</title>
+      <link>https://cybeird.github.io/post/algorithm-analysis-learning-4/</link>
+      <pubDate>Tue, 14 Sep 2021 18:38:43 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/algorithm-analysis-learning-4/</guid>
+      <description>&lt;h2 id=&#34;引入&#34;&gt;引入&lt;/h2&gt;
+&lt;p&gt;我感觉我没有必要专门再去写一个引入，因为无论是通俗易懂的金矿模型还是经典的01背包问题（抑或是今天老师讲的超市买东西）都讲的很不错，看这些肯定比我这个半吊子强。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>算法第二课-二分后查找</title>
+      <link>https://cybeird.github.io/post/algorithm-analysis-learning-2/</link>
+      <pubDate>Tue, 07 Sep 2021 08:21:43 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/algorithm-analysis-learning-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>算法第三课-够快的排序</title>
+      <link>https://cybeird.github.io/post/algorithm-analysis-learning-3/</link>
+      <pubDate>Tue, 07 Sep 2021 08:21:43 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/algorithm-analysis-learning-3/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 #include &amp;lt;cstdio&amp;gt; #include &amp;lt;iostream&amp;gt; #include &amp;lt;algorithm&amp;gt; #include &amp;lt;cmath&amp;gt; #include &amp;lt;ctime&amp;gt; #define N</description>
+    </item>
+    
+    <item>
+      <title>算法第一课-分治下的归并</title>
+      <link>https://cybeird.github.io/post/algorithm-analysis-learning-1/</link>
+      <pubDate>Thu, 02 Sep 2021 17:00:49 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/algorithm-analysis-learning-1/</guid>
+      <description>&lt;h2 id=&#34;核心思想&#34;&gt;核心思想&lt;/h2&gt;
+&lt;p&gt;归并排序的核心操作是归并（一般是二路归并），首先将待排序数列分割成若干个小子序列，在对最小的子序列进行完合并操作后，再将这些有序表逐步合并成为最终的有序序列。这个算法在老师的PPT上好像是叫做合并排序，本质上是一样的。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

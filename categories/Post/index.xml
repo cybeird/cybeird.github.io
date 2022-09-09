@@ -6,7 +6,53 @@
     <description>Recent content in Post on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 28 Oct 2016 08:36:48 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jan 2017 21:53:20 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Funny</title>
+      <link>https://cybeird.github.io/post/a-funny/</link>
+      <pubDate>Mon, 30 Jan 2017 21:53:20 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/a-funny/</guid>
+      <description>&lt;p&gt;1.&lt;/p&gt;
+&lt;p&gt;一个男孩给女孩写了一行代码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;print &amp;#39;I&amp;#39;, &amp;#39;Love&amp;#39;, &amp;#39;You!&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;女孩回了一行代码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;print(&amp;#39;I&amp;#39;, &amp;#39;Love&amp;#39;, &amp;#39;You&amp;#39;, &amp;#39;Too!&amp;#39;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;男孩看到后：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;print &amp;#39;BOOOOOOOOM!&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;很凄美&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2048更新日志</title>
+      <link>https://cybeird.github.io/post/2048-report/</link>
+      <pubDate>Sat, 05 Nov 2016 10:23:12 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/2048-report/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>何以解忧?唯有认怂~</title>
       <link>https://cybeird.github.io/post/soy-juice-hot-chicken/</link>
@@ -42,6 +88,15 @@
       
       <guid>https://cybeird.github.io/post/god-damn-it/</guid>
       <description>&lt;p&gt;　　苍天已死，黄天当立！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>正式驻扎在HEXO!</title>
+      <link>https://cybeird.github.io/post/stationed-on/</link>
+      <pubDate>Sun, 23 Oct 2016 14:27:09 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/stationed-on/</guid>
+      <description>&lt;p&gt;好了，搞了差不多有两节课的时间，终于把WP上的博文全数迁移到了HEXO上，实在是很不容易。&lt;/p&gt;</description>
     </item>
     
     <item>

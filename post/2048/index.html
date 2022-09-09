@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>别做题了！一起来颓废吧！ - Sundae&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sundedi" /><meta name="description" content="　没错，感到无聊的我决定要沉迷2048，但是并不想要去别的地方搞一搞，于是我开始想，能不能自己在自己的网站上做(嗯，clone一个)一个2048呢？这样就可以在自己的网站上颓废了。
+" /><meta name="keywords" content="Hugo, theme, even, c&#43;&#43;, qt" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://cybeird.github.io/post/2048/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="别做题了！一起来颓废吧！" />
+<meta property="og:description" content="　　没错，感到无聊的我决定要沉迷2048，但是并不想要去别的地方搞一搞，于是我开始想，能不能自己在自己的网站上做(嗯，clone一个)一个2048呢？这样就可以在自己的网站上颓废了。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cybeird.github.io/post/2048/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-10-26T15:00:38+08:00" />
+<meta property="article:modified_time" content="2016-10-26T15:00:38+08:00" />
+
+<meta itemprop="name" content="别做题了！一起来颓废吧！">
+<meta itemprop="description" content="　　没错，感到无聊的我决定要沉迷2048，但是并不想要去别的地方搞一搞，于是我开始想，能不能自己在自己的网站上做(嗯，clone一个)一个2048呢？这样就可以在自己的网站上颓废了。"><meta itemprop="datePublished" content="2016-10-26T15:00:38+08:00" />
+<meta itemprop="dateModified" content="2016-10-26T15:00:38+08:00" />
+<meta itemprop="wordCount" content="873">
+<meta itemprop="keywords" content="强势,妙趣横生,BTE," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="别做题了！一起来颓废吧！"/>
+<meta name="twitter:description" content="　　没错，感到无聊的我决定要沉迷2048，但是并不想要去别的地方搞一搞，于是我开始想，能不能自己在自己的网站上做(嗯，clone一个)一个2048呢？这样就可以在自己的网站上颓废了。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Sundae&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Sundae&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">别做题了！一起来颓废吧！</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-10-26 </span>
+        
+          <span class="more-meta"> 约 873 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#创建自定义网页">创建自定义网页</a></li>
+        <li><a href="#跳过渲染">跳过渲染</a>
+          <ul>
+            <li><a href="#在codehtmlcode文件中添加跳过渲染指令">在<code>html</code>文件中添加跳过渲染指令</a></li>
+            <li><a href="#在code_configymlcode文件中设置codeskip_rendercode">在<code>_config.yml</code>文件中设置<code>skip_render</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#完成">完成</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>　　没错，感到无聊的我决定要沉迷2048，但是并不想要去别的地方搞一搞，于是我开始想，能不能自己在自己的网站上做(嗯，clone一个)一个2048呢？这样就可以在自己的网站上颓废了。</p>
+<p>在经过了千辛万苦，终于clone+修改+发布成功了 <a href="http://cybird.site/2048/">没错，快点我</a>；
+　　这其中最让人感到头疼的莫过于如何让hexo不渲染这个网页。</p>
+<blockquote>
+<p>Hexo 博客中所见文章都是经由渲染的静态网页，而静态网页的样式都直接由 Hexo 的主题控制，所以 Hexo 博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。</p>
+</blockquote>
+<h2 id="创建自定义网页">创建自定义网页</h2>
+<p>　　网页可以是自己编写的，也可以是别人现成的源码。
+　　网页编写完成后，在<code>Hexo\source</code>目录下创建一个文件夹
+　　将 <code>html</code> 文件放置于此文件夹，并重命名为 <code>index.html</code> 。</p>
+<h2 id="跳过渲染">跳过渲染</h2>
+<h3 id="在codehtmlcode文件中添加跳过渲染指令">在<code>html</code>文件中添加跳过渲染指令</h3>
+<p>　　用编辑器打开放入<code>\Hexo\source&lt;/code&gt;创建的文件夹中的 <code>index.html</code> 文件，在开头添加如下代码即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">	---
+</span></span><span class="line"><span class="cl">	layout: false
+</span></span><span class="line"><span class="cl">	---
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>　　添加该指令后，执行 <code>hexo g</code>命令时便会跳过该 <code>index.html</code>文件，使得<code>index.html</code>不受当前 <code>hexo</code> 主题影响，完全是一个独立的网页，如果网页引用了 <code>css</code> 或 <code>js</code> ，这些 <code>css</code> 和 <code>js</code> 必须使用外链</p>
+<h3 id="在code_configymlcode文件中设置codeskip_rendercode">在<code>_config.yml</code>文件中设置<code>skip_render</code></h3>
+<p>　　使用编辑器打开 <code>Hexo</code> 目录下的<code>_config.yml</code>文件，找到<code>skip_render</code></p>
+<p><code>skip_render</code>一般有以下四种常用参数：
+1. 跳过 <code>source</code> 目录下的 <code>test.html:</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">	skip_render: test.html
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>　　2. 跳过<code>source</code>目录下 <code>test</code> 文件夹内所有文件：<code>skip_render: test/*</code>
+　　3. 跳过<code>source</code>目录下 <code>test</code> 文件夹内所有文件包括子文件夹以及子文件夹内的文件：<code>skip_render: test/**</code>
+　　4. 跳过多个路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">	skip_render:
+</span></span><span class="line"><span class="cl">    - test.html
+</span></span><span class="line"><span class="cl">    - test/*
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>　　<code>_config.yml</code>对格式要求严格，注意填写参数时的格式，添加完成后便不会渲染指定文件/文件夹。</p>
+<h2 id="完成">完成</h2>
+<p>　　执行<code>hexo g</code>和<code>hexo deploy</code>命令后便可以在博客上看到自己创建的网页，如果网页有特殊用途，可以在博客首页增加一个入口。 
+　　这时我们已经成功使得<code>hexo</code>不再渲染这个网页，然后让我们愉快玩耍吧！(你也可以通过站点概览下的“感到无聊”进入2048)</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Sundedi</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-10-26
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%BC%BA%E5%8A%BF/">强势</a>
+          <a href="/tags/%E5%A6%99%E8%B6%A3%E6%A8%AA%E7%94%9F/">妙趣横生</a>
+          <a href="/tags/bte/">BTE</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/1024-festival/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">从我做起 - 抵制1024程序员节</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/god-damn-it/">
+            <span class="next-text nav-default">苦痛！某老师坑爹的脑回路使得吾等不能自已。</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:cybeird@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/cybeird" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/login.php" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/blrd" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://cybeird.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Sundedi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
