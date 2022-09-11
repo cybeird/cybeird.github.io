@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>数据结构实验课の解题报告-Week3 - Sundae&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sundedi" /><meta name="description" content="这个实验课有很多水分，就当我在水贴吧" /><meta name="keywords" content="Hugo, theme, even, c&#43;&#43;, qt" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://cybeird.github.io/post/how-i-learn-data-3/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="数据结构实验课の解题报告-Week3" />
+<meta property="og:description" content="这个实验课有很多水分，就当我在水贴吧" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cybeird.github.io/post/how-i-learn-data-3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-10-12T22:50:10+08:00" />
+<meta property="article:modified_time" content="2019-10-12T22:50:10+08:00" />
+
+<meta itemprop="name" content="数据结构实验课の解题报告-Week3">
+<meta itemprop="description" content="这个实验课有很多水分，就当我在水贴吧"><meta itemprop="datePublished" content="2019-10-12T22:50:10+08:00" />
+<meta itemprop="dateModified" content="2019-10-12T22:50:10+08:00" />
+<meta itemprop="wordCount" content="3448">
+<meta itemprop="keywords" content="学习,数据结构,线性表," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据结构实验课の解题报告-Week3"/>
+<meta name="twitter:description" content="这个实验课有很多水分，就当我在水贴吧"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Sundae&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Sundae&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">数据结构实验课の解题报告-Week3</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-10-12 </span>
+        <div class="post-category">
+            <a href="/categories/cpp/"> cpp </a>
+            </div>
+          <span class="more-meta"> 约 3448 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#线性表对话框编程实例方法介绍下">线性表对话框编程实例方法介绍(下)</a></li>
+            <li><a href="#类中添加成员函数">类中添加成员函数：</a></li>
+            <li><a href="#为实现表的基本操作对话框类dlg_linear_lists的变量函数设置">为实现表的基本操作，对话框类<code>DLG_LINEAR_LISTS</code>的变量、函数设置</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="线性表对话框编程实例方法介绍下">线性表对话框编程实例方法介绍(下)</h3>
+<h3 id="类中添加成员函数">类中添加成员函数：</h3>
+<p>书接上文，继续在类中添加成员函数</p>
+<h4 id="添加类tbl成员函数">添加类<code>TBL</code>成员函数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">TBL</span>   <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="n">WriteFile</span><span class="p">(</span><span class="n">CString</span> <span class="n">fname</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">void</span> <span class="nf">DispTbl</span><span class="p">(</span><span class="n">CListBox</span> <span class="o">&amp;</span><span class="n">plist</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="nf">DeleteElem</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="nf">InsertElem</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ELEM</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="nf">AddElem</span><span class="p">(</span><span class="n">ELEM</span> <span class="o">&amp;</span><span class="n">pe</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">void</span> <span class="nf">InitTbl</span><span class="p">(</span><span class="n">CString</span> <span class="n">path_filename</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">TBL</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="k">virtual</span> <span class="o">~</span><span class="n">TBL</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">long</span> <span class="n">LoadFile</span><span class="p">(</span><span class="n">CString</span> <span class="n">fname</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ELEM</span>    <span class="n">e</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span>	<span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>初始化表<code>InitTbl</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">TBL</span><span class="o">::</span><span class="n">InitTbl</span><span class="p">(</span><span class="n">CString</span> <span class="n">path_filename</span><span class="p">)</span> <span class="p">{</span><span class="c1">//初始化表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>	<span class="c1">//设置表中元素个数为0，即空表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">CFileFind</span>  <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">FindFile</span><span class="p">(</span><span class="n">path_filename</span><span class="p">))</span>	
+</span></span><span class="line"><span class="cl">		<span class="c1">//测试文件是否存在，存在装入学生表文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">cnt</span><span class="o">=</span><span class="n">LoadFile</span><span class="p">(</span><span class="n">path_filename</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">ELEM</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>装入文件<code>LoadFile</code>，该成员函数属性设置为<code>private</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">TBL</span><span class="o">::</span><span class="n">LoadFile</span><span class="p">(</span><span class="n">CString</span> <span class="n">fname</span><span class="p">)</span> <span class="p">{</span>	<span class="c1">//参数: fname为全路径文件名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//返回值：0=读文件失败，否则，为读取文件的长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">CFile</span> <span class="n">x_hand</span><span class="p">;</span>	<span class="c1">//定义文件类对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">long</span> <span class="n">x_size</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">x_hand</span><span class="p">.</span><span class="n">Open</span><span class="p">((</span><span class="n">LPCTSTR</span><span class="p">)</span><span class="n">fname</span><span class="p">,</span><span class="n">CFile</span><span class="o">::</span><span class="n">modeRead</span><span class="p">,</span><span class="nb">NULL</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span><span class="c1">//只读模式打开文件，成功进行读操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">x_size</span><span class="o">=</span><span class="n">x_hand</span><span class="p">.</span><span class="n">GetLength</span><span class="p">();</span><span class="c1">//得到文件长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">x_hand</span><span class="p">.</span><span class="n">Read</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">t</span><span class="p">,</span><span class="n">x_size</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//读取x_size长度的内容到缓存e数组中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">x_hand</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>			<span class="c1">//关闭文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">x_size</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>向表中添加元素<code>AddElem</code></li>
+</ul>
+<p>即在表尾添加新元素，表长度增1。类<code>TBL</code>添加成员函数<code>AddElem</code>，属性<code>public</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl">  <span class="kt">bool</span> <span class="n">TBL</span><span class="o">::</span><span class="n">AddElem</span><span class="p">(</span><span class="n">ELEM</span> <span class="o">&amp;</span><span class="n">pe</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span><span class="c1">//向表中添加元素pe，pe待添加的元素变量引用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	 <span class="c1">//返回真，成功。否则，失败
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kt">bool</span>	<span class="n">val</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">cnt</span><span class="o">&lt;</span><span class="n">N</span><span class="p">)</span>			<span class="c1">//表满测试
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">{</span>	<span class="n">val</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>		<span class="c1">//添加成功标志
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">e</span><span class="p">[</span><span class="n">cnt</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">pe</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span>	<span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>向表中插入元素<code>InsertElem</code></p>
+<p>表插入，指在表的第i个位置上插入一个值为<code> x</code> 的新元素。</p>
+<p>原表长为<code>n</code>的表:</p>
+<p>(a1，a2，&hellip;，ai-1，ai，ai+1，&hellip;，an)
+插入后成为表长为<code>n+1</code>的表:
+(a1，a2，&hellip;，ai-1，x，ai，ai+1，&hellip;，an)
+<code>i</code> 的取值范围：<code>1&lt;=i&lt;=n+1</code> 。</p>
+</li>
+</ul>
+<ul>
+<li>类<code>TBL</code>添加成员函数<code>InsertElem</code> ，属性<code>public</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">TBL</span><span class="o">::</span><span class="n">InsertElem</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ELEM</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="c1">//参  数：pos插入位置（从1开始）, a待插入元素变量引用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">//返回值：true插入成功，否则失败
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span>	<span class="n">val</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">cnt</span><span class="o">&lt;</span><span class="n">N</span> <span class="o">&amp;&amp;</span> <span class="n">pos</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">pos</span><span class="o">&lt;=</span><span class="n">cnt</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>	<span class="n">val</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>	         <span class="c1">//插入成功标志
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">cnt</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">pos</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span>	
+</span></span><span class="line"><span class="cl">			<span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>    <span class="c1">//移位元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">;</span>	         <span class="c1">//插入元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">cnt</span><span class="o">++</span><span class="p">;</span>                 <span class="c1">//元素计数增1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>   
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>删除元素<code>DeleteElem</code></p>
+<p>表删除元素，指将表的第<code>i</code>个位置上元素删除。</p>
+<p>原表长为<code>n</code>的表:
+(a1，a2，&hellip;，ai-1，ai，ai+1，&hellip;，an)
+删除后成为表长为<code>n-1</code>的表:
+(a1，a2，&hellip;，ai-1，ai+1，&hellip;，an)
+<code> i</code> 的取值范围：<code>1&lt;=i&lt;=n</code> 。</p>
+</li>
+</ul>
+<ul>
+<li>类<code>TBL</code>添加成员函数<code>DeleteElem</code> ，属性<code>public</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="kt">bool</span> <span class="n">TBL</span><span class="o">::</span><span class="n">DeleteElem</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="c1">//参  数：pos为删除位置（从1开始）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">//返回值：true插入成功，否则失败
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span> <span class="n">val</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">pos</span><span class="o">&lt;=</span><span class="n">cnt</span> <span class="o">&amp;&amp;</span> <span class="n">pos</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>	<span class="n">val</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">cnt</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">			<span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span> 	<span class="c1">//向前移动元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">cnt</span><span class="o">--</span><span class="p">;</span>			<span class="c1">//表中元素-1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>表中元素输出到列表框<code>DispTbl</code> 类<code>TBL</code>添加成员函数<code>DispTbl</code>，属性<code>public</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">TBL</span><span class="o">::</span><span class="n">DispTbl</span><span class="p">(</span><span class="n">CListBox</span> <span class="o">&amp;</span><span class="n">plist</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="c1">//参  数： plist列表框控件对象引用；
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//返回值：无
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">CString</span> <span class="n">str</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plist</span><span class="p">.</span><span class="n">ResetContent</span><span class="p">();</span>		<span class="c1">//清除列表框内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">str</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="mi">15</span><span class="n">s</span><span class="o">%</span><span class="mi">12</span><span class="n">s</span><span class="o">%</span><span class="mi">8</span><span class="n">s</span><span class="o">%</span><span class="mi">10</span><span class="n">s</span><span class="err">”</span><span class="p">,</span> <span class="err">“编号”</span><span class="p">,</span> <span class="err">“姓名”</span><span class="p">,</span> <span class="err">“性别”</span><span class="p">,</span> <span class="err">“出生日期”</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plist</span><span class="p">.</span><span class="n">AddString</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>	<span class="c1">//组织好表头串，追加到列表框
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">cnt</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//逐个元素追加到列表框
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>	<span class="n">str</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s">&#34;%15s%12s%8s%18s&#34;</span><span class="p">,</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">GetNum</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">GetName</span><span class="p">(),</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">GetSex</span><span class="p">(),</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">GetElem</span><span class="p">().</span><span class="n">GetDate</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">		<span class="n">plist</span><span class="p">.</span><span class="n">AddString</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>   <span class="c1">//组织好一个串，追加到列表框
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>将表中数据写入文件中<code>WriteFile</code>类<code>TBL</code>添加成员函数<code>WriteFile</code>，属性<code>public</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">TBL</span><span class="o">::</span><span class="n">WriteFile</span><span class="p">(</span><span class="n">CString</span> <span class="n">fname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>	<span class="c1">//参数:fname为全路径文件名；返回值：false为写失败，否则写成功
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span>	<span class="n">val</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">CFile</span> <span class="n">x_hand</span><span class="p">;</span>	<span class="c1">//文件类对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">x_hand</span><span class="p">.</span><span class="n">Open</span><span class="p">((</span><span class="n">LPCTSTR</span><span class="p">)</span><span class="n">fname</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">CFile</span><span class="o">::</span><span class="n">modeCreate</span><span class="o">|</span><span class="n">CFile</span><span class="o">::</span><span class="n">modeWrite</span><span class="p">,</span><span class="nb">NULL</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="n">AfxMessageBox</span><span class="p">(</span><span class="s">&#34;打开或建立文件“&#34;</span><span class="o">+</span><span class="n">fname</span><span class="o">+</span><span class="s">&#34;”失败!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>	<span class="c1">//打开或建立文件成功
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">x_hand</span><span class="p">.</span><span class="n">Write</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">e</span><span class="p">,</span><span class="n">cnt</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="n">ELEM</span><span class="p">));</span><span class="c1">//写文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">x_hand</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>				<span class="c1">//关闭文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">val</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="类elem和类date_b添加内联函数">类ELEM和类DATE_B添加内联函数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DATE_B</span>  
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">CString</span> <span class="n">GetDate</span><span class="p">(){</span> <span class="n">CString</span> <span class="n">s</span><span class="p">;</span><span class="n">s</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s">&#34;%d-%d-%d&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">);</span><span class="k">return</span> <span class="n">s</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>	<span class="nf">SetDate</span><span class="p">(</span><span class="kt">int</span> <span class="n">y</span><span class="p">,</span><span class="kt">int</span> <span class="n">m</span><span class="p">,</span><span class="kt">int</span> <span class="n">d</span><span class="p">)</span>	<span class="p">{</span><span class="n">year</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">month</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="n">day</span><span class="o">=</span><span class="n">d</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">DATE_B</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="o">~</span><span class="n">DATE_B</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ELEM</span>  
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ELEM</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">virtual</span> <span class="o">~</span><span class="n">ELEM</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="o">*</span><span class="nf">GetNum</span><span class="p">()</span>	<span class="p">{</span>	<span class="k">return</span> <span class="n">num</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="o">*</span><span class="nf">GetName</span><span class="p">()</span>	<span class="p">{</span>	<span class="k">return</span> <span class="n">name</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="nf">GetSex</span><span class="p">()</span>	<span class="p">{</span>	<span class="k">return</span> <span class="n">sex</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">SetNum</span><span class="p">(</span><span class="n">CString</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span>	<span class="p">{</span>	<span class="n">strcpy</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">s</span><span class="p">);}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">SetName</span><span class="p">(</span><span class="n">CString</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span>	<span class="p">{</span>	<span class="n">strcpy</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">s</span><span class="p">);}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">SetSex</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>	<span class="p">{</span>	<span class="n">sex</span><span class="o">=</span><span class="n">a</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">DATE_B</span> <span class="o">&amp;</span><span class="n">IndexDate</span><span class="p">()</span>	<span class="p">{</span>	<span class="k">return</span> <span class="n">date</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="为实现表的基本操作对话框类dlg_linear_lists的变量函数设置">为实现表的基本操作，对话框类<code>DLG_LINEAR_LISTS</code>的变量、函数设置</h3>
+<h4 id="添加成员变量">添加成员变量</h4>
+<p>添加操作状态标识变量<code>m_flag</code>、表对象<code>my_qt</code></p>
+<p><img src="https://i.loli.net/2019/10/16/XUORjnqPM7E5NWc.png" alt="添加操作状态.png"></p>
+<blockquote>
+<p>注：为了能够识别类型<code>TBL</code>，添加<code>“include TBL.h</code></p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/10/16/OXw5Bjqm96CG2fk.png" alt="头文件.png"></p>
+<h4 id="添加成员函数">添加成员函数</h4>
+<ul>
+<li>
+<p>添加成员函数<code>x_SetAttrItem()</code></p>
+<p>函数功能：
+对追加、插入、删除和无操作状态这几个模式，设置编辑框、按钮的属性，即编辑框是否允许输入，按钮点击是否有效及按钮是否可见。
+访问类型： <code>private</code>
+说明函数为类的私有成员函数</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">DLG_LINEAR_LISTS</span><span class="o">::</span><span class="n">x_SetAttrItem</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="c1">//设置编辑框、按钮操作状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">m_year</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">;</span><span class="n">m_month</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">;</span> <span class="n">m_day</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">m_radio</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">m_num</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">;</span>	<span class="n">m_name</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">;</span>	<span class="n">m_pos</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">this</span><span class="o">-&gt;</span><span class="n">UpdateData</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>		<span class="c1">//变量交换到控件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">switch</span><span class="p">(</span><span class="n">m_flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>	<span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">		<span class="n">SET_EDIT_OPTION_MODE</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span><span class="c1">//使变灰色不能操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">mc_pos</span><span class="p">.</span><span class="n">EnableWindow</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">mc_butt_set</span><span class="p">.</span><span class="n">ShowWindow</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="c1">//隐藏控件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">mc_butt_noset</span><span class="p">.</span><span class="n">ShowWindow</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">SET_BUTTON_OPTION_MODE</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="mi">2</span><span class="o">:</span>				<span class="c1">//插入功能状态设置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">SET_EDIT_OPTION_MODE</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>	<span class="c1">//设置可操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">mc_pos</span><span class="p">.</span><span class="n">EnableWindow</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">mc_butt_set</span><span class="p">.</span><span class="n">ShowWindow</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">mc_butt_noset</span><span class="p">.</span><span class="n">ShowWindow</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">SET_BUTTON_OPTION_MODE</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="mi">1</span><span class="o">:</span>				<span class="c1">//追加功能状态设置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">SET_EDIT_OPTION_MODE</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>	<span class="c1">//设置可操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">mc_pos</span><span class="p">.</span><span class="n">EnableWindow</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>	
+</span></span><span class="line"><span class="cl">                      <span class="c1">//追加位置号设置为不可操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">mc_butt_set</span><span class="p">.</span><span class="n">ShowWindow</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">mc_butt_noset</span><span class="p">.</span><span class="n">ShowWindow</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">SET_BUTTON_OPTION_MODE</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="mi">3</span><span class="o">:</span>			<span class="c1">//删除功能状态设置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">SET_EDIT_OPTION_MODE</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                  <span class="c1">//使变灰色，不能操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">mc_pos</span><span class="p">.</span><span class="n">EnableWindow</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span> <span class="c1">//可操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">mc_butt_set</span><span class="p">.</span><span class="n">ShowWindow</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">mc_butt_noset</span><span class="p">.</span><span class="n">ShowWindow</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">SET_BUTTON_OPTION_MODE</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面函数里使用了宏，将下面宏代码添加到DLG_LINEAR_LISTS.cpp文件中，放在
+“// DLG_LINEAR_LISTS 对话框” 的前面</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#define SET_EDIT_OPTION_MODE(x)	\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_year.EnableWindow(x);\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_month.EnableWindow(x);\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_day.EnableWindow(x);\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_radio1.EnableWindow(x);\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_radio2.EnableWindow(x);\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_num.EnableWindow(x);\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_name.EnableWindow(x);
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define SET_BUTTON_OPTION_MODE(x)	\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_butt_add.EnableWindow(x);\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_butt_delete.EnableWindow(x);\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_butt_insert.EnableWindow(x);\
+</span></span></span><span class="line"><span class="cl"><span class="cp">		mc_butt_cancel.EnableWindow(x);
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://i.loli.net/2019/10/16/MovOs9gXHnyCcmF.png" alt="宏代码"></p>
+<ul>
+<li>
+<p>添加成员函数<code>x_CheckValidity</code></p>
+<p>功能：输入数据合法性检测，并将数据存入元素中
+参数：ELEM &amp;pe，为存放数据的元素
+返回值：返回真合法，否则不合法
+访问类型：private</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">DLG_LINEAR_LISTS</span><span class="o">::</span><span class="n">x_CheckValidity</span><span class="p">(</span><span class="n">ELEM</span> <span class="o">&amp;</span><span class="n">pe</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="c1">//输入数据合法性检测
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">bool</span>	<span class="n">val</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span> 	<span class="kt">int</span> <span class="n">m</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">switch</span><span class="p">(</span><span class="n">m_flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>	<span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">m_pos</span><span class="o">==</span><span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>	<span class="n">val</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>	<span class="k">break</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">m_flag</span><span class="o">==</span><span class="mi">3</span><span class="p">)</span>	<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	 <span class="n">m</span><span class="o">=</span><span class="n">atoi</span><span class="p">(</span><span class="n">m_month</span><span class="p">);</span>	<span class="n">d</span><span class="o">=</span><span class="n">atoi</span><span class="p">(</span><span class="n">m_day</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	 <span class="k">if</span><span class="p">(</span><span class="n">m_num</span><span class="o">==</span><span class="s">&#34;&#34;</span> <span class="o">||</span> <span class="n">m_name</span><span class="o">==</span><span class="s">&#34;&#34;</span> <span class="o">||</span> <span class="n">m</span><span class="o">&lt;</span><span class="mi">1</span> <span class="o">||</span> <span class="n">m</span><span class="o">&gt;</span><span class="mi">12</span> <span class="o">||</span> <span class="n">d</span><span class="o">&lt;</span><span class="mi">1</span> <span class="o">||</span> <span class="n">d</span><span class="o">&gt;</span><span class="mi">31</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	 <span class="p">{</span>	<span class="n">val</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>	<span class="k">break</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pe</span><span class="p">.</span><span class="n">SetNum</span><span class="p">(</span><span class="n">m_num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pe</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">m_name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">pe</span><span class="p">.</span><span class="n">SetSex</span><span class="p">(</span><span class="n">m_radio</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	   <span class="n">pe</span><span class="p">.</span><span class="n">IndexDate</span><span class="p">().</span><span class="n">SetDate</span><span class="p">(</span><span class="n">atoi</span><span class="p">(</span><span class="n">m_year</span><span class="p">),</span><span class="n">m</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>	<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="添加按钮点击消息影射函数">添加按钮点击消息影射函数</h4>
+<ul>
+<li>“追加”按钮点击响应函数<code>OnBnClickedButtonAdd()</code>
+功能：使成为追加元素操作模式</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">DLG_LINEAR_LISTS</span><span class="o">::</span><span class="n">OnBnClickedButtonAdd</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="c1">// TODO: 在此添加控件通知处理程序代码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">m_flag</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>		<span class="c1">//设置为追加元素操作模式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">x_SetAttrItem</span><span class="p">();</span><span class="c1">//设置编辑框、按钮属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>“插入”按钮点击响应函数<code>OnBnClickedButtonInsert()</code>
+功能：使成为插入元素操作模式</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">DLG_LINEAR_LISTS</span><span class="o">::</span><span class="n">OnBnClickedButtonInsert</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="c1">// TODO: 在此添加控件通知处理程序代码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">m_flag</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>		<span class="c1">//设置为插入元素操作模式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">x_SetAttrItem</span><span class="p">();</span><span class="c1">//设置编辑框、按钮属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>“删除”按钮点击响应函数<code>OnBnClickedButtonDelete()</code>
+功能：使成为删除元素操作模式</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">DLG_LINEAR_LISTS</span><span class="o">::</span><span class="n">OnBnClickedButtonDelete</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="c1">// TODO: 在此添加控件通知处理程序代码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">m_flag</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>		<span class="c1">//设置为删除元素操作模式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">x_SetAttrItem</span><span class="p">();</span><span class="c1">//设置编辑框、按钮属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>“返回”按钮点击响应函数<code>OnBnClickedButtonNoset()</code>
+功能：使成为无操作模式状态</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">DLG_LINEAR_LISTS</span><span class="o">::</span><span class="n">OnBnClickedButtonNoset</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="c1">// TODO: 在此添加控件通知处理程序代码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">m_flag</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>		<span class="c1">//设置为无操作模式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">x_SetAttrItem</span><span class="p">();</span><span class="c1">//设置编辑框、按钮属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>“确定”按钮点击响应函数<code>OnBnClickedButtonSet()</code>
+功能：输入数据合法性检测。合法，则按对应操作模式，更新表中数据</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">DLG_LINEAR_LISTS</span><span class="o">::</span> <span class="n">OnBnClickedButtonSet</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>	<span class="c1">// TODO: 在此添加控件通知处理程序代码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">bool</span>	<span class="n">val</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span><span class="c1">//状态，true=成功，false=失败
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">ELEM</span>	 <span class="n">e</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">this</span><span class="o">-&gt;</span><span class="n">UpdateData</span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>	<span class="c1">//从控件到变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">x_CheckValidity</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">this</span><span class="o">-&gt;</span><span class="n">MessageBox</span><span class="p">(</span><span class="s">&#34;数据不正确!!!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">   	<span class="k">switch</span><span class="p">(</span><span class="n">m_flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span><span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">my_qt</span><span class="p">.</span><span class="n">AddElem</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>	<span class="n">val</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>	<span class="nf">MessageBox</span><span class="p">(</span><span class="s">&#34;表已满，追加失败!!!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>                
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">my_qt</span><span class="p">.</span><span class="n">InsertElem</span><span class="p">(</span><span class="n">atoi</span><span class="p">(</span><span class="n">m_pos</span><span class="p">),</span><span class="n">e</span><span class="p">))</span> <span class="n">val</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">MessageBox</span><span class="p">(</span><span class="s">&#34;插入位置不合法或表已满，插入失败!!!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">my_qt</span><span class="p">.</span><span class="n">DeleteElem</span><span class="p">(</span><span class="n">atoi</span><span class="p">(</span><span class="n">m_pos</span><span class="p">)))</span> <span class="n">val</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>  <span class="nf">MessageBox</span><span class="p">(</span><span class="s">&#34;删除位置不合法，删除失败!!!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="c1">//操作成功
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>	<span class="n">my_qt</span><span class="p">.</span><span class="n">DispTbl</span><span class="p">(</span><span class="n">mc_list</span><span class="p">);</span>	<span class="k">this</span><span class="o">-&gt;</span><span class="n">x_SetAttrItem</span><span class="p">();}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>添加对话框初始化消息影射函数<code>OnInitDialog()</code></p>
+<pre><code>在“类视图”页面，点击“DLG_LINEAR_LISTS”项(左上图所示)后，在出
+</code></pre>
+<p>现如下图页面中，点击重写函数的盒子，图中红色箭头指的小方块， 弹出右图页面，找到<code>OnInitDialog</code>项，添加即可。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2019/10/16/tsWSB2LPpXfM5Gn.png" alt="添加初始化函数.png"></p>
+<p>在函数中添加初始化代码:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">m_flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//设置为无操作状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">my_qt</span><span class="p">.</span><span class="n">InitTbl</span><span class="p">(</span><span class="n">path_filename</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">my_qt</span><span class="p">.</span><span class="n">DispTbl</span><span class="p">(</span><span class="n">mc_list</span><span class="p">);</span>    <span class="c1">//表的信息从my_qt送到列表框中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">this</span><span class="o">-&gt;</span><span class="n">x_SetAttrItem</span><span class="p">();</span><span class="c1">//设置操作状态
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://i.loli.net/2019/10/16/IQ9AoFsgE7NY3lV.png" alt="初始化代码.png"></p>
+<ul>
+<li>通过“类向导”页面，添加<code>WM_DESTROY</code>消息映射函数<code>OnDestroy() </code></li>
+</ul>
+<p><img src="https://i.loli.net/2019/10/16/ZlAiMkJIYmdN7sv.png" alt="消息映射函数.png"></p>
+<p>在函数中添加代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl">	<span class="n">my_qt</span><span class="p">.</span><span class="n">WriteFile</span><span class="p">(</span><span class="n">path_filename</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://i.loli.net/2019/10/16/dZgs6Fpbk2HWlwe.png" alt="添加代码1.png"></p>
+<p>在<code>DLG_LINEAR_LISTS.cpp</code>文件开始处，添加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">path_filename</span><span class="p">[]</span><span class="o">=</span><span class="s">&#34;d:</span><span class="se">\\</span><span class="s">abc.xx&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://i.loli.net/2019/10/16/ErNoHJ357DWd6Kk.png" alt="添加代码.png">好了，生成，没有问题，运行程序</p>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+          <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+          <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/how-i-learn-data-4/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">数据结构实验课の解题报告-Week4</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/how-i-learn-data-2/">
+            <span class="next-text nav-default">数据结构实验课の解题报告-Week2</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-10-12 22:50:10 \u002b0800 CST',
+        title: '数据结构实验课の解题报告-Week3',
+        link: decodeURI(location.href),
+        desc: '',
+        owner: 'CyBeird',
+        repo: 'https:\/\/github.com\/cybeird\/blog-comments.git',
+        oauth: {
+          client_id: 'ad64af78087e76558035',
+          client_secret: '88c2f5096abefa211e680396ce9d373e5fb096b4'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:cybeird@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/cybeird" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/login.php" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/blrd" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://cybeird.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Sundedi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

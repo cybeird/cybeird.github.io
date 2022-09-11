@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>心情 on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/%E5%BF%83%E6%83%85/</link>
+    <description>Recent content in 心情 on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 05 Oct 2018 20:08:56 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E5%BF%83%E6%83%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我开学了，我不开心</title>
+      <link>https://cybeird.github.io/post/happy-new-bad-feel/</link>
+      <pubDate>Fri, 05 Oct 2018 20:08:56 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/happy-new-bad-feel/</guid>
+      <description>评论系统 这是我比较难受的部分，为此我还专门把hexo升级到了 `5.1.4` ，然而。。。 是的，在我将`gitalk`加入我的博客之后`deplay`了一下</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>从头开始的Python(z)初次见面 - Sundae&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sundedi" /><meta name="description" content="一不小心就把Python选修课给选上了，既如此，那就勉为其难的学学吧" /><meta name="keywords" content="Hugo, theme, even, c&#43;&#43;, qt" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://cybeird.github.io/post/how-i-learn-python/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="从头开始的Python(z)初次见面" />
+<meta property="og:description" content="一不小心就把Python选修课给选上了，既如此，那就勉为其难的学学吧" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cybeird.github.io/post/how-i-learn-python/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-10-17T21:53:31+08:00" />
+<meta property="article:modified_time" content="2019-10-17T21:53:31+08:00" />
+
+<meta itemprop="name" content="从头开始的Python(z)初次见面">
+<meta itemprop="description" content="一不小心就把Python选修课给选上了，既如此，那就勉为其难的学学吧"><meta itemprop="datePublished" content="2019-10-17T21:53:31+08:00" />
+<meta itemprop="dateModified" content="2019-10-17T21:53:31+08:00" />
+<meta itemprop="wordCount" content="2512">
+<meta itemprop="keywords" content="学习,Python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="从头开始的Python(z)初次见面"/>
+<meta name="twitter:description" content="一不小心就把Python选修课给选上了，既如此，那就勉为其难的学学吧"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Sundae&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Sundae&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">从头开始的Python(z)初次见面</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-10-17 </span>
+        <div class="post-category">
+            <a href="/categories/cpp/"> cpp </a>
+            </div>
+          <span class="more-meta"> 约 2512 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#我学python">我学Python</a></li>
+            <li><a href="#再起征途">再起征途</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="我学python">我学Python</h3>
+<p>实际上我在高二的时候就设想过把<code>Python</code>全通一遍，比如某个暑假搞一搞。</p>
+<p>但是由于某种不可抗力的存在，我的学习始终处于初识语法的阶段。</p>
+<h3 id="再起征途">再起征途</h3>
+<p>这次选修课的<em>误选</em>在某种程度上也算是成了一把鞭子，鼓励我向前走起。</p>
+<p>那么就从最基础的开始学起吧！</p>
+<h4 id="数据类型和变量">数据类型和变量</h4>
+<p><code>Python</code>的变量是很智能的，其类型由其所赋值的类型决定，随着赋值的改变，其类型也会改变。</p>
+<p>当然有的时候<code>Python</code>的<strong>自动类型转换</strong>有的时候会妨碍我们作业，这时候就需要使用<strong>强制类型转换</strong></p>
+<p>强制类型转换需要用到一些函数： <code>int()</code>,<code>float</code>，and so on</p>
+<h4 id="算术运算符">算术运算符</h4>
+<p>对于<code>Python</code>来说，除是<code>/</code>而整除是<code>//</code>，幂运算则是<code>**</code>，这与c艹不同。</p>
+<h4 id="eval函数"><code>eval()</code>函数</h4>
+<p>这可以说是上帝赋予的神奇之手了，智能无匹</p>
+<p>大概就是可以自动识别自动赋类型赋值，十分灵活但是我懒得在这里阐述了</p>
+<h4 id="空语句">空语句</h4>
+<p><strong><code>pass</code></strong></p>
+<h4 id="与或非">与或非</h4>
+<p><code>Python</code>里的与或非完全可以直接用<code>and</code>,<code>or</code>来搞，很方便</p>
+<h4 id="range语句"><code>range</code>语句</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">range(start, stop[, step])
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>参数说明：</p>
+<ul>
+<li>
+<p>start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;</p>
+</li>
+<li>
+<p>stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5</p>
+</li>
+<li>
+<p>step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)</p>
+</li>
+</ul>
+<p>很神奇，但是还算是比较好理解</p>
+<h4 id="列表的截取">列表的截取</h4>
+<h5 id="举个例子">举个例子</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">list</span><span class="p">[</span><span class="n">a</span><span class="err">🅱️</span><span class="n">c</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个a是左端,b是右端,c是步长。</p>
+<p>在[a,b]区间从左到右每隔c取值,默认c为1可以省略c参数，若c带负号表示反方向取值，即从右到左。</p>
+<h5 id="再举个例子">再举个例子</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">list[-1]            //取最后一个元素
+</span></span><span class="line"><span class="cl">list[:-1]			//取除了最后一个的全部
+</span></span><span class="line"><span class="cl">list[1:]			//从第二个开始取
+</span></span><span class="line"><span class="cl">list[:2]			//取到第二个
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个时候就可以放两道例题了，第一道是<a href="%E8%B4%A7%E5%B8%81%E8%BD%AC%E6%8D%A21">货币转换</a>，第二道也是<a href="%E8%B4%A7%E5%B8%81%E8%BD%AC%E6%8D%A22">货币转换</a></p>
+<h4 id="按需输出列表中的元素">按需输出列表中的元素</h4>
+<h5 id="指针">指针</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&#34; &#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="for循环">for循环</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a = [0, 1, 2, 3]
+</span></span><span class="line"><span class="cl">[print(i,end = &#34; &#34;) for i in a]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="奇妙缩进">奇妙缩进</h4>
+<p>对于<a href="%E6%89%BE%E7%B4%A0%E6%95%B0">这道题</a>,我在某个关键的地方少了一个关键的<code>Tab</code>,然后输出的结果就疯了</p>
+<p>这是我的错误代码,我在第11行不小心把<code>else</code>和<code>if</code>对齐了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">list1 = []
+</span></span><span class="line"><span class="cl">num = 0
+</span></span><span class="line"><span class="cl">for i in range (1,5) :
+</span></span><span class="line"><span class="cl">    for j in range(1,5) :
+</span></span><span class="line"><span class="cl">        for h in range(1,5) :
+</span></span><span class="line"><span class="cl">            if i != j and j != h and i != h :
+</span></span><span class="line"><span class="cl">                num = i *100 + j * 10 + h
+</span></span><span class="line"><span class="cl">                for k in range(2, num//2+1):
+</span></span><span class="line"><span class="cl">                    if (num % i) == 0:
+</span></span><span class="line"><span class="cl">                        break
+</span></span><span class="line"><span class="cl">                	else :
+</span></span><span class="line"><span class="cl">                        list1.append(num)
+</span></span><span class="line"><span class="cl">print(*list1, sep = &#34; &#34;)
+</span></span><span class="line"><span class="cl">#[print(i,end = &#34; &#34;) for i in list1]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>人民币和美元是世界上通用的两种货币之一，写一个程序进行货币间币值转换，其中：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>人民币和美元间汇率固定为：1美元 = 6.78人民币。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>程序可以接受人民币或美元输入，转换为美元或人民币输出。人民币采用￥符号或RMB表示，美元采用$或USD表示，符号和数值之间没有空格。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>注意：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>人民币和美元间符号在转换中要对等，￥和$相互对应，RMB和USD相互对应。</p>
+</blockquote>
+<p>代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">money</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">money</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="s1">&#39;U&#39;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">money</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;R&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">money</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span><span class="o">/</span><span class="mf">6.78</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;USD</span><span class="si">%.2f</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">ans</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">money</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span><span class="o">*</span><span class="mf">6.78</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;RMB</span><span class="si">%.2f</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">ans</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">money</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;￥&#39;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">money</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;￥&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">money</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="mf">6.78</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;$</span><span class="si">%.2f</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">ans</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">money</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">*</span><span class="mf">6.78</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;￥</span><span class="si">%.2f</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">ans</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>人民币和美元是世界上通用的两种货币之一，写一个程序进行货币间币值转换，其中：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>人民币和美元间汇率固定为：1美元 = 6.78人民币。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>程序可以接收人民币或美元输入，转换为美元或人民币输出。人民币采用￥符号或RMB表示，美元采用$或USD表示，符号和数值之间没有空格。‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>注意：‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>(1) 人民币和美元间符号在转换中要对等，￥和$相互对应，RMB和USD相互对应，输出结果保留小数点后两位；‪‬‪‬‪‬‪‬‪‬‮‬‪‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‫‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‭‬‪‬‪‬‪‬‪‬‪‬‪‬‮‬‫‬‭‬‪‬‪‬‪‬‪‬‪‬‮‬‪‬‮‬</p>
+<p>(2) 符号在数字的后面；</p>
+</blockquote>
+<p>代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">money</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">money</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">money</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">money</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">money</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">money</span><span class="p">[</span><span class="mi">0</span><span class="p">:(</span><span class="nb">len</span><span class="p">(</span><span class="n">money</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">)])</span><span class="o">/</span><span class="mf">6.78</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%.2f</span><span class="s2">USD&#34;</span><span class="o">%</span><span class="n">ans</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">money</span><span class="p">[</span><span class="mi">0</span><span class="p">:(</span><span class="nb">len</span><span class="p">(</span><span class="n">money</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">)])</span><span class="o">*</span><span class="mf">6.78</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%.2f</span><span class="s2">RMB&#34;</span><span class="o">%</span><span class="n">ans</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">money</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">money</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;￥&#39;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">money</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">money</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;￥&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">money</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">money</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mf">6.78</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%.2f</span><span class="s2">$&#34;</span><span class="o">%</span><span class="n">ans</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">money</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">money</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="mf">6.78</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%.2f</span><span class="s2">￥&#34;</span><span class="o">%</span><span class="n">ans</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>编写程序，由1、2、3、4四个数字组成三位数，每个数字在三位数中只能使用一次，找出其中的全部素数。</p>
+</blockquote>
+<p>正确代码如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">list1</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">h</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">h</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">num</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span><span class="mi">100</span> <span class="o">+</span> <span class="n">j</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">h</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">num</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">list1</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&#34; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#[print(i,end = &#34; &#34;) for i in list1]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+          <a href="/tags/python/">Python</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/algorithm-analysis-learning-1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">算法第一课-分治下的归并</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/how-i-learn-data-4/">
+            <span class="next-text nav-default">数据结构实验课の解题报告-Week4</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-10-17 21:53:31 \u002b0800 CST',
+        title: '从头开始的Python(z)初次见面',
+        link: decodeURI(location.href),
+        desc: '',
+        owner: 'CyBeird',
+        repo: 'https:\/\/github.com\/cybeird\/blog-comments.git',
+        oauth: {
+          client_id: 'ad64af78087e76558035',
+          client_secret: '88c2f5096abefa211e680396ce9d373e5fb096b4'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:cybeird@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/cybeird" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/login.php" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/blrd" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://cybeird.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Sundedi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

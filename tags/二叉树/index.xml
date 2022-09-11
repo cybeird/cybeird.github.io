@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>二叉树 on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+    <description>Recent content in 二叉树 on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 16 Oct 2019 21:33:01 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据结构实验课の解题报告-Week4</title>
+      <link>https://cybeird.github.io/post/how-i-learn-data-4/</link>
+      <pubDate>Wed, 16 Oct 2019 21:33:01 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-i-learn-data-4/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

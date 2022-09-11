@@ -44,6 +44,16 @@
     </item>
     
     <item>
+      <title>忘记弄点书了</title>
+      <link>https://cybeird.github.io/post/forget-to-get-some-books/</link>
+      <pubDate>Wed, 15 Sep 2021 11:24:08 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/forget-to-get-some-books/</guid>
+      <description>&lt;h2 id=&#34;学习&#34;&gt;学习&lt;/h2&gt;
+&lt;p&gt;今天第一节课软工理论基本是睡过去的，算法实验课基本也就写了个01背包然后全程划水，只感觉好累好累的，看来还是尽量不要熬夜，欸。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>算法第四课-DP靠顿悟</title>
       <link>https://cybeird.github.io/post/algorithm-analysis-learning-4/</link>
       <pubDate>Tue, 14 Sep 2021 18:38:43 +0800</pubDate>
@@ -51,6 +61,15 @@
       <guid>https://cybeird.github.io/post/algorithm-analysis-learning-4/</guid>
       <description>&lt;h2 id=&#34;引入&#34;&gt;引入&lt;/h2&gt;
 &lt;p&gt;我感觉我没有必要专门再去写一个引入，因为无论是通俗易懂的金矿模型还是经典的01背包问题（抑或是今天老师讲的超市买东西）都讲的很不错，看这些肯定比我这个半吊子强。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>看来只有我处于疯狂颓废的状态</title>
+      <link>https://cybeird.github.io/post/everoneslearning-expert-me/</link>
+      <pubDate>Tue, 07 Sep 2021 19:32:09 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/everoneslearning-expert-me/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -72,12 +91,30 @@
     </item>
     
     <item>
+      <title>周六的快乐我总是无法感受完全</title>
+      <link>https://cybeird.github.io/post/ff14-and-happy-life/</link>
+      <pubDate>Sat, 04 Sep 2021 20:55:24 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/ff14-and-happy-life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>见鬼，这些符号到底有什么不同？</title>
       <link>https://cybeird.github.io/post/diffence-between-many-simple/</link>
       <pubDate>Fri, 03 Sep 2021 12:11:48 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/diffence-between-many-simple/</guid>
       <description>引子&amp;ndash;二叉树交换左右子树 昨日的题目大概是这样？ 1 2 3 4 5 6 7 8 9 10 11 12 13 void change(bitnode *&amp;amp;t, int x, int y) { bitnode *temp = new bitnode; if (t) { if (t==NULL)re</description>
+    </item>
+    
+    <item>
+      <title>感叹这操蛋的生活--以及探索一番markdown的技巧</title>
+      <link>https://cybeird.github.io/post/explore-hexo-life-fuckegg/</link>
+      <pubDate>Fri, 03 Sep 2021 11:57:12 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/explore-hexo-life-fuckegg/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -91,12 +128,84 @@
     </item>
     
     <item>
+      <title>从头开始的Python(z)初次见面</title>
+      <link>https://cybeird.github.io/post/how-i-learn-python/</link>
+      <pubDate>Thu, 17 Oct 2019 21:53:31 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-i-learn-python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据结构实验课の解题报告-Week4</title>
+      <link>https://cybeird.github.io/post/how-i-learn-data-4/</link>
+      <pubDate>Wed, 16 Oct 2019 21:33:01 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-i-learn-data-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据结构实验课の解题报告-Week3</title>
+      <link>https://cybeird.github.io/post/how-i-learn-data-3/</link>
+      <pubDate>Sat, 12 Oct 2019 22:50:10 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-i-learn-data-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据结构实验课の解题报告-Week2</title>
+      <link>https://cybeird.github.io/post/how-i-learn-data-2/</link>
+      <pubDate>Thu, 10 Oct 2019 17:09:36 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-i-learn-data-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C艹实验课の解题报告-Week2</title>
+      <link>https://cybeird.github.io/post/how-i-learn-c-2/</link>
+      <pubDate>Thu, 10 Oct 2019 17:09:33 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-i-learn-c-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据结构实验课の解题报告-Week1</title>
+      <link>https://cybeird.github.io/post/how-i-learn-data-1/</link>
+      <pubDate>Wed, 09 Oct 2019 12:58:50 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-i-learn-data-1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C艹实验课の解题报告-Week1</title>
+      <link>https://cybeird.github.io/post/how-i-learn-c-1/</link>
+      <pubDate>Tue, 08 Oct 2019 21:26:19 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-i-learn-c-1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>又又又又一个新学期的新文章</title>
       <link>https://cybeird.github.io/post/a-new-term-for-new-life/</link>
       <pubDate>Mon, 26 Aug 2019 18:03:23 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/a-new-term-for-new-life/</guid>
       <description>旧的学期已然结束 怎么说呢，上个学期因为转专业的缘故，导致进班的时候实在是有点晚，落下的内容有点多以至于我自己都有许多自暴自弃的感觉，最后的结</description>
+    </item>
+    
+    <item>
+      <title>我开学了，我不开心</title>
+      <link>https://cybeird.github.io/post/happy-new-bad-feel/</link>
+      <pubDate>Fri, 05 Oct 2018 20:08:56 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/happy-new-bad-feel/</guid>
+      <description>评论系统 这是我比较难受的部分，为此我还专门把hexo升级到了 `5.1.4` ，然而。。。 是的，在我将`gitalk`加入我的博客之后`deplay`了一下</description>
     </item>
     
     <item>
@@ -115,6 +224,15 @@
       
       <guid>https://cybeird.github.io/post/an-amazing-update-hard-also/</guid>
       <description>首先必须要提的是一个悲伤的消息: 恩,的确是这样,多说就这样告别了我们. 而在我还在感叹的时候,发现hexo已经更新到了5.1.0版本,吓得我赶</description>
+    </item>
+    
+    <item>
+      <title>什么！炉石传说都有单机版了?</title>
+      <link>https://cybeird.github.io/post/hearthstone-mod-on-linux/</link>
+      <pubDate>Mon, 06 Feb 2017 20:02:32 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/hearthstone-mod-on-linux/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -170,6 +288,16 @@
       
       <guid>https://cybeird.github.io/post/a-new-world/</guid>
       <description>就是这样&amp;hellip; (我发现Ubuntu的PrtSc极其好使啊) 那么,就只需要用新的域名来访问我的博客了!</description>
+    </item>
+    
+    <item>
+      <title>新年快乐!</title>
+      <link>https://cybeird.github.io/post/happy-spring-fastival/</link>
+      <pubDate>Fri, 27 Jan 2017 09:36:29 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/happy-spring-fastival/</guid>
+      <description>&lt;p&gt;不知不觉又一年过去了,新的一年到来了,那么,就先祝大家新年快乐吧.
+实际上也没有什么太多要说的,在新的一年里,一起努力,一起变强吧!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -392,6 +520,22 @@
       
       <guid>https://cybeird.github.io/post/big-trip-of-waterquestions/</guid>
       <description>&lt;p&gt;在悉心听取了吴菶菶的建议之后，那么我也开始在自己的blog上更新自己的题解什么的东西了&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Friendship Is Magic!</title>
+      <link>https://cybeird.github.io/post/friendship-is-magic/</link>
+      <pubDate>Tue, 13 Sep 2016 16:04:24 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/friendship-is-magic/</guid>
+      <description>&lt;div class=&#34;zm-item-answer  zm-item-expanded&#34;&gt;
+&lt;div class=&#34;zm-item-rich-text expandable js-collapse-body&#34;&gt;
+&lt;div class=&#34;zm-editable-content clearfix&#34;&gt;
+&lt;p&gt;我的《彩虹小马：友谊的魔力》入教感想&lt;/p&gt;
+&lt;p&gt;孩之宝，世界顶级玩具公司之一，拥有特种部队，星球大战，变形金刚等知名品牌。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
     </item>
     
     <item>
