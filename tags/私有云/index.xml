@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>私有云 on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/%E7%A7%81%E6%9C%89%E4%BA%91/</link>
+    <description>Recent content in 私有云 on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 16 Oct 2019 21:33:07 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E7%A7%81%E6%9C%89%E4%BA%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>云服务器初探C-私有网盘</title>
+      <link>https://cybeird.github.io/post/my-first-cvm-3/</link>
+      <pubDate>Wed, 16 Oct 2019 21:33:07 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/my-first-cvm-3/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

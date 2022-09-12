@@ -6,7 +6,43 @@
     <description>Recent content in Technology on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Nov 2016 15:34:01 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Oct 2019 21:33:07 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>云服务器初探C-私有网盘</title>
+      <link>https://cybeird.github.io/post/my-first-cvm-3/</link>
+      <pubDate>Wed, 16 Oct 2019 21:33:07 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/my-first-cvm-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>云服务器初探B-转移博客</title>
+      <link>https://cybeird.github.io/post/my-first-cvm-2/</link>
+      <pubDate>Tue, 15 Oct 2019 22:41:43 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/my-first-cvm-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>云服务器初探A-基本操作</title>
+      <link>https://cybeird.github.io/post/my-first-cvm/</link>
+      <pubDate>Tue, 15 Oct 2019 12:51:14 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/my-first-cvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>一条不好但却和大家关注的免费域名关系密切的消息</title>
+      <link>https://cybeird.github.io/post/why-tk-free-and-cant-link-to-baidu/</link>
+      <pubDate>Mon, 30 Jan 2017 20:27:21 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/why-tk-free-and-cant-link-to-baidu/</guid>
+      <description>&lt;p&gt;免费域名由于垃圾站太多,&lt;code&gt;Google&lt;/code&gt;搜索完全清除了所有&lt;code&gt;.co.cc&lt;/code&gt;网站索引。也就是说，谷歌已经将&lt;code&gt;1100万&lt;/code&gt;个&lt;code&gt;.co.cc&lt;/code&gt;子域名从搜索结果中移除。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>怎样尊重一个程序员</title>
       <link>https://cybeird.github.io/post/how-the-programmer-should-be-duidai/</link>

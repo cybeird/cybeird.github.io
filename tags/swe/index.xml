@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SWE on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/swe/</link>
+    <description>Recent content in SWE on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 03 Sep 2021 18:01:45 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/swe/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一 软件工程概述</title>
+      <link>https://cybeird.github.io/post/software-engineering-learning-2/</link>
+      <pubDate>Fri, 03 Sep 2021 18:01:45 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/software-engineering-learning-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>软工第一课-概述与软件危机</title>
+      <link>https://cybeird.github.io/post/software-engineering-learning-1/</link>
+      <pubDate>Wed, 25 Aug 2021 10:06:53 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/software-engineering-learning-1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
