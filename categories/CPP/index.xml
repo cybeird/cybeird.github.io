@@ -6,7 +6,16 @@
     <description>Recent content in cpp on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Aug 2022 17:49:17 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Sep 2022 11:00:03 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>11月4日解题报告</title>
+      <link>https://cybeird.github.io/post/noip2016-11-4-reports/</link>
+      <pubDate>Tue, 13 Sep 2022 11:00:03 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/noip2016-11-4-reports/</guid>
+      <description>&lt;p&gt;没错,2017年的我发现我当年什么都没写,已然忘记当年在干什么了..就这样吧&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>我的项目正在蒸蒸日上了！</title>
       <link>https://cybeird.github.io/post/my-program-updating/</link>
@@ -49,6 +58,31 @@
       <pubDate>Sat, 12 Oct 2019 22:50:10 +0800</pubDate>
       
       <guid>https://cybeird.github.io/post/how-i-learn-data-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>如何将将类模板中的成员函数在类模板外定义呢</title>
+      <link>https://cybeird.github.io/post/how-make-model-out/</link>
+      <pubDate>Fri, 11 Oct 2019 20:13:41 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-make-model-out/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先我们知道类模板很重要，而这个声明是在类前进行的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;但是每个成员函数在模板外定义的时候都要再声明一边类模板，这就是我所知道但却忘记的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>在类的外面调用类的private数据</title>
+      <link>https://cybeird.github.io/post/how-to-use-private-out/</link>
+      <pubDate>Fri, 11 Oct 2019 20:13:35 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-to-use-private-out/</guid>
       <description></description>
     </item>
     
@@ -122,6 +156,15 @@
       
       <guid>https://cybeird.github.io/post/how-to-get-the-maxelement-in-queue/</guid>
       <description>&lt;p&gt;本文从&lt;a href=&#34;http://blog.jobbole.com/106940/#comment-158883&#34;&gt;漫画算法：最小栈的实现&lt;/a&gt;的评论区得到启发，有所感触，从而写下这篇博文.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>树状天平(Not so Mobile,UVa 839)(TOWQs)</title>
+      <link>https://cybeird.github.io/post/not-so-mobile/</link>
+      <pubDate>Tue, 08 Nov 2016 17:38:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/not-so-mobile/</guid>
+      <description>下面看一道名为天平的题目(Not si Mobile,UVa 839) 题目描述 输入一个树状天平,根据力矩相等的原则判断是否平衡。如图，所谓力矩相等，就是WlDl=WrDr，</description>
     </item>
     
     <item>

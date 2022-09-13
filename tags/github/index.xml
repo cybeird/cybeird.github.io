@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/github/</link>
+    <description>Recent content in Github on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 02 Sep 2021 09:06:20 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>怎样将博客内容相关的源文件保存在Github上</title>
+      <link>https://cybeird.github.io/post/how-save-blog-github/</link>
+      <pubDate>Thu, 02 Sep 2021 09:06:20 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-save-blog-github/</guid>
+      <description>&lt;h2 id=&#34;前情提要&#34;&gt;前情提要&lt;/h2&gt;
+&lt;p&gt;首先，我们要知道哪些文件是可替代的，哪些文件是用户配置之后需要保留的&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

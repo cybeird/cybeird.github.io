@@ -6,7 +6,16 @@
     <description>Recent content in Binary Tree on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 23 Oct 2016 09:50:54 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Nov 2016 17:38:54 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>树状天平(Not so Mobile,UVa 839)(TOWQs)</title>
+      <link>https://cybeird.github.io/post/not-so-mobile/</link>
+      <pubDate>Tue, 08 Nov 2016 17:38:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/not-so-mobile/</guid>
+      <description>下面看一道名为天平的题目(Not si Mobile,UVa 839) 题目描述 输入一个树状天平,根据力矩相等的原则判断是否平衡。如图，所谓力矩相等，就是WlDl=WrDr，</description>
+    </item>
+    
     <item>
       <title>『3』我要入门！让你们见识一下树和二叉树的力量！</title>
       <link>https://cybeird.github.io/post/i-want-to-learn-3rd/</link>

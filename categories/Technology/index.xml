@@ -6,7 +6,16 @@
     <description>Recent content in Technology on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Oct 2019 21:33:07 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Oct 2019 23:30:19 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux系统SSH客户端断开后保持进程继续运行配置方法</title>
+      <link>https://cybeird.github.io/post/how-keep-running/</link>
+      <pubDate>Wed, 16 Oct 2019 23:30:19 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-keep-running/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://help.aliyun.com/knowledge_detail/42523.html?spm=5176.2000002.0.0.616d7b0fuIjmqa&#34;&gt;参考链接&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>云服务器初探C-私有网盘</title>
       <link>https://cybeird.github.io/post/my-first-cvm-3/</link>

@@ -16,5 +16,19 @@
       <description></description>
     </item>
     
+    <item>
+      <title>关于markdown中使用思维导图的测试与研究</title>
+      <link>https://cybeird.github.io/post/mermaid-text/</link>
+      <pubDate>Wed, 25 Aug 2021 15:25:39 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/mermaid-text/</guid>
+      <description>&lt;p&gt;mermaid的markdown语法
+graph LR
+A[方块] &amp;ndash;&amp;gt; B(圆块)
+B &amp;ndash;&amp;gt; C{菱形}
+C &amp;ndash;&amp;gt; |1| D[方块1]
+C &amp;ndash;&amp;gt; |2| E[方块2]&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

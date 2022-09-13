@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Aug 2022 17:49:17 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Sep 2022 11:17:52 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>coding</title>
+      <link>https://cybeird.github.io/tags/coding/</link>
+      <pubDate>Tue, 13 Sep 2022 11:17:52 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/coding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hexo</title>
+      <link>https://cybeird.github.io/tags/hexo/</link>
+      <pubDate>Tue, 13 Sep 2022 11:17:52 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>https://cybeird.github.io/tags/website/</link>
+      <pubDate>Tue, 13 Sep 2022 11:17:52 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>二分答案</title>
+      <link>https://cybeird.github.io/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/</link>
+      <pubDate>Tue, 13 Sep 2022 11:00:03 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>线段树</title>
+      <link>https://cybeird.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+      <pubDate>Tue, 13 Sep 2022 11:00:03 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>C&#43;&#43;</title>
       <link>https://cybeird.github.io/tags/c&#43;&#43;/</link>
@@ -154,9 +199,27 @@
     <item>
       <title>next</title>
       <link>https://cybeird.github.io/tags/next/</link>
-      <pubDate>Tue, 07 Sep 2021 19:32:09 +0800</pubDate>
+      <pubDate>Wed, 08 Sep 2021 15:53:04 +0800</pubDate>
       
       <guid>https://cybeird.github.io/tags/next/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self-Contribute</title>
+      <link>https://cybeird.github.io/tags/self-contribute/</link>
+      <pubDate>Wed, 08 Sep 2021 15:53:04 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/self-contribute/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Volantis</title>
+      <link>https://cybeird.github.io/tags/volantis/</link>
+      <pubDate>Wed, 08 Sep 2021 15:53:04 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/volantis/</guid>
       <description></description>
     </item>
     
@@ -215,15 +278,6 @@
     </item>
     
     <item>
-      <title>hexo</title>
-      <link>https://cybeird.github.io/tags/hexo/</link>
-      <pubDate>Fri, 03 Sep 2021 11:57:12 +0800</pubDate>
-      
-      <guid>https://cybeird.github.io/tags/hexo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>markdown</title>
       <link>https://cybeird.github.io/tags/markdown/</link>
       <pubDate>Fri, 03 Sep 2021 11:57:12 +0800</pubDate>
@@ -251,11 +305,38 @@
     </item>
     
     <item>
+      <title>git</title>
+      <link>https://cybeird.github.io/tags/git/</link>
+      <pubDate>Thu, 02 Sep 2021 09:06:20 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://cybeird.github.io/tags/github/</link>
+      <pubDate>Thu, 02 Sep 2021 09:06:20 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>DOOM</title>
       <link>https://cybeird.github.io/tags/doom/</link>
       <pubDate>Thu, 02 Sep 2021 08:32:16 +0800</pubDate>
       
       <guid>https://cybeird.github.io/tags/doom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mermaid</title>
+      <link>https://cybeird.github.io/tags/mermaid/</link>
+      <pubDate>Wed, 25 Aug 2021 15:25:39 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/mermaid/</guid>
       <description></description>
     </item>
     
@@ -278,20 +359,20 @@
     </item>
     
     <item>
+      <title>云服务器</title>
+      <link>https://cybeird.github.io/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Wed, 16 Oct 2019 23:30:19 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>私有云</title>
       <link>https://cybeird.github.io/tags/%E7%A7%81%E6%9C%89%E4%BA%91/</link>
       <pubDate>Wed, 16 Oct 2019 21:33:07 +0800</pubDate>
       
       <guid>https://cybeird.github.io/tags/%E7%A7%81%E6%9C%89%E4%BA%91/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>云服务器</title>
-      <link>https://cybeird.github.io/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-      <pubDate>Wed, 16 Oct 2019 21:33:07 +0800</pubDate>
-      
-      <guid>https://cybeird.github.io/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description></description>
     </item>
     
@@ -323,6 +404,15 @@
     </item>
     
     <item>
+      <title>类模板</title>
+      <link>https://cybeird.github.io/tags/%E7%B1%BB%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Fri, 11 Oct 2019 20:13:41 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E7%B1%BB%E6%A8%A1%E6%9D%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>友元函数</title>
       <link>https://cybeird.github.io/tags/%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0/</link>
       <pubDate>Thu, 10 Oct 2019 17:09:33 +0800</pubDate>
@@ -337,6 +427,15 @@
       <pubDate>Wed, 09 Oct 2019 12:58:50 +0800</pubDate>
       
       <guid>https://cybeird.github.io/tags/%E9%A1%BA%E5%BA%8F%E8%A1%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>life</title>
+      <link>https://cybeird.github.io/tags/life/</link>
+      <pubDate>Wed, 11 Sep 2019 18:50:09 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/life/</guid>
       <description></description>
     </item>
     
@@ -404,11 +503,20 @@
     </item>
     
     <item>
-      <title>website</title>
-      <link>https://cybeird.github.io/tags/website/</link>
-      <pubDate>Fri, 27 Jan 2017 14:10:37 +0800</pubDate>
+      <title>Scarlett</title>
+      <link>https://cybeird.github.io/tags/scarlett/</link>
+      <pubDate>Sat, 21 Jan 2017 15:44:54 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/tags/website/</guid>
+      <guid>https://cybeird.github.io/tags/scarlett/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://cybeird.github.io/tags/windows/</link>
+      <pubDate>Sat, 21 Jan 2017 15:44:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -584,6 +692,51 @@
     </item>
     
     <item>
+      <title>Binary Tree</title>
+      <link>https://cybeird.github.io/tags/binary-tree/</link>
+      <pubDate>Tue, 08 Nov 2016 17:38:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/binary-tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TOWQs</title>
+      <link>https://cybeird.github.io/tags/towqs/</link>
+      <pubDate>Tue, 08 Nov 2016 17:38:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/towqs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trip Of WaterQuestions</title>
+      <link>https://cybeird.github.io/tags/trip-of-waterquestions/</link>
+      <pubDate>Tue, 08 Nov 2016 17:38:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/trip-of-waterquestions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据结构基础</title>
+      <link>https://cybeird.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Tue, 08 Nov 2016 17:38:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>正常的题目</title>
+      <link>https://cybeird.github.io/tags/%E6%AD%A3%E5%B8%B8%E7%9A%84%E9%A2%98%E7%9B%AE/</link>
+      <pubDate>Tue, 08 Nov 2016 17:38:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/tags/%E6%AD%A3%E5%B8%B8%E7%9A%84%E9%A2%98%E7%9B%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>2048</title>
       <link>https://cybeird.github.io/tags/2048/</link>
       <pubDate>Sat, 05 Nov 2016 10:23:12 +0800</pubDate>
@@ -656,24 +809,6 @@
     </item>
     
     <item>
-      <title>TOWQs</title>
-      <link>https://cybeird.github.io/tags/towqs/</link>
-      <pubDate>Thu, 27 Oct 2016 17:01:35 +0800</pubDate>
-      
-      <guid>https://cybeird.github.io/tags/towqs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Trip Of WaterQuestions</title>
-      <link>https://cybeird.github.io/tags/trip-of-waterquestions/</link>
-      <pubDate>Thu, 27 Oct 2016 17:01:35 +0800</pubDate>
-      
-      <guid>https://cybeird.github.io/tags/trip-of-waterquestions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>递归</title>
       <link>https://cybeird.github.io/tags/%E9%80%92%E5%BD%92/</link>
       <pubDate>Thu, 27 Oct 2016 17:01:35 +0800</pubDate>
@@ -697,24 +832,6 @@
       <pubDate>Mon, 24 Oct 2016 19:22:47 +0800</pubDate>
       
       <guid>https://cybeird.github.io/tags/apple/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Binary Tree</title>
-      <link>https://cybeird.github.io/tags/binary-tree/</link>
-      <pubDate>Sun, 23 Oct 2016 09:50:54 +0800</pubDate>
-      
-      <guid>https://cybeird.github.io/tags/binary-tree/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>数据结构基础</title>
-      <link>https://cybeird.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Sun, 23 Oct 2016 09:50:54 +0800</pubDate>
-      
-      <guid>https://cybeird.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     

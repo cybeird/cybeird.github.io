@@ -6,11 +6,20 @@
     <description>Recent content in Categories on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Aug 2022 17:49:17 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Sep 2022 11:17:52 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Post</title>
+      <link>https://cybeird.github.io/categories/post/</link>
+      <pubDate>Tue, 13 Sep 2022 11:17:52 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/categories/post/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>cpp</title>
       <link>https://cybeird.github.io/categories/cpp/</link>
-      <pubDate>Wed, 24 Aug 2022 17:49:17 +0800</pubDate>
+      <pubDate>Tue, 13 Sep 2022 11:00:03 +0800</pubDate>
       
       <guid>https://cybeird.github.io/categories/cpp/</guid>
       <description></description>
@@ -44,15 +53,6 @@
     </item>
     
     <item>
-      <title>Post</title>
-      <link>https://cybeird.github.io/categories/post/</link>
-      <pubDate>Wed, 15 Sep 2021 11:24:08 +0800</pubDate>
-      
-      <guid>https://cybeird.github.io/categories/post/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Software Engineering</title>
       <link>https://cybeird.github.io/categories/software-engineering/</link>
       <pubDate>Fri, 03 Sep 2021 18:01:45 +0800</pubDate>
@@ -64,7 +64,7 @@
     <item>
       <title>Technology</title>
       <link>https://cybeird.github.io/categories/technology/</link>
-      <pubDate>Wed, 16 Oct 2019 21:33:07 +0800</pubDate>
+      <pubDate>Wed, 16 Oct 2019 23:30:19 +0800</pubDate>
       
       <guid>https://cybeird.github.io/categories/technology/</guid>
       <description></description>

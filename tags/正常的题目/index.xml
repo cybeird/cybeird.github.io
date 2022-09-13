@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>正常的题目 on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/%E6%AD%A3%E5%B8%B8%E7%9A%84%E9%A2%98%E7%9B%AE/</link>
+    <description>Recent content in 正常的题目 on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 08 Nov 2016 17:38:54 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E6%AD%A3%E5%B8%B8%E7%9A%84%E9%A2%98%E7%9B%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>树状天平(Not so Mobile,UVa 839)(TOWQs)</title>
+      <link>https://cybeird.github.io/post/not-so-mobile/</link>
+      <pubDate>Tue, 08 Nov 2016 17:38:54 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/not-so-mobile/</guid>
+      <description>下面看一道名为天平的题目(Not si Mobile,UVa 839) 题目描述 输入一个树状天平,根据力矩相等的原则判断是否平衡。如图，所谓力矩相等，就是WlDl=WrDr，</description>
+    </item>
+    
+  </channel>
+</rss>

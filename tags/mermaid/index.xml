@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mermaid on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/mermaid/</link>
+    <description>Recent content in mermaid on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 Aug 2021 15:25:39 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/mermaid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于markdown中使用思维导图的测试与研究</title>
+      <link>https://cybeird.github.io/post/mermaid-text/</link>
+      <pubDate>Wed, 25 Aug 2021 15:25:39 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/mermaid-text/</guid>
+      <description>&lt;p&gt;mermaid的markdown语法
+graph LR
+A[方块] &amp;ndash;&amp;gt; B(圆块)
+B &amp;ndash;&amp;gt; C{菱形}
+C &amp;ndash;&amp;gt; |1| D[方块1]
+C &amp;ndash;&amp;gt; |2| E[方块2]&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

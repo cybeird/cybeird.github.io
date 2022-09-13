@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>从next离开，但是感觉前途渺茫</title>
+      <link>https://cybeird.github.io/post/next-step-to-another/</link>
+      <pubDate>Wed, 08 Sep 2021 15:53:04 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/next-step-to-another/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>看来只有我处于疯狂颓废的状态</title>
       <link>https://cybeird.github.io/post/everoneslearning-expert-me/</link>
       <pubDate>Tue, 07 Sep 2021 19:32:09 +0800</pubDate>
@@ -32,6 +41,30 @@
       
       <guid>https://cybeird.github.io/post/explore-hexo-life-fuckegg/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>怎样将博客内容相关的源文件保存在Github上</title>
+      <link>https://cybeird.github.io/post/how-save-blog-github/</link>
+      <pubDate>Thu, 02 Sep 2021 09:06:20 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-save-blog-github/</guid>
+      <description>&lt;h2 id=&#34;前情提要&#34;&gt;前情提要&lt;/h2&gt;
+&lt;p&gt;首先，我们要知道哪些文件是可替代的，哪些文件是用户配置之后需要保留的&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>关于markdown中使用思维导图的测试与研究</title>
+      <link>https://cybeird.github.io/post/mermaid-text/</link>
+      <pubDate>Wed, 25 Aug 2021 15:25:39 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/mermaid-text/</guid>
+      <description>&lt;p&gt;mermaid的markdown语法
+graph LR
+A[方块] &amp;ndash;&amp;gt; B(圆块)
+B &amp;ndash;&amp;gt; C{菱形}
+C &amp;ndash;&amp;gt; |1| D[方块1]
+C &amp;ndash;&amp;gt; |2| E[方块2]&lt;/p&gt;</description>
     </item>
     
     <item>

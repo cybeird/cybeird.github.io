@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>类模板 on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/%E7%B1%BB%E6%A8%A1%E6%9D%BF/</link>
+    <description>Recent content in 类模板 on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Oct 2019 20:13:41 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E7%B1%BB%E6%A8%A1%E6%9D%BF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何将将类模板中的成员函数在类模板外定义呢</title>
+      <link>https://cybeird.github.io/post/how-make-model-out/</link>
+      <pubDate>Fri, 11 Oct 2019 20:13:41 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-make-model-out/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先我们知道类模板很重要，而这个声明是在类前进行的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;但是每个成员函数在模板外定义的时候都要再声明一边类模板，这就是我所知道但却忘记的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

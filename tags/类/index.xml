@@ -17,6 +17,31 @@
     </item>
     
     <item>
+      <title>如何将将类模板中的成员函数在类模板外定义呢</title>
+      <link>https://cybeird.github.io/post/how-make-model-out/</link>
+      <pubDate>Fri, 11 Oct 2019 20:13:41 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-make-model-out/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先我们知道类模板很重要，而这个声明是在类前进行的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;但是每个成员函数在模板外定义的时候都要再声明一边类模板，这就是我所知道但却忘记的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>在类的外面调用类的private数据</title>
+      <link>https://cybeird.github.io/post/how-to-use-private-out/</link>
+      <pubDate>Fri, 11 Oct 2019 20:13:35 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/how-to-use-private-out/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>C艹实验课の解题报告-Week2</title>
       <link>https://cybeird.github.io/post/how-i-learn-c-2/</link>
       <pubDate>Thu, 10 Oct 2019 17:09:33 +0800</pubDate>
