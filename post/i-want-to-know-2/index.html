@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>『2』我要入门！矩阵？辣鸡！[Uva 442](TOWQs) - Sundae&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sundedi" /><meta name="description" content="嗯，今天要刷的水题是一道看起来很难的题目，因为当我们看到矩阵的时候难免会有‘一阵阵的恶心’，但是再仔细读了题意之后就会发现，这是一道很辣鸡的水题。
+" /><meta name="keywords" content="Hugo, theme, even, c&#43;&#43;, qt" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://cybeird.github.io/post/i-want-to-know-2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="『2』我要入门！矩阵？辣鸡！[Uva 442](TOWQs)" />
+<meta property="og:description" content="嗯，今天要刷的水题是一道看起来很难的题目，因为当我们看到矩阵的时候难免会有‘一阵阵的恶心’，但是再仔细读了题意之后就会发现，这是一道很辣鸡的水题。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cybeird.github.io/post/i-want-to-know-2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-10-16T19:12:27+08:00" />
+<meta property="article:modified_time" content="2016-10-16T19:12:27+08:00" />
+
+<meta itemprop="name" content="『2』我要入门！矩阵？辣鸡！[Uva 442](TOWQs)">
+<meta itemprop="description" content="嗯，今天要刷的水题是一道看起来很难的题目，因为当我们看到矩阵的时候难免会有‘一阵阵的恶心’，但是再仔细读了题意之后就会发现，这是一道很辣鸡的水题。"><meta itemprop="datePublished" content="2016-10-16T19:12:27+08:00" />
+<meta itemprop="dateModified" content="2016-10-16T19:12:27+08:00" />
+<meta itemprop="wordCount" content="687">
+<meta itemprop="keywords" content="cpp,stack,TOWQs,Trip Of WaterQuestions,我要入门,正常的标题," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="『2』我要入门！矩阵？辣鸡！[Uva 442](TOWQs)"/>
+<meta name="twitter:description" content="嗯，今天要刷的水题是一道看起来很难的题目，因为当我们看到矩阵的时候难免会有‘一阵阵的恶心’，但是再仔细读了题意之后就会发现，这是一道很辣鸡的水题。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Sundae&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Sundae&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">『2』我要入门！矩阵？辣鸡！[Uva 442](TOWQs)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-10-16 </span>
+        <div class="post-category">
+            <a href="/categories/cpp/"> cpp </a>
+            </div>
+          <span class="more-meta"> 约 687 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>嗯，今天要刷的水题是一道<a href="https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=383">看起来很难的题目</a>，因为当我们看到矩阵的时候难免会有‘一阵阵的恶心’，但是再仔细读了题意之后就会发现，这是一道很辣鸡的水题。</p>
+<h4 id="仔细瞅瞅">仔细瞅瞅</h4>
+<p>发现本题的关键就是解析表达式，而比较简单的解析表达式可以借助栈来完成。
+代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stack&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Matrix</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Matrix</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">:</span><span class="n">a</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="n">b</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{}</span>   <span class="c1">//定义一个结构体，这一步是构造函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="n">m</span><span class="p">[</span><span class="mi">26</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">stack</span><span class="o">&lt;</span><span class="n">Matrix</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>  <span class="c1">//嗯，这样就读入了数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">string</span> <span class="n">expr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">expr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">expr</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>		<span class="c1">//用len来保存长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kt">bool</span> <span class="n">error</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>		
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span><span class="p">(</span> <span class="n">isalpha</span><span class="p">(</span><span class="n">expr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">)</span> <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">expr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;A&#39;</span><span class="p">]);</span>  
+</span></span><span class="line"><span class="cl">			<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">expr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;)&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">Matrix</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">();</span> <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">				<span class="n">Matrix</span> <span class="n">m1</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">();</span> <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="p">(</span><span class="n">m1</span><span class="p">.</span><span class="n">b</span> <span class="o">!=</span> <span class="n">m2</span><span class="p">.</span><span class="n">a</span><span class="p">){</span> <span class="n">error</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>		
+</span></span><span class="line"><span class="cl">                                        <span class="c1">//若A的行数不等于B的列数，则乘法无法运行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>				<span class="n">ans</span> <span class="o">+=</span> <span class="n">m1</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">m1</span><span class="p">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">m2</span><span class="p">.</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">Matrix</span><span class="p">(</span><span class="n">m1</span><span class="p">.</span><span class="n">a</span><span class="p">,</span> <span class="n">m2</span><span class="p">.</span><span class="n">b</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>	       <span class="c1">//当我们遇到右括号时出栈并计算，然后结果入栈
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;error</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意到底下的算式中每两个需要相乘的矩阵都会放在一个括号中，不会出现(ABC)这样的算式。因此，每遇到一个右括号就代表要将括号之前的两个矩阵进行矩阵乘法。我们可以使用一个栈来模拟这个过程：</p>
+<ul>
+<li>右括号 : 不用搭理它</li>
+<li>矩阵名称 : 压栈</li>
+<li>右括号 : 弹出栈中的前两个，进行乘法运算，将结果压栈
+由此便可以模拟整个表达式的计算过程。我们可以用一个 pair 来表示矩阵的行数和列数，矩阵乘法的过程请参考《线性代数》。在前面的 res 函数中计算结果，如果遇到了没法相乘的矩阵就输出 error。这个函数可以计算结果矩阵的行数和列数并返回相乘的总次数。我们只需要将结果加起来就可以得到结果了。另外，如果表达式只有一个矩阵的话，表达式长度必为 1，直接输出结果 0。</li>
+</ul>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/cpp/">cpp</a>
+          <a href="/tags/stack/">stack</a>
+          <a href="/tags/towqs/">TOWQs</a>
+          <a href="/tags/trip-of-waterquestions/">Trip Of WaterQuestions</a>
+          <a href="/tags/%E6%88%91%E8%A6%81%E5%85%A5%E9%97%A8/">我要入门</a>
+          <a href="/tags/%E6%AD%A3%E5%B8%B8%E7%9A%84%E6%A0%87%E9%A2%98/">正常的标题</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/how-to-kill-yourself/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">How to Kill Yourself ?</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/i-want-to-know-1/">
+            <span class="next-text nav-default">『1』我要入门！[UVa 514](TOWQs)</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2016-10-16 19:12:27 \u002b0800 CST',
+        title: '『2』我要入门！矩阵？辣鸡！[Uva 442](TOWQs)',
+        link: decodeURI(location.href),
+        desc: '\u003cp\u003e嗯，今天要刷的水题是一道\u003ca href=\u0022https:\/\/uva.onlinejudge.org\/index.php?option=onlinejudge\u0026amp;page=show_problem\u0026amp;problem=383\u0022\u003e看起来很难的题目\u003c\/a\u003e，因为当我们看到矩阵的时候难免会有‘一阵阵的恶心’，但是再仔细读了题意之后就会发现，这是一道很辣鸡的水题。\u003c\/p\u003e',
+        owner: 'CyBeird',
+        repo: 'https:\/\/github.com\/cybeird\/blog-comments.git',
+        oauth: {
+          client_id: 'ad64af78087e76558035',
+          client_secret: '88c2f5096abefa211e680396ce9d373e5fb096b4'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:cybeird@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/cybeird" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/login.php" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/blrd" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://cybeird.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Sundedi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

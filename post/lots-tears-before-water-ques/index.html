@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>一道水题背后的几把辛酸泪(TOWQs) - Sundae&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Sundedi" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even, c&#43;&#43;, qt" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="https://cybeird.github.io/post/lots-tears-before-water-ques/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="一道水题背后的几把辛酸泪(TOWQs)" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cybeird.github.io/post/lots-tears-before-water-ques/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-09-26T09:36:49+08:00" />
+<meta property="article:modified_time" content="2016-09-26T09:36:49+08:00" />
+
+<meta itemprop="name" content="一道水题背后的几把辛酸泪(TOWQs)">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2016-09-26T09:36:49+08:00" />
+<meta itemprop="dateModified" content="2016-09-26T09:36:49+08:00" />
+<meta itemprop="wordCount" content="680">
+<meta itemprop="keywords" content="cpp,MINE,TOWQs,Trip Of WaterQuestions,动态规划,单调性DP,作死," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一道水题背后的几把辛酸泪(TOWQs)"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Sundae&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Sundae&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">一道水题背后的几把辛酸泪(TOWQs)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-09-26 </span>
+        <div class="post-category">
+            <a href="/categories/cpp/"> cpp </a>
+            </div>
+          <span class="more-meta"> 约 680 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p><a href="https://vijos.org/p/1292"><span class="pid">vijos P1292 </span>火车票</a></p>
+<p>这道题可以说是一道不是很水的题目，因为毕竟是一道动态规划的题目（当然你也可以用贪心做）。</p>
+<p>但是我，即便是使用了动态规划，却也依旧达成了如此强大的战绩。。</p>
+<p>下面上图！</p>
+<p><img src="https://cybirdy.files.wordpress.com/2016/09/ticket.png" alt="ticket"></p>
+<p>没错，就是这*一样的战绩，下面就来揭晓这道题的真面目！<!--more--></p>
+<p>前三次TLE的原因很简单，<img src="https://cybirdy.files.wordpress.com/2016/09/e698af.png" alt="%e6%98%af"></p>
+<p>没错，连续三次忘记了去掉文件操作，而且最重要的是我还以为是其他的错误（比如说把%lld变成%I64d等等）成功刷低了我的AC率，这血一样的教训。。可啪。。</p>
+<p>至于后三次RE的原因就有那么几分意思了，为此我还做了个测试（就不在这里展开了，感兴趣的可以下去试试，就是关于memset的坑爹用法）</p>
+<p>先上代码</p>
+<blockquote>
+<pre>#define LOCAL
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+int main()
+{
+	#ifdef LOCAL
+		freopen("rail.in","r",stdin);
+		freopen("rail.out","w",stdout);
+        #endif 
+	int bird,is,great,c1,c2,c3,n,m,i,j,p,s,t;
+	long long d[101],dis,f[101];
+	scanf("%d%d%d%d%d%d",&amp;bird,&amp;is,&amp;great,&amp;c1,&amp;c2,&amp;c3);
+	scanf("%d",&amp;n);
+	scanf("%d%d",&amp;s,&amp;t);
+	if (s&gt;t) swap(s,t);
+	d[1]=0;
+	for(i=2;i&lt;=n;i++)
+	  scanf("%lld",&amp;d[i]);
+	memset(f,0x3f,sizeof(f));
+	f[s]=0;
+	for(i=s+1;i&lt;=t;i++)
+	  for(j=s;j&lt;=i-1;j++)
+	  {
+	   dis=d[i]-d[j];
+	   if (dis&lt;=bird) 
+	     if (f[j]+c1&lt;f[i]) f[i]=c1+f[j]; 	   
+           if (dis&gt;bird&amp;&amp;dis&lt;=is) 
+	     if (f[j]+c2&lt;f[i]) f[i]=c2+f[j]; 	   
+           if (dis&gt;is&amp;&amp;dis&lt;=great) 
+	     if (f[j]+c3&lt;f[i]) f[i]=c3+f[j];
+	  }
+	printf("%lld",f[t]);
+}</pre>
+</blockquote>
+<p> </p>
+<p><span style="font-family:Merriweather, Georgia, 'Times New Roman', Times, serif;line-height:1.7;background-color:#ffffff;">我的想法很简单，就是用memset将f数组中的值定义成非常大。</span></p>
+<pre><code>&lt;span class=&quot;hljs-built_in&quot;&gt;memset&lt;/span&gt;(f,&lt;span class=&quot;hljs-number&quot;&gt;127&lt;/span&gt;,&lt;span class=&quot;hljs-keyword&quot;&gt;sizeof&lt;/span&gt;(f));`&lt;/pre&gt;
+&lt;span style=&quot;font-family:Merriweather, Georgia, 'Times New Roman', Times, serif;line-height:1.7;background-color:#ffffff;&quot;&gt;但是，我忽视了一个简单而又致命的错误，当我将数组中的值定义的太大之后，如果数据很大的话，它们加在一起就会爆掉，从而在评测集中出现“崩溃：访用无效内存”的错误。&lt;/span&gt;
+&lt;pre&gt;`&lt;span class=&quot;hljs-built_in&quot;&gt;memset&lt;/span&gt;(f,0x3f,&lt;span class=&quot;hljs-keyword&quot;&gt;sizeof&lt;/span&gt;(f));
+</code></pre>
+<p>然后我就将其改成了这个样子，心想，这应该不会出错了吧。</p>
+<p>但是，依旧出现了RE的坑爹错误，看来是我的代码出现了严重问题！</p>
+<p>【尽管我在cogs上提交后只RE了四个点，但是却是开了-O2优化之后的结果（实际上cogs上并不能不开-o2，据吴鸫鸫的神奇小道消息所说：】</p>
+<p><img src="https://cybirdy.files.wordpress.com/2016/09/e68d95e88eb72.png" alt="%e6%8d%95%e8%8e%b7"></p>
+<p>我 我我我我我我我我我我是是是是是是是是是 。。火火火火火，车王！</p>
+<hr>
+<p> </p>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/cpp/">cpp</a>
+          <a href="/tags/mine/">MINE</a>
+          <a href="/tags/towqs/">TOWQs</a>
+          <a href="/tags/trip-of-waterquestions/">Trip Of WaterQuestions</a>
+          <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+          <a href="/tags/%E5%8D%95%E8%B0%83%E6%80%A7dp/">单调性DP</a>
+          <a href="/tags/%E4%BD%9C%E6%AD%BB/">作死</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/a-tour-of-growing/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">一个弃牌术的成长之旅’.‘</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/a-big-screat-of-base-qurs/">
+            <span class="next-text nav-default">一道十分经典的基础题背后竟然隐藏天大秘密！[TOWQs]</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2016-09-26 09:36:49 \u002b0800 CST',
+        title: '一道水题背后的几把辛酸泪(TOWQs)',
+        link: decodeURI(location.href),
+        desc: '',
+        owner: 'CyBeird',
+        repo: 'https:\/\/github.com\/cybeird\/blog-comments.git',
+        oauth: {
+          client_id: 'ad64af78087e76558035',
+          client_secret: '88c2f5096abefa211e680396ce9d373e5fb096b4'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:cybeird@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/cybeird" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/login.php" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/blrd" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://cybeird.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2016 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>Sundedi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

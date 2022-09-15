@@ -25,5 +25,14 @@
       <description>&lt;p&gt;　　二叉树的递归定义如下：二叉树要么为空，要么由根节点(root)、左子树(left subtree)和右子树(right subtree)组成，而左子树和右子树分别是一棵二叉树。&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>『1』我要入门！[UVa 514](TOWQs)</title>
+      <link>https://cybeird.github.io/post/i-want-to-know-1/</link>
+      <pubDate>Fri, 14 Oct 2016 10:10:46 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/i-want-to-know-1/</guid>
+      <description>&lt;p&gt;好的，今天就是要先走一遍这&lt;a href=&#34;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;page=show_problem&amp;amp;problem=455&#34;&gt;一道题目&lt;/a&gt;。恩，就是简单的运用一下栈(stack)而已；&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

@@ -43,5 +43,14 @@
       <description>许多程序会大量的使用字符串。对于不同的字符串，我们希望能有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操</description>
     </item>
     
+    <item>
+      <title>一道水题背后的几把辛酸泪(TOWQs)</title>
+      <link>https://cybeird.github.io/post/lots-tears-before-water-ques/</link>
+      <pubDate>Mon, 26 Sep 2016 09:36:49 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/lots-tears-before-water-ques/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

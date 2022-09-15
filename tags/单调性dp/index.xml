@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>单调性DP on Sundae&#39;s Blog</title>
+    <link>https://cybeird.github.io/tags/%E5%8D%95%E8%B0%83%E6%80%A7dp/</link>
+    <description>Recent content in 单调性DP on Sundae&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Sep 2016 09:36:49 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E5%8D%95%E8%B0%83%E6%80%A7dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一道水题背后的几把辛酸泪(TOWQs)</title>
+      <link>https://cybeird.github.io/post/lots-tears-before-water-ques/</link>
+      <pubDate>Mon, 26 Sep 2016 09:36:49 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/lots-tears-before-water-ques/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
