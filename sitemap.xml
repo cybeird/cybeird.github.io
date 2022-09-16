@@ -3,146 +3,83 @@
   
   <url>
     <loc>https://cybeird.github.io/categories/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <lastmod>2022-09-16T16:35:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cybeird.github.io/tags/evaluation/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <lastmod>2022-09-16T16:35:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cybeird.github.io/post/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <lastmod>2022-09-16T16:35:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cybeird.github.io/tags/qt/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <lastmod>2022-09-16T16:35:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cybeird.github.io/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <lastmod>2022-09-16T16:35:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cybeird.github.io/tags/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <lastmod>2022-09-16T16:35:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cybeird.github.io/categories/technology/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <lastmod>2022-09-16T16:35:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cybeird.github.io/post/some-problems-about-evaluation/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <lastmod>2022-09-16T16:35:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cybeird.github.io/tags/adc%E6%95%88%E8%83%BD%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <lastmod>2022-09-16T16:35:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cybeird.github.io/post/adc-little-passage/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cybeird.github.io/tags/coding/</loc>
-    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cybeird.github.io/tags/hexo/</loc>
-    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cybeird.github.io/categories/post/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cybeird.github.io/tags/website/</loc>
-    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cybeird.github.io/post/i-dot-like-it/</loc>
-    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cybeird.github.io/post/noip2016-11-4-reports/</loc>
-    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cybeird.github.io/categories/cpp/</loc>
-    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cybeird.github.io/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/</loc>
-    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cybeird.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
-    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cybeird.github.io/post/when-i-am-learning-py/</loc>
-    <lastmod>2022-09-12T09:16:44+08:00</lastmod>
+    <lastmod>2022-09-16T16:35:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cybeird.github.io/tags/c&#43;&#43;/</loc>
+    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cybeird.github.io/categories/cpp/</loc>
     <lastmod>2022-09-16T13:34:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -199,6 +136,13 @@
   
   <url>
     <loc>https://cybeird.github.io/tags/hugo/</loc>
+    <lastmod>2022-09-16T13:34:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cybeird.github.io/categories/post/</loc>
     <lastmod>2022-09-16T13:34:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -311,6 +255,13 @@
   
   <url>
     <loc>https://cybeird.github.io/post/kaoyan-or-not/</loc>
+    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cybeird.github.io/tags/hexo/</loc>
     <lastmod>2022-09-13T11:24:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -835,6 +786,13 @@
   </url>
   
   <url>
+    <loc>https://cybeird.github.io/tags/website/</loc>
+    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cybeird.github.io/post/a-new-world/</loc>
     <lastmod>2022-09-09T16:58:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1131,6 +1089,27 @@
   <url>
     <loc>https://cybeird.github.io/post/how-the-programmer-should-be-duidai/</loc>
     <lastmod>2022-09-07T10:23:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cybeird.github.io/post/noip2016-11-4-reports/</loc>
+    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cybeird.github.io/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/</loc>
+    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cybeird.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
+    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1481,6 +1460,27 @@
   <url>
     <loc>https://cybeird.github.io/tags/cartoon/</loc>
     <lastmod>2022-09-15T17:31:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cybeird.github.io/tags/coding/</loc>
+    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cybeird.github.io/post/i-dot-like-it/</loc>
+    <lastmod>2022-09-13T11:24:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cybeird.github.io/post/when-i-am-learning-py/</loc>
+    <lastmod>2022-09-12T09:16:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -6,16 +6,7 @@
     <description>Recent content in cpp on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Sep 2022 11:00:03 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/cpp/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>11月4日解题报告</title>
-      <link>https://cybeird.github.io/post/noip2016-11-4-reports/</link>
-      <pubDate>Tue, 13 Sep 2022 11:00:03 +0800</pubDate>
-      
-      <guid>https://cybeird.github.io/post/noip2016-11-4-reports/</guid>
-      <description>&lt;p&gt;没错,2017年的我发现我当年什么都没写,已然忘记当年在干什么了..就这样吧&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Wed, 24 Aug 2022 17:49:17 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/cpp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>我的项目正在蒸蒸日上了！</title>
       <link>https://cybeird.github.io/post/my-program-updating/</link>
@@ -165,6 +156,15 @@
       
       <guid>https://cybeird.github.io/post/not-so-mobile/</guid>
       <description>下面看一道名为天平的题目(Not si Mobile,UVa 839) 题目描述 输入一个树状天平,根据力矩相等的原则判断是否平衡。如图，所谓力矩相等，就是WlDl=WrDr，</description>
+    </item>
+    
+    <item>
+      <title>11月4日解题报告</title>
+      <link>https://cybeird.github.io/post/noip2016-11-4-reports/</link>
+      <pubDate>Fri, 04 Nov 2016 11:00:03 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/noip2016-11-4-reports/</guid>
+      <description>&lt;p&gt;没错,2017年的我发现我当年什么都没写,已然忘记当年在干什么了..就这样吧&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
