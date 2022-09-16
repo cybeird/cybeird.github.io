@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>创建Hugo博客时踩的一些坑</title>
+      <link>https://cybeird.github.io/post/hugo-keng/</link>
+      <pubDate>Wed, 10 Aug 2022 10:11:43 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/hugo-keng/</guid>
+      <description>措施1 修改静态配置文件，将url改为https</description>
+    </item>
+    
+    <item>
       <title>忘记弄点书了</title>
       <link>https://cybeird.github.io/post/forget-to-get-some-books/</link>
       <pubDate>Wed, 15 Sep 2021 11:24:08 +0800</pubDate>
