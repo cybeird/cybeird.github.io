@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cybeird.github.io/post/some-problems-about-evaluation/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-09-15T15:06:13+08:00" />
-<meta property="article:modified_time" content="2022-09-15T17:31:53+08:00" />
+<meta property="article:modified_time" content="2022-09-16T13:34:02+08:00" />
 
 <meta itemprop="name" content="初步探索评估系统">
 <meta itemprop="description" content="依据测试样例研究评估系统如何使用"><meta itemprop="datePublished" content="2022-09-15T15:06:13+08:00" />
-<meta itemprop="dateModified" content="2022-09-15T17:31:53+08:00" />
-<meta itemprop="wordCount" content="202">
+<meta itemprop="dateModified" content="2022-09-16T13:34:02+08:00" />
+<meta itemprop="wordCount" content="369">
 <meta itemprop="keywords" content="Evaluation,Qt," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="初步探索评估系统"/>
 <meta name="twitter:description" content="依据测试样例研究评估系统如何使用"/>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/technology/"> TECHNOLOGY </a>
             </div>
-          <span class="more-meta"> 约 202 字 </span>
+          <span class="more-meta"> 约 369 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -147,6 +147,7 @@
       <ul>
         <li>
           <ul>
+            <li><a href="#项目架构探索">项目架构探索</a></li>
             <li><a href="#个人算法研究方向">个人算法研究方向</a></li>
             <li><a href="#后续功能修改大致方向">后续功能修改大致方向</a></li>
           </ul>
@@ -160,16 +161,36 @@
     <div class="post-content">
       <p>探索一下这个系统的功能都有哪些，它们在代码层面是如何实现和运行的
 以此为基础，研究一下如何添加ADC评估算法，诸如在哪层页面如何添加，构建初步的实现方案</p>
+<h3 id="项目架构探索">项目架构探索</h3>
+<h4 id="algorithmmanage-算子管理">AlgorithmManage 算子管理</h4>
+<h5 id="算子相关操作">算子相关操作</h5>
+<ul>
+<li>获取算子信息</li>
+<li>验证算子</li>
+<li>生成计算任务</li>
+<li>生成并管理python脚本</li>
+<li>管理xml文件</li>
+</ul>
+<h4 id="analysisresult-分析结果">AnalysisResult 分析结果</h4>
+<h4 id="dataanalysis-数据分析">DataAnalysis 数据分析</h4>
+<h4 id="datapreprocess-数据回放">DataPreprocess 数据回放</h4>
+<h4 id="dbservice-数据库服务">DBService 数据库服务</h4>
+<h4 id="evaluationprocess-分析过程">EvaluationProcess 分析过程</h4>
+<h4 id="evaluationproject-主项目">EvaluationProject 主项目</h4>
+<h4 id="evaluationresult-分析结果">EvaluationResult 分析结果</h4>
 <h3 id="个人算法研究方向">个人算法研究方向</h3>
 <ul>
 <li>一致性修正算法：粒子群优化算法</li>
 <li>归一值的计算方式</li>
 <li>程序中python算子是如何运作的</li>
+<li>程序数据分析中，映射规则和分析规则是如何使用的</li>
+<li></li>
 </ul>
 <h3 id="后续功能修改大致方向">后续功能修改大致方向</h3>
 <ul>
 <li>在设定权重值时，若权重之和要求为一，可以依据之前已经填入的数据，自动平均设置剩下的权重值</li>
-<li>删除评估方案时，无法删除(且不提示删除错误的原因)</li>
+<li><del>删除评估方案时，无法删除(且不提示删除错误的原因)</del></li>
+<li>数据预处理中，当未添加数据源时，显示无数据源，但是该数据源也可作为一个数据源打开使用，并且在创建数据源后依旧存在</li>
 </ul>
     </div>
 
