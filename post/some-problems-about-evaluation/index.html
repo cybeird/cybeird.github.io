@@ -49,7 +49,7 @@
 <meta itemprop="name" content="初步探索评估系统">
 <meta itemprop="description" content="依据测试样例研究评估系统如何使用"><meta itemprop="datePublished" content="2022-09-15T15:06:13+08:00" />
 <meta itemprop="dateModified" content="2022-09-16T16:35:27+08:00" />
-<meta itemprop="wordCount" content="369">
+<meta itemprop="wordCount" content="1295">
 <meta itemprop="keywords" content="Evaluation,Qt," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="初步探索评估系统"/>
 <meta name="twitter:description" content="依据测试样例研究评估系统如何使用"/>
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/technology/"> TECHNOLOGY </a>
             </div>
-          <span class="more-meta"> 约 369 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 1295 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
         
       </div>
     </header>
@@ -148,6 +148,7 @@
         <li>
           <ul>
             <li><a href="#项目架构探索">项目架构探索</a></li>
+            <li><a href="#项目添加adc算法的主要思路">项目添加ADC算法的主要思路</a></li>
             <li><a href="#个人算法研究方向">个人算法研究方向</a></li>
             <li><a href="#后续功能修改大致方向">后续功能修改大致方向</a></li>
           </ul>
@@ -178,13 +179,80 @@
 <h4 id="evaluationprocess-分析过程">EvaluationProcess 分析过程</h4>
 <h4 id="evaluationproject-主项目">EvaluationProject 主项目</h4>
 <h4 id="evaluationresult-分析结果">EvaluationResult 分析结果</h4>
+<h3 id="项目添加adc算法的主要思路">项目添加ADC算法的主要思路</h3>
+<h4 id="算法所需参数">算法所需参数</h4>
+<ul>
+<li>
+<p>A 可用度
+一个需要用户输入的向量，长度为n(状态数量)
+参数1 任务开始时可能出现的各种状态(正常状态，故障状态)
+参数2 任务开始时出现各种状态的概率
+或者
+参数1 系统处于正常状态的时间
+参数2 系统处于故障状态的时间
+参数3 系统进行故障维修的时间
+注1: 依据不同的参数传入，进行不同的可用度计算
+注2: 状态使用故障程度从低到高排列，使后续生成一个更便于查看的可靠度矩阵</p>
+</li>
+<li>
+<p>D 可靠度
+一个需要用户输入的矩阵，大小为n*n
+参数1 任务进行过程中，系统可能在状态之间相互转换，记录两两转换的概率
+注1: 矩阵中任意一行的元素和为1
+注2: 若安装角标值越大故障越严重的方式排列，并且状态转为故障后不能自行修复，则矩阵变成上三角矩阵</p>
+</li>
+<li>
+<p>C 效能值
+取决于系统本身的性能和具体作战情况
+创建方式可以通过层次分析法、专家评估法来确定</p>
+</li>
+</ul>
+<h4 id="算法计算方式">算法计算方式</h4>
+<h5 id="可用度计算">可用度计算</h5>
+<p>依据概率判断系统处于正常的概率和处于故障的概率
+(在系统出现两次故障之间正常运作的时间和系统从故障转到正常的时间计算)
+T1为正常开始使用到故障开始时间
+T2为故障开始时间到维修开始时间
+T3为维修开始时间到维修结束时间</p>
+<ul>
+<li>
+<p>MTTF (Mean Time To Failure，平均无故障时间)，指系统无故障运行的平均时间，取所有从系统开始正常运行到发生故障之间的时间段的平均值。
+<code>MTTF =∑T1/ N</code></p>
+</li>
+<li>
+<p>MTTR (Mean Time To Repair，平均修复时间)，指系统从发生故障到维修结束之间的时间段的平均值。</p>
+</li>
+</ul>
+<p><code>MTTR =∑(T2+T3)/ N</code></p>
+<ul>
+<li>MTBF (Mean Time Between Failure，平均失效间隔)，指系统两次故障发生时间之间的时间段的平均值。 
+<code>MTBF =∑(T2+T3+T1)/ N</code></li>
+</ul>
+<p>很明显:MTBF= MTTF+ MTTR</p>
+<p>系统正常概率 Pzc = MTBF / (MTBF + MTTR)
+系统故障概率 Pgz = MTTR / (MTBF + MTTR)</p>
+<p>系统的可用度可以用
+(∑T1 / N) / (∑(T2+T3+T1)/ N)
+= (∑T1) / ∑(T2+T3+T1)
+表示</p>
+<h5 id="可靠度计算">可靠度计算</h5>
+<p>执行任务保持正常的概率Pnor服从指数分布
+指数分布：exp(-γT) = 1/(-γT) * e ^ ( x / (γT) )
+Pnor=exp(-γT) T为任务时间，γ为故障率
+γ=1/MTBF</p>
+<blockquote>
+<p>MTBF = ∑(T2+T3+T1)/ N</p>
+</blockquote>
+<p>系统转为某种故障的概率 = 系统不同部件处于不同状态的概率乘积</p>
+<blockquote>
+<p>比如系统左引擎故障概率为γ1, 右引擎正常概率为γ2, 系统处于左引擎正常右引擎故障概率为γ1*γ2</p>
+</blockquote>
 <h3 id="个人算法研究方向">个人算法研究方向</h3>
 <ul>
 <li>一致性修正算法：粒子群优化算法</li>
 <li>归一值的计算方式</li>
 <li>程序中python算子是如何运作的</li>
 <li>程序数据分析中，映射规则和分析规则是如何使用的</li>
-<li></li>
 </ul>
 <h3 id="后续功能修改大致方向">后续功能修改大致方向</h3>
 <ul>
