@@ -6,7 +6,16 @@
     <description>Recent content in cpp on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Aug 2022 17:49:17 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Sep 2022 16:48:25 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试，寻找项目中的奇怪bug</title>
+      <link>https://cybeird.github.io/bugs-of-evaluation-project/</link>
+      <pubDate>Wed, 21 Sep 2022 16:48:25 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/bugs-of-evaluation-project/</guid>
+      <description>&lt;p&gt;本次主要在工程管理和评估流程两个界面寻找可能是问题的部分，并将其进行记录&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>我的项目正在蒸蒸日上了！</title>
       <link>https://cybeird.github.io/post/my-program-updating/</link>
