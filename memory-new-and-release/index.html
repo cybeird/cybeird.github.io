@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>测试，寻找项目中的奇怪bug - Sundae&#39;s Blog</title>
+  <title>C&#43;&#43;指针与内存管理：申请与释放 - Sundae&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Sundedi" /><meta name="description" content="在探索项目运作方式和使用项目创建测试工程时发现了不少bug，在这里将其汇总一番，以待后续更改" /><meta name="keywords" content="Hugo, theme, even, c&#43;&#43;, qt" />
+<meta name="author" content="Sundedi" /><meta name="description" content="由于之前搞错的东西太多，所以深入讨论一下相关技术" /><meta name="keywords" content="Hugo, theme, even, c&#43;&#43;, qt" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.101.0 with theme even" />
 
 
-<link rel="canonical" href="https://cybeird.github.io/bugs-of-evaluation-project/" />
+<link rel="canonical" href="https://cybeird.github.io/memory-new-and-release/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="测试，寻找项目中的奇怪bug" />
-<meta property="og:description" content="在探索项目运作方式和使用项目创建测试工程时发现了不少bug，在这里将其汇总一番，以待后续更改" />
+<meta property="og:title" content="C&#43;&#43;指针与内存管理：申请与释放" />
+<meta property="og:description" content="由于之前搞错的东西太多，所以深入讨论一下相关技术" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cybeird.github.io/bugs-of-evaluation-project/" /><meta property="article:section" content="" />
-<meta property="article:published_time" content="2022-09-21T16:48:25+08:00" />
+<meta property="og:url" content="https://cybeird.github.io/memory-new-and-release/" /><meta property="article:section" content="" />
+<meta property="article:published_time" content="2022-09-23T09:13:38+08:00" />
 <meta property="article:modified_time" content="2022-09-23T10:55:35+08:00" />
 
-<meta itemprop="name" content="测试，寻找项目中的奇怪bug">
-<meta itemprop="description" content="在探索项目运作方式和使用项目创建测试工程时发现了不少bug，在这里将其汇总一番，以待后续更改"><meta itemprop="datePublished" content="2022-09-21T16:48:25+08:00" />
+<meta itemprop="name" content="C&#43;&#43;指针与内存管理：申请与释放">
+<meta itemprop="description" content="由于之前搞错的东西太多，所以深入讨论一下相关技术"><meta itemprop="datePublished" content="2022-09-23T09:13:38+08:00" />
 <meta itemprop="dateModified" content="2022-09-23T10:55:35+08:00" />
-<meta itemprop="wordCount" content="353">
-<meta itemprop="keywords" content="Qt," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="测试，寻找项目中的奇怪bug"/>
-<meta name="twitter:description" content="在探索项目运作方式和使用项目创建测试工程时发现了不少bug，在这里将其汇总一番，以待后续更改"/>
+<meta itemprop="wordCount" content="417">
+<meta itemprop="keywords" content="cpp," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C&#43;&#43;指针与内存管理：申请与释放"/>
+<meta name="twitter:description" content="由于之前搞错的东西太多，所以深入讨论一下相关技术"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -124,28 +124,57 @@
         <div id="content" class="content">
           <article class="post">
   <div class="post-content">
-    <p>本次主要在各个界面寻找可能是问题的部分，并将其进行记录</p>
-<h2 id="工程管理">工程管理</h2>
+    <p>C++新增了两个关键字
+new 和 delete：</p>
 <ul>
-<li>打开项目速度好慢，得打开一次项目才快，能不能加载时先连上数据库，而不是第一次打开项目时再连</li>
+<li>new 用来动态分配内存</li>
+<li>delete 用来释放内存</li>
 </ul>
-<h2 id="评估流程">评估流程</h2>
-<ul>
-<li>将指标列表的指标拖入指标体系中后，修改指标名字后，在指标体系界面无法实时更改，在指标列表和数据库中的修改能正常保存</li>
-</ul>
-<blockquote>
-<p>感觉可以设置一个刷新按钮</p>
-</blockquote>
-<ul>
-<li>在新建或修改过指标属性后，再次创建新指标时，选择类型时区间内框有时并非初始值而会被设置成上次修改指标属性的值</li>
-<li>指标体系界面有时无法正常使用连线功能，不晓得是怎么出现的</li>
-<li>界面右侧指标属性界面不会实时刷新</li>
-</ul>
-<h2 id="数据分析">数据分析</h2>
-<ul>
-<li>在分析任务界面放置新分析规则后，若未保存便在分析规则中修改，分析任务中依旧可以保存一个不在分析规则列表中的分析规则</li>
-<li>分析任务，分析指标列表中，若对指标进行了改动，新建指标列表提示是否保存改动时，否 按钮无效果</li>
-</ul>
+<p>用 new 和 delete 分配内存更加简单：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">;</span> <span class="c1">//分配1个int型的内存空间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">delete</span> <span class="n">p</span><span class="p">;</span> <span class="c1">//释放内存
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>new 操作符会根据后面的数据类型来推断所需空间的大小。</p>
+<p>如果希望分配一组连续的数据，可以使用 new[]：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span> <span class="c1">//分配10个int型的内存空间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">delete</span><span class="p">[]</span> <span class="n">p</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>用 new[] 分配的内存需要用 delete[] 释放，它们是一一对应的。</p>
+<p>和 malloc() 一样，new 也是在堆区分配内存，必须手动释放，否则只能等到程序运行结束由操作系统回收。
+为了避免内存泄露，通常 new 和 delete、new[] 和 delete[] 操作符应该成对出现，并且不要和C语言中 malloc()、free() 一起混用。</p>
+<p>在C++中，建议使用 new 和 delete 来管理内存，它们可以使用C++的一些新特性，最明显的是可以自动调用构造函数和析构函数，后续我们将会讲解</p>
+<p>指针在被释放后，其值并不会自动的被设置为NULL，需要自行手动设置，所有一个基本的删除指针变量的操作是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
   </div>
 </article>
         </div>
@@ -154,10 +183,10 @@
     <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitment = new Gitment({
-        id: '2022-09-21 16:48:25 \u002b0800 CST',
-        title: '测试，寻找项目中的奇怪bug',
+        id: '2022-09-23 09:13:38 \u002b0800 CST',
+        title: 'C\u002b\u002b指针与内存管理：申请与释放',
         link: decodeURI(location.href),
-        desc: '\u003cp\u003e本次主要在各个界面寻找可能是问题的部分，并将其进行记录\u003c\/p\u003e',
+        desc: '\u003cp\u003eC\u002b\u002b新增了两个关键字\nnew 和 delete：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003enew 用来动态分配内存\u003c\/li\u003e\n\u003cli\u003edelete 用来释放内存\u003c\/li\u003e\n\u003c\/ul\u003e',
         owner: 'CyBeird',
         repo: 'https:\/\/github.com\/cybeird\/blog-comments.git',
         oauth: {
