@@ -6,7 +6,19 @@
     <description>Recent content in Software Engineering on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Sep 2021 18:01:45 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Sep 2022 09:03:12 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/categories/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何将项目的界面修改的更加用户友好</title>
+      <link>https://cybeird.github.io/post/a-user-friendly-way-to-improve-project/</link>
+      <pubDate>Mon, 26 Sep 2022 09:03:12 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/a-user-friendly-way-to-improve-project/</guid>
+      <description>&lt;p&gt;参照各路评估方案设置软件，对当前项目界面使用流程进行再度优化&lt;/p&gt;
+&lt;p&gt;方向1：将 评估流程 界面的功能拆分到多个界面，并在UI设置上加入引导功能&lt;/p&gt;
+&lt;p&gt;方向2：在设计新UI时，也要考虑到无缝添加ADC算法的方式，以及考虑后续新加算法提供兼容性&lt;/p&gt;
+&lt;p&gt;方向3：现有的功能不做修改，将已有功能进行整理，仅做UI界面对这些功能调用方式的改动&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>一 软件工程概述</title>
       <link>https://cybeird.github.io/post/software-engineering-learning-2/</link>

@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 22 Sep 2022 16:10:13 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>力扣第一题：哈希表判断匹配与否</title>
-      <link>https://cybeird.github.io/day-1-sep-hash-table/</link>
+      <link>https://cybeird.github.io/post/day-1-sep-hash-table/</link>
       <pubDate>Thu, 22 Sep 2022 16:10:13 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/day-1-sep-hash-table/</guid>
+      <guid>https://cybeird.github.io/post/day-1-sep-hash-table/</guid>
       <description>&lt;p&gt;给你一个整数数组 arr ，数组中的每个整数 互不相同 。另有一个由整数数组构成的数组 pieces，其中的整数也 互不相同 。请你以 任意顺序 连接 pieces 中的数组以形成 arr 。但是，不允许 对每个数组 pieces[i] 中的整数重新排序。&lt;/p&gt;
 &lt;p&gt;来源：&lt;a href=&#34;https://leetcode.cn/problems/check-array-formation-through-concatenation&#34;&gt;力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;</description>
     </item>

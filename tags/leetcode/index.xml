@@ -9,20 +9,20 @@
     <lastBuildDate>Fri, 23 Sep 2022 10:23:20 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>力扣第二题：创建链表</title>
-      <link>https://cybeird.github.io/day-2-sep-create-chain-table/</link>
+      <link>https://cybeird.github.io/post/day-2-sep-create-chain-table/</link>
       <pubDate>Fri, 23 Sep 2022 10:23:20 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/day-2-sep-create-chain-table/</guid>
+      <guid>https://cybeird.github.io/post/day-2-sep-create-chain-table/</guid>
       <description>&lt;p&gt;设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：val 和 next。val 是当前节点的值，next 是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性 prev 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/design-linked-list&#34;&gt;力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>力扣第一题：哈希表判断匹配与否</title>
-      <link>https://cybeird.github.io/day-1-sep-hash-table/</link>
+      <link>https://cybeird.github.io/post/day-1-sep-hash-table/</link>
       <pubDate>Thu, 22 Sep 2022 16:10:13 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/day-1-sep-hash-table/</guid>
+      <guid>https://cybeird.github.io/post/day-1-sep-hash-table/</guid>
       <description>&lt;p&gt;给你一个整数数组 arr ，数组中的每个整数 互不相同 。另有一个由整数数组构成的数组 pieces，其中的整数也 互不相同 。请你以 任意顺序 连接 pieces 中的数组以形成 arr 。但是，不允许 对每个数组 pieces[i] 中的整数重新排序。&lt;/p&gt;
 &lt;p&gt;来源：&lt;a href=&#34;https://leetcode.cn/problems/check-array-formation-through-concatenation&#34;&gt;力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;</description>
     </item>

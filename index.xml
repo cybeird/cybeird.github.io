@@ -6,23 +6,70 @@
     <description>Recent content on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Sep 2022 10:23:20 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Sep 2022 09:03:12 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何将项目的界面修改的更加用户友好</title>
+      <link>https://cybeird.github.io/post/a-user-friendly-way-to-improve-project/</link>
+      <pubDate>Mon, 26 Sep 2022 09:03:12 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/a-user-friendly-way-to-improve-project/</guid>
+      <description>&lt;p&gt;参照各路评估方案设置软件，对当前项目界面使用流程进行再度优化&lt;/p&gt;
+&lt;p&gt;方向1：将 评估流程 界面的功能拆分到多个界面，并在UI设置上加入引导功能&lt;/p&gt;
+&lt;p&gt;方向2：在设计新UI时，也要考虑到无缝添加ADC算法的方式，以及考虑后续新加算法提供兼容性&lt;/p&gt;
+&lt;p&gt;方向3：现有的功能不做修改，将已有功能进行整理，仅做UI界面对这些功能调用方式的改动&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>可能是一种新的遍历控件的方式（有待探索）</title>
+      <link>https://cybeird.github.io/post/new-way-to-search-treewidget/</link>
+      <pubDate>Fri, 23 Sep 2022 14:21:35 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/new-way-to-search-treewidget/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;//给是同一个指标的树item设置图标
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;QTreeWidgetItemIterator&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;it&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;treeWidget_TargetList&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;it&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;CTargetItem&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;planItem&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;it&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Qt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;UserRole&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CTargetItem&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;planItem&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getID&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;item&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getID&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;it&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;setIcon&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;icon&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;it&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
     <item>
       <title>力扣第二题：创建链表</title>
-      <link>https://cybeird.github.io/day-2-sep-create-chain-table/</link>
+      <link>https://cybeird.github.io/post/day-2-sep-create-chain-table/</link>
       <pubDate>Fri, 23 Sep 2022 10:23:20 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/day-2-sep-create-chain-table/</guid>
+      <guid>https://cybeird.github.io/post/day-2-sep-create-chain-table/</guid>
       <description>&lt;p&gt;设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：val 和 next。val 是当前节点的值，next 是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性 prev 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/design-linked-list&#34;&gt;力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>C&#43;&#43;指针与内存管理：申请与释放</title>
-      <link>https://cybeird.github.io/memory-new-and-release/</link>
+      <link>https://cybeird.github.io/post/memory-new-and-release/</link>
       <pubDate>Fri, 23 Sep 2022 09:13:38 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/memory-new-and-release/</guid>
+      <guid>https://cybeird.github.io/post/memory-new-and-release/</guid>
       <description>&lt;p&gt;C++新增了两个关键字
 new 和 delete：&lt;/p&gt;
 &lt;ul&gt;
@@ -33,20 +80,20 @@ new 和 delete：&lt;/p&gt;
     
     <item>
       <title>力扣第一题：哈希表判断匹配与否</title>
-      <link>https://cybeird.github.io/day-1-sep-hash-table/</link>
+      <link>https://cybeird.github.io/post/day-1-sep-hash-table/</link>
       <pubDate>Thu, 22 Sep 2022 16:10:13 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/day-1-sep-hash-table/</guid>
+      <guid>https://cybeird.github.io/post/day-1-sep-hash-table/</guid>
       <description>&lt;p&gt;给你一个整数数组 arr ，数组中的每个整数 互不相同 。另有一个由整数数组构成的数组 pieces，其中的整数也 互不相同 。请你以 任意顺序 连接 pieces 中的数组以形成 arr 。但是，不允许 对每个数组 pieces[i] 中的整数重新排序。&lt;/p&gt;
 &lt;p&gt;来源：&lt;a href=&#34;https://leetcode.cn/problems/check-array-formation-through-concatenation&#34;&gt;力扣（LeetCode）&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>测试，寻找项目中的奇怪bug</title>
-      <link>https://cybeird.github.io/bugs-of-evaluation-project/</link>
+      <link>https://cybeird.github.io/post/bugs-of-evaluation-project/</link>
       <pubDate>Wed, 21 Sep 2022 16:48:25 +0800</pubDate>
       
-      <guid>https://cybeird.github.io/bugs-of-evaluation-project/</guid>
+      <guid>https://cybeird.github.io/post/bugs-of-evaluation-project/</guid>
       <description>&lt;p&gt;本次主要在各个界面寻找可能是问题的部分，并将其进行记录&lt;/p&gt;</description>
     </item>
     

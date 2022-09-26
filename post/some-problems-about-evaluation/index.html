@@ -49,7 +49,7 @@
 <meta itemprop="name" content="初步探索评估系统">
 <meta itemprop="description" content="依据测试样例研究评估系统如何使用"><meta itemprop="datePublished" content="2022-09-15T15:06:13+08:00" />
 <meta itemprop="dateModified" content="2022-09-21T13:45:08+08:00" />
-<meta itemprop="wordCount" content="1435">
+<meta itemprop="wordCount" content="2043">
 <meta itemprop="keywords" content="Evaluation,Qt," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="初步探索评估系统"/>
 <meta name="twitter:description" content="依据测试样例研究评估系统如何使用"/>
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/technology/"> TECHNOLOGY </a>
             </div>
-          <span class="more-meta"> 约 1435 字 </span>
-          <span class="more-meta"> 预计阅读 3 分钟 </span>
+          <span class="more-meta"> 约 2043 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
         
       </div>
     </header>
@@ -242,8 +242,34 @@
 创建方式可以通过层次分析法、专家评估法来确定</p>
 </li>
 </ul>
+<h4 id="界面添加思路">界面添加思路</h4>
+<p>评估流程-&gt;新建评估方案
+选择算法之前加入是否选择使用ADC评估算法
+评估流程-&gt;修改评估方案
+隐藏是否使用ADC评估算法（这取决于如何将ADC评估算法加入到计算体系中）
+若使用ADC评估算法，在评估方案的指标体系结构中新增两个指标体系（暂定为中间层指标，可用性向量和可靠度矩阵）
+可用性向量（中间层指标）（评估方案界面）：
+填入参数：
+主系统下子系统的数量count
+子系统的正常与故障情况种类type
+子系统之间的并行或线性关系（是需求都正常还是需求只需一个正常）
+可用性向量（底层指标）（评估任务界面）：
+填入参数：
+生成一个count*3的子系统矩阵，在其中填入子系统正常时间，系统故障时间，系统维修时间（在评估任务中进行修改）
+点击生成：
+生成可用性向量（在评估方案中也可修改，修改后点保存按钮可以保存，需判断可行性，或者也可在评估任务处重新生成）</p>
+<p>可靠度矩阵（中间层指标）（评估方案界面）：
+填入参数：
+可靠度矩阵（底层指标）（评估任务界面）：
+填入参数：
+方式1：任务时间，故障率，能否自行修复（处于故障的机器是否有可能回到正常状态）
+方式2：直接填不同状态之间转换概率的矩阵</p>
 <h4 id="算法计算方式">算法计算方式</h4>
 <h5 id="可用度计算">可用度计算</h5>
+<p>可用度计算情况分三种：
+并联式：需求多个子系统都处于正常情况，方才认为主系统处于正常状况： a总 = a1 * a2 * a3 &hellip;
+串联式：需求多个子系统中，只需有一个处于正常情况，即认为主系统处于正常： a总 = 1 - (1 - a1) * (1 - a2) * (1 - a3) &hellip;
+混合式：上述两种状况混合的情况</p>
 <p>依据概率判断系统处于正常的概率和处于故障的概率
 (在系统出现两次故障之间正常运作的时间和系统从故障转到正常的时间计算)
 T1为正常开始使用到故障开始时间
@@ -302,7 +328,11 @@ Pnor=exp(-γT) T为任务时间，γ为故障率
           <a href="/tags/qt/">Qt</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/bugs-of-evaluation-project/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">测试，寻找项目中的奇怪bug</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/post/adc-little-passage/">
             <span class="next-text nav-default">系统效能分析法(ADC)小记</span>
             <span class="next-text nav-mobile">下一篇</span>
