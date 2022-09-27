@@ -6,7 +6,17 @@
     <description>Recent content in 数据结构基础 on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Sep 2022 10:23:20 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Sep 2022 09:50:40 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>力扣第三题：判断字符串元素是否相等</title>
+      <link>https://cybeird.github.io/post/day-3-sep-hash-table-check-string/</link>
+      <pubDate>Tue, 27 Sep 2022 09:50:40 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/day-3-sep-hash-table-check-string/</guid>
+      <description>&lt;p&gt;给定两个字符串 s1 和 s2，请编写一个程序，确定其中一个字符串的字符重新排列后，能否变成另一个字符串。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/check-permutation-lcci/&#34;&gt;力扣&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>力扣第二题：创建链表</title>
       <link>https://cybeird.github.io/post/day-2-sep-create-chain-table/</link>
