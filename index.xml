@@ -6,7 +6,27 @@
     <description>Recent content on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Sep 2022 09:50:40 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Sep 2022 09:13:51 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>力扣第四题：找出第k个数</title>
+      <link>https://cybeird.github.io/post/day-4-sep-get-kth-number/</link>
+      <pubDate>Wed, 28 Sep 2022 09:13:51 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/day-4-sep-get-kth-number/</guid>
+      <description>&lt;p&gt;有些数的素因子只有 3，5，7，请设计一个算法找出第 k 个数。注意，不是必须有这些素因子，而是必须不包含其他的素因子。例如，前几个数按顺序应该是 1，3，5，7，9，15，21。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/get-kth-magic-number-lcci&#34;&gt;力扣&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>力扣第四题：在数组中挑出两数满足和</title>
+      <link>https://cybeird.github.io/post/day-4-sep-find-sum/</link>
+      <pubDate>Wed, 28 Sep 2022 08:57:17 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/day-4-sep-find-sum/</guid>
+      <description>&lt;p&gt;给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/two-sum/&#34;&gt;力扣&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>力扣第三题：判断字符串元素是否相等</title>
       <link>https://cybeird.github.io/post/day-3-sep-hash-table-check-string/</link>

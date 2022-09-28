@@ -6,7 +6,17 @@
     <description>Recent content in leetcode on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Sep 2022 09:50:40 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Sep 2022 08:57:17 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>力扣第四题：在数组中挑出两数满足和</title>
+      <link>https://cybeird.github.io/post/day-4-sep-find-sum/</link>
+      <pubDate>Wed, 28 Sep 2022 08:57:17 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/day-4-sep-find-sum/</guid>
+      <description>&lt;p&gt;给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/two-sum/&#34;&gt;力扣&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>力扣第三题：判断字符串元素是否相等</title>
       <link>https://cybeird.github.io/post/day-3-sep-hash-table-check-string/</link>
