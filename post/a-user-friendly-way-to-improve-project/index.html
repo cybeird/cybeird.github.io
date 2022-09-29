@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cybeird.github.io/post/a-user-friendly-way-to-improve-project/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-09-26T09:03:12+08:00" />
-<meta property="article:modified_time" content="2022-09-28T09:53:13+08:00" />
+<meta property="article:modified_time" content="2022-09-29T15:26:37+08:00" />
 
 <meta itemprop="name" content="如何将项目的界面修改的更加用户友好">
 <meta itemprop="description" content="当前项目还存在些许构建思路上的问题，许多操作还比较繁琐"><meta itemprop="datePublished" content="2022-09-26T09:03:12+08:00" />
-<meta itemprop="dateModified" content="2022-09-28T09:53:13+08:00" />
-<meta itemprop="wordCount" content="2119">
+<meta itemprop="dateModified" content="2022-09-29T15:26:37+08:00" />
+<meta itemprop="wordCount" content="2223">
 <meta itemprop="keywords" content="Qt," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何将项目的界面修改的更加用户友好"/>
 <meta name="twitter:description" content="当前项目还存在些许构建思路上的问题，许多操作还比较繁琐"/>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/software-engineering/"> Software Engineering </a>
             </div>
-          <span class="more-meta"> 约 2119 字 </span>
+          <span class="more-meta"> 约 2223 字 </span>
           <span class="more-meta"> 预计阅读 5 分钟 </span>
         
       </div>
@@ -259,11 +259,35 @@
 </ul>
 <h4 id="分析算法所需指标参数并简化">分析算法所需指标参数并简化</h4>
 <h5 id="层次分析法">层次分析法</h5>
+<p>需要填入底层指标两两之间的权重关系</p>
+<p>指标类型</p>
+<ul>
+<li>效益型</li>
+<li>成本型</li>
+<li>中间型</li>
+<li>区间型</li>
+</ul>
 <h5 id="专家打分法">专家打分法</h5>
+<p>需要添加专家人数和专家权重矩阵</p>
+<p>指标类型</p>
+<ul>
+<li>效益型</li>
+<li>成本型</li>
+<li>中间型</li>
+<li>区间型</li>
+</ul>
 <h5 id="模糊综合分析法">模糊综合分析法</h5>
+<p>需要填入隶属度矩阵</p>
 <blockquote>
 <p>想法：在程序中需要提供更为详细的指引</p>
 </blockquote>
+<p>指标类型</p>
+<ul>
+<li>效益型</li>
+<li>成本型</li>
+<li>中间型</li>
+<li>区间型</li>
+</ul>
 <h5 id="adc效能分析法">ADC效能分析法</h5>
 <p>需要额外传递</p>
 <ul>
@@ -292,6 +316,7 @@
 <li>区间型</li>
 </ul>
 <h5 id="主成分分析法">主成分分析法</h5>
+<p>通过判断各种变量之间的关系，在最小化减少信息的情况下，将多个底层指标拟合成上一层指标的效能值</p>
 <h2 id="项目后续实现流程设想">项目后续实现流程设想</h2>
 <h3 id="创建工程和指标体系结构页面1">创建工程和指标体系结构（页面1）</h3>
 <p>左侧显示工程名称 工程所在单位 工程描述</p>
@@ -331,14 +356,14 @@
 <li>顶层指标右侧 有一加号，点击直接在该顶层下创建下一层指标（同时在右侧生成）（设想：设置最大创建层数（5），然后到第五层就不再有加号生成了）</li>
 </ul>
 <p>创建指标体系树方式：</p>
+<p><del>* 按钮2：创建标准化底层指标（在图上随机生成，默认使用百分制单位）</del></p>
+<p><del>* 底层指标被其他层指标链接后，自带变成对应指标的上一层指标</del></p>
 <ul>
-<li>按钮2：创建标准化底层指标（在图上随机生成，默认使用百分制单位）</li>
-<li>底层指标被其他层指标链接后，自带变成对应指标的上一层指标</li>
+<li>之间在现有的指标上右键新建来创建下层指标</li>
 <li>转换成非底层指标后标准化，同时任何修改也将同步到指标列表</li>
 </ul>
 <h2 id="异想天开">异想天开</h2>
 <p>界面添加的项目默认都是用百分制单位，并且可加入到任意算法的模型中，方便用户测试。在界面上显示算法的准确可信度（依据输入数据的参数，比如本应该是一个模糊综合分析法的参数，结果输入的是一个百分比的数值，在界面显示：可信度低，某某指标的参数未详细指定）</p>
-<p>对于创建好层次结构的指标列表，可以一键生成指标体系结构，而对于建立好的指标结构，也可一键构筑指标列表的层次</p>
     </div>
 
     

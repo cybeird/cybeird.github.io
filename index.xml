@@ -6,7 +6,17 @@
     <description>Recent content on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 28 Sep 2022 09:13:51 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 14:55:30 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>力扣第五题：字符串轮转</title>
+      <link>https://cybeird.github.io/post/day-5-sep-string-rotation/</link>
+      <pubDate>Thu, 29 Sep 2022 14:55:30 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/day-5-sep-string-rotation/</guid>
+      <description>&lt;p&gt;字符串轮转。给定两个字符串s1和s2，请编写代码检查s2是否为s1旋转而成（比如，waterbottle是erbottlewat旋转后的字符串）。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/string-rotation-lcci/&#34;&gt;力扣&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>力扣第四题：找出第k个数</title>
       <link>https://cybeird.github.io/post/day-4-sep-get-kth-number/</link>
