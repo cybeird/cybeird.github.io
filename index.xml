@@ -6,7 +6,17 @@
     <description>Recent content on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Sep 2022 14:55:30 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Sep 2022 13:13:45 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>力扣第六题：置零矩阵</title>
+      <link>https://cybeird.github.io/post/day-6-sep-zero-matrix/</link>
+      <pubDate>Fri, 30 Sep 2022 13:13:45 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/day-6-sep-zero-matrix/</guid>
+      <description>&lt;p&gt;编写一种算法，若M × N矩阵中某个元素为0，则将其所在的行与列清零。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/zero-matrix-lcci/&#34;&gt;力扣&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>力扣第五题：字符串轮转</title>
       <link>https://cybeird.github.io/post/day-5-sep-string-rotation/</link>
