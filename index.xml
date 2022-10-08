@@ -6,7 +6,18 @@
     <description>Recent content on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Sep 2022 13:13:45 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Oct 2022 16:04:12 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>力扣第七题：优势洗牌</title>
+      <link>https://cybeird.github.io/post/day-7-oct-advantage-shuffle/</link>
+      <pubDate>Sat, 08 Oct 2022 16:04:12 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/day-7-oct-advantage-shuffle/</guid>
+      <description>&lt;p&gt;给定两个大小相等的数组 nums1 和 nums2，nums1 相对于 nums2 的优势可以用满足 nums1[i] &amp;gt; nums2[i] 的索引 i 的数目来描述。&lt;/p&gt;
+&lt;p&gt;返回 nums1 的任意排列，使其相对于 nums2 的优势最大化。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/advantage-shuffle&#34;&gt;力扣&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>力扣第六题：置零矩阵</title>
       <link>https://cybeird.github.io/post/day-6-sep-zero-matrix/</link>
