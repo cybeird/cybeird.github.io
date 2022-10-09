@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Oct 2022 16:04:12 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Oct 2022 16:08:17 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>力扣第八题：括号的分数</title>
+      <link>https://cybeird.github.io/post/day-8-oct-score-of-parentheses/</link>
+      <pubDate>Sun, 09 Oct 2022 16:08:17 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/day-8-oct-score-of-parentheses/</guid>
+      <description>&lt;p&gt;给定一个平衡括号字符串 S，按下述规则计算该字符串的分数：&lt;/p&gt;
+&lt;p&gt;() 得 1 分。
+AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
+(A) 得 2 * A 分，其中 A 是平衡括号字符串。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/score-of-parentheses&#34;&gt;力扣&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>力扣第七题：优势洗牌</title>
       <link>https://cybeird.github.io/post/day-7-oct-advantage-shuffle/</link>
