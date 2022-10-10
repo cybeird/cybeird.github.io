@@ -6,7 +6,20 @@
     <description>Recent content on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 09 Oct 2022 16:08:17 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Oct 2022 16:00:46 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>摸了摸了今天摸了</title>
+      <link>https://cybeird.github.io/post/day-none-oct-touchafish/</link>
+      <pubDate>Mon, 10 Oct 2022 16:00:46 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/day-none-oct-touchafish/</guid>
+      <description>&lt;p&gt;我们有两个长度相等且不为空的整型数组 nums1 和 nums2 。在一次操作中，我们可以交换 nums1[i] 和 nums2[i]的元素。&lt;/p&gt;
+&lt;p&gt;例如，如果 nums1 = [1,2,3,8] ， nums2 =[5,6,7,4] ，你可以交换 i = 3 处的元素，得到 nums1 =[1,2,3,4] 和 nums2 =[5,6,7,8] 。
+返回 使 nums1 和 nums2 严格递增 所需操作的最小次数 。&lt;/p&gt;
+&lt;p&gt;数组 arr 严格递增 且  arr[0] &amp;lt; arr[1] &amp;lt; arr[2] &amp;lt; &amp;hellip; &amp;lt; arr[arr.length - 1] 。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/minimum-swaps-to-make-sequences-increasing&#34;&gt;力扣&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>力扣第八题：括号的分数</title>
       <link>https://cybeird.github.io/post/day-8-oct-score-of-parentheses/</link>
