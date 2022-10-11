@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Sundae&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Oct 2022 16:00:46 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Oct 2022 14:55:26 +0800</lastBuildDate><atom:link href="https://cybeird.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>力扣第九题：仅执行一次字符串交换能否使两个字符串相等</title>
+      <link>https://cybeird.github.io/post/day-9-oct-check-if-one-string-swap-can-make-strings-equal/</link>
+      <pubDate>Tue, 11 Oct 2022 14:55:26 +0800</pubDate>
+      
+      <guid>https://cybeird.github.io/post/day-9-oct-check-if-one-string-swap-can-make-strings-equal/</guid>
+      <description>&lt;p&gt;给你长度相等的两个字符串 s1 和 s2 。一次 字符串交换 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。&lt;/p&gt;
+&lt;p&gt;如果对 其中一个字符串 执行 最多一次字符串交换 就可以使两个字符串相等，返回 true ；否则，返回 false 。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://leetcode.cn/problems/check-if-one-string-swap-can-make-strings-equal&#34;&gt;力扣&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>摸了摸了今天摸了</title>
       <link>https://cybeird.github.io/post/day-none-oct-touchafish/</link>
